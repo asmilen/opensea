@@ -1,0 +1,52 @@
+/*San Francisco Display Regular*/
+@font-face {
+  font-family: 'SF Display Regular';
+  src: url("../font/SF-Pro-Display-Regular.otf");
+}
+/*San Francisco Display Medium*/
+@font-face {
+  font-family: 'SF Display Medium';
+  src: url("../font/SFProDisplay-Medium.ttf");
+}
+/*San Francisco Display Bold*/
+@font-face {
+  font-family: 'SF Display Bold';
+  src: url("../font/SFProDisplay-Bold.ttf");
+}
+/*San Francisco Display Light*/
+@font-face {
+  font-family: 'SF Display Light';
+  src: url("../font/SFProDisplay-Light.ttf");
+}
+/*San Francisco Text Regular*/
+@font-face {
+  font-family: 'SF Text Regular';
+  src: url("../font/SFProText-Regular.ttf");
+}
+/*San Francisco Text Bold*/
+@font-face {
+  font-family: 'SF Text Bold';
+  src: url("../font/SF-Pro-Text-Bold.ttf");
+}
+/*Holmes207*/
+@font-face {
+  font-family: 'Holmes207';
+  src: url('../font/Holmes207.ttf');
+}
+
+/*iCielBCBroadsheet-Italic*/
+@font-face {
+  font-family: 'BCBroadsheet Italic';
+  src: url('../font/iCielBCBroadsheet-Italic.ttf');
+}
+
+/*iCielBCBroadsheet-Regular*/
+@font-face {
+  font-family: 'BCBroadsheet Regular';
+  src: url('../font/iCielBCBroadsheet-Regular.ttf');
+}
+/*Cartel Deux*/
+@font-face {
+  font-family: 'BCCartelDeux';
+  src: url('../font/ICIELBCCARTELDEUX-ALT.OTF');
+}
