@@ -27,15 +27,10 @@ class CreateTourRequestTable extends Migration
             $table->integer('number_people')->nullable();
             $table->text('special_request')->nullable();
             $table->integer('tour_id')->nullable();
-            $table->enum('status', ['new', 'inprocess', 'done', 'cancel'])->default(new);
+            $table->enum('status', ['new', 'inprocess', 'done', 'cancel'])->default('new');
             $table->text('note')->nullable();
             $table->dateTime('created_at')->nullable();
             $table->dateTime('updated_at')->nullable();
-
-            
-
-            
-
         });
 
         
