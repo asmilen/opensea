@@ -196,22 +196,21 @@ function showTourDetail() {
 function handleSubmitBookingForm() {
 	$('.tour-detail .book .booking form').on('submit', function (e) {
         e.preventDefault();
+        $('#error').empty();
 
         $.post('/tour-request', $(this).serialize())
             .then(function (response) {
-                console.log(response);
-
                 if(response.status == 'success'){
                     self.errors = false;
                     self.message = "Thank you for booking with us!";
                     setTimeout(function(){
                         $('#product_view > div > div > a').click();
-                        self.message = false;
                     }, 3000);
                 } else {
-                    self.errors = response.errors;
+                    $.each( response.errors, function( key, value ) {
+                        $('#error').append(" <p><span>* " + value + "</span></p>");
+                    });
                 }
-
             })
             .catch(function (error) {
                 console.log(error);

@@ -412,6 +412,7 @@
 					</ul>
 					<button type="submit">BOOK NOW</button>
 				</form>
+				<div style="color: red; font-size: 12px; padding-top: 10px;" id="error"></div>
 			</div>
 			<!-- /.booking -->
 		</div>
