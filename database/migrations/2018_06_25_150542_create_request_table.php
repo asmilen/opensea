@@ -23,7 +23,7 @@ class CreateRequestTable extends Migration
             $table->string('email', 255);
             $table->string('phone', 255);
             $table->text('content');
-            $table->enum('status', ['new', 'inprocess', 'done', 'cancel'])->default(new);
+            $table->enum('status', ['new', 'inprocess', 'done', 'cancel'])->default('new');
             $table->text('note')->nullable();
             $table->nullableTimestamps();
 

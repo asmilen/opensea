@@ -25,7 +25,7 @@ class CreateTourTable extends Migration
             $table->text('price')->nullable();
             $table->text('include')->nullable();
             $table->text('add_on')->nullable();
-            $table->enum('type', ['normal', 'future'])->default(normal);
+            $table->enum('type', ['normal', 'future'])->default('normal');
             $table->dateTime('updated_at')->nullable();
             $table->dateTime('created_at')->nullable();
 
