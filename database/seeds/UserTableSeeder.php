@@ -12,17 +12,11 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker\Factory::create();
-
-        for ($i=1; $i <= 100; $i++) {
-            $length = 32;
-            User::create([
-                'name' => $faker->name,
-                'email' => $faker->email,
-                'password' => bcrypt($faker->text),
-                'api_token' => substr(str_shuffle(str_repeat($x='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length/strlen($x)) )),1,$length),
-            ]);
-            echo ("Created $i users!\n");
-        }
+        DB::table('users')->insert([
+            'name' => 'Nam Vu',
+            'email' => 'namvu1210@gmail.com',
+            'password' => bcrypt('123456'),
+            'api_token' => 'fDqQVugU5HdO9ayzCtxIEZiNb17LR2e6',
+        ]);
     }
 }

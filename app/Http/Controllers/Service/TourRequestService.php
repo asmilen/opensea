@@ -55,6 +55,13 @@ class TourRequestService extends BaseService
         ]);
     }
 
+    public function detail($id) {
+        $orderObj = App::make('tourRequestService')->query()->findOrFail($id);
+        return $this->response([
+            'data' => $orderObj
+        ]);
+    }
+
     public function create (Request $request) {
         if (!$request->input('name')) {
             return response()->json([
@@ -83,7 +90,9 @@ class TourRequestService extends BaseService
 
     public function update (Request $request) {
         $number = $request->input('number_people');
+
         $id = $request->input('id');
+
         if (!$id || ($number && ($number < 0 || !is_int($number)))) {
             return response()->json([
                 'status' => 'fail',
@@ -96,29 +105,36 @@ class TourRequestService extends BaseService
             'number_people' => $number,
             'status' => $request->input('status')
         ];
-        if ($request->input('note_new')) {
-            $dataOld = TourRequest::where('id', '=', $id)->first(['note']);
-            if ($dataOld && $dataOld->note) {
-                $note = json_decode($dataOld->note);
-                array_unshift($note, [
-                    'author' => Auth::user()->name,
-                    'time' => date('Y-m-d H:i:s'),
-                    'content' => $request->input('note_new')
-                ]);
-            } else {
-                $note = [
-                    [
-                        'author' => Auth::user()->name,
-                        'time' => date('Y-m-d H:i:s'),
-                        'content' => $request->input('note_new')
-                    ]
-                ];
-            }
-            $dataUpdate['note'] = json_encode($note);
+
+        $tourRequest = TourRequest::where('id', '=', $id)->first();
+
+        $dataBefore = [
+            'date' => $tourRequest->date,
+            'number_people' => $tourRequest->number_people,
+            'status' => $tourRequest->status
+        ];
+
+        $log = [
+            'author' => Auth::user()->name,
+            'time' => date('Y-m-d H:i:s'),
+            'content' => $request->input('note_new'),
+            'old_data' => $dataBefore,
+            'new_data' => $dataUpdate
+        ];
+
+        if ($tourRequest && $tourRequest->note) {
+            $note = json_decode($tourRequest->note);
+            array_unshift($note, $log);
+        } else {
+            $note = [$log];
         }
+
+        $dataUpdate['note'] = json_encode($note);
+
         $articleObj = App::make('tourRequestService')->baseQuery([
             'id' => $id
         ])->update($dataUpdate);
+
         return $this->response([
             'data' => $articleObj
         ]);

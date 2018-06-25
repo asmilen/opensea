@@ -21,6 +21,5 @@
 <section class="content" ng-controller="TourRequestController">
   @include('system.tour-request.filter')
   @include('system.tour-request.list')
-  @include('system.tour-request.modal')
 </section>
 @endsection

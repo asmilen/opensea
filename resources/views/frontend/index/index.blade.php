@@ -7,6 +7,8 @@
 	<!-- Responsive meta tag -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
+	<meta name="csrf-token" content="{{ csrf_token() }}">
+
 	<title>OpenSea Demo</title>
 
 	<!-- Disable tap highlight on IE -->
@@ -324,7 +326,7 @@
 					<li class="group5">
 						<div class="type">GROUP 3-5</div>
 						<div>
-							<span class="cost">$<span>85</span class="number"></span>
+							<span class="cost">$<span class="number">85</span ></span>
 							<span class="pax">/PAX</span>
 						</div>
 					</li>
@@ -362,11 +364,12 @@
 			<div class="booking">
 				<div class="title">BOOKING INFO</div>
 				<div class="underline"></div>
-				<form>
+				<form method="POST" action="/tour-request">
 					<ul>
+						<input type="hidden" name="tour_id" id="tour_id">
 						<div class="input full-name">
 							<label>Full Name</label><br>
-							<input type="text" name="full_name">
+							<input type="text" name="name">
 							<div class="underline"></div>
 						</div>
 
@@ -378,13 +381,13 @@
 
 						<div class="input phone">
 							<label>Phone/WhatsApp/Kacaotalk</label><br>
-							<input type="text" name="phone">
+							<input type="text" name="contact">
 							<div class="underline"></div>
 						</div>
 
 						<div class="nationality input">
 							<label>Nationality&nbsp;&nbsp;</label>
-							<select>
+							<select name="nation">
 								<option>Australia</option>
 								<option>Belgium</option>
 								<option>Denmark</option>
@@ -399,12 +402,12 @@
 
 						<div class="amount input">
 							<label>Number of people&nbsp;&nbsp;</label>
-							<input type="number" max="5" min="1" name="amount">
+							<input type="number" max="5" min="1" name="number_people">
 						</div>
 
 						<div class="other input">
 							<label>Special Request</label><br>
-							<textarea rows="2"></textarea>
+							<textarea rows="2" name="special_request"></textarea>
 						</div>
 					</ul>
 					<button type="submit">BOOK NOW</button>

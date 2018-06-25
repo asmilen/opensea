@@ -34,7 +34,7 @@
                         @{{ summarizeDateTime(article.created_at, true) }}
                     </td>
                     <td>
-                        <a href="javascript:void(0)" class="btn btn-warning btn-sm" title="Edit this tour request" ng-click="showEditArticle(article)">
+                        <a href="/system/tour-requests/@{{ article.id }}/edit" class="btn btn-warning btn-sm">
                             <i class="fa fa-pencil"></i>
                         </a>
                     </td>

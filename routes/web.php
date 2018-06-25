@@ -25,4 +25,5 @@ Route::any('system/news/upload', 'System\TicketController@tinymceImageUpload');
 Route::get('system/request', 'System\RequestController@index')->name('system-request');
 Route::get('system/ticket', 'System\TicketController@index')->name('system-ticket');
 Route::get('system/tour', 'System\TourController@index')->name('system-tour');
-Route::get('system/tour-request', 'System\TourRequestController@index')->name('system-tour-request');
+Route::get('system/tour-requests', 'System\TourRequestController@index')->name('system-tour-request');
+Route::get('system/tour-requests/{tourRequest}/edit', 'System\TourRequestController@edit');

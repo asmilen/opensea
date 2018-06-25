@@ -10,6 +10,7 @@ namespace App\Http\Controllers\System;
 
 
 use App\Http\Controllers\Controller;
+use App\Models\TourRequest;
 
 class TourRequestController extends Controller
 {
@@ -20,5 +21,9 @@ class TourRequestController extends Controller
 
     public function index () {
         return view('system.tour-request.index');
+    }
+
+    public function edit (TourRequest $tourRequest) {
+        return view('system.tour-request.edit',compact('tourRequest'));
     }
 }

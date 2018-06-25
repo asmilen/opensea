@@ -116,6 +116,7 @@ Route::middleware(['auth:api'])->group(function () {
 
     //tour request
     Route::get('/tour-request/index', 'Service\TourRequestService@index');
+    Route::get('/tour-request/{id}/detail', 'Service\TourRequestService@detail');
     Route::post('/tour-request/create', 'Service\TourRequestService@create');
     Route::post('/tour-request/update', 'Service\TourRequestService@update');
     Route::post('/tour-request/delete', 'Service\TourRequestService@delete');

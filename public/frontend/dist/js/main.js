@@ -1,83 +1,92 @@
 $(document).ready(() => {
+
+    // ajax setup laravel
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
 	// Render tours list
-	renderToursList();
+    $.get('/api/frontend/tour',function (tours) {
+        window.tours = tours;
 
-	// Handle click on tour item
-	handleClickOnTour();
+		renderToursList();
 
-	// Handle submit get in touch form
-	handleSubmitGetInTouchForm();
+		// Handle click on tour item
+		handleClickOnTour();
 
-	// Handle submit booking form
-	handleSubmitBookingForm();
+		// Handle submit get in touch form
+		handleSubmitGetInTouchForm();
 
-	// Handle next tour
-	handleNextTour();
+		// Handle submit booking form
+		handleSubmitBookingForm();
 
-	// Handle previous tour
-	handlePrevTour();
+		// Handle next tour
+		handleNextTour();
 
-	// Handle click on dot
-	handleClickOnDot();
+		// Handle previous tour
+		handlePrevTour();
+
+		// Handle click on dot
+		handleClickOnDot();
+	});
 });
 
 // Render tours list
 function renderToursList() {
 	// Tours list
-	$.get('/api/frontend/tour',function (tours) {
+	let $toursList = $('.contents .tours .list ul.list-row');
 
-        let $toursList = $('.contents .tours .list ul.list-row');
+	$toursList.empty(); // empty list
+	for (let i in window.tours) {
+		let tour = window.tours[i]; // current tour
 
-        $toursList.empty(); // empty list
-        for (let i in tours) {
-            let tour = tours[i]; // current tour
+		// Position
+		let pos;
 
-            // Position
-            let pos;
+		if (i % 3 === 0) {
+			pos = "left";
+		} else if (i % 3 === 1) {
+			pos = "center";
+		} else {
+			pos = "right";
+		}
 
-            if (i % 3 === 0) {
-                pos = "left";
-            } else if (i % 3 === 1) {
-                pos = "center";
-            } else {
-                pos = "right";
-            }
+		// Is coming soon
+		let isComingSoon = '';
 
-            // Is coming soon
-            let isComingSoon = '';
+		if (tour.type) {
+			isComingSoon = 'coming-soon';
+		}
 
-            if (tour.type) {
-                isComingSoon = 'coming-soon';
-            }
+		// Append to list
+		let html = `
+		<li class="list-item ${pos} ${isComingSoon}" id="${i}">
+			<img src="${tour.images[0]}">
+			<div class="tour-info">
+				<div class="name">${tour.title}</div>
+				<div class="underline"></div>
+				<ul class="descriptions">`;
 
-            // Append to list
-            let html = `
-			<li class="list-item ${pos} ${isComingSoon}" id="${i}">
-				<img src="${tour.images[0]}">
-				<div class="tour-info">
-					<div class="name">${tour.title}</div>
-					<div class="underline"></div>
-					<ul class="descriptions">`;
+		if (tour.type === 0) {
+			for (let line of tour.includes) {
+				html += `<li class="description">${line}</li>`;
+			}
+		}
+		html += `</ul>`;
+		if (tour.type === 0) { // if tour exists
+			html += `
+			<div class="book">
+				<div class="cost">FROM $<span>${tour.prices[0].value}</span></div>
+				<button class="book-now">BOOK NOW</button>
+			</div>
+		`;
+		}
+		html += `</div></li>`;
 
-            if (tour.type === 0) {
-                for (let line of tour.includes) {
-                    html += `<li class="description">${line}</li>`;
-                }
-            }
-            html += `</ul>`;
-            if (tour.type === 0) { // if tour exists
-                html += `
-				<div class="book">
-					<div class="cost">FROM $<span>${tour.prices[0]}</span></div>
-					<button class="book-now">BOOK NOW</button>
-				</div>
-			`;
-            }
-            html += `</div></li>`;
-
-            $toursList.append(html);
-        }
-    });
+		$toursList.append(html);
+	}
 };
 
 // Handle click on tour item
@@ -91,7 +100,6 @@ function handleClickOnTour() {
 
 		let id = parseInt($(this).attr('id')); // item id
 
-		console.log(id);
 		// Find tour
 		let tour = window.tours[id];
 
@@ -117,7 +125,6 @@ function handleClickOnTour() {
 
 function showTourDetail() {
 	// Set data
-
 	// Dots
 	let $dots = $('.tour-detail .full-info .images-slider .dots');
 
@@ -149,15 +156,20 @@ function showTourDetail() {
 	// Title
 	$('.tour-detail .full-info .info .name').text(window.tour.title);
 
+
+
 	// Descriptions
 	let desc = window.tour.descriptions.join('<br>');
 
 	$('.tour-detail .full-info .info .description').html(desc);
 
 	// Prices
-	$('.tour-detail .book .price ul li.single .cost .number').text(window.tour.prices.single);
-	$('.tour-detail .book .price ul li.group2 .cost .number').text(window.tour.prices.group2);
-	$('.tour-detail .book .price ul li.group5 .cost .number').text(window.tour.prices.group5);
+	$('.tour-detail .book .price ul li.single .cost .number').text(window.tour.prices[0].value);
+    $('.tour-detail .book .price ul li.single .type ').text(window.tour.prices[0].title);
+	$('.tour-detail .book .price ul li.group2 .cost .number').text(window.tour.prices[1].value);
+    $('.tour-detail .book .price ul li.group2 .type ').text(window.tour.prices[1].title);
+	$('.tour-detail .book .price ul li.group5 .cost .number').text(window.tour.prices[2].value);
+    $('.tour-detail .book .price ul li.group5 .type ').text(window.tour.prices[2].title);
 
 	// Includes
 	let $includes = $('.tour-detail .book .include ul');
@@ -183,7 +195,28 @@ function showTourDetail() {
 // Handle submit booking form
 function handleSubmitBookingForm() {
 	$('.tour-detail .book .booking form').on('submit', function (e) {
-		e.preventDefault();
+        e.preventDefault();
+
+        $.post('/tour-request', $(this).serialize())
+            .then(function (response) {
+                console.log(response);
+
+                if(response.status == 'success'){
+                    self.errors = false;
+                    self.message = "Thank you for booking with us!";
+                    setTimeout(function(){
+                        $('#product_view > div > div > a').click();
+                        self.message = false;
+                    }, 3000);
+                } else {
+                    self.errors = response.errors;
+                }
+
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+
 	});
 }
 
