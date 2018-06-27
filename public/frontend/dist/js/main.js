@@ -201,11 +201,11 @@ function handleSubmitBookingForm() {
         $.post('/tour-request', $(this).serialize())
             .then(function (response) {
                 if(response.status == 'success'){
-                    self.errors = false;
-                    self.message = "Thank you for booking with us!";
-                    setTimeout(function(){
-                        $('#product_view > div > div > a').click();
-                    }, 3000);
+                    swal(
+                        'Success!',
+                        response.message,
+                        'success'
+                    )
                 } else {
                     $.each( response.errors, function( key, value ) {
                         $('#error').append(" <p><span>* " + value + "</span></p>");

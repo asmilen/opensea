@@ -366,7 +366,7 @@
 				<div class="underline"></div>
 				<form method="POST" action="/tour-request">
 					<ul>
-						<input type="hidden" name="tour_id" id="tour_id">
+						<input type="hidden" name="tour_id" id="tour_id" value="1">
 						<div class="input full-name">
 							<label>Full Name</label><br>
 							<input type="text" name="name">
@@ -413,6 +413,7 @@
 					<button type="submit">BOOK NOW</button>
 				</form>
 				<div style="color: red; font-size: 12px; padding-top: 10px;" id="error"></div>
+				<div style="color: Green; font-size: 14px; padding-top: 10px;" id="success"></div>
 			</div>
 			<!-- /.booking -->
 		</div>
@@ -454,10 +455,12 @@
 <script src="frontend/plugins/slimScroll/jquery.slimscroll.min.js"></script>
 <!-- Masonry -->
 <script type="text/javascript" src="frontend/plugins/masonry/masonry.pkgd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
 <!-- Content -->
 <script src="frontend/dist/js/data.js"></script>
 <script src="frontend/dist/js/main.js"></script>
 <!-- UI -->
 <script src="frontend/dist/js/ui.js"></script>
+
 </body>
 </html>
