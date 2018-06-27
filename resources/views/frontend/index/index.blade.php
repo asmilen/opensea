@@ -366,7 +366,7 @@
 				<div class="underline"></div>
 				<form method="POST" action="/tour-request">
 					<ul>
-						<input type="hidden" name="tour_id" id="tour_id" value="1">
+						<input type="hidden" name="tour_id" id="tour_id">
 						<div class="input full-name">
 							<label>Full Name</label><br>
 							<input type="text" name="name">

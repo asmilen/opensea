@@ -36,7 +36,6 @@ function TourRequestDetailController($scope, $http, $rootScope, $timeout, Upload
                 if (response.data.status == 'successful') {
                     $scope.editArticle = response.data.data;
                     $scope.editArticle.note = JSON.parse($scope.editArticle.note);
-                    console.log($scope.editArticle.note);
                 } else {
                     showMessage('Error', 'There was an error processing, please try again!', 'error');
                 }

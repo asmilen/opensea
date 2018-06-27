@@ -54,7 +54,7 @@
                     <div class="form-group" style="margin-top: 10px">
                         <label for="" class="col-md-3 control-label">Tour</label>
                         <div class="col-md-9">
-                            <strong> {{ $tourRequest->tour_id }}</strong>
+                            <strong ng-bind-html="editArticle.tour_name"></strong>
                         </div>
                     </div>
                 </div>

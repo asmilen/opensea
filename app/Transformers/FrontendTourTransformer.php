@@ -10,6 +10,7 @@ class FrontendTourTransformer extends TransformerAbstract
     public function transform(Tour $tour)
     {
         return [
+            'id'                    => $tour->id,
             'type'                  => $tour->type == 'normal' ? 0 : 1,
             'title'                 => $tour->name,
             'descriptions'          => explode(PHP_EOL, $tour->description),

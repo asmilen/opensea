@@ -62,7 +62,7 @@ function renderToursList() {
 
 		// Append to list
 		let html = `
-		<li class="list-item ${pos} ${isComingSoon}" id="${i}">
+		<li class="list-item ${pos} ${isComingSoon}" index="${i}">
 			<img src="${tour.images[0]}">
 			<div class="tour-info">
 				<div class="name">${tour.title}</div>
@@ -98,20 +98,19 @@ function handleClickOnTour() {
 			return;
 		}
 
-		let id = parseInt($(this).attr('id')); // item id
+		let index = parseInt($(this).attr('index')); // item id
 
 		// Find tour
-		let tour = window.tours[id];
+		let tour = window.tours[index];
 
 		if (!tour) {
 			return;
 		}
 
 		window.tour = tour;
-		window.tour.id = id;
+		window.tour.index = index;
 		window.tour.activeImage = 0;
 
-		console.log(tour);
 		// Show tour detail background
 		$('.tour-detail-background').show();
 
@@ -187,6 +186,9 @@ function showTourDetail() {
 		$addon.append(`<li>${line}</li>`);
 	}
 
+	// Set Id
+	$('#tour_id').val(window.tour.id);
+
 	// Show
 	$('html,body').scrollTop(70);
 	$('.tour-detail').show();
@@ -231,19 +233,19 @@ function handleNextTour() {
 	$('.tour-detail .next').click(function () {
 
 		do {
-			let id = window.tour.id;
+			let index = window.tour.index;
 			
-			if (id < window.tours.length - 1) {
-				id++;
+			if (index < window.tours.length - 1) {
+                index++;
 			} else {
-				id = 0;
+                index = 0;
 			}
 
-			tour = window.tours[id];
+			tour = window.tours[index];
 			
 			// Update
 			window.tour = tour;
-			window.tour.id = id;
+			window.tour.index = index;
 			window.tour.activeImage = 0;
 		} while (window.tour.type !== 0);
 
@@ -259,19 +261,19 @@ function handleNextTour() {
 function handlePrevTour() {
 	$('.tour-detail .prev').click(function () {
 		do {
-			let id = window.tour.id;
+			let index = window.tour.index;
 			
-			if (id > 0) {
-				id--;
+			if (index > 0) {
+                index--;
 			} else {
-				id = window.tours.length - 1;
+                index = window.tours.length - 1;
 			}
 
-			tour = window.tours[id];
+			tour = window.tours[index];
 			
 			// Update
 			window.tour = tour;
-			window.tour.id = id;
+			window.tour.index = index;
 			window.tour.activeImage = 0;
 		} while (window.tour.type !== 0);
 
@@ -287,7 +289,6 @@ function handlePrevTour() {
 function handleClickOnDot() {
 	$('.tour-detail .full-info .images-slider .dots .dot').click(function() {
 		let id = parseInt($(this).attr('id')); // dot id
-		console.log(id)
 		if (window.tour.activeImage === id) {
 			return;
 		}
