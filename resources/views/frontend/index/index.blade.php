@@ -5,9 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description" content="">
 	<!-- Responsive meta tag -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<meta name="csrf-token" content="{{ csrf_token() }}">
+	<meta name="viewport" content="width=device-width, initial-scale=1 , maximum-scale=1.0, user-scalable=no">
 
 	<title>OpenSea Demo</title>
 
@@ -15,22 +13,23 @@
 	<meta name="msapplication-tap-highlight" content="no">
 
 	<!-- Web Application Manifest -->
-	<link rel="manifest" href="manifest.json">
+	<link rel="manifest" href="mix-manifest.json">
 
 	<!-- Add to homescreen for Chrome on Android -->
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="application-name" content="Web Starter Kit">
-	<link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+	<meta name="csrf-token" content="{{ csrf_token() }}">
+	<!-- <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png"> -->
 
 	<!-- Add to homescreen for Safari on iOS -->
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="apple-mobile-web-app-title" content="Web Starter Kit">
-	<link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+	<!-- <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png"> -->
 
 	<!-- Tile icon for Win8 (144x144 + tile color) -->
-	<meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
-	<meta name="msapplication-TileColor" content="#2F3BA2">
+	<!-- <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png"> -->
+	<!-- <meta name="msapplication-TileColor" content="#2F3BA2"> -->
 
 	<!-- Color the status bar on mobile devices -->
 	<meta name="theme-color" content="#2F3BA2">
@@ -39,21 +38,29 @@
 	<!--
 	<link rel="canonical" href="http://www.example.com/">
 	-->
-
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- Bootstrap 4 -->
+	<!-- <script src="frontend/plugins/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<!-- Theme styles -->
-	<link rel="stylesheet" href="frontend/dist/css/style.css">
+	<link rel="stylesheet" href="frontend/dist/css/tours.css">
+	<link rel="stylesheet" type="text/css" media="screen and (min-width: 1367px)" href="frontend/dist/css/tours_min_1367px.css">
+	<link rel="stylesheet" type="text/css" media="screen and (max-width: 1024px)" href="frontend/dist/css/tours_max_1024px.css">
+	<link rel="stylesheet" type="text/css" media="screen and (max-width: 768px)" href="frontend/dist/css/tours_max_768px.css">
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="frontend/plugins/font-awesome/css/font-awesome.min.css">
 	<!-- Ionicons -->
-	<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+	<!-- <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"> -->
 	<!-- Theme style -->
-	<link rel="stylesheet" href="frontend/dist/css/adminlte.min.css">
+	<!-- <link rel="stylesheet" href="frontend/dist/css/adminlte.min.css"> -->
 	<!-- iCheck -->
-	<link rel="stylesheet" href="frontend/plugins/iCheck/flat/blue.css">
-	<!-- Bootstrap -->
-	<link rel="stylesheet" type="text/css" href="frontend/plugins/bootstrap/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="frontend/plugins/iCheck/flat/blue.css"> -->
+
 	<!-- bootstrap wysihtml5 - text editor -->
-	<link rel="stylesheet" href="frontend/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+	<!-- <link rel="stylesheet" href="frontend/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css"> -->
 	<!-- Google Font: Source Sans Pro -->
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -67,34 +74,37 @@
 	<!-- /.header -->
 
 	<!-- Navigation bar -->
-	<div class="navigation-bar">
+	<div class="navigation-bar relative">
 		<img class="logo" src="frontend/dist/img/logo.gif" alt="logo">
-		<ul>
-			<li class="active">
-				HOME
-				<div class="underline"></div>
-			</li>
-			<li>
-				HOP ON HOP OFF
-				<div class="underline"></div>
-			</li>
-			<li>
-				HANOI RETREAT
-				<div class="underline"></div>
-			</li>
-			<li>
-				BLOG
-				<div class="underline"></div>
-			</li>
-			<li>
-				FAQ
-				<div class="underline"></div>
-			</li>
-			<li>
-				<i class="fa fa-shopping-cart"></i>&nbsp;CART&nbsp;<span>(0)</span>
-				<div class="underline"></div>
-			</li>
-		</ul>
+		<div class="icon">
+			<div class="icon-line"></div>
+			<div class="icon-line"></div>
+			<div class="icon-line"></div>
+		</div>
+		<a class="item active" href="#">
+			HOME
+			<div class="underline"></div>
+		</a>
+		<a class="item" href="#">
+			HOP ON HOP OFF
+			<div class="underline"></div>
+		</a>
+		<a class="item" href="#">
+			HANOI RETREAT
+			<div class="underline"></div>
+		</a>
+		<a class="item" href="#">
+			BLOG
+			<div class="underline"></div>
+		</a>
+		<a class="item" href="#">
+			FAQ
+			<div class="underline"></div>
+		</a>
+		<a class="shopping-cart" href="#">
+			<i class="fa fa-shopping-cart"></i><span class="label">CART</span><span class="amount">(0)</span>
+			<div class="underline"></div>
+		</a>
 	</div>
 	<!-- /.navigation-bar -->
 
@@ -109,14 +119,13 @@
 		<!-- Tours -->
 		<section class="tours">
 			<div class="title">
-				<span class="left-dash">----------------------------------------------------</span>
+				<div class="dash"></div>
 				<span class="text">Tours</span>
-				<span class="right-dash">----------------------------------------------------</span>
 			</div>
 			<div class="list">
-				<ul class="list-row">
+				<div class="list-row">
 					<!-- <li class="list-item left">
-                        <img src="dist/img/tour-image.png">
+                        <img src="frontend/dist/img/tour-image.png">
                         <div class="tour-info">
                             <div class="name">HANOI'S SECRETS WITH FILM CAMERAS HANOI'S SECRETS WITH FILM CAMERAS</div>
                             <div class="underline"></div>
@@ -133,7 +142,7 @@
                         </div>
                     </li>
                     <li class="list-item center">
-                        <img src="dist/img/tour-image.png">
+                        <img src="frontend/dist/img/tour-image.png">
                         <div class="tour-info">
                             <div class="name">HANOI'S SECRETS WITH FILM CAMERAS</div>
                             <div class="underline"></div>
@@ -150,27 +159,37 @@
                         </div>
                     </li>
                     <li class="list-item coming-soon right">
-                        <img src="dist/img//coming-soon.png">
+                        <img src="frontend/dist/img//coming-soon.png">
                         <div class="tour-info">
                             <div class="name">COMING SOON</div>
                             <div class="underline"></div>
                         </div>
                     </li>
                     <li class="list-item coming-soon left">
-                        <img src="dist/img/coming-soon.png">
+                        <img src="frontend/dist/img/coming-soon.png">
                         <div class="tour-info">
                             <div class="name">COMING SOON</div>
                             <div class="underline"></div>
                         </div>
                     </li>
                     <li class="list-item coming-soon center">
-                        <img src="dist/img/coming-soon.png">
+                        <img src="frontend/dist/img/coming-soon.png">
                         <div class="tour-info">
                             <div class="name">COMING SOON</div>
                             <div class="underline"></div>
                         </div>
                     </li> -->
-				</ul>
+				</div>
+
+				<!-- Indicator -->
+				<div class="indicator">
+				</div>
+				<!-- /.indicator -->
+
+				<!-- Slider -->
+				<div class="prev"><i class="fa fa-chevron-circle-left"></i></div>
+				<div class="next"><i class="fa fa-chevron-circle-right"></i></div>
+				<!-- /Slider -->
 			</div>
 		</section>
 		<!-- /.tours -->
@@ -178,36 +197,48 @@
 		<!-- Testinomial -->
 		<section class="testinomial">
 			<div class="title">
+				<div class="dash"></div>
 				<span class="left-dash">-----------------------------------------</span>
 				<span class="text">Testinomial</span>
 				<span class="right-dash">-----------------------------------------</span>
 			</div>
 			<div class="list">
-				<ul>
-					<li class="left item">
-						<div class="avatar"><img src="frontend/dist/img/testinomial1.png"></div>
-						<div class="testinomial-info">
-							<div class="name">Ong Nguyen Van A</div>
-							<div class="description"> Photoshop CS6 Portable ( Chạy ngay không cần cài đặt ) Do nhu cầu download phần mềm Photoshop luôn rất lớn, nhưng không phải bạn nào Photoshop CS6 Portable ( Chạy ngay không cần cài đặt ) Do nhu cầu download phần mềm Photoshop luôn rất lớn, nhưng không phải bạn nào</div>
-						</div>
-					</li>
-					<li class="vertical-bar"></li>
-					<li class="center item">
-						<div class="avatar"><img src="frontend/dist/img/testinomial1.png"></div>
-						<div class="testinomial-info">
-							<div class="name">Ong Nguyen Van Hung</div>
-							<div class="description"> Photoshop CS6 Portable ( Chạy ngay không cần cài đặt ) Do nhu cầu download phần mềm Photoshop luôn rất lớn, nhưng không phải bạn nào Photoshop CS6 Portable ( Chạy ngay không cần cài đặt ) Do nhu cầu download phần mềm Photoshop luôn rất lớn, nhưng không phải bạn nào</div>
-						</div>
-					</li>
-					<li class="vertical-bar"></li>
-					<li class="right item">
-						<div class="avatar"><img src="frontend/dist/img/testinomial1.png"></div>
-						<div class="testinomial-info">
-							<div class="name">Ong Nguyen Van Hung</div>
-							<div class="description"> Photoshop CS6 Portable ( Chạy ngay không cần cài đặt ) Do nhu cầu download phần mềm Photoshop luôn rất lớn, nhưng không phải bạn nào Photoshop CS6 Portable ( Chạy ngay không cần cài đặt ) Do nhu cầu download phần mềm Photoshop luôn rất lớn, nhưng không phải bạn nào</div>
-						</div>
-					</li>
-				</ul>
+				<div class="left item active myfade" id="0">
+					<div class="avatar"><img src="frontend/dist/img/testinomial1.png"></div>
+					<div class="testinomial-info">
+						<div class="name">Ong Nguyen Van A</div>
+						<div class="description"> Photoshop CS6 Portable ( Chạy ngay không cần cài đặt ) Do nhu cầu download phần mềm Photoshop luôn rất lớn, nhưng không phải bạn nào Photoshop CS6 Portable ( Chạy ngay không cần cài đặt ) Do nhu cầu download phần mềm Photoshop luôn rất lớn, nhưng không phải bạn nào</div>
+					</div>
+				</div>
+				<div class="vertical-bar"></div>
+				<div class="center item myfade" id="1">
+					<div class="avatar"><img src="frontend/dist/img/testinomial1.png"></div>
+					<div class="testinomial-info">
+						<div class="name">Ong Nguyen Van Hung</div>
+						<div class="description"> Photoshop CS6 Portable ( Chạy ngay không cần cài đặt ) Do nhu cầu download phần mềm Photoshop luôn rất lớn, nhưng không phải bạn nào Photoshop CS6 Portable ( Chạy ngay không cần cài đặt ) Do nhu cầu download phần mềm Photoshop luôn rất lớn, nhưng không phải bạn nào</div>
+					</div>
+				</div>
+				<div class="vertical-bar"></div>
+				<div class="right item myfade"  id="2">
+					<div class="avatar"><img src="frontend/dist/img/testinomial1.png"></div>
+					<div class="testinomial-info">
+						<div class="name">Ong Nguyen Van Hung</div>
+						<div class="description"> Photoshop CS6 Portable ( Chạy ngay không cần cài đặt ) Do nhu cầu download phần mềm Photoshop luôn rất lớn, nhưng không phải bạn nào Photoshop CS6 Portable ( Chạy ngay không cần cài đặt ) Do nhu cầu download phần mềm Photoshop luôn rất lớn, nhưng không phải bạn nào</div>
+					</div>
+				</div>
+
+				<!-- Indicator -->
+				<div class="indicator">
+					<div class="dot active" id="0"></div>
+					<div class="dot" id="1"></div>
+					<div class="dot" id="2"></div>
+				</div>
+				<!-- /.indicator -->
+
+				<!-- Slider -->
+				<div class="prev"><i class="fa fa-chevron-circle-left"></i></div>
+				<div class="next"><i class="fa fa-chevron-circle-right"></i></div>
+				<!-- /Slider -->
 			</div>
 		</section>
 		<!-- /.testinomial -->
@@ -217,14 +248,14 @@
 	<!-- Get in touch -->
 	<div class="get-in-touch">
 		<div class="title">Get in touch</div>
-		<form>
+		<form class="large">
 			<ul>
-				<div class="name input  left">
+				<div class="name input left">
 					<label>NAME:</label><br>
 					<input type="text" name="name">
 					<div class="line"></div>
 				</div>
-				<div class="message input  right">
+				<div class="message input right">
 					<label>MESSAGE:</label>
 					<br>
 					<textarea rows="4"></textarea>
@@ -243,22 +274,50 @@
 				<button type="submit" class="right">SEND</button>
 			</ul>
 		</form>
+		<form class="responsive">
+			<ul>
+				<div class="name input left">
+					<label>NAME:</label><br>
+					<input type="text" name="name">
+					<div class="line"></div>
+				</div>
+
+				<div class="phone input  left">
+					<label>PHONE NUMBER:</label><br>
+					<input type="text" name="phone">
+					<div class="line"></div>
+				</div>
+
+				<div class="email input left">
+					<label>EMAIL:</label><br>
+					<input type="email" name="email">
+					<div class="line"></div>
+				</div>
+				<div class="message input right">
+					<label>MESSAGE:</label>
+					<br>
+					<textarea rows="4"></textarea>
+				</div>
+				<button type="submit" class="right">SEND</button>
+			</ul>
+		</form>
 	</div>
 	<!-- /.get-in-touch -->
 
 	<!-- Footer -->
 	<div class="footer">
+		<div class="address">
+			<span id="company">OPENSEA TOURISM AND SERVICES COMPANY</span><br>
+			<span id="address">12 Ngo Tram Str, Hoan Kiem dis, Ha Noi, Vietnam</span><br>
+			<div id="fb"><img src="frontend/dist/img/fb-icon.png">&nbsp;Find us on Facebook</div>
+		</div>
 		<div class="contact">
 			<div id="contact-us">CONTACT US:</div>
 			<span id="tel">Tel: (+84) 23232332323</span><br>
 			<span id="cell">Cell: (+84) 23232323232</span><br>
 			<span id="email">Email: info@opensea.net</span>
 		</div>
-		<div class="address">
-			<span id="company">OPENSEA TOURISM AND SERVICES COMPANY</span><br>
-			<span id="address">12 Ngo Tram Str, Hoan Kiem dis, Ha Noi, Vietnam</span><br>
-			<div id="fb"><img src="frontend/dist/img/fb-icon.png">&nbsp;Find us on Facebook</div>
-		</div>
+		<div class="fb"><img src="frontend/dist/img/fb-icon.png">&nbsp;Find us on Facebook</div>
 		<div class="copyright">Copyright@Opensea Vietnam Inc. All Right Reserved</div>
 	</div>
 	<!-- /.footer -->
@@ -326,7 +385,7 @@
 					<li class="group5">
 						<div class="type">GROUP 3-5</div>
 						<div>
-							<span class="cost">$<span class="number">85</span ></span>
+							<span class="cost">$<span class="number">85</span></span>
 							<span class="pax">/PAX</span>
 						</div>
 					</li>
@@ -364,9 +423,9 @@
 			<div class="booking">
 				<div class="title">BOOKING INFO</div>
 				<div class="underline"></div>
-				<form method="POST" action="/tour-request">
+				<form>
+					<input type="hidden" name="tour_id" id="backend_id">
 					<ul>
-						<input type="hidden" name="tour_id" id="tour_id">
 						<div class="input full-name">
 							<label>Full Name</label><br>
 							<input type="text" name="name">
@@ -387,7 +446,7 @@
 
 						<div class="nationality input">
 							<label>Nationality&nbsp;&nbsp;</label>
-							<select name="nation">
+							<select>
 								<option>Australia</option>
 								<option>Belgium</option>
 								<option>Denmark</option>
@@ -407,13 +466,12 @@
 
 						<div class="other input">
 							<label>Special Request</label><br>
-							<textarea rows="2" name="special_request"></textarea>
+							<textarea rows="2"></textarea>
 						</div>
 					</ul>
 					<button type="submit">BOOK NOW</button>
 				</form>
 				<div style="color: red; font-size: 12px; padding-top: 10px;" id="error"></div>
-				<div style="color: Green; font-size: 14px; padding-top: 10px;" id="success"></div>
 			</div>
 			<!-- /.booking -->
 		</div>
@@ -441,26 +499,24 @@
 <script>
     $.widget.bridge('uibutton', $.ui.button)
 </script>
-<!-- Bootstrap 4 -->
-<script src="frontend/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 <!-- daterangepicker -->
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
-<script src="plugins/daterangepicker/daterangepicker.js"></script> -->
+<script src="frontend/plugins/daterangepicker/daterangepicker.js"></script> -->
 <!-- datepicker -->
-<!-- <script src="plugins/datepicker/bootstrap-datepicker.js"></script> -->
+<!-- <script src="frontend/plugins/datepicker/bootstrap-datepicker.js"></script> -->
 
 <!-- Bootstrap WYSIHTML5 -->
-<script src="frontend/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+<!-- <script src="frontend/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script> -->
 <!-- Slimscroll -->
-<script src="frontend/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- <script src="frontend/plugins/slimScroll/jquery.slimscroll.min.js"></script> -->
 <!-- Masonry -->
-<script type="text/javascript" src="frontend/plugins/masonry/masonry.pkgd.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
+<!-- <script type="text/javascript" src="frontend/plugins/masonry/masonry.pkgd.min.js"></script> -->
 <!-- Content -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
 <script src="frontend/dist/js/data.js"></script>
 <script src="frontend/dist/js/main.js"></script>
 <!-- UI -->
 <script src="frontend/dist/js/ui.js"></script>
-
 </body>
 </html>

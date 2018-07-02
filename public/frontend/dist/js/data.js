@@ -7,9 +7,9 @@ window.tours = [{
 		"This site uses cookies to deliver our services and to show you relevant ads and job listings. By using our site, you acknowledge that you have read and understand our Cookie Policy, Privacy Policy, and our Terms of Service. Your use of Stack Overflow’s Products and Services, including the Stack Overflow Network, is subject to these policies and terms."
 	],
 	"images": [
-		"frontend/dist/img/tour-detail-image.png",
-		"frontend/dist/img/coming-soon.png",
-		"frontend/dist/img/tour-detail-image.png"
+		"dist/img/tour-detail-image.png",
+		"dist/img/coming-soon.png",
+		"dist/img/tour-detail-image.png"
 	],
 	"prices": {
 		"single": 60,
@@ -36,9 +36,9 @@ window.tours = [{
 		"This site uses cookies to deliver our services and to show you relevant ads and job listings. By using our site, you acknowledge that you have read and understand our Cookie Policy, Privacy Policy, and our Terms of Service. Your use of Stack Overflow’s Products and Services, including the Stack Overflow Network, is subject to these policies and terms."
 	],
 	"images": [
-		"frontend/dist/img/tour-detail-image.png",
-		"frontend/dist/img/tour-detail-image.png",
-		"frontend/dist/img/tour-detail-image.png"
+		"dist/img/tour-detail-image.png",
+		"dist/img/tour-detail-image.png",
+		"dist/img/tour-detail-image.png"
 	],
 	"prices": {
 		"single": 70,
@@ -60,13 +60,13 @@ window.tours = [{
 },{
 	"type": 1, // coming soon
 	"title": "COMING SOON",
-	"images": ["frontend/dist/img/coming-soon.png"]
+	"images": ["dist/img/coming-soon.png"]
 },{
 	"type": 1, // coming soon
 	"title": "COMING SOON",
-	"images": ["frontend/dist/img/coming-soon.png"]
+	"images": ["dist/img/coming-soon.png"]
 },{
 	"type": 1, // coming soon
 	"title": "COMING SOON",
-	"images": ["frontend/dist/img/coming-soon.png"]
+	"images": ["dist/img/coming-soon.png"]
 }];
