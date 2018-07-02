@@ -260,7 +260,7 @@ function showTourDetail() {
 	$('.tour-detail .full-info .info .description').html(desc);
 
 	// Prices
-s    $('.tour-detail .book .price ul li.single .cost .number').text(window.tour.prices[0].value);
+    $('.tour-detail .book .price ul li.single .cost .number').text(window.tour.prices[0].value);
     $('.tour-detail .book .price ul li.single .type ').text(window.tour.prices[0].title);
     $('.tour-detail .book .price ul li.group2 .cost .number').text(window.tour.prices[1].value);
     $('.tour-detail .book .price ul li.group2 .type ').text(window.tour.prices[1].title);
