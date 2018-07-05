@@ -9,9 +9,11 @@ use App\Models\Tour;
 class IndexController extends Controller
 {
     public function index(){
-    	$tours = Tour::orderBy('id')->get();
-        return view('frontend.index.index', compact([
-        	'tours'
-        ]));
+        return view('frontend.index.index');
+    }
+
+    public function bus()
+    {
+        return view('frontend.index.bus');
     }
 }

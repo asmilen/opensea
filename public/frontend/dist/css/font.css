@@ -28,6 +28,16 @@
   font-family: 'SF Text Bold';
   src: url("../font/SF-Pro-Text-Bold.ttf");
 }
+/*San Francisco Text LightItalic*/
+@font-face {
+  font-family: 'SF Text LightItalic';
+  src: url("../font/SF-Text-LightItalic.otf");
+}
+/*San Francisco Text Heavy*/
+@font-face {
+  font-family: 'SF Text Heavy';
+  src: url("../font/SF-Compact-Text-Heavy.otf");
+}
 /*Holmes207*/
 @font-face {
   font-family: 'Holmes207';

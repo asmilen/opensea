@@ -89,7 +89,7 @@
 			HOP ON HOP OFF
 			<div class="underline"></div>
 		</a>
-		<a class="item" href="#">
+		<a class="item" href="/bus">
 			HANOI RETREAT
 			<div class="underline"></div>
 		</a>

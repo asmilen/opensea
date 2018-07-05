@@ -12,6 +12,8 @@
 */
 
 Route::get('/', 'Frontend\IndexController@index')->name('frontend::index');
+Route::get('/bus', 'Frontend\IndexController@bus')->name('frontend::');
+
 Route::post('/tour-request', 'Frontend\TourController@sendRequest')->name('send-tour-request');
 
 Auth::routes();

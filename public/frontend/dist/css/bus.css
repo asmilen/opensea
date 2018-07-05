@@ -1,0 +1,877 @@
+/* Fonts */
+@import url("font.css");
+
+/* 1024px < width <= 1360px */
+/*Body*/
+body {
+	padding: 0px;
+	margin: 0px;
+	width: 100%;
+}
+.row {
+	margin: 0;
+}
+.navigation-bar {
+	width: 100%;
+}
+.sticky {
+	width: 100%;
+}
+
+/*Main*/
+.main {
+	position: relative;
+	background-image: url('../img/pattern.png');
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+
+/*Header*/
+.header {
+	position: relative;
+	height: 4vw;
+	line-height: 4vw;
+	vertical-align: middle;
+	text-align: right;
+	background-color: rgb(25,55,97);
+	color: rgb(255,255,255);
+	font-size: 1vw;
+	font-family: "SF Display Medium";
+	padding-right: 10%;
+}
+
+/*Navigation bar*/
+.sticky {
+	position: fixed;
+	top: 0;
+}
+.sticky + .contents {
+	padding-top: 6vw;
+}
+.relative {
+	position: relative;
+}
+.navigation-bar {
+	/*position: relative;*/
+	height: 6vw;
+	background-color: rgb(255,255,255);
+	padding-left: 10%;
+	padding-right: 10%;
+	z-index: 5;
+	text-align: right;
+}
+.navigation-bar img.logo {
+	position: relative;
+	float: left;
+	height: 100%;
+	/*border: 1px solid black;*/
+}
+.navigation-bar a {
+	position: relative;
+	display: inline-block;
+	height: 6vw;
+	line-height: 6vw;
+	vertical-align: middle;
+	padding-left: .9vw;
+	padding-right: .9vw;
+	margin: 0px;
+	text-align: center;
+	font-family: "SF Text Bold";
+	font-size: 1.4vw;
+	color: rgb(25,55,97);
+	/*border: 1px solid black;*/
+	cursor: pointer;
+}
+.navigation-bar a:hover {
+	text-decoration: none;
+	color: rgb(25,55,97);
+}
+.navigation-bar .icon {
+	display: none;
+}
+.navigation-bar a.active .underline, .navigation-bar a.hover .underline {
+	position: relative;
+	margin: 0 auto;
+	width: 3vw;
+	bottom: 1.7vw;
+	border: 1px solid rgb(25,55,97);
+}
+.navigation-bar a.inactive .underline {
+	display: none;
+}
+.navigation-bar a.shopping-cart span.label {
+	color: rgb(25,55,97);
+	padding-left: 3px;
+	padding-right: 3px;
+	font-size: 1.5vw;
+	font-family: "SF Text Bold";
+}
+.navigation-bar a.shopping-cart span.amount {
+	font-size: 1vw;
+}
+.navigation-bar:after {
+	display: block;
+	content: '';
+	clear: both;
+}
+
+/*Contents*/
+.contents {
+	background-color: rgb(255,255,255);
+}
+/*Banner*/
+.contents .banner {
+	position: relative;
+	padding-top: 0;
+	padding-left: 0;
+	padding-right: 0;
+	width: 100%;
+	height: 43.45vw;
+}
+.contents .banner img {
+	width: 100%;
+	height: 100%;
+}
+.contents .banner .text {
+	position: absolute;
+	top: 16.7vw;
+	width: 100%;
+	text-align: center;
+	font-family: "BCBroadsheet Italic";
+	font-size: 5vw;
+	color: rgb(255,255,255);
+}
+/* Intro video */
+.contents .intro-video {
+	padding: 2% 10% 2% 10%;
+	color: rgb(26,55,97);
+}
+.contents .intro-video .title {
+	text-align: center;
+	font-family: "BCBroadsheet Italic";
+	font-size: 4vw;
+	line-height: 10vw;
+	vertical-align: middle;
+	padding: 0;
+}
+.contents .intro-video .text {
+	padding: 0;
+	padding-right: 8%;
+	text-align: justify;
+	font-family: "SF Text Regular";
+	font-size: 1vw;
+}
+.contents .intro-video .video {
+	padding: 0;
+}
+.contents .intro-video .video img {
+	width: 100%;
+}
+
+/* Tickets */
+.contents .tickets {
+	background-color: rgb(253,242,220);
+	padding: 2% 10% 2% 10%;
+	text-align: center;
+}
+.contents .tickets .title {
+	position: relative;
+	color: rgb(26,55,97);
+	text-align: center;
+}
+.contents .tickets .title .header_1 {
+	font-family: "BCBroadsheet Italic";
+	font-size: 4vw;
+	padding: 0;
+}
+.contents .tickets .title .header_2 {
+	font-family: "BCBroadsheet Regular";
+	font-size: 1.9vw;
+	padding: 0;
+}
+.contents .tickets .list {
+	width: 100%;
+	display: inline-flex;
+	justify-content: space-between;
+	margin-top: 4%;
+}
+.contents .tickets .list .list-item {
+	width: 22.5vw;
+	height: 34.96vw;
+	background-image: url('../img/tour-background.png');
+	background-repeat: repeat;
+	padding: .4%;
+}
+.contents .tickets .list .list-item .image {
+	width: 100%;
+	height: 43%;
+}
+.contents .tickets .list .list-item .image img {
+	width: 100%;
+	height: 100%;
+}
+.contents .tickets .list .list-item .info {
+	height: 48%;
+	padding: .2vw;
+}
+.contents .tickets .list .list-item .info .title {
+	height: 22%;
+	font-family: "BCCartelDeux";
+	font-size: 1.5vw;
+	color: rgb(30,58,117);
+	padding-top: .7vw;
+}
+.contents .tickets .list .list-item .info .underline {
+	height: 3%;
+	width: 40%;
+	margin: 0 auto;
+	background-color: rgb(35,67,136);
+}
+.contents .tickets .list .list-item .info .descriptions {
+	height: 52%;
+	overflow-y: hidden;
+	margin: 0;
+	text-align: justify;
+	padding: 3% 6%;
+	list-style-type: none;
+	list-style-image: none;
+}
+.contents .tickets .list .list-item .info .descriptions .desc:before {
+	margin-left: -1.3em;
+	width: 1.3em;
+	display: inline-block;
+	font-family: "FontAwesome";
+	content: '\f00c';
+	color: rgb(33,33,33);
+}
+.contents .tickets .list .list-item .info .descriptions .desc {
+	padding-left: 1.3em;
+	font-family: "SF Text Regular";
+	font-size: 1vw;
+	line-height: 1.7vw;
+	color: rgb(28,56,96);
+}
+.contents .tickets .list .list-item .info .prices {
+	width: 100%;
+	height: 21%;
+	display: inline-flex;
+	justify-content: space-between;
+}
+.contents .tickets .list .list-item .info .prices .price {
+	height: 100%;
+	/*position: relative;*/
+	width: 32%;
+	text-align: center;
+}
+.contents .tickets .list .list-item .info .prices .price:after {
+	display: block;
+	content: '';
+	clear: both;
+}
+.contents .tickets .list .list-item .info .prices .price .type {
+	width: 100%;
+	font-family: "SF Text Bold";
+	font-size: .9vw;
+	color: rgb(28,56,96);
+}
+.contents .tickets .list .list-item .info .prices .price .number {
+	width: 100%;
+	position: relative;
+	top: -.3vw;
+	font-family: "BCCartelDeux";
+	font-size: 1.5vw;
+	color: rgb(33,65,127);
+}
+.contents .tickets .list .list-item .info .prices .adult {
+
+}
+.contents .tickets .list .list-item .info .prices .child {
+	width: 34%;
+	border-left: 1px dashed;
+	border-right: 1px dashed;
+}
+.contents .tickets .list .list-item .info .prices .family {
+	
+}
+.contents .tickets .list .list-item .more-info {
+	height: 9%;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contents .tickets .list .list-item .more-info button {
+	font-family: "BCCartelDeux";
+	font-size: 1.3vw;
+	padding: .1vw .8vw .13vw .8vw;
+	background-color: rgb(36,72,153);
+	color: rgb(243,239,229);
+	border: none;
+	border-radius: 5px;
+}
+.contents .tickets .other-info {
+	padding: 1vw 0;
+}
+.contents .tickets .other-info .info {
+	font-family: "SF Text LightItalic";
+	font-size: 1vw;
+	color: rgb(36,72,153);
+}
+
+/* Highlight */
+.contents .highlights {
+	background-color: rgb(255,255,255);
+	padding: 2% 10% 6% 10%;
+	color: rgb(26,55,97);
+	text-align: center;
+}
+.contents .highlights .title {
+	position: relative;
+	color: rgb(26,55,97);
+	text-align: center;
+}
+.contents .highlights .title .header_1 {
+	font-size: 4vw;
+	font-family: "BCBroadsheet Italic";
+}
+.contents .highlights .title .header_2 {
+	font-size: 1.9vw;
+	font-family: "BCBroadsheet Regular";
+}
+.contents .highlights .grid {
+	display: inline-flex;
+	justify-content: space-between;
+}
+.contents .highlights .grid .col {
+	display: flex;
+	flex-direction: column;
+}
+.contents .highlights .grid .col.left {
+	width: 34%;
+}
+.contents .highlights .grid .col.center {
+	width: 34%;
+}
+.contents .highlights .grid .col.right {
+	width: 29%;
+}
+.contents .highlights .grid .col .panel {
+	position: relative;
+  background-image: url(../img/bus-highlight-bg.png);
+  background-repeat: repeat;
+  text-align: left;
+	height: 8vw;
+	padding: 1vw .8vw 0 0.8vw;
+  overflow-y: hidden;
+  margin: 0;
+  margin-top: 1vw;
+}
+.contents .highlights .grid .col .panel .icon {
+	position: relative;
+  left: 0;
+  display: inline-block;
+  color: rgb(255,254,254);
+  background-color: rgb(213,122,52);
+  width: 4vw;
+  height: 4vw;
+  border-radius: 50%;
+  margin: .6vw .5vw;
+  padding-top: .6vw;
+  text-align: center;
+  font-size: 2vw;
+  vertical-align: top;
+}
+.contents .highlights .grid .col .panel .right {
+	display: inline-block;
+	position: relative;
+	width: 75%;
+	left: 0;
+	height: 6.6vw;
+}
+.contents .highlights .grid .col .panel .right .title {
+	font-family: "BCCartelDeux";
+	font-size: 1.4vw;
+	line-height: 1.6vw;
+	color: rgb(213,122,52);
+	text-align: left;
+	padding: .5vw 0;
+}
+.contents .highlights .grid .col .panel .right .abstract {
+	color: rgb(36,72,153);
+	text-align: left;
+	font-family: "SF Text Regular";
+	font-size: 1.1vw;
+	line-height: 1.3vw;
+	overflow-y: hidden;
+}
+.contents .highlights .grid .col .panel .arrow {
+	position: absolute;
+	top: 1vw;
+	right: .5vw;
+	font-size: 1.5vw;
+}
+.contents .highlights .grid .col.right {
+	height: 26vw;
+	margin-top: 1vw;
+}
+.contents .highlights .grid .col.right .panel {
+	height: 100%;
+	margin: 0;
+}
+.contents .highlights .grid .col.right .how-it-work {
+	padding: 0;
+}
+.contents .highlights .grid .col.right .how-it-work .head {
+  background-color: rgb(213,122,52);
+  color: rgb(243,239,229);
+  /* padding: 3% 5%; */
+  font-family: "BCCartelDeux";
+  font-size: 1.3vw;
+  height: 12%;
+  display: flex;
+  align-items: center;
+  padding-left: 5%;
+}
+.contents .highlights .grid .col.right .how-it-work .item {
+	height: 23%;
+	display: flex;
+}
+.contents .highlights .grid .col.right .how-it-work .vertical-dash {
+	height: 9.5%;
+  margin-left: 10%;
+  border-left: 1px dashed rgb(215,131,69);
+}
+.contents .highlights .grid .col.right .how-it-work .item.browse {
+}
+.contents .highlights .grid .col.right .how-it-work .item.book {
+}
+.contents .highlights .grid .col.right .how-it-work .item.ticket {
+}
+.contents .highlights .grid .col.right .how-it-work .item .icon {
+  color: rgb(254,254,254);
+  background-color: rgb(26,55,97);
+  width: 3vw;
+  height: 3vw;
+  position: relative;
+  left: 0;
+  display: inline-block;
+  border-radius: 50%;
+  margin: 1vw .7vw;
+  padding-top: .5vw;
+  text-align: center;
+  font-size: 1.5vw;
+}
+.contents .highlights .grid .col.right .how-it-work .item .right-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.contents .highlights .grid .col.right .how-it-work .item .description {
+	color: rgb(26,55,97);
+	font-family: "SF Text Regular";
+	font-size: 1.1vw;
+	line-height: 1.3vw;
+}
+.contents .highlights .grid .col.right .how-it-work .item .link {
+	color: rgb(213,122,52);
+	text-decoration: underline;
+	text-decoration-color: rgb(213,122,52);
+	font-family: "SF Text Heavy";
+	font-style: italic;
+	font-size: 1.3vw;
+	cursor: pointer;
+}
+
+
+/* Route */
+.contents .route {
+	background-color: rgb(253,241,221);
+	padding: 2% 10% 6% 10%;
+	color: rgb(26,55,97);
+	text-align: center;
+}
+.contents .route .header_1 {
+	font-family: "BCBroadsheet Italic";
+	font-size: 4vw;
+	padding: 0;
+}
+.contents .route .header_2 {
+	font-family: "BCBroadsheet Regular";
+	font-size: 1.9vw;
+	padding: 0;
+}
+.contents .route .map {
+	position: relative;
+	padding: 0;
+	padding-top: 2%;
+}
+.contents .route .map img {
+	width: 100%;
+}
+.contents .route .map button {
+	position: absolute;
+	background-color: rgb(36,72,153);
+	color: rgb(243,239,229);
+	border: none;
+	border-radius: 4px;
+	font-size: 1.1vw;
+	font-family: "BCCartelDeux";
+	bottom: 2vw;
+	right: 2vw;
+	padding: 2px 8px;
+}
+
+/* Attractions */
+.contents .attractions {
+	padding: 2% 10% 2% 10%;
+	background-color: rgb(255,255,255);
+}
+.contents .attractions .title {
+	position: relative;
+	color: rgb(26,55,97);
+	text-align: center;
+}
+.contents .attractions .title .header_1 {
+	font-size: 4vw;
+	font-family: "BCBroadsheet Italic";
+}
+.contents .attractions .title .header_2 {
+	font-size: 1.9vw;
+	font-family: "BCBroadsheet Regular";
+}
+.contents .attractions .list {
+	width: 100%;
+	display: inline-flex;
+	justify-content: space-between;
+	margin-top: 4%;
+}
+.contents .attractions .list .list-item {
+	width: 22vw;
+	height: 36.77vw;
+	background-image: url('../img/tour-background.png');
+	background-repeat: repeat;
+	padding: .7%;
+}
+.contents .attractions .list .list-item .image {
+	width: 100%;
+	height: 54%;
+}
+.contents .attractions .list .list-item .image img {
+	width: 100%;
+	height: 100%;
+}
+.contents .attractions .list .list-item .info {
+	height: 39%;
+	padding: 1vw;
+}
+.contents .attractions .list .list-item .info .title {
+	height: 30%;
+	font-family: "BCCartelDeux";
+	font-size: 1.8vw;
+	padding-top: .7vw;
+}
+.contents .attractions .list .list-item .info .description {
+	height: 70%;
+	overflow-y: hidden;
+	text-align: justify;
+	font-family: "SF Text Regular";
+	font-size: 1vw;
+}
+.contents .attractions .list .list-item .see-more {
+	height: 5%;
+	text-align: center;
+}
+.contents .attractions .list .list-item .see-more button {
+	font-size: 1vw;
+	font-family: "BCCartelDeux";
+	color: rgb(243,239,229);
+	background-color: rgb(36,72,153);
+	padding: .3vw 2vw .4vw 2vw;
+	border: none;
+	border-radius: 4px;
+}
+.contents .attractions .button {
+	text-align: center;
+	margin-top: 4%;
+}
+.contents .attractions .button button {
+	font-family: "BCCartelDeux";
+	font-size: 1.8vw;
+	padding: .5vw 2vw .6vw 2vw;
+	background-color: rgb(213,122,52);
+	color: rgb(243,239,229);
+	border: none;
+	border-radius: 5px;
+}
+/* Testinomial */
+.contents .testinomial {
+	padding: 1% 10% 4% 10%;
+	background-color: rgb(253,242,220);
+}
+.contents .testinomial .title {
+	position: relative;
+	color: rgb(26,55,97);
+	text-align: center;
+}
+.contents .testinomial .title .header_1 {
+	font-size: 4vw;
+	font-family: "BCBroadsheet Italic";
+}
+.contents .testinomial .title .header_2 {
+	font-size: 1.9vw;
+	font-family: "BCBroadsheet Regular";
+}
+.contents .testinomial .list {
+	position: relative;
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: 4%;
+	text-align: center;
+	width: 100%;
+	margin: 0px;
+}
+.contents .testinomial .list .item {
+	position: relative;
+	width: 28%;
+	display: inline-block;
+	vertical-align: top;
+}
+.contents .testinomial .list .item.myfade {
+	opacity: 1;
+}
+.contents .testinomial .list .vertical-bar {
+	position: relative;
+	display: inline-block;
+	width: 0px;
+	margin-top: 5%;
+	padding-top: 22%;
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-right: 3.4%;
+	margin-left: 3.4%;
+	border: 0.5px solid rgb(247,223,204);
+	height: 100%;
+}
+.contents .testinomial .list .item .avatar {
+	position: relative;
+	/*border: 1px solid black;*/
+	width: 50%;
+	left: 25%;
+	padding-top: 50%;
+}
+.contents .testinomial .list .item .avatar img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	border-radius: 50%;
+}
+.contents .testinomial .list .left {
+	float: left;
+}
+.contents .testinomial .list .center {
+}
+.contents .testinomial .list .right {
+	float: right;
+}
+.contents .testinomial-info {
+	text-align: justify;
+	color: rgb(28,56,96);
+	font-family: "SF Display Regular";
+	font-size: 1.1vw;
+	line-height: 1.2vw;
+}
+.contents .testinomial-info .name {
+	font-family: "SF Display Bold";
+	font-size: 1.5vw;
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	color: rgb(216,122,37);
+}
+.contents .testinomial .list .next {
+	display: none;
+}
+.contents .testinomial .list .prev {
+	display: none;
+}
+.contents .testinomial .list .indicator {
+	display: none;
+}
+/*Get in touch*/
+.get-in-touch {
+	position: relative;
+	margin-top: 4%;
+	margin-left: 3%;
+	margin-right: 3%;
+	background-color: rgb(255,255,255);
+	padding-left: 7%;
+	padding-right: 7%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+.get-in-touch .title {
+	position: relative;
+	top: 0px;
+	text-align: center;
+	font-family: "BCBroadsheet Regular";
+	font-size: 5vw;
+	color: rgb(25,55,97);
+	margin-bottom: 4%;
+}
+.get-in-touch form label {
+	font: 1.7vw "BCBroadsheet Regular";
+	color: rgb(216,122,37);
+}
+.get-in-touch form {
+	padding: 0;
+	/*border: 1px solid black;*/
+}
+.get-in-touch form.responsive {
+	display: none;
+}
+.get-in-touch form ul {
+	width: 100%;
+	padding: 0;
+	/*border: 1px solid black;*/
+	display: inline-block;
+	margin: 0;
+}
+.get-in-touch form .input {
+	width: 50%;
+	position: relative;
+	/*border: 1px solid black;*/
+	padding: 0px;
+	display: inline-block;
+	margin-bottom: 2%;
+}
+.get-in-touch form .left {
+	float: left;
+}
+.get-in-touch form .right {
+	float: right;
+}
+.get-in-touch input {
+	border: 0px;
+	width: 95%;
+	line-height: 1.7vw;
+	font-size: 1.7vw;
+}
+.get-in-touch input:focus {
+	border: 0px;
+	outline: none;
+}
+.get-in-touch textarea {
+	width: 100%;
+	border: 0px;
+	padding: 0;
+	height: 161px;
+	line-height: 40px;
+	font-size: 1.7vw;
+	resize: none;
+	z-index: 1;
+	background-attachment: local;
+    background:
+        repeating-linear-gradient(#fff, #fff 38px, rgb(216,122,37) 38px, #fff 40px, rgb(216,122,37) 40px);
+	overflow: hidden;
+	resize: none;
+}
+.get-in-touch textarea:focus {
+	border: 0px;
+	outline: none;
+	box-shadow: none;
+}
+.get-in-touch form .input .line {
+	border: 0.5px solid rgb(216,122,37);
+    width: 95%;
+}
+.get-in-touch form .submit {
+	display: inline-block;
+	width: 100%;
+	text-align: right;
+}
+.get-in-touch form button {
+	position: relative;
+	display: block;
+	background-color: rgb(216,122,37);
+	color: rgb(255,255,255);
+	font: 25px "BCBroadsheet Regular";
+	font-weight: 100;
+	border: 0px;
+	border-radius: 5px;
+	padding-right: 4%;
+	padding-left: 4%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	line-height: 34px;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+/*Footer*/
+.footer {
+	position: relative;
+	background-color: rgb(24,24,24);
+	color: rgb(255,255,255);
+	padding-left: 10%;
+	padding-right: 10%;
+	padding-top: 3%;
+	/*border: 0.5px solid rgb(216,122,37);*/
+	padding-bottom: 3%;
+}
+.footer .contact {
+	width: 30%;
+	text-align: left;
+	/*border: 0.5px solid rgb(216,122,37);*/
+	display: inline-block;
+}
+.footer .contact #contact-us {
+	font: 18px "SF Display Medium";
+	margin-bottom: 5px;
+}
+.footer .contact #tel {
+	font: 16px "SF Display Medium";
+}
+.footer .contact #cell {
+	font: 16px "SF Display Medium";
+}
+.footer .contact #email {
+	font: 16px "SF Display Medium";
+}
+.footer .address {
+	float: right;
+	display: inline-block;
+	text-align: center;
+	/*border: 0.5px solid rgb(216,122,37);*/
+}
+.footer .address #address {
+	font: 16px "SF Text Regular";
+}
+.footer .fb {
+	display: none;
+}
+.footer .address #fb {
+	font: 13px "SF Text Regular";
+	/*border: 0.5px solid rgb(216,122,37);*/
+	margin: 15px;
+}
+.footer .address #fb:after {
+	display: block;
+	content: "";
+	clear: both;
+}
+.footer .address #fb img {
+	width: 28px;
+	height: 28px;
+}
+.footer .address #company {
+	font: 15px "SF Text Bold";
+}
+.footer .copyright {
+	margin-top: 3%;
+	margin-bottom: 0;
+	text-align: center;
+	font: 11px "SF Display Light";
+	/*border: 0.5px solid rgb(216,122,37);*/
+}
