@@ -17,6 +17,35 @@ body {
 .sticky {
 	width: 100%;
 }
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition-property: height, visibility;
+  transition-property: height, visibility;
+  -webkit-transition-duration: .1s;
+  transition-duration: .1s;
+  -webkit-transition-timing-function: linear;
+  transition-timing-function: linear;
+}
+.carousel-inner.multi .item.left.active {
+  transform: translateX(-33%);
+}
+.carousel-inner.multi .item.right.active {
+  transform: translateX(33%);
+}
+
+.carousel-inner.multi .item.next {
+  transform: translateX(33%)
+}
+.carousel-inner.multi .item.prev {
+  transform: translateX(-33%)
+}
+
+.carousel-inner.multi .item.right,
+.carousel-inner.multi .item.left { 
+  transform: translateX(0);
+}
 
 /*Main*/
 .main {
@@ -58,7 +87,7 @@ body {
 	background-color: rgb(255,255,255);
 	padding-left: 10%;
 	padding-right: 10%;
-	z-index: 5;
+	z-index: 20;
 	text-align: right;
 }
 .navigation-bar img.logo {
@@ -127,16 +156,27 @@ body {
 	padding-left: 0;
 	padding-right: 0;
 	width: 100%;
-	height: 43.45vw;
+	/*height: 43.45vw;*/
 }
 .contents .banner img {
 	width: 100%;
 	height: 100%;
 }
+.contents .banner img.small {
+	display: block;
+}
+.contents .banner img.medium {
+	display: none;
+}
 .contents .banner .text {
 	position: absolute;
-	top: 16.7vw;
+	/*top: 16.7vw;*/
+	top: -2.5vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	width: 100%;
+	height: 100%;
 	text-align: center;
 	font-family: "BCBroadsheet Italic";
 	font-size: 5vw;
@@ -161,9 +201,11 @@ body {
 	text-align: justify;
 	font-family: "SF Text Regular";
 	font-size: 1vw;
+	float: left;
 }
 .contents .intro-video .video {
 	padding: 0;
+	float: right;
 }
 .contents .intro-video .video img {
 	width: 100%;
@@ -192,9 +234,11 @@ body {
 }
 .contents .tickets .list {
 	width: 100%;
-	display: inline-flex;
-	justify-content: space-between;
 	margin-top: 4%;
+}
+.contents .tickets .list .inner {
+	display: flex;
+	justify-content: space-between;
 }
 .contents .tickets .list .list-item {
 	width: 22.5vw;
@@ -202,6 +246,10 @@ body {
 	background-image: url('../img/tour-background.png');
 	background-repeat: repeat;
 	padding: .4%;
+}
+.contents .tickets .list .list-item .item-inner {
+	width: 100%;
+	height: 100%;
 }
 .contents .tickets .list .list-item .image {
 	width: 100%;
@@ -260,14 +308,8 @@ body {
 }
 .contents .tickets .list .list-item .info .prices .price {
 	height: 100%;
-	/*position: relative;*/
 	width: 32%;
 	text-align: center;
-}
-.contents .tickets .list .list-item .info .prices .price:after {
-	display: block;
-	content: '';
-	clear: both;
 }
 .contents .tickets .list .list-item .info .prices .price .type {
 	width: 100%;
@@ -297,8 +339,8 @@ body {
 .contents .tickets .list .list-item .more-info {
 	height: 9%;
 	display: flex;
-    align-items: center;
-    justify-content: center;
+	align-items: center;
+	justify-content: center;
 }
 .contents .tickets .list .list-item .more-info button {
 	font-family: "BCCartelDeux";
@@ -316,6 +358,84 @@ body {
 	font-family: "SF Text LightItalic";
 	font-size: 1vw;
 	color: rgb(36,72,153);
+}
+/* Carousel */
+.contents .tickets .list .carousel-inner {
+	height: 34.96vw;
+	width: 22.5vw;
+	margin: 0 auto;
+}
+.contents .tickets .list .carousel-inner .item {
+	width: 100%;
+	height: 100%;
+}
+.contents .tickets .list .carousel-inner .item .item-inner {
+	width: 100%;
+	height: 100%;
+}
+.contents .tickets .list .carousel-control {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 20%;
+	padding-top: 20%;
+	font-size: 30px;
+	color: #000;
+	text-align: center;
+	text-shadow: 0 1px 2px rgba(0,0,0,.6);
+	background: none;
+	filter: alpha(opacity=50);
+	opacity: .7;
+}
+.contents .tickets .list .carousel-control.left {
+	left: -11%;
+}
+.contents .tickets .list .carousel-control.right {
+	right: -11%;
+}
+.contents .tickets .list .carousel-indicators {
+	position: relative;
+	margin-top: 5%;
+	left: 50%;
+	z-index: 15;
+	width: 60%;
+	padding-left: 0;
+	margin-left: -30%;
+	text-align: center;
+	list-style: none;
+}
+.contents .tickets .list .carousel-indicators li {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: rgb(76,65,37);
+	margin: 0 3px auto;
+	display: inline-block;
+	vertical-align: middle;
+	border: none;
+}
+.contents .tickets .list .carousel-indicators li.active {
+	width: 15px;
+	height: 15px;
+	background-color: rgb(73,62,34);
+}
+/*Multi*/
+.contents .tickets .list .carousel-inner.multi {
+	width: 100%;
+}
+.contents .tickets .list .carousel-inner.multi .item {
+	background: none;
+	padding: 0;
+	width: 100%;
+	height: unset;
+}
+.contents .tickets .list .carousel-inner.multi .item .item-inner {
+	width: 22.5vw;
+	height: 34.96vw;
+	background-image: url('../img/tour-background.png');
+	background-repeat: repeat;
+	padding: .4%;
+	margin: 0 2.32%;
 }
 
 /* Highlight */
@@ -339,32 +459,51 @@ body {
 	font-family: "BCBroadsheet Regular";
 }
 .contents .highlights .grid {
-	display: inline-flex;
+	width: 100%;
+	position: relative;
+	display: flex;
 	justify-content: space-between;
 }
 .contents .highlights .grid .col {
-	display: flex;
-	flex-direction: column;
+	position: relative;
+	display: block;
+	/*flex-direction: column;*/
 }
-.contents .highlights .grid .col.left {
+.contents .highlights .grid .col#col1 {
 	width: 34%;
 }
-.contents .highlights .grid .col.center {
+.contents .highlights .grid .col#col2 {
 	width: 34%;
 }
-.contents .highlights .grid .col.right {
+.contents .highlights .grid .col#col3 {
 	width: 29%;
 }
 .contents .highlights .grid .col .panel {
-	position: relative;
-  background-image: url(../img/bus-highlight-bg.png);
-  background-repeat: repeat;
-  text-align: left;
+	width: 100%;
+	background-image: url(../img/bus-highlight-bg.png);
+	background-repeat: repeat;
+	text-align: left;
 	height: 8vw;
 	padding: 1vw .8vw 0 0.8vw;
-  overflow-y: hidden;
-  margin: 0;
-  margin-top: 1vw;
+	overflow-y: hidden;
+	margin: 0;
+	margin-top: 1vw;
+	z-index: 1;
+}
+.contents .highlights .grid .col .panel.row1 {
+	position: absolute;
+	top: 0;
+}
+.contents .highlights .grid .col .panel.row2 {
+	position: absolute;
+	top: 9vw;
+}
+.contents .highlights .grid .col .panel.row3 {
+	position: absolute;
+	top: 18vw;
+}
+.contents .highlights .grid .col .panel.full {
+	height: unset;
 }
 .contents .highlights .grid .col .panel .icon {
 	position: relative;
@@ -410,18 +549,32 @@ body {
 	right: .5vw;
 	font-size: 1.5vw;
 }
-.contents .highlights .grid .col.right {
+.contents .highlights .grid .col .panel .content {
+	position: relative;
+	top: -.4vw;
+	padding-top: 0.5vw;
+	margin: .1vw .8vw .4vw .8vw;
+	font-family: "SF Text LightItalic";
+	font-size: 1vw;
+	color: rgb(36,72,153);
+	border-top: 1px solid;
+	text-align: justify;
+}
+.contents .highlights .grid .col#col3 {
 	height: 26vw;
 	margin-top: 1vw;
 }
-.contents .highlights .grid .col.right .panel {
+.contents .highlights .grid .col#col3 .how-it-work {
+	padding: 0;
 	height: 100%;
+	position: relative;
+	background-image: url(../img/bus-highlight-bg.png);
+	background-repeat: repeat;
+	text-align: left;
+	overflow-y: hidden;
 	margin: 0;
 }
-.contents .highlights .grid .col.right .how-it-work {
-	padding: 0;
-}
-.contents .highlights .grid .col.right .how-it-work .head {
+.contents .highlights .grid .col#col3 .how-it-work .head {
   background-color: rgb(213,122,52);
   color: rgb(243,239,229);
   /* padding: 3% 5%; */
@@ -432,22 +585,22 @@ body {
   align-items: center;
   padding-left: 5%;
 }
-.contents .highlights .grid .col.right .how-it-work .item {
+.contents .highlights .grid .col#col3 .how-it-work .item {
 	height: 23%;
 	display: flex;
 }
-.contents .highlights .grid .col.right .how-it-work .vertical-dash {
+.contents .highlights .grid .col#col3 .how-it-work .vertical-dash {
 	height: 9.5%;
   margin-left: 10%;
   border-left: 1px dashed rgb(215,131,69);
 }
-.contents .highlights .grid .col.right .how-it-work .item.browse {
+.contents .highlights .grid .col#col3 .how-it-work .item.browse {
 }
-.contents .highlights .grid .col.right .how-it-work .item.book {
+.contents .highlights .grid .col#col3 .how-it-work .item.book {
 }
-.contents .highlights .grid .col.right .how-it-work .item.ticket {
+.contents .highlights .grid .col#col3 .how-it-work .item.ticket {
 }
-.contents .highlights .grid .col.right .how-it-work .item .icon {
+.contents .highlights .grid .col#col3 .how-it-work .item .icon {
   color: rgb(254,254,254);
   background-color: rgb(26,55,97);
   width: 3vw;
@@ -461,18 +614,18 @@ body {
   text-align: center;
   font-size: 1.5vw;
 }
-.contents .highlights .grid .col.right .how-it-work .item .right-content {
+.contents .highlights .grid .col#col3 .how-it-work .item .right-content {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 }
-.contents .highlights .grid .col.right .how-it-work .item .description {
+.contents .highlights .grid .col#col3 .how-it-work .item .description {
 	color: rgb(26,55,97);
 	font-family: "SF Text Regular";
 	font-size: 1.1vw;
 	line-height: 1.3vw;
 }
-.contents .highlights .grid .col.right .how-it-work .item .link {
+.contents .highlights .grid .col#col3 .how-it-work .item .link {
 	color: rgb(213,122,52);
 	text-decoration: underline;
 	text-decoration-color: rgb(213,122,52);
@@ -481,7 +634,6 @@ body {
 	font-size: 1.3vw;
 	cursor: pointer;
 }
-
 
 /* Route */
 .contents .route {
@@ -541,9 +693,11 @@ body {
 }
 .contents .attractions .list {
 	width: 100%;
-	display: inline-flex;
-	justify-content: space-between;
 	margin-top: 4%;
+}
+.contents .attractions .list .inner {
+	display: flex;
+	justify-content: space-between;
 }
 .contents .attractions .list .list-item {
 	width: 22vw;
@@ -551,6 +705,10 @@ body {
 	background-image: url('../img/tour-background.png');
 	background-repeat: repeat;
 	padding: .7%;
+}
+.contents .attractions .list .list-item .item-inner {
+	width: 100%;
+	height: 100%;
 }
 .contents .attractions .list .list-item .image {
 	width: 100%;
@@ -603,6 +761,86 @@ body {
 	border: none;
 	border-radius: 5px;
 }
+/*Carousel*/
+.contents .attractions .list .carousel-inner {
+	width: 22vw;
+	height: 36.77vw;
+	margin: 0 auto;
+}
+.contents .attractions .list .carousel-inner .item {
+	width: 100%;
+	height: 100%;
+}
+.contents .attractions .list .carousel-inner .item .item-inner {
+	width: 100%;
+	height: 100%;
+}
+.contents .attractions .list .carousel-control {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 20%;
+	padding-top: 20%;
+	font-size: 30px;
+	color: #000;
+	text-align: center;
+	text-shadow: 0 1px 2px rgba(0,0,0,.6);
+	background: none;
+	filter: alpha(opacity=50);
+	opacity: .7;
+}
+.contents .attractions .list .carousel-control.left {
+	left: -11%;
+}
+.contents .attractions .list .carousel-control.right {
+	right: -11%;
+}
+.contents .attractions .list .carousel-indicators {
+	position: relative;
+	margin-top: 5%;
+	left: 50%;
+	z-index: 15;
+	width: 60%;
+	padding-left: 0;
+	margin-left: -30%;
+	text-align: center;
+	list-style: none;
+}
+.contents .attractions .list .carousel-indicators li {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: rgb(76,65,37);
+	margin: 0 3px auto;
+	display: inline-block;
+	vertical-align: middle;
+	border: none;
+}
+.contents .attractions .list .carousel-indicators li.active {
+	width: 15px;
+	height: 15px;
+	background-color: rgb(73,62,34);
+}
+/*Multi*/
+.contents .attractions .list .carousel-inner.multi {
+	width: 100%;
+}
+.contents .attractions .list .carousel-inner.multi .item {
+	background: none;
+	padding: 0;
+	width: 100%;
+	height: unset;
+}
+.contents .attractions .list .carousel-inner.multi .item .item-inner {
+	width: 22vw;
+	height: 36.77vw;
+	background-image: url('../img/tour-background.png');
+	background-repeat: repeat;
+	padding: .7%;
+	margin: 0 2.7%;
+}
+
+
 /* Testinomial */
 .contents .testinomial {
 	padding: 1% 10% 4% 10%;
@@ -630,11 +868,12 @@ body {
 	width: 100%;
 	margin: 0px;
 }
+.contents .testinomial .list .inner {
+	display: flex;
+	justify-content: space-between;
+}
 .contents .testinomial .list .item {
-	position: relative;
 	width: 28%;
-	display: inline-block;
-	vertical-align: top;
 }
 .contents .testinomial .list .item.myfade {
 	opacity: 1;
@@ -643,12 +882,8 @@ body {
 	position: relative;
 	display: inline-block;
 	width: 0px;
-	margin-top: 5%;
-	padding-top: 22%;
-	padding-left: 0px;
-	padding-right: 0px;
-	margin-right: 3.4%;
-	margin-left: 3.4%;
+	margin: 5% 0;
+	padding: 22% 0 0 0;
 	border: 0.5px solid rgb(247,223,204);
 	height: 100%;
 }
@@ -667,14 +902,6 @@ body {
 	left: 0px;
 	border-radius: 50%;
 }
-.contents .testinomial .list .left {
-	float: left;
-}
-.contents .testinomial .list .center {
-}
-.contents .testinomial .list .right {
-	float: right;
-}
 .contents .testinomial-info {
 	text-align: justify;
 	color: rgb(28,56,96);
@@ -690,15 +917,7 @@ body {
 	padding-bottom: 10px;
 	color: rgb(216,122,37);
 }
-.contents .testinomial .list .next {
-	display: none;
-}
-.contents .testinomial .list .prev {
-	display: none;
-}
-.contents .testinomial .list .indicator {
-	display: none;
-}
+
 /*Get in touch*/
 .get-in-touch {
 	position: relative;

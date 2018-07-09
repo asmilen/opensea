@@ -13,7 +13,7 @@
     <meta name="msapplication-tap-highlight" content="no">
 
     <!-- Web Application Manifest -->
-    <link rel="manifest" href="mix-manifest.json">
+    <link rel="manifest" href="manifest.json">
 
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
@@ -38,17 +38,14 @@
     <link rel="canonical" href="http://www.example.com/">
     -->
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Bootstrap 4 -->
-    <!-- <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script> -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Theme styles -->
     <link rel="stylesheet" href="frontend/dist/css/bus.css">
     <link rel="stylesheet" type="text/css" media="screen and (min-width: 1367px)" href="frontend/dist/css/bus_min_1367px.css">
     <link rel="stylesheet" type="text/css" media="screen and (max-width: 1024px)" href="frontend/dist/css/bus_max_1024px.css">
-    <!-- <link rel="stylesheet" type="text/css" media="screen and (max-width: 768px)" href="frontend/dist/css/tours_max_768px.css"> -->
+    <link rel="stylesheet" type="text/css" media="screen and (max-width: 768px)" href="frontend/dist/css/bus_max_768px.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="frontend/plugins/font-awesome/css/font-awesome.min.css">
     <!-- Ionicons -->
@@ -88,7 +85,7 @@
             HOP ON HOP OFF
             <div class="underline"></div>
         </a>
-        <a class="item active" href="/bus">
+        <a class="item active" href="bus.html">
             HANOI RETREAT
             <div class="underline"></div>
         </a>
@@ -111,7 +108,8 @@
     <div class="contents">
         <!-- Banner -->
         <section class="banner">
-            <img src="frontend/dist/img/bus-banner-small.png" alt="banner">
+            <img class="small" src="frontend/dist/img/bus-banner-small.png" alt="banner">
+            <img class="medium" src="frontend/dist/img/bus-banner-medium.png" alt="banner">
             <div class="text">&#x2DD;Bon anywhere. Bon anytime&#x2F6;</div>
         </section>
         <!-- /.banner -->
@@ -119,23 +117,23 @@
         <!-- Intro video -->
         <section class="intro-video row">
             <div class="title col-md-12 col-xs-12">It's time to BonBon</div>
+            <div class="video col-md-6 col-xs-6">
+                <img src="frontend/dist/img/bus-video.png">
+            </div>
             <div class="text col-md-6 col-xs-6">
                 <p>Embark on your own adventure with Hanoi's One and Only Bon Bon city Tours. Our flexible city sightseeing tours allow you to soak up the city's history and atmosphere with ease. Hop on any of our unique buses from 10+ Bon Bon stops, conveniently located close to famous landmarks and attractions. You can hop off the bus to explore as often as you wish, and rejoin the tour once you're ready.</p>
                 <p>Buses arrive at each stop every 30 minutes, so you can quickly rejoin the tour whenever you like. Our 3 bus routes have been carefully planned to ensure that you'll capture all the best sights of Hanoi including Hanoi Opera House, Long Bien Bridge, Van Mieu, Imperial Citadel of Thang Long. With our curated tickets of 24 and 48 hours, you can upgrade to excellent combo tickets that include admission to our exclusive museums, attractions as well as cuisine services.</p>
-            </div>
-            <div class="video col-md-6 col-xs-6">
-                <img src="frontend/dist/img/bus-video.png">
             </div>
         </section>
         <!-- /.intro-video -->
 
         <!-- Tickets -->
-        <section class="tickets" id="tickets">
+        <section class="tickets">
             <div class="title">
                 <div class="header_1">Tickets</div>
                 <div class="header_2">More than a ticket, your entrance to our every own Hanoi</div>
             </div>
-            <div class="list">
+            <!-- <div class="list">
                 <div class="list-item">
                     <div class="image">
                         <img src="frontend/dist/img/tour-image.png">
@@ -231,7 +229,125 @@
                         <button>MORE INFO</button>
                     </div>
                 </div>
+            </div> -->
+
+            <!-- Carousel -->
+            <div class="list carousel slide" id="tickets" data-ride="carousel" data-interval="false">
+                <div class="inner carousel-inner">
+                    <!-- <div class="list-item item active">
+                        <div class="image">
+                            <img src="frontend/dist/img/tour-image.png">
+                        </div>
+                        <div class="info">
+                            <div class="title">CLASSIC PACKAGE</div>
+                            <div class="underline"></div>
+                            <ul class="descriptions">
+                                <li class="desc">24h BonBon City Tour Bus</li>
+                                <li class="desc">10% off Hanoi Retreat</li>
+                                <li class="desc">3 exclusive partners's coupons</li>
+                            </ul>
+                            <div class="prices">
+                                <div class="adult price">
+                                    <div class="type">Adult</div>
+                                    <div class="number">350.000</div>
+                                </div>
+                                <div class="child price">
+                                    <div class="type">Child</div>
+                                    <div class="number">250.000</div>
+                                </div>
+                                <div class="family price">
+                                    <div class="type">Family</div>
+                                    <div class="number">999.000</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="more-info">
+                            <button>MORE INFO</button>
+                        </div>
+                    </div>
+                    <div class="list-item item">
+                        <div class="image">
+                            <img src="frontend/dist/img/tour-image.png">
+                        </div>
+                        <div class="info">
+                            <div class="title">PREMIUM PACKAGE</div>
+                            <div class="underline"></div>
+                            <ul class="descriptions">
+                                <li class="desc">24h BonBon City Tour Bus</li>
+                                <li class="desc">15% off Hanoi Retreat</li>
+                                <li class="desc">3 exclusive attractions pass</li>
+                                <li class="desc">3 exclusive partners's coupons</li>
+                            </ul>
+                            <div class="prices">
+                                <div class="adult price">
+                                    <div class="type">Adult</div>
+                                    <div class="number">350.000</div>
+                                </div>
+                                <div class="child price">
+                                    <div class="type">Child</div>
+                                    <div class="number">250.000</div>
+                                </div>
+                                <div class="family price">
+                                    <div class="type">Family</div>
+                                    <div class="number">999.000</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="more-info">
+                            <button>MORE INFO</button>
+                        </div>
+                    </div>
+                    <div class="list-item item">
+                        <div class="image">
+                            <img src="frontend/dist/img/tour-image.png">
+                        </div>
+                        <div class="info">
+                            <div class="title">DELUXE PACKAGE</div>
+                            <div class="underline"></div>
+                            <ul class="descriptions">
+                                <li class="desc">24h BonBon City Tour Bus</li>
+                                <li class="desc">20% off Hanoi Retreat</li>
+                                <li class="desc">All-you-can-have attractions pass</li>
+                                <li class="desc">Exclusive partners's coupons</li>
+                            </ul>
+                            <div class="prices">
+                                <div class="adult price">
+                                    <div class="type">Adult</div>
+                                    <div class="number">350.000</div>
+                                </div>
+                                <div class="child price">
+                                    <div class="type">Child</div>
+                                    <div class="number">250.000</div>
+                                </div>
+                                <div class="family price">
+                                    <div class="type">Family</div>
+                                    <div class="number">999.000</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="more-info">
+                            <button>MORE INFO</button>
+                        </div>
+                    </div>	 -->
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#tickets" data-slide="prev">
+                    <i class="fa fa-chevron-circle-left"></i>
+                </a>
+                <a class="right carousel-control" href="#tickets" data-slide="next">
+                    <i class="fa fa-chevron-circle-right"></i>
+                </a>
+
+                <ol class="carousel-indicators">
+                    <!-- <li data-target="#tickets" data-slide-to="0" class="active"></li> -->
+                    <!-- <li data-target="#tickets" data-slide-to="1"></li> -->
+                    <!-- <li data-target="#tickets" data-slide-to="2"></li> -->
+                </ol>
             </div>
+
+            <!-- /.carousel -->
+
             <div class="other-info">
                 <div class="info">*Save 10%/20k by buying your tickets online</div>
             </div>
@@ -244,9 +360,9 @@
                 <div class="header_1">Highlights</div>
                 <div class="header_2">What's on the way? Are you ready for this?</div>
             </div>
-            <div class="grid row">
-                <div class="col left">
-                    <div class="panel ticket">
+            <div class="grid">
+                <div class="col" id="col1">
+                    <div class="panel ticket row1">
                         <div class="icon">
                             <i class="fa fa-ticket"></i>
                         </div>
@@ -254,12 +370,11 @@
                             <div class="title">HOP ON HOP OFF TICKET</div>
                             <div class="abstract">Explore the city at your own page with our flexibility</div>
                         </div>
-                        <hr>
-                        <div class="content">Language included: English, VIetnamese. All BonBon bus offers audio guide in English and Vietnamese which will give you information on every stop as well as activities along the way. We will also provide you our very own guidebook to the essential sights, sounds and tastes from east to west that define Hanoi.</div>
-                        <div class="arrow"><i class="fa fa-angle-down"></i></div>
+                        <div class="content collapse">Language included: English, VIetnamese. All BonBon bus offers audio guide in English and Vietnamese which will give you information on every stop as well as activities along the way. We will also provide you our very own guidebook to the essential sights, sounds and tastes from east to west that define Hanoi.</div>
+                        <div class="arrow down"><i class="fa fa-angle-down"></i></div>
                     </div>
 
-                    <div class="panel wifi">
+                    <div class="panel wifi row2">
                         <div class="icon">
                             <i class="fa fa-wifi"></i>
                         </div>
@@ -267,10 +382,11 @@
                             <div class="title">FREE ON BOARD WIFI</div>
                             <div class="abstract">Get connected as you tour around the city</div>
                         </div>
-                        <div class="arrow"><i class="fa fa-angle-down"></i></div>
+                        <div class="content collapse">Language included: English, VIetnamese. All BonBon bus offers audio guide in English and Vietnamese which will give you information on every stop as well as activities along the way. We will also provide you our very own guidebook to the essential sights, sounds and tastes from east to west that define Hanoi.</div>
+                        <div class="arrow down"><i class="fa fa-angle-down"></i></div>
                     </div>
 
-                    <div class="panel wifi">
+                    <div class="panel wifi row3">
                         <div class="icon">
                             <i class="fa fa-wifi"></i>
                         </div>
@@ -278,11 +394,12 @@
                             <div class="title">FREE ON BOARD WIFI</div>
                             <div class="abstract">Get connected as you tour around the city</div>
                         </div>
-                        <div class="arrow"><i class="fa fa-angle-down"></i></div>
+                        <div class="content collapse">Language included: English, VIetnamese. All BonBon bus offers audio guide in English and Vietnamese which will give you information on every stop as well as activities along the way. We will also provide you our very own guidebook to the essential sights, sounds and tastes from east to west that define Hanoi.</div>
+                        <div class="arrow down"><i class="fa fa-angle-down"></i></div>
                     </div>
                 </div>
-                <div class="col center">
-                    <div class="panel service">
+                <div class="col" id="col2">
+                    <div class="panel service row1">
                         <div class="icon">
                             <i class="fa fa-dollar"></i>
                         </div>
@@ -290,10 +407,11 @@
                             <div class="title">MAXIMUM SERVICE<br>AT BEST PRICE</div>
                             <div class="abstract">It's all inclusive with no extra fee</div>
                         </div>
-                        <div class="arrow"><i class="fa fa-angle-down"></i></div>
+                        <div class="content collapse">Language included: English, VIetnamese. All BonBon bus offers audio guide in English and Vietnamese which will give you information on every stop as well as activities along the way. We will also provide you our very own guidebook to the essential sights, sounds and tastes from east to west that define Hanoi.</div>
+                        <div class="arrow down"><i class="fa fa-angle-down"></i></div>
                     </div>
 
-                    <div class="panel departure">
+                    <div class="panel departure row2">
                         <div class="icon">
                             <i class="fa fa-map-marker"></i>
                         </div>
@@ -301,10 +419,11 @@
                             <div class="title">DEPARTURE POINTS</div>
                             <div class="abstract">Conveniently located so you can see the best of Hanoi</div>
                         </div>
-                        <div class="arrow"><i class="fa fa-angle-down"></i></div>
+                        <div class="content collapse">Language included: English, VIetnamese. All BonBon bus offers audio guide in English and Vietnamese which will give you information on every stop as well as activities along the way. We will also provide you our very own guidebook to the essential sights, sounds and tastes from east to west that define Hanoi.</div>
+                        <div class="arrow down"><i class="fa fa-angle-down"></i></div>
                     </div>
 
-                    <div class="panel app">
+                    <div class="panel app row3">
                         <div class="icon">
                             <i class="fa fa-mobile"></i>
                         </div>
@@ -312,11 +431,12 @@
                             <div class="title">PRE-RECORDER APP</div>
                             <div class="abstract">Complimentary available in 2 languages on all tours</div>
                         </div>
-                        <div class="arrow"><i class="fa fa-angle-down"></i></div>
+                        <div class="content collapse">Language included: English, VIetnamese. All BonBon bus offers audio guide in English and Vietnamese which will give you information on every stop as well as activities along the way. We will also provide you our very own guidebook to the essential sights, sounds and tastes from east to west that define Hanoi.</div>
+                        <div class="arrow down"><i class="fa fa-angle-down"></i></div>
                     </div>
                 </div>
-                <div class="col right">
-                    <div class="panel how-it-work">
+                <div class="col" id="col3">
+                    <div class="how-it-work">
                         <div class="head">HOW IT WORK?</div>
 
                         <div class="browse item">
@@ -375,37 +495,53 @@
                 <div class="header_1">Hanoi Attractions</div>
                 <div class="header_2">The not-so-litle gems of our route. Presenting Hanoi's proudest</div>
             </div>
-            <div class="list">
-                <div class="list-item">
-                    <div class="image">
-                        <img src="frontend/dist/img/bus-attraction.png">
+            <div class="list carousel slide" id="attractions"  data-ride="carousel" data-interval="false">
+                <div class="inner carousel-inner">
+                    <div class="list-item item">
+                        <div class="image">
+                            <img src="frontend/dist/img/bus-attraction.png">
+                        </div>
+                        <div class="info">
+                            <div class="title">HANOI'S SECRETS</div>
+                            <div class="description">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</div>
+                        </div>
+                        <div class="see-more"><button>SEE MORE</button></div>
                     </div>
-                    <div class="info">
-                        <div class="title">HANOI'S SECRETS</div>
-                        <div class="description">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</div>
+                    <div class="list-item item">
+                        <div class="image">
+                            <img src="frontend/dist/img/bus-attraction.png">
+                        </div>
+                        <div class="info">
+                            <div class="title">HANOI'S SECRETS</div>
+                            <div class="description">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</div>
+                        </div>
+                        <div class="see-more"><button>SEE MORE</button></div>
                     </div>
-                    <div class="see-more"><button>SEE MORE</button></div>
+                    <div class="list-item item">
+                        <div class="image">
+                            <img src="frontend/dist/img/bus-attraction.png">
+                        </div>
+                        <div class="info">
+                            <div class="title">HANOI'S SECRETS</div>
+                            <div class="description">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</div>
+                        </div>
+                        <div class="see-more"><button>SEE MORE</button></div>
+                    </div>
                 </div>
-                <div class="list-item">
-                    <div class="image">
-                        <img src="frontend/dist/img/bus-attraction.png">
-                    </div>
-                    <div class="info">
-                        <div class="title">HANOI'S SECRETS</div>
-                        <div class="description">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</div>
-                    </div>
-                    <div class="see-more"><button>SEE MORE</button></div>
-                </div>
-                <div class="list-item">
-                    <div class="image">
-                        <img src="frontend/dist/img/bus-attraction.png">
-                    </div>
-                    <div class="info">
-                        <div class="title">HANOI'S SECRETS</div>
-                        <div class="description">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</div>
-                    </div>
-                    <div class="see-more"><button>SEE MORE</button></div>
-                </div>
+
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#attractions" data-slide="prev">
+                    <i class="fa fa-chevron-circle-left"></i>
+                </a>
+                <a class="right carousel-control" href="#attractions" data-slide="next">
+                    <i class="fa fa-chevron-circle-right"></i>
+                </a>
+
+                <ol class="carousel-indicators">
+                    <!-- <li data-target="#attractions" data-slide-to="0" class="active"></li> -->
+                    <!-- <li data-target="#attractions" data-slide-to="1"></li> -->
+                    <!-- <li data-target="#attractions" data-slide-to="2"></li> -->
+                </ol>
             </div>
             <div class="button"><button>LET'S BON BON TOGETHER</button></div>
         </div>
@@ -415,45 +551,49 @@
         <section class="testinomial">
             <div class="title">
                 <div class="header_1">Happy Customers</div>
-                <div class="header_2">Why only hear from us? Let's check more from our friendsfrontend.</div>
+                <div class="header_2">Why only hear from us? Let's check more from our friends...</div>
             </div>
-            <div class="list">
-                <div class="left item active myfade" id="0">
-                    <div class="avatar"><img src="frontend/dist/img/bus-testi.png"></div>
-                    <div class="testinomial-info">
-                        <div class="name">Ong Nguyen Van A</div>
-                        <div class="description">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea </div>
+            <div class="list" id="happy-customers" data-ride="carousel" data-interval="false">
+                <div class="inner">
+                    <div class="item active" id="0">
+                        <div class="avatar"><img src="frontend/dist/img/bus-testi.png"></div>
+                        <div class="testinomial-info">
+                            <div class="name">Ong Nguyen Van A</div>
+                            <div class="description">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea</div>
+                        </div>
                     </div>
-                </div>
-                <div class="vertical-bar"></div>
-                <div class="center item myfade" id="1">
-                    <div class="avatar"><img src="frontend/dist/img/bus-testi.png"></div>
-                    <div class="testinomial-info">
-                        <div class="name">Ong Nguyen Van Hung</div>
-                        <div class="description">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea </div>
+                    <div class="vertical-bar"></div>
+                    <div class="item" id="1">
+                        <div class="avatar"><img src="frontend/dist/img/bus-testi.png"></div>
+                        <div class="testinomial-info">
+                            <div class="name">Ong Nguyen Van Hung</div>
+                            <div class="description">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea</div>
+                        </div>
                     </div>
-                </div>
-                <div class="vertical-bar"></div>
-                <div class="right item myfade"  id="2">
-                    <div class="avatar"><img src="frontend/dist/img/bus-testi.png"></div>
-                    <div class="testinomial-info">
-                        <div class="name">Ong Nguyen Van Hung</div>
-                        <div class="description">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea </div>
+                    <div class="vertical-bar"></div>
+                    <div class="item" id="2">
+                        <div class="avatar"><img src="frontend/dist/img/bus-testi.png"></div>
+                        <div class="testinomial-info">
+                            <div class="name">Ong Nguyen Van Hung</div>
+                            <div class="description">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea</div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Indicator -->
-                <div class="indicator">
-                    <div class="dot active" id="0"></div>
-                    <div class="dot" id="1"></div>
-                    <div class="dot" id="2"></div>
-                </div>
-                <!-- /.indicator -->
 
-                <!-- Slider -->
-                <div class="prev"><i class="fa fa-chevron-circle-left"></i></div>
-                <div class="next"><i class="fa fa-chevron-circle-right"></i></div>
-                <!-- /Slider -->
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#happy-customers" data-slide="prev">
+                    <i class="fa fa-chevron-circle-left"></i>
+                </a>
+                <a class="right carousel-control" href="#happy-customers" data-slide="next">
+                    <i class="fa fa-chevron-circle-right"></i>
+                </a>
+
+                <ol class="carousel-indicators">
+                    <li data-target="#happy-customers" data-slide-to="0" class="active"></li>
+                    <li data-target="#happy-customers" data-slide-to="1"></li>
+                    <li data-target="#happy-customers" data-slide-to="2"></li>
+                </ol>
             </div>
         </section>
         <!-- /.testinomial -->
@@ -540,29 +680,8 @@
 </div>
 <!-- /.main -->
 
-<!-- jQuery -->
-<script src="frontend/plugins/jquery/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-    $.widget.bridge('uibutton', $.ui.button)
-</script>
-
-<!-- daterangepicker -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
-<script src="plugins/daterangepicker/daterangepicker.js"></script> -->
-<!-- datepicker -->
-<!-- <script src="plugins/datepicker/bootstrap-datepicker.js"></script> -->
-
-<!-- Bootstrap WYSIHTML5 -->
-<!-- <script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script> -->
-<!-- Slimscroll -->
-<!-- <script src="plugins/slimScroll/jquery.slimscroll.min.js"></script> -->
-<!-- Masonry -->
-<!-- <script type="text/javascript" src="plugins/masonry/masonry.pkgd.min.js"></script> -->
 <!-- Content -->
-<script src="frontend/dist/js/data.js"></script>
+<script src="frontend/dist/js/bus_data.js"></script>
 <script src="frontend/dist/js/bus.js"></script>
 <!-- UI -->
 <script src="frontend/dist/js/bus_ui.js"></script>

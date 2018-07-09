@@ -1,522 +1,307 @@
 $(document).ready(() => {
-	// Active testinomial
-	window.testinomial = 0;
-	window.testinomials = [0, 1, 2];
+	// Render tickets
+	renderTickets();
 
-	// Render tours list on home page
-	renderToursListOnHomePage();
+	// Render attractions
+	renderAttractions();
 
-	// Handle click on tour item on home page
-	handleClickOnTourOnHomePage();
-
-	// Handle submit get in touch form on home page
-	handleSubmitGetInTouchFormOnHomePage();
-
-	// Handle submit booking form on tour detail popup
-	handleSubmitBookingFormOnTourDetailPopup();
-
-	// Handle next tour on tour detail popup
-	handleNextTourOnTourDetailPopup();
-
-	// Handle previous tour on tour detail popup
-	handlePrevTourOnTourDetailPopup();
-
-	// Handle next tour on tours list on home page
-	handleNextTourOnToursList();
-
-	// Handle previous tour on tours list on home page
-	handlePrevTourOnToursList();
-
-	// Handle click on dot on image slider on tour detail
-	// popup
-	handleClickOnDotOnTourDetailPopup();
-
-	// Testinomial
-	// Handle next on testinomial list
-	handleNextOnTestinomialList();
-
-	// Handle prev on testinomial list
-	handlePrevOnTestinomialList();
-
-	// Handle click on testinomial list indicator
-	handleClickOnTestinomialListIndicator();
+	// Render testinomial
+	renderTestinomial();
 });
 
-// Render tours list on home page
-function renderToursListOnHomePage() {
-	// Tours list
-	let $toursList = $('.contents .tours .list .list-row');
+// Responsive carousel tickets
+function responsiveCarouselTickets() {
+	if ($(window).width() <= 768) {
+		// Hide clone
+		$('#tickets .inner .item .item-inner.clone').hide();
 
-	// Current tour
-	if (!window.tour) {
-		window.tour = window.tours[0];
-		window.tour.id = 0;
-	}
-	
-	$toursList.empty(); // empty list
-	for (let i in window.tours) {
-		let tour = window.tours[i]; // current tour
+		// Add carousel
+		$('#tickets').addClass('carousel slide');
+		$('#tickets .inner').addClass('carousel-inner')
+		$('#tickets .carousel-control').show();
+		$('#tickets .carousel-indicators').show();
+		$('#tickets .inner .list-item').addClass('item');
 
-		// Position
-		let pos;
-
-		if (i % 3 === 0) {
-			pos = "left";
-		} else if (i % 3 === 1) {
-			pos = "center";
-		} else {
-			pos = "right";
-		}
+		// Remove multi carousel
+		$('#tickets .inner').removeClass('multi')
+		$('#tickets .inner .item .item-inner').removeClass('col-md-4 col-xs-4');
+		// $('#tickets .inner .item .item-inner.clone').hide();
+		console.log('Responsive <=768')
+	} else {
+		// Hide clones
+		$('#tickets .inner .item .clone').hide();
 		
-		// Is coming soon
-		let isComingSoon = '';
+		if (window.tickets.length <= 3) {
+			// Remove carousel
+			$('#tickets').removeClass('carousel slide');
+			$('#tickets .inner').removeClass('carousel-inner')
+			$('#tickets .carousel-control').hide();
+			$('#tickets .carousel-indicators').hide();
+			$('#tickets .inner .list-item').removeClass('item');
 
-		if (tour.type) {
-			isComingSoon = 'coming-soon';
+			// Remove multi carousel
+			$('#tickets .inner').removeClass('multi')
+			// $('#tickets .inner .item .clone').hide();
+			$('#tickets .inner .item .item-inner').removeClass('col-md-4 col-xs-4');
+			console.log('Responsive >768, <=3 items')
+		} else {
+			// Add multi carousel
+			$('#tickets').addClass('carousel slide');
+			$('#tickets .inner .list-item').addClass('item');
+			$('#tickets .inner').addClass('carousel-inner multi')
+			$('#tickets .carousel-control').show();
+			$('#tickets .carousel-indicators').show();
+			$('#tickets .item .item-inner.clone').show();
+			$('#tickets .inner .item .item-inner').addClass('col-md-4 col-xs-4');
+			console.log('Responsive >768, >3 items')
 		}
+	}
+}
 
-		// Active
+// Responsive carousel attractions
+function responsiveCarouselAttractions() {
+	if ($(window).width() <= 768) {
+		// Hide clone
+		$('#attractions .inner .item .item-inner.clone').hide();
+
+		// Add carousel
+		$('#attractions').addClass('carousel slide');
+		$('#attractions .inner').addClass('carousel-inner')
+		$('#attractions .carousel-control').show();
+		$('#attractions .carousel-indicators').show();
+		$('#attractions .inner .list-item').addClass('item');
+
+		// Remove multi carousel
+		$('#attractions .inner').removeClass('multi')
+		$('#attractions .inner .item .item-inner').removeClass('col-md-4 col-xs-4');
+		console.log('Responsive <=768')
+	} else {
+		// Hide clone
+		$('#attractions .inner .item .item-inner.clone').hide();
+		
+		if (window.attractions.length <= 3) {
+			// Remove carousel
+			$('#attractions').removeClass('carousel slide');
+			$('#attractions .inner').removeClass('carousel-inner')
+			$('#attractions .carousel-control').hide();
+			$('#attractions .carousel-indicators').hide();
+			$('#attractions .inner .list-item').removeClass('item');
+
+			// Remove multi carousel
+			$('#attractions .inner').removeClass('multi')
+			$('#attractions .inner .item .item-inner').removeClass('col-md-4 col-xs-4');
+			// $('#attractions .inner .item .item-inner.clone').hide();
+			console.log('Responsive >768, <=3 items')
+		} else {
+			// Add multi carousel
+			$('#attractions').addClass('carousel slide');
+			$('#attractions .inner .list-item').addClass('item');
+			$('#attractions .inner').addClass('carousel-inner multi')
+			$('#attractions .carousel-control').show();
+			$('#attractions .carousel-indicators').show();
+			$('#attractions .item .item-inner.clone').show();
+			$('#attractions .inner .item .item-inner').addClass('col-md-4 col-xs-4');
+			console.log('Responsive >768, >3 items')
+		}
+	}
+}
+
+// Responsive testinomial
+function responsiveTestinomial() {
+	if ($(window).width() <= 768) {
+		// Add carousel
+		$('#happy-customers').addClass('carousel slide')
+		$('#happy-customers .inner').addClass('carousel-inner')
+		$('#happy-customers .carousel-control').show();
+		$('#happy-customers .carousel-indicators').show();
+	} else {
+		// Remove carousel
+		$('#happy-customers').removeClass('carousel slide')
+		$('#happy-customers .inner').removeClass('carousel-inner')
+		$('#happy-customers .carousel-control').hide();
+		$('#happy-customers .carousel-indicators').hide();
+	}
+}
+
+// Responsive
+$(window).resize(function () {
+	// Tickets
+	responsiveCarouselTickets();
+
+	// Attractions
+	responsiveCarouselAttractions();
+
+	// Testinomial
+	responsiveTestinomial();
+});
+
+// Render tickets
+function renderTickets() {
+	$('#tickets .inner').empty() // empty carousel inner
+	$('#tickets .carousel-indicators').empty();
+
+	for (let i in window.tickets) {
+		let ticket = window.tickets[i]; // ticket info
 		let active = '';
 
-		if (i == window.tour.id) {
+		if (i == window.ticketId) {
 			active = 'active';
 		}
 
-		// Append to list
 		let html = `
-			<div class="list-item myfade ${pos} ${isComingSoon} ${active}" id="${i}">
-				<div class="image"><img src="${tour.images[0]}"></div>
-				<div class="tour-info">
-					<div class="name">${tour.title}</div>
-					<div class="underline"></div>
-					<ul class="descriptions">`;
-		
-		if (tour.type === 0) {
-			for (let line of tour.includes) {
-				html += `<li class="description">${line}</li>`;
-			}
-		}
-		html += `</ul>`;
-		if (tour.type === 0) { // if tour exists
-			html += `
-				<div class="book row">
-					<div class="cost col-xs-7 col-md-7">FROM $<span>${tour.prices.single}</span></div>
-					<button class="book-now col-xs-5 col-md-5" id="${i}">BOOK NOW</button>
+			<div class="list-item item ${active}" id="${i}"><div class="item-inner">
+				<div class="image">
+					<img src="${ticket.image}">
 				</div>
-			`;
-		}
-		html += `</div></div>`;
-
-		$toursList.append(html);
-	}
-
-	// Indicators
-	renderToursListIndicatorOnHomePage();
-	
-	// Handle click on indicator
-	handleClickOnToursListIndicatorOnHomePage();
-};
-
-// Render tour list indicator on home page
-function renderToursListIndicatorOnHomePage() {
-	let $indicators = $('.contents .tours .list .indicator');
-
-	for (let i in window.tours) {
-		// Active dot
-		let active = '';
-
-		if (i == window.tour.id) {
-			active = 'active'
-		}
-		
-		// Append dot
-		let html = `
-			<div class="dot ${active}" id="${i}"></div>
+				<div class="info">
+					<div class="title">${ticket.title}</div>
+					<div class="underline"></div>
+					<ul class="descriptions">
 		`;
 
-		$indicators.append(html)
-	}
-}
-
-// Handle click on indicator
-function handleClickOnToursListIndicatorOnHomePage() {
-	$('.contents .tours .list .indicator .dot').click(function() {
-		// Target tour id
-		let id = parseInt($(this).attr('id'));
-
-		if (id == window.tour.id) {
-			return;
+		// Descriptions
+		for (let desc of ticket.descriptions) {
+			html += `<li class="desc">${desc}</li>`;
 		}
 
-		// Change current tour
-		window.tour = window.tours[id];
-		window.tour.id = id;
+		// Prices
+		html += `
+					</ul>
+					<div class="prices">
+						<div class="adult price">
+							<div class="type">Adult</div>
+							<div class="number">${ticket.prices.adult}</div>
+						</div>
+						<div class="child price">
+							<div class="type">Child</div>
+							<div class="number">${ticket.prices.child}</div>
+						</div>
+						<div class="family price">
+							<div class="type">Family</div>
+							<div class="number">${ticket.prices.family}</div>
+						</div>
+					</div>
+				</div>
+				<div class="more-info">
+					<button>MORE INFO</button>
+				</div>
+			</div></div>
+		`;
 
-		// Update active tour
-		updateActiveTourOnHomePage();
+		// Append to list
+		$('#tickets .inner').append(html);
 
-		// Update active dot
-		updateActiveDotOnToursListOnHomePage();
+		// Append to indicators
+		html = `
+			<li data-target="#tickets" data-slide-to="${i}" class="${active}"></li>
+		`;
+
+		$('#tickets .carousel-indicators').append(html)
+	}
+
+	// Clone
+	$('#tickets .item').each(function(){
+		let next = $(this).next();
+		if (!next.length) {
+			next = $(this).siblings(':first');
+		}
+		next.children(':first-child').clone().addClass('clone').appendTo($(this));
+
+		if (next.next().length>0) {
+			next.next().children(':first-child').clone().addClass('clone').appendTo($(this));
+		}
+		else {
+			$(this).siblings(':first').children(':first-child').clone().addClass('clone').appendTo($(this));
+		}
 	});
+
+	// Responsive carousel
+	responsiveCarouselTickets();
+
+	// $('#tickets .item .item-inner.clone').hide();
+	// if ($(window).width() > 768) {
+	// 	if (window.tickets.length <= 3) {
+	// 		// Render row
+ // 			$('#tickets').removeClass('carousel slide'); // add carousel
+	// 		$('#tickets .inner').removeClass('carousel-inner multi') // carousel inner
+	// 		$('#tickets .carousel-control').hide();
+	// 		$('#tickets .carousel-indicators').hide();
+	// 	} else {
+	// 		// Render multi-carousel
+	// 		$('#tickets .inner').addClass('carousel-inner multi');
+	// 		$('#tickets .inner .item .item-inner').addClass('col-md-4 col-xs-4')
+	// 		$('#tickets .item .item-inner.clone').show();
+	// 	}
+	// }
 }
 
-// Update active dot on tours list on home page
-function updateActiveDotOnToursListOnHomePage() {
-	// Dots
-	let dots = $('.contents .tours .list .indicator .dot');
-
-	// Update active
-	for (let dot of dots) {
-		if ($(dot).attr('id') == window.tour.id) {
-			$(dot).addClass('active');
-		} else {
-			$(dot).removeClass('active');
-		}
-	}
-}
-
-// Handle click on tour item on home page
-function handleClickOnTourOnHomePage() {
-	$('.contents .tours .list .list-row .list-item .book-now').click(function () {
-		// Check exists
-		if ($(this).hasClass('coming-soon')) {
-			console.log('Coming soon');
-			return;
-		}
-
-		let id = parseInt($(this).attr('id')); // item id
-
-		console.log(id);
-		// Find tour
-		let tour = window.tours[id];
-
-		if (!tour) {
-			return;
-		}
-
-		window.tour = tour;
-		window.tour.id = id;
-		window.tour.activeImage = 0;
-
-		console.log(tour);
-		// Show tour detail background
-		$('.tour-detail-background').show();
-
-		// Show tour detail
-		showTourDetail();
-
-		// Handle click on dot
-		handleClickOnDotOnTourDetailPopup();
-	});	
-}
-
-// Show tour detail popup
-function showTourDetail() {
-	// Dots
-	let $dots = $('.tour-detail .full-info .images-slider .dots');
-
-	$dots.empty();
-	for (let i in window.tour.images) {
-		if (i == window.tour.activeImage) {
-			$dots.append(`<div class="dot active" id="${i}"></div>`);
-		} else {
-			$dots.append(`<div class="dot" id="${i}"></div>`);
-		}
-	}
-
-	// Images
-	let $images = $('.tour-detail .full-info .images-slider .images');
+// Render attractions
+function renderAttractions() {
+	$('#attractions .inner').empty() // empty carousel inner
+	$('#attractions .carousel-indicators').empty() // empty indicators
 	
-	$images.empty();
-	for (let i in window.tour.images) {
-		if (i == window.tour.activeImage) {
-			$images.append(`
-				<img src="${tour.images[i]}" id="img${i}" class="fade">
-			`);
-		} else {
-			$images.append(`
-				<img src="${tour.images[i]}" class="hidden fade" id="img${i}">
-			`);
+	for (let i in window.attractions) {
+		let attraction = window.attractions[i]; // attraction
+		let active = '';
+
+		if (i == window.attractionId) {
+			active = 'active'
 		}
+
+		// Item
+		let html = `
+			<div class="list-item item ${active}" id="${i}"><div class="item-inner">
+				<div class="image">
+					<img src="${attraction.image}">
+				</div>
+				<div class="info">
+					<div class="title">${attraction.title}</div>
+					<div class="description">${attraction.content}</div>
+				</div>
+				<div class="see-more"><button>SEE MORE</button></div>
+			</div></div>
+		`;
+
+		// Append to list
+		$('#attractions .inner').append(html);
+
+		// Indicators
+		html = `<li data-target="#attractions" data-slide-to="${i}" class="${active}"></li>`
+
+		$('#attractions .carousel-indicators').append(html)
 	}
 
-	// Title
-	$('.tour-detail .full-info .info .name').text(window.tour.title);
+	// Clone
+	$('#attractions .item').each(function(){
+		let next = $(this).next();
+		if (!next.length) {
+			next = $(this).siblings(':first');
+		}
+		next.children(':first-child').clone().addClass('clone').appendTo($(this));
 
-	// Descriptions
-	let desc = window.tour.descriptions.join('<br>');
+		if (next.next().length>0) {
+			next.next().children(':first-child').clone().addClass('clone').appendTo($(this));
+		}
+		else {
+			$(this).siblings(':first').children(':first-child').clone().addClass('clone').appendTo($(this));
+		}
+	});
 
-	$('.tour-detail .full-info .info .description').html(desc);
+	// Responsive carousel
+	responsiveCarouselAttractions();
+}
 
-	// Prices
-	$('.tour-detail .book .price ul li.single .cost .number').text(window.tour.prices.single);
-	$('.tour-detail .book .price ul li.group2 .cost .number').text(window.tour.prices.group2);
-	$('.tour-detail .book .price ul li.group5 .cost .number').text(window.tour.prices.group5);
-
-	// Includes
-	let $includes = $('.tour-detail .book .include ul');
-	
-	$includes.empty();
-	for (let line of window.tour.includes) {
-		$includes.append(`<li>${line}</li>`);
+// Render testinomial
+function renderTestinomial() {
+	if ($(window).width() <= 768) {
+		console.log('s')
+		$('#happy-customers').addClass('carousel'); // remove carousel
+		$('#happy-customers').addClass('slide'); // remove carousel
+		$('#happy-customers .inner').addClass('carousel-inner') // carousel inner
+		$('#happy-customers .carousel-control').show();
+		$('#happy-customers .carousel-indicators').show();
+	} else {
+		$('#happy-customers .carousel-control').hide();
+		$('#happy-customers .carousel-indicators').hide();
 	}
-
-	// Addon
-	let $addon = $('.tour-detail .book .addon ul');
-	
-	$addon.empty();
-	for (let line of window.tour.addon) {
-		$addon.append(`<li>${line}</li>`);
-	}
-
-	// Show
-	$('html,body').scrollTop(70);
-	$('.tour-detail').show();
-}
-
-// Handle submit booking form on tour detail page
-function handleSubmitBookingFormOnTourDetailPopup() {
-	$('.tour-detail .book .booking form').on('submit', function (e) {
-		e.preventDefault();
-	});
-}
-
-// Handle submit get in touch form on home page
-function handleSubmitGetInTouchFormOnHomePage() {
-	$('.get-in-touch form').on('submit', function (e) {
-		e.preventDefault();
-	});
-}
-
-// Handle next tour on tour detail popup
-function handleNextTourOnTourDetailPopup() {
-	$('.tour-detail .next').click(function () {
-
-		do {
-			let id = window.tour.id;
-			
-			if (id < window.tours.length - 1) {
-				id++;
-			} else {
-				id = 0;
-			}
-
-			tour = window.tours[id];
-			
-			// Update
-			window.tour = tour;
-			window.tour.id = id;
-			window.tour.activeImage = 0;
-		} while (window.tour.type !== 0);
-
-		// Show tour detail
-		showTourDetail();
-		
-		// Handle click on dot
-		handleClickOnDotOnTourDetailPopup();
-	});
-}
-
-// Handle previous tour on tour detail popup
-function handlePrevTourOnTourDetailPopup() {
-	$('.tour-detail .prev').click(function () {
-		do {
-			let id = window.tour.id;
-			
-			if (id > 0) {
-				id--;
-			} else {
-				id = window.tours.length - 1;
-			}
-
-			tour = window.tours[id];
-			
-			// Update
-			window.tour = tour;
-			window.tour.id = id;
-			window.tour.activeImage = 0;
-		} while (window.tour.type !== 0);
-
-		// Show tour detail
-		showTourDetail();
-
-		// Handle click on dot
-		handleClickOnDotOnTourDetailPopup();
-	});
-}
-
-// Handle click on dot on tour detail popup
-function handleClickOnDotOnTourDetailPopup() {
-	$('.tour-detail .full-info .images-slider .dots .dot').click(function() {
-		let id = parseInt($(this).attr('id')); // dot id
-		console.log(id)
-		if (window.tour.activeImage === id) {
-			return;
-		}
-
-		// Change active dot
-		$(`.tour-detail .full-info .images-slider .dots .dot.active`)
-			.removeClass('active');
-		$(this).addClass('active');
-
-		// Change active image
-		$(`.tour-detail .full-info .images-slider .images img#img${window.tour.activeImage}`)
-			.addClass('hidden');
-		window.tour.activeImage = id;
-		$(`.tour-detail .full-info .images-slider .images img#img${id}`)
-			.removeClass('hidden');
-	});	
-}	
-
-// Handle next tour on tours list on home page
-function handleNextTourOnToursList() {
-	$('.contents .tours .list .next').click(function () {
-		let id = window.tour.id;
-
-		if (id < window.tours.length - 1) {
-			id++;
-		} else {
-			id = 0;
-		}
-
-		tour = window.tours[id];
-		
-		// Update
-		window.tour = tour;
-		window.tour.id = id;
-
-		// Update list
-		updateActiveTourOnHomePage();
-
-		// Update indicator
-		updateActiveDotOnToursListOnHomePage();
-	});
-}
-
-// Handle prev tour on tours list on home page
-function handlePrevTourOnToursList() {
-	$('.contents .tours .list .prev').click(function () {
-		let id = window.tour.id;
-
-		if (id > 0) {
-			id--;
-		} else {
-			id = window.tours.length - 1;
-		}
-
-		tour = window.tours[id];
-		
-		// Update
-		window.tour = tour;
-		window.tour.id = id;
-
-		// Update list
-		updateActiveTourOnHomePage();
-
-		// Update indicator
-		updateActiveDotOnToursListOnHomePage();
-	});
-}
-
-// Update active tour on home page
-function updateActiveTourOnHomePage() {
-	// List items
-	let $items = $('.contents .tours .list .list-item');
-	
-	for (let item of $items) {
-		if ($(item).attr('id') == window.tour.id) {
-			$(item).addClass('active');
-		} else {
-			$(item).removeClass('active');
-		}
-	}
-}
-
-// Handle next on testinomial list
-function handleNextOnTestinomialList() {
-	$('.contents .testinomial .list .next').click(function() {
-		let t = window.testinomial;
-
-		if (t < window.testinomials.length - 1) {
-			t++;
-		} else {
-			t = 0;
-		}
-
-		window.testinomial = t;
-
-		// Update active testinomial
-		updateActiveTestinomial();
-
-		// Update active dot
-		updateActiveDotOnTestinomialList();
-	});
-}
-
-// Update active testinomial
-function updateActiveTestinomial() {
-	let $ts = $('.contents .testinomial .list .item'); // testinomials
-	
-	for (let t of $ts) {
-		if ($(t).attr('id') == window.testinomial) {
-			$(t).addClass('active');
-		} else {
-			$(t).removeClass('active');
-		}
-	}	
-}
-
-// Handle prev on testinomial list
-function handlePrevOnTestinomialList() {
-	$('.contents .testinomial .list .prev').click(function() {
-		let t = window.testinomial;
-
-		if (t > 0) {
-			t--;
-		} else {
-			t = window.testinomials.length - 1;
-		}
-
-		window.testinomial = t;
-
-		// Update active testinomial
-		updateActiveTestinomial();
-
-		// Update active dot
-		updateActiveDotOnTestinomialList();
-	});
-}
-
-// Update active dot on testinomial indicator
-function updateActiveDotOnTestinomialList() {
-	let $dots = $('.contents .testinomial .list .indicator .dot'); // dots
-	
-	for (let dot of $dots) {
-		if ($(dot).attr('id') == window.testinomial) {
-			$(dot).addClass('active');
-		} else {
-			$(dot).removeClass('active');
-		}
-	}	
-}
-
-// Handle click on testinomial list indicator
-function handleClickOnTestinomialListIndicator() {
-	$('.contents .testinomial .list .indicator .dot').click(function() {
-		// Target testinomial
-		let id = parseInt($(this).attr('id'));
-
-		if (id == window.testinomial) {
-			return;
-		}
-
-		// Change current testinomial
-		window.testinomial = window.testinomials[id];
-
-		// Update active testinomial
-		updateActiveTestinomial();
-
-		// Update active dot
-		updateActiveDotOnTestinomialList();
-	});
 }
