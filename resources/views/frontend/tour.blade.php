@@ -82,11 +82,11 @@
 			<div class="icon-line"></div>
 			<div class="icon-line"></div>
 		</div>
-		<a class="item" href="frontend/index.html">
+		<a class="item" href="/">
 			HOME
 			<div class="underline"></div>
 		</a>
-		<a class="item" href="bus.html">
+		<a class="item" href="/bus">
 			HOP ON HOP OFF
 			<div class="underline"></div>
 		</a>
@@ -94,7 +94,7 @@
 			HANOI RETREAT
 			<div class="underline"></div>
 		</a>
-		<a class="item" href="faq.html">
+		<a class="item" href="/faq">
 			FAQ
 			<div class="underline"></div>
 		</a>

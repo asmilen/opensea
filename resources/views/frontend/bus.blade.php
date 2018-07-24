@@ -90,7 +90,7 @@
             HANOI RETREAT
             <div class="underline"></div>
         </a>
-        <a class="item" href="#">
+        <a class="item" href="/faq">
             FAQ
             <div class="underline"></div>
         </a>
