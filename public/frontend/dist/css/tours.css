@@ -6,17 +6,13 @@
 body {
 	padding: 0px;
 	margin: 0px;
+	width: 100%;
 }
-@media screen and (max-width: 1366px) and (min-width: 1025px) {
-	body {
-		width: 100%;
-	}
-	.navigation-bar {
-		width: 100%;
-	}
-	.sticky {
-		width: 100%;
-	}
+.row {
+	margin: 0;
+}
+.navigation-bar {
+	width: 100%;
 }
 
 /*Main*/
@@ -30,36 +26,44 @@ body {
 
 /*Header*/
 .header {
-	position: relative;
-	height: 48px;
-	line-height: 48px;
-	vertical-align: middle;
-	text-align: right;
-	background-color: rgb(25,55,97);
-	color: rgb(255,255,255);
-	font-size: 13px;
-	font-family: "SF Display Medium";
-	padding-right: 13%;
+    position: relative;
+    height: 4vw;
+    line-height: 4vw;
+    vertical-align: middle;
+    text-align: right;
+    background-color: rgb(25,55,97);
+    color: rgb(255,255,255);
+    font-size: 1vw;
+    font-family: "SF Display Medium";
+    padding-right: 13%;
 }
 
-/*Navigation bar*/
-.sticky {
-	position: fixed;
-	top: 0;
-}
-.sticky + .contents {
-	padding-top: 78px;
-}
+/* Sticky navbar */
 .relative {
 	position: relative;
 }
+.sticky {
+	width: 100%;
+	position: fixed;
+	top: 0;
+}
+.sticky + .content {
+	padding-top: 4vw;
+}
+@media screen and (max-width: 768px) {
+	.sticky + .content {
+		padding-top: 36px;
+	}
+}
+
+/*Navigation bar*/
 .navigation-bar {
-	/*position: relative;*/
-	height: 78px;
+	top: 0;
+	height: 6vw;
 	background-color: rgb(255,255,255);
 	padding-left: 13%;
 	padding-right: 13%;
-	z-index: 5;
+	z-index: 20;
 	text-align: right;
 }
 .navigation-bar img.logo {
@@ -71,22 +75,25 @@ body {
 .navigation-bar a {
 	position: relative;
 	display: inline-block;
-	height: 78px;
-	line-height: 78px;
+	height: 6vw;
+	line-height: 6vw;
 	vertical-align: middle;
-	padding-left: .7vw;
-	padding-right: .7vw;
+	padding-left: .9vw;
+	padding-right: .9vw;
 	margin: 0px;
 	text-align: center;
 	font-family: "SF Text Bold";
-	font-size: 1.5vw;
+	font-size: 1.4vw;
 	color: rgb(25,55,97);
-	/*border: 1px solid black;*/
 	cursor: pointer;
 }
 .navigation-bar a:hover {
 	text-decoration: none;
 	color: rgb(25,55,97);
+}
+.navigation-bar a:focus {
+	text-decoration: none;
+	outline: none;
 }
 .navigation-bar .icon {
 	display: none;
@@ -94,8 +101,8 @@ body {
 .navigation-bar a.active .underline, .navigation-bar a.hover .underline {
 	position: relative;
 	margin: 0 auto;
-	width: 35px;
-	bottom: 20px;
+	width: 3vw;
+	bottom: 1.7vw;
 	border: 1px solid rgb(25,55,97);
 }
 .navigation-bar a.inactive .underline {
@@ -105,7 +112,7 @@ body {
 	color: rgb(25,55,97);
 	padding-left: 3px;
 	padding-right: 3px;
-	font-size: 1.5vw;
+	font-size: 1.4vw;
 	font-family: "SF Text Bold";
 }
 .navigation-bar a.shopping-cart span.amount {
@@ -134,10 +141,7 @@ body {
 
 /*Tours*/
 .contents .tours {
-	padding-top: 78px;
-	padding-bottom: 0;
-	padding-left: 0%;
-	padding-right: 0%;
+	padding: 5vw 0 0 0;
 }
 .contents .tours .title {
 	position: relative;
@@ -161,14 +165,13 @@ body {
 .contents .tours .title .text {
 	position: relative;
 	display: inline-block;
-	bottom: 30px;
 	font-family: "BCBroadsheet Italic";
-	font-size: 63px;
+	font-size: 4vw;
 	color: rgb(25,55,97);
 	background-color: rgb(255,250,246);
-	padding-left: 100px;
-	padding-right: 100px;
-	top: -55px;
+	padding-left: 7vw;
+	padding-right: 7vw;
+	top: -3.1vw;
 }
 .contents .tours .list {
 	position: relative;
@@ -178,7 +181,6 @@ body {
 .contents .tours .list .list-row {
 	position: relative;
 	width: 100%;
-	/*border: 1px solid black;*/
 	display: inline-block;
 	margin: 0px;
 	padding: 0px;
@@ -188,16 +190,16 @@ body {
 	position: relative;
 	vertical-align: top;
 	top: 0;
-	/*border: 1px solid black;*/
 	width: 20vw;
 	height: 31.4vw;
 	display: inline-block;
-	padding: 5px;
+	padding: .3vw;
 	margin: 0px 0 20px 0;
 	background-image: url('../img/tour-background.png');
 	background-repeat: repeat;
 	cursor: pointer;
 }
+
 .contents .tours .list .list-row .list-item.myfade {
 	opacity: 1;
 }
@@ -220,20 +222,20 @@ body {
 	left: 0%;
 }
 .contents .tours .list .center {
-	left: 10%;
+	left: 8.4%;
 }
 .contents .tours .list .right {
-	left: 20%;
+	left: 16.8%;
 }
 .contents .tours .list .tour-info {
 	height: 56%;
 	overflow-y: hidden;
-	padding: 13px 13px 10px 13px;
+	padding: 1vw 1vw .8vw 1vw;
 	text-align: left;
 	color: rgb(25,55,97);
 }
 .contents .tours .list .tour-info .name {
-   	line-height: 1.5vw;
+   	line-height: 1.55vw;
     height: 20%;
     overflow-y: hidden;
     vertical-align: middle;
@@ -242,43 +244,42 @@ body {
     color: rgb(35,67,136);
 }
 .contents .tours .list .tour-info .underline {
-	margin-top: 5px;
 	border: none;
-    border-bottom: 1px solid rgb(25,55,97);
+    border-bottom: .1vw solid rgb(25,55,97);
     width: 45%;
     height: 4%;
     margin: 0;
 }
 .contents .tours .list .tour-info ul.descriptions {
 	margin-top: 2%;
-   	margin-bottom: 2%;
-   	padding: 0;
-	height: 56%;
-	/*border: 1px solid rgb(25,55,97);*/
-	list-style-image: none;
-	list-style-type: none;
-	text-align: justify;
-	overflow-y: hidden;
-	/*Word break*/
-	-ms-word-break: break-all;
-	word-break: break-all;
-	/*Hyphens*/
-	-webkit-hyphens: auto;
-	-moz-hyphens: auto;
-	-ms-hyphens: auto;
-	-o-hyphens: auto;
-	hyphens: auto;
+    margin-bottom: 2%;
+    padding: 0;
+    height: 56%;
+    list-style-image: none;
+    list-style-type: none;
+    text-align: justify;
+    overflow-y: hidden;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -o-hyphens: auto;
 }
 .contents .tours .list .tour-info ul.descriptions li {
     padding-left: 1.3em;
-    font-size: 11px;
+    font-size: 12px;
     font-family: "SF Text Regular";
-    line-height: 14px;
+    line-height: 16px;
     color: rgb(28,56,96);
+}
+@media screen and (max-width: 1024px) {
+	.contents .tours .list .tour-info ul.descriptions li {
+	    font-size: 10px;
+	    line-height: 12px;
+	}
 }
 .contents .tours .list .tour-info ul.descriptions li:before {
 	margin-left: -1.3em;
-	/*border: 1px solid rgb(25,55,97);*/
 	width: 1.3em;
 	display: inline-block;
 	font-family: "FontAwesome";
@@ -292,10 +293,7 @@ body {
 }
 .contents .tours .list .tour-info .book {
 	position: relative;
-	margin-top: 10px;
 	height: 16%;
-	line-height: 24px;
-	vertical-align: middle;
 	margin-left: 0;
 	margin-right: 0;
 }
@@ -305,20 +303,13 @@ body {
 	clear: both;
 }
 .contents .tours .list .tour-info .book .book-now {
-    position: absolute;
-    /* right: 0; */
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+	position: absolute;
     height: 80%;
-    border-radius: 5px;
+    border-radius: .3vw;
     font-size: 1.1vw;
-    vertical-align: middle;
-    line-height: 100%;
+    line-height: 1vw;
     top: 10%;
     font-family: "BCCartelDeux";
-    /* border: 1px solid rgb(25,55,97); */
     color: rgb(255,255,255);
     border: 0;
     background-color: rgb(34,66,131);
@@ -392,15 +383,15 @@ body {
 .contents .testinomial .title .text {
 	position: relative;
 	display: inline-block;
-	bottom: 30px;
+	/*bottom: 30px;*/
 	font-family: "BCBroadsheet Italic";
 	/*border: 1px solid black;*/
-	font-size: 63px;
+	font-size: 4vw;
 	color: rgb(25,55,97);   
 	background-color: rgb(255,250,246);
-	top: -55px;
-	padding-left: 100px;
-	padding-right: 100px;
+	top: -3vw;
+	padding-left: 7vw;
+	padding-right: 7vw;
 }
 .contents .testinomial .list {
 	position: relative;
@@ -459,8 +450,8 @@ body {
 	text-align: justify;
 	color: rgb(25,55,97);
 	font-family: "SF Display Regular";
-	font-size: 14px;
-	line-height: 16px;
+	font-size: 12px;
+	line-height: 14px;
 	/*padding-left: 3%;*/
 	/*padding-right: 3%;*/
 }
@@ -489,8 +480,8 @@ body {
 	margin-left: 3%;
 	margin-right: 3%;
 	background-color: rgb(255,255,255);
-	padding-left: 10%;
-	padding-right: 10%;
+	padding-left: 7%;
+	padding-right: 7%;
 	padding-top: 2%;
 	padding-bottom: 2%;
 }
@@ -499,12 +490,12 @@ body {
 	top: 0px;
 	text-align: center;
 	font-family: "BCBroadsheet Regular";
-	font-size: 63px;
+	font-size: 5vw;
 	color: rgb(25,55,97);
 	margin-bottom: 4%;
 }
 .get-in-touch form label {
-	font: 20px "BCBroadsheet Regular";
+	font: 1.7vw "BCBroadsheet Regular";
 	color: rgb(216,122,37);
 }
 .get-in-touch form {
@@ -538,8 +529,8 @@ body {
 .get-in-touch input {
 	border: 0px;
 	width: 95%;
-	line-height: 20px;
-	font-size: 20px;
+	line-height: 36px;
+	font-size: 16px;
 }
 .get-in-touch input:focus {
 	border: 0px;
@@ -551,7 +542,7 @@ body {
 	padding: 0;
 	height: 161px;
 	line-height: 40px;
-	font-size: 20px;
+	font-size: 16px;
 	resize: none;
 	z-index: 1;
 	background-attachment: local;
@@ -569,9 +560,14 @@ body {
 	border: 0.5px solid rgb(216,122,37);
     width: 95%;
 }
+.get-in-touch form .submit {
+	display: inline-block;
+	width: 100%;
+	text-align: right;
+}
 .get-in-touch form button {
 	position: relative;
-	display: inline-block;
+	display: block;
 	background-color: rgb(216,122,37);
 	color: rgb(255,255,255);
 	font: 25px "BCBroadsheet Regular";
@@ -592,46 +588,42 @@ body {
 	position: relative;
 	background-color: rgb(24,24,24);
 	color: rgb(255,255,255);
-	padding-left: 13%;
-	padding-right: 13%;
+	padding-left: 10%;
+	padding-right: 10%;
 	padding-top: 3%;
-	/*border: 0.5px solid rgb(216,122,37);*/
 	padding-bottom: 3%;
 }
 .footer .contact {
 	width: 30%;
 	text-align: left;
-	/*border: 0.5px solid rgb(216,122,37);*/
 	display: inline-block;
 }
 .footer .contact #contact-us {
-	font: 18px "SF Display Medium";
-	margin-bottom: 5px;
+	font: 1.4vw "SF Display Medium";
+	margin-bottom: .4vw;
 }
 .footer .contact #tel {
-	font: 16px "SF Display Medium";
+	font: 1.1vw "SF Display Medium";
 }
 .footer .contact #cell {
-	font: 16px "SF Display Medium";
+	font: 1.1vw "SF Display Medium";
 }
 .footer .contact #email {
-	font: 16px "SF Display Medium";
+	font: 1.1vw "SF Display Medium";
 }
 .footer .address {
 	float: right;
 	display: inline-block;
 	text-align: center;
-	/*border: 0.5px solid rgb(216,122,37);*/
 }
 .footer .address #address {
-	font: 16px "SF Text Regular";
+	font: 1.25vw "SF Text Regular";
 }
 .footer .fb {
 	display: none;
 }
 .footer .address #fb {
-	font: 13px "SF Text Regular";
-	/*border: 0.5px solid rgb(216,122,37);*/
+	font: 1vw "SF Text Regular";
 	margin: 15px;
 }
 .footer .address #fb:after {
@@ -640,18 +632,17 @@ body {
 	clear: both;
 }
 .footer .address #fb img {
-	width: 28px;
-	height: 28px;
+	width: 2.2vw;
+	height: 2.2vw;
 }
 .footer .address #company {
-	font: 15px "SF Text Bold";
+	font: 1.14vw "SF Text Bold";
 }
 .footer .copyright {
 	margin-top: 3%;
 	margin-bottom: 0;
 	text-align: center;
-	font: 11px "SF Display Light";
-	/*border: 0.5px solid rgb(216,122,37);*/
+	font: .9vw "SF Display Light";
 }
 
 /*Tour detail*/
@@ -671,18 +662,21 @@ body {
 	/* Good browsers */
   	opacity: 0.4;
 	width: 100%;
-	z-index: 10;
+	z-index: 20;
 }
 .tour-detail {
-	display: none;
-	z-index: 20;
-	position: absolute;
-	top: 70px;
-	left: 22%;
-	width: 56%;
-	padding: 25px 35px;
-	font-size: 10px;
-	background-image: url('../img/tour-detail-bg.png');
+    display: none;
+    z-index: 20;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    width: 750px;
+    /*padding: 2.9% 3.3%;*/
+    padding: 39.75px 45px;
+    font-size: 10.2px;
+    /* margin: 0 auto; */
+    margin-left: -375px;
+    background-image: url(../img/tour-detail-bg.png);
 }
 .tour-detail .left {
 	float: left;
@@ -692,7 +686,7 @@ body {
 }
 .tour-detail .full-info {
 	position: relative;
-	width: 45%;
+    width: 44.26%;
 }
 .tour-detail .full-info .images-slider {
 	/*border: 0.5px solid rgb(216,122,37);*/
@@ -744,45 +738,37 @@ body {
 	display: inline-block;
 }
 .tour-detail .full-info .info .name {
-	/*border: 0.5px solid rgb(216,122,37);*/
-	line-height: 20px;
-	font-size: 18px;
+	line-height: 25px;
+	font-size: 21px;
 	font-family: "BCCartelDeux";
 	vertical-align: center;
 	text-align: left;
-	/*font-weight: 700;*/
 	color: rgb(33,69,155);
 	margin: 10px 0 0 0;
 }
 .tour-detail .full-info .info .underline {
 	border: 1px solid rgb(33,69,155);
 	width: 40%;
-	margin: 10px 0 15px 0;
+    margin: 10px 0 10px 0;
 }
 .tour-detail .full-info .info .description {
-	/*border: 0.5px solid rgb(216,122,37);*/
 	/*font-size: 10px;*/
-	/*font-weight: 500;*/
 	font-family: "SF Text Regular";
 	text-align: justify;
 	line-height: 12px;
 }
 .tour-detail .book {
 	position: relative;
-	width: 52%;
+	width: 47.53%;
 	vertical-align: top;
 	display: inline-block;
 	font-family: "SF Text Regular";
-	/*border: 0.5px solid rgb(216,122,37);*/
 }
 .tour-detail .book .price {
-	/*border: 0.5px solid rgb(216,122,37);*/
 }
 .tour-detail .book .price label {
-	/*border: 0.5px solid rgb(216,122,37);*/
 	font-family: "BCCartelDeux";
-	font-size: 16px;
-	/*font-weight: 700;*/
+	font-size: 14px;
 	color: rgb(33,69,155);
 	margin: 0;
 }
@@ -791,13 +777,11 @@ body {
 	width: 8%;
 }
 .tour-detail .book .price ul {
-	/*border: 0.5px solid rgb(216,122,37);*/
 	margin-top: 10px;
 	margin-bottom: 0;
 	padding: 0;
 }
 .tour-detail .book .price ul li {
-	/*border: 0.5px solid rgb(216,122,37);*/
 	position: relative;
 	width: 28%;
 	display: inline-block;
@@ -805,22 +789,19 @@ body {
 	border-radius: 5px;
 	color: rgb(255,255,255);
 	text-align: center;
-	padding: 3px 6px 3px 6px;
+	padding: 5px 0px;
 }
 .tour-detail .book .price ul li .type {
-	font-size: 8px;
-	/*font-weight: 300;*/
+	font-size: 9px;
 	font-family: "SF Text Bold";
 }
 .tour-detail .book .price ul li .cost {
-	line-height: 20px;
-	font-size: 18px;
-	/*font-weight: 900;*/
+	line-height: 24px;
+	font-size: 22px;
 	font-family: "BCCartelDeux";
 }
 .tour-detail .book .price ul li .pax {
-	font-size: 8px;
-	/*font-weight: 100;*/
+	font-size: 8.5px;
 	font-family: "BCCartelDeux";
 }
 .tour-detail .book .price ul li.single {
@@ -833,20 +814,16 @@ body {
 	left: 8%;
 }
 .tour-detail .book .price .max {
-	/*line-height: 10px;*/
 	font-size: 9px;
-	/*font-weight: 700;*/
 	font-family: "SF Text Bold";
 	color: rgb(33,69,155);
 	padding: 10px 0 5px 0;
 }
 /*What include*/
 .tour-detail .book .include {
-
 }
 .tour-detail .book .include label {
-	font-size: 16px;
-	/*font-weight: 700;*/
+	font-size: 14px;
 	font-family: "BCCartelDeux";
 	color: rgb(33,69,155);
 	margin: 0;
@@ -879,9 +856,8 @@ body {
 
 }
 .tour-detail .book .addon label {
-	font-size: 16px;
+	font-size: 14px;
 	font-family: "BCCartelDeux";
-	/*font-weight: 700;*/
 	color: rgb(33,69,155);
 	margin: 0;
 }
@@ -913,7 +889,7 @@ body {
 	text-align: center;
 }
 .tour-detail .book .booking .title {
-	font-size: 16px;
+	font-size: 14px;
 	font-family: "BCCartelDeux";
 	color: rgb(33,69,155);
 	margin: 0;
@@ -935,12 +911,15 @@ body {
 	display: inline-block;
 	vertical-align: top;
 	margin-top: 10px;
-	padding-right: 10px;
+	padding-right: 3px;
 	/*font-size: 10px;*/
 	/*line-height: 12px;*/
 }
 .tour-detail .book .booking form ul .input label {
+	padding: 0;
 	margin-bottom: 0;
+	font-weight: unset;
+    color: #000;
 }
 .tour-detail .book .booking form ul .input.other {
 	width: 100%;
@@ -949,33 +928,32 @@ body {
 	width: 98%;
 }
 .tour-detail .book .booking form button {
-	/*text-align: center;*/
 	position: relative;
 	background-color: rgb(33,69,155); 
 	border-radius: 5px;
-	padding: 4px 10px 4px 10px;
-	color: rgb(255,255,255);
-	font-size: 16px;
+    padding: 3px 10px;
+    color: rgb(255,255,255);
+    font-size: 14px;
 	font-family: "BCCartelDeux";
 	cursor: pointer;
+	border: none;
 }
 .tour-detail .book .booking form input {
 	width: 100%;
 	border: 0px;
 	background: transparent;
-	/*line-height: 12px;*/
-	/*font-size: 10px;*/
+}
+.tour-detail .book .booking form select {
+	width: 100%;
 }
 .tour-detail .book .booking form input:focus {
 	border: 0px;
 	outline: none;
 }
 .tour-detail .book .booking form .input.date input {
-	/*font-size: 10px;*/
 	font-size: 10px;
-	width: 60%;
+	padding: 0;
 	background-color: rgb(255,255,255);
-	float: right;
 }
 .tour-detail .book .booking form ul .input.amount input {
 	/*font-size: 15px;*/
@@ -984,8 +962,9 @@ body {
 }
 .tour-detail .book .booking form ul .input.nationality select {
 	border: 0;
+	padding: 0;
 	/*font-size: 10px;*/
-	width: 60%;
+	/*width: 60%;*/
 }
 .tour-detail .book .booking form ul .input .underline {
 	border: 0.5px solid rgb(0,0,0);
@@ -1031,25 +1010,25 @@ body {
 	cursor: pointer;
 }
 /*Slider*/
-.tour-detail .next {
-	font-size: 26px;
-	position: absolute;
-	right: 10px;
-	top: 300px;
-}
 .tour-detail .prev {
 	font-size: 26px;
-	position: absolute;
-	left: 10px;
-	top: 300px;
+    width: 10%;
+    position: absolute;
+    left: 5px;
+    padding-top: 30%;
+    height: 80%;
+}
+.tour-detail .next {
+    font-size: 26px;
+    width: 10%;
+    position: absolute;
+    right: 5px;
+    padding-top: 30%;
+    height: 80%;
+    text-align: right;
 }
 
-
-/* Min width 1361px */
-/*@import url("tours_min_1361px.css");*/
-
-/* Max width 1024px */
-/*@import url("tours_max_1024px.css");*/
-
-/* Max width 768px */
-/*@import url("tours_max_768px.css");*/
+/* No scroll */
+.no-scroll {
+	position: fixed;
+}

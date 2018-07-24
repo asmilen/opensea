@@ -1,0 +1,681 @@
+/* Fonts */
+@import url("font.css");
+
+/*Body*/
+body {
+	padding: 0px;
+	margin: 0px;
+	width: 100%;
+}
+.row {
+	margin: 0;
+}
+
+/*Main*/
+.main {
+	position: relative;
+	background-image: url('../img/pattern.png');
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+
+/*Header*/
+.header {
+    position: relative;
+    height: 4vw;
+    line-height: 4vw;
+    vertical-align: middle;
+    text-align: right;
+    background-color: rgb(25,55,97);
+    color: rgb(255,255,255);
+    font-size: 1vw;
+    font-family: "SF Display Medium";
+    padding-right: 13%;
+}
+@media screen and (max-width: 768px) {
+	.header {
+		height: 36px;
+		line-height: 36px;
+		vertical-align: middle;
+		padding-right: 4%;
+		padding-left: 0;
+		font-size: 11px;
+	}
+}
+
+/* Sticky navbar */
+.relative {
+	position: relative;
+}
+.sticky {
+	width: 100%;
+	position: fixed;
+	top: 0;
+}
+.sticky + .content {
+	padding-top: 4vw;
+}
+@media screen and (max-width: 768px) {
+	.sticky + .content {
+		padding-top: 36px;
+	}
+}
+
+/*Navigation bar*/
+.navigation-bar {
+	top: 0;
+	height: 6vw;
+	background-color: rgb(255,255,255);
+	padding-left: 13%;
+	padding-right: 13%;
+	width: 100%;
+	z-index: 20;
+	text-align: right;
+}
+.navigation-bar img.logo {
+	position: relative;
+	float: left;
+	height: 100%;
+}
+.navigation-bar a {
+	position: relative;
+	display: inline-block;
+	height: 6vw;
+	line-height: 6vw;
+	vertical-align: middle;
+	padding-left: .9vw;
+	padding-right: .9vw;
+	margin: 0px;
+	text-align: center;
+	font-family: "SF Text Bold";
+	font-size: 1.4vw;
+	color: rgb(25,55,97);
+	cursor: pointer;
+}
+.navigation-bar a:hover {
+	text-decoration: none;
+	color: rgb(25,55,97);
+}
+.navigation-bar a:focus {
+	text-decoration: none;
+	outline: none;
+}
+.navigation-bar .icon {
+	display: none;
+}
+.navigation-bar a.active .underline, .navigation-bar a.hover .underline {
+	position: relative;
+	margin: 0 auto;
+	width: 3vw;
+	bottom: 1.7vw;
+	border: 1px solid rgb(25,55,97);
+}
+.navigation-bar a.inactive .underline {
+	display: none;
+}
+.navigation-bar a.shopping-cart span.label {
+	color: rgb(25,55,97);
+	padding-left: 3px;
+	padding-right: 3px;
+	font-size: 1.4vw;
+	font-family: "SF Text Bold";
+}
+.navigation-bar a.shopping-cart span.amount {
+	font-size: 1vw;
+}
+.navigation-bar:after {
+	display: block;
+	content: '';
+	clear: both;
+}
+@media screen and (max-width: 768px) {
+	.navigation-bar {
+		width: 100%;
+		height: 60px;
+		text-align: center;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.navigation-bar .icon {
+		position: absolute;
+		left: 0;
+		top: 0;
+		display: block;
+		width: 60px;
+		height: 60px;
+		padding-top: 15px;
+		padding-left: 15px;
+		border: none;
+		border-right: 1px solid #ddd;
+		box-shadow: 2px 0px 1px #eee;
+		cursor: pointer;
+	}
+	.navigation-bar .icon .icon-line {
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 5px;
+		margin-bottom: 6px;
+		background-color: rgb(25,55,97);
+	}
+	.navigation-bar a.item {
+		display: none;
+		text-align: left;
+		top: 0px;
+		height: 35px;
+		font-size: 14px;
+		line-height: 35px;
+		vertical-align: middle;
+		background-color: rgb(17,44,93);
+		color: rgb(255,255,255);
+		width: 200px;
+		z-index: 10;
+		box-shadow: 0px 5px rgb(25,55,97);
+		margin-bottom: 5px;
+		padding-left: 15px;
+	}
+	.navigation-bar a.shopping-cart {
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding: 0;
+		width: 60px;
+		height: 60px;
+		line-height: 60px;
+		vertical-align: middle;
+		border-left: 1px solid #ddd;
+		box-shadow: -2px 0px 1px #eee;
+	}
+	.navigation-bar a.shopping-cart span.label {
+		display: none;
+	}
+	.navigation-bar a.shopping-cart span.amount {
+		position: relative;
+	    color: rgb(25,55,97);
+	    top: 9px;
+	    font-size: 10px;
+	}
+	.navigation-bar a.shopping-cart i {
+		font-size: 30px;
+		color: rgb(25,55,97);
+		vertical-align: middle;
+	}
+	.navigation-bar img.logo {
+		float: none;
+	}
+	.navigation-bar a.active .underline, .navigation-bar a.hover .underline,
+		.navigation-bar a.inactive .underline {
+			display: none;	
+	}
+}
+
+/* Picture */
+.pic {
+	width: 100%;
+	position: relative;
+}
+
+/* Picture 1 */
+#pic1 {
+}
+#pic1 img {
+	width: 100%;
+}
+#pic1 .text {
+	color: rgb(255,255,255);
+	font-family: "BCCartelDeux";
+	font-size: 4.1vw;
+	position: absolute;
+	width: 100%;
+	top: 40%;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	opacity: 0;
+	transition: all 1s ease;
+}
+#pic1 .text.show {
+	top: 35%;
+	opacity: 1;
+}
+
+/* Picture 2 */
+#pic2 {
+}
+#pic2 img {
+	width: 100%;
+}
+#pic2 .text-1 {
+	font-family: "BCCartelDeux";
+	font-size: 7.8vw;
+	color: rgb(255,255,255);
+	width: 100%;
+	position: absolute;
+	text-align: center;
+	top: 35%;
+	opacity: 0;
+	transition: all 1s ease;
+}
+#pic2 .text-1.show {
+	top: 30%;
+	opacity: 1;
+}
+#pic2 .link {
+	width: 100%;
+	position: absolute;
+	display: flex!important;
+	justify-content: center;
+	top: 60%;
+	opacity: 0;
+	transition: all 1s ease;
+}
+#pic2 .link.show {
+	top: 55%;
+	opacity: 1;
+}
+#pic2 a, #pic2 a:hover, #pic2 a:focus {
+	text-decoration: none;
+	outline: none;
+}
+#pic2 a button {
+	background: transparent;
+	padding: 1vw 1vw;
+	font-family: "SF Text Bold";
+	font-size: 1.8vw;
+	color: rgb(255,255,255);
+    border: 2px solid rgb(255,255,255);
+	text-shadow: 0.5px 0.5px #111;
+}
+
+/* Picture 3 */
+#pic3 {
+}
+#pic3 img {
+	width: 100%;
+}
+#pic3 .text-1 {
+	font-family: "BCCartelDeux";
+	font-size: 7.3vw;
+	text-align: center;
+	color: rgb(255,255,255);
+	width: 100%;
+	position: absolute;
+	top: 35%;
+	opacity: 0;
+	transition: all 1s ease;
+}
+#pic3 .text-1.show {
+	top: 30%;
+	opacity: 1;
+}
+#pic3 .link {
+	width: 100%;
+	position: absolute;
+	top: 60%;
+	display: flex!important;
+	justify-content: center;
+	transition: all 1s ease;
+	opacity: 0;
+}
+#pic3 .link.show {
+	opacity: 1;
+	top: 55%;
+}
+#pic3 a, #pic3 a:hover, #pic3 a:focus {
+	text-decoration: none;
+	outline: none;
+}
+#pic3 a button {
+	background: transparent;
+	padding: 1vw 1vw;
+	font-family: "SF Text Bold";
+	font-size: 1.8vw;
+	color: rgb(255,255,255);
+    border: 2px solid rgb(255,255,255);
+	text-shadow: 0.5px 0.5px #111;
+}
+
+/* About us */
+.about {
+	position: relative;
+	background-color: rgb(104,147,190);
+	height: 55vw;
+}
+.about .header_1 {
+	font-family: "BCCartelDeux";
+	font-size: 5.5vw;
+	text-align: center;
+	color: rgb(255,255,255);
+	width: 100%;
+	overflow: hidden;
+	position: absolute;
+	top: 30%;
+	transition: all 1s ease;
+	opacity: 0;
+}
+.about .header_1.show {
+	top: 25%;
+	opacity: 1;
+}
+.about .underline {
+	position: absolute;
+    top: 45%;
+    width: 10%;
+    margin: 0 45%;
+    height: 3px;
+    background-color: rgb(255,255,255);
+    transition: all 1s ease;
+    opacity: 0;
+}
+.about .underline.show {
+	top: 40%;
+	opacity: 1;
+}
+.about .content {
+	font-family: "SF Text Regular";
+	position: absolute;
+    top: 50%;
+    color: rgb(255,255,255);
+    text-align: center;
+    width: 74%;
+    left: 13%;
+    font-size: 1.59vw;
+    transition: all 1s ease;
+    opacity: 0;
+}
+.about .content.show {
+	opacity: 1;
+	top: 45%;
+}
+
+/*Get in touch*/
+.get-in-touch {
+	position: relative;
+	margin-top: 4%;
+	margin-left: 3%;
+	margin-right: 3%;
+	background-color: rgb(255,255,255);
+	padding-left: 7%;
+	padding-right: 7%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+.get-in-touch .title {
+	position: relative;
+	top: 0px;
+	text-align: center;
+	font-family: "BCBroadsheet Regular";
+	font-size: 5vw;
+	color: rgb(25,55,97);
+	margin-bottom: 4%;
+}
+.get-in-touch form label {
+	font: 1.7vw "BCBroadsheet Regular";
+	color: rgb(216,122,37);
+}
+.get-in-touch form {
+	padding: 0;
+	/*border: 1px solid black;*/
+}
+.get-in-touch form.responsive {
+	display: none;
+}
+.get-in-touch form ul {
+	width: 100%;
+	padding: 0;
+	/*border: 1px solid black;*/
+	display: inline-block;
+	margin: 0;
+}
+.get-in-touch form .input {
+	width: 50%;
+	position: relative;
+	/*border: 1px solid black;*/
+	padding: 0px;
+	display: inline-block;
+	margin-bottom: 2%;
+}
+.get-in-touch form .left {
+	float: left;
+}
+.get-in-touch form .right {
+	float: right;
+}
+.get-in-touch input {
+	border: 0px;
+	width: 95%;
+	line-height: 36px;
+	font-size: 16px;
+}
+.get-in-touch input:focus {
+	border: 0px;
+	outline: none;
+}
+.get-in-touch textarea {
+	width: 100%;
+	border: 0px;
+	padding: 0;
+	height: 161px;
+	line-height: 40px;
+	font-size: 16px;
+	resize: none;
+	z-index: 1;
+	background-attachment: local;
+    background:
+        repeating-linear-gradient(#fff, #fff 38px, rgb(216,122,37) 38px, #fff 40px, rgb(216,122,37) 40px);
+	overflow: hidden;
+	resize: none;
+}
+.get-in-touch textarea:focus {
+	border: 0px;
+	outline: none;
+	box-shadow: none;
+}
+.get-in-touch form .input .line {
+	border: 0.5px solid rgb(216,122,37);
+    width: 95%;
+}
+.get-in-touch form .submit {
+	display: inline-block;
+	width: 100%;
+	text-align: right;
+}
+.get-in-touch form button {
+	position: relative;
+	display: block;
+	background-color: rgb(216,122,37);
+	color: rgb(255,255,255);
+	font: 25px "BCBroadsheet Regular";
+	font-weight: 100;
+	border: 0px;
+	border-radius: 5px;
+	padding-right: 4%;
+	padding-left: 4%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	line-height: 34px;
+	vertical-align: middle;
+	cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+	.get-in-touch {
+		margin-top: 6%;
+		margin-left: 4%;
+		margin-right: 4%;
+	   	padding-bottom: 5%;
+	}
+	.get-in-touch .title {
+		font-size: 40px;
+		margin-bottom: 6%;
+	}
+	.get-in-touch form {
+		display: none;
+	}
+	.get-in-touch form.responsive {
+		display: block;
+	}
+	.get-in-touch form label {
+		font-size: 16px;
+	}
+	.get-in-touch form .input {
+		width: 100%;
+		display: block;
+		margin-bottom: 4%;
+	}
+	.get-in-touch form .left {
+		float: none;
+	}
+	.get-in-touch form .right {
+		float: none;
+	}
+	.get-in-touch input {
+		width: 100%;
+		font-size: 14px;
+	}
+	.get-in-touch textarea {
+		width: 100%;
+		border: 0px;
+		height: 119px;
+		line-height: 30px;
+		font-size: 14px;
+		resize: none;
+		outline: none;
+		padding: 0;
+		z-index: 1;
+		background-attachment: local;
+	    background:
+	        repeating-linear-gradient(white, white 28px, rgb(216,122,37) 28px, white 30px, rgb(216,122,37) 30px);
+		overflow: hidden;
+		resize: none;
+	}
+	.get-in-touch form .input .line {
+		border: 0.5px solid rgb(216,122,37);
+	    width: 100%;
+	}
+	.get-in-touch form button {
+		display: block;
+		font-size: 16px;
+		padding-right: 12%;
+		padding-left: 12%;
+		line-height: 24px;
+		margin: 0 auto;
+	}
+}
+/*Footer*/
+.footer {
+	position: relative;
+	background-color: rgb(24,24,24);
+	color: rgb(255,255,255);
+	padding-left: 10%;
+	padding-right: 10%;
+	padding-top: 3%;
+	padding-bottom: 3%;
+}
+.footer .contact {
+	width: 30%;
+	text-align: left;
+	display: inline-block;
+}
+.footer .contact #contact-us {
+	font: 1.4vw "SF Display Medium";
+	margin-bottom: .4vw;
+}
+.footer .contact #tel {
+	font: 1.1vw "SF Display Medium";
+}
+.footer .contact #cell {
+	font: 1.1vw "SF Display Medium";
+}
+.footer .contact #email {
+	font: 1.1vw "SF Display Medium";
+}
+.footer .address {
+	float: right;
+	display: inline-block;
+	text-align: center;
+}
+.footer .address #address {
+	font: 1.25vw "SF Text Regular";
+}
+.footer .fb {
+	display: none;
+}
+.footer .address #fb {
+	font: 1vw "SF Text Regular";
+	margin: 15px;
+}
+.footer .address #fb:after {
+	display: block;
+	content: "";
+	clear: both;
+}
+.footer .address #fb img {
+	width: 2.2vw;
+	height: 2.2vw;
+}
+.footer .address #company {
+	font: 1.14vw "SF Text Bold";
+}
+.footer .copyright {
+	margin-top: 3%;
+	margin-bottom: 0;
+	text-align: center;
+	font: .9vw "SF Display Light";
+}
+@media screen and (max-width: 768px) {
+	.footer {
+		padding-top: 10%;
+		padding-bottom: 10%;
+	}
+	.footer .contact {
+		width: 100%;
+		text-align: center;
+		padding-top: 12px;
+	}
+	.footer .contact #contact-us {
+		font-size: 12px;
+		margin-bottom: 0px;
+	}
+	.footer .contact #tel {
+		font-size: 11px;
+	}
+	.footer .contact #cell {
+		font-size: 11px;
+	}
+	.footer .contact #email {
+		font-size: 11px;
+	}
+	.footer .address {
+		position: relative;
+		width: 100%;
+		text-align: center;
+	}
+	.footer .address #address {
+		font-size: 11px;
+	}
+	.footer .fb {
+		display: block;
+		font: 12px "SF Text Regular";
+		text-align: center;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.footer .fb:after {
+		display: block;
+		content: "";
+		clear: both;
+	}
+	.footer .fb img {
+		width: 24px;
+		height: 24px;
+	}
+	.footer .address #fb {
+		display: none;
+	}
+	.footer .address #company {
+		font-size: 11px;
+	}
+}

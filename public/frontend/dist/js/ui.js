@@ -1,43 +1,30 @@
 $(document).ready(() => {
 	let $navBar = $('.navigation-bar'); // nav bar
-	let sticky = $navBar.offset().top; // nav bar's offset top
-	let posX = 0;
-
-	// Responsive
-	$(window).resize(() => {
-		let w = $(window).width(); // window width
-
-		if (w <= 751) {
-			// Update sticky
-			sticky = 36;
-		} else if (w <= 1343) {
-			sticky = 48;
-		} else {
-			sticky = 60;
-		}
-		
-	});
 
 	// Sticky navbar
-	$(window).scroll(function() {
-		let $cart = $('.navigation-bar a.shopping-cart'); // shoping cart
-		let $icon = $('.navigation-bar .icon'); // menu icon
+	function stickyNavbar() {
+		// Header height
+		let sticky = $('.header').height();
 
-		// Offset y navbar
-		if (window.pageYOffset >= sticky) {
+		// Offset y
+		let y = $(window).scrollTop();
+
+		if (y >= sticky) {
 			$navBar.removeClass('relative');
 			$navBar.addClass('sticky');
 		} else {
 			$navBar.removeClass('sticky');
 			$navBar.addClass('relative');
 		}
+	}
 
-		// Offset x navbar
-		let curPosX = $(document).scrollLeft();
+	$(window).bind('scroll', stickyNavbar);
 
-		$('.sticky').css('left', `-${curPosX}px`)
-		// $('.sticky').css('position', `fixed`)
-	});
+	// Anchor offset
+	window.onhashchange = function() {
+		console.log('hashchange')
+		window.scrollBy(0, - $('.navigation-bar').height());
+	};
 
 	// Toggle navbar
 	$('.navigation-bar .icon').click(function () {
@@ -74,39 +61,34 @@ $(document).ready(() => {
 		}
 	});
 
-	// Mouse over tour item
-	$('.contents .tours .list ul.list-row li.list-item').mouseover(function() {
-		// Width
-		$(this).width($(this).width() + 10);
+	// Scroll fade-in
+	let pic1Y = $('#pic1').offset().top - $('.navigation-bar').height();
+	let pic2Y = $('#pic2').offset().top - $('.navigation-bar').height();
+	let pic3Y = $('#pic3').offset().top - $('.navigation-bar').height();
+	let aboutY = $('.about').offset().top - $('.navigation-bar').height();
 
-		// Padding
-		let padding = parseInt($(this).css('padding')) + 5;
-		$(this).css('padding', `${padding}px`);
-		// Margin
-		let margin = parseInt($(this).css('margin-top')) - 3;
-		$(this).css('margin-top', `${margin}px`);
+	$(document).scroll(function() {
+		let y = $(document).scrollTop();
+
+		if (y >= pic1Y && y < pic2Y) {
+			$('#pic1 .text').addClass('show');
+		}
+
+		if (y >= pic2Y && y < pic3Y) {
+			$('#pic2 .text-1').addClass('show');
+			$('#pic2 .link').addClass('show');
+		}
+
+		if (y >= pic3Y && y < aboutY) {
+			$('#pic3 .text-1').addClass('show');
+			$('#pic3 .link').addClass('show');
+		}
+
+		if (y >= aboutY) {
+			$('.about .header_1').addClass('show');
+			$('.about .underline').addClass('show');
+			$('.about .content').addClass('show');
+		}
 	});
 
-	// Mouse out from tour item
-	$('.contents .tours .list ul.list-row li.list-item').mouseout(function() {
-		// Width
-		$(this).width($(this).width() - 10);
-
-		// Padding
-		let padding = parseInt($(this).css('padding')) - 5;
-		$(this).css('padding', `${padding}px`);
-		// Margin
-		let margin = parseInt($(this).css('margin-top')) + 3;
-		$(this).css('margin-top', `${margin}px`);
-	});
-
-	// Close tour detail
-	$('.tour-detail .close-detail').click(function() {
-		$('.tour-detail').hide();
-		$('.tour-detail-background').hide();
-	});
-
-	// Min date time
-	let date = new Date().toISOString().substr(0, 10);
-	$('.tour-detail .book .booking form .input.date input').attr('min', date);
 });

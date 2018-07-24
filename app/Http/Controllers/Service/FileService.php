@@ -43,6 +43,21 @@ class FileService extends BaseService {
 
     }
 
+    public function map(Request $request)
+    {
+        $path = $request->input('path', '/images/');
+        $this->validate($request, [
+            'images.*' => 'required|image|mimes:jpeg,png,jpg,svg|max:2048',
+        ]);
+        $allImage = $request->file('images');
+        $data = [];
+        foreach ($allImage as $imageObj) {
+            $data[] = $this->fileUpload($imageObj, $path,'bus-map.png');
+        }
+        return $this->response($data);
+
+    }
+
     public function files(Request $request)
     {
         $allFiles = $request->file('files');

@@ -29,7 +29,7 @@ window.tickets = [{
 }];
 
 // window.tickets.push({
-// 	image: 'frontend/dist/img/tour-image.png',
+// 	image: '../dist/img/tour-image.png',
 // 	title: 'DELUXE PACKAGE',
 // 	descriptions: [
 // 		'24h BonBon City Tour Bus',
@@ -66,23 +66,23 @@ window.tickets.push({
 window.attractions = [{
 	image: 'frontend/dist/img/bus-attraction.png',
 	title: "HANOI'S SECRET",
-	content: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea '
+	content: 'Nam ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea '
 }, {
 	image: 'frontend/dist/img/bus-attraction.png',
 	title: "HANOI'S SECRET",
-	content: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea '
+	content: '"Linh Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea '
 }]
 
 window.attractions.push({
 	image: 'frontend/dist/img/bus-attraction.png',
 	title: "HANOI'S SECRET",
-	content: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea '
+	content: '"123 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea '
 });
 
 window.attractions.push({
 	image: 'frontend/dist/img/bus-attraction.png',
 	title: "HANOI'S SECRET",
-	content: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea '
+	content: '"vfg Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea '
 });
 
 window.attractionId = 0;

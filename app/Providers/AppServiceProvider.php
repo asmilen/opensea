@@ -4,11 +4,12 @@ namespace App\Providers;
 
 
 use App\Repositories\ArticleRepository;
+use App\Repositories\AttractionRepository;
 use App\Repositories\CategoryRepository;
 use App\Repositories\CollectionRepository;
 use App\Repositories\ContactRepository;
+use App\Repositories\CustomerMessageRepository;
 use App\Repositories\DealRepository;
-use App\Repositories\Network\LinkGeneratorRepository;
 use App\Repositories\PaymentRepository;
 use App\Repositories\RedisRepository;
 use App\Repositories\SettingRepository;
@@ -73,8 +74,14 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton('tourService', function(){
             return new TourRepository();
         });
+        $this->app->singleton('attractionService', function(){
+            return new AttractionRepository();
+        });
         $this->app->singleton('tourRequestService', function(){
             return new TourRequestRepository();
+        });
+        $this->app->singleton('customerMessageService', function(){
+            return new CustomerMessageRepository();
         });
         $this->app->singleton('requestService', function(){
             return new RequestRepository();

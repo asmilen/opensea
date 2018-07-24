@@ -23,6 +23,7 @@ Route::get('/searchStore', 'Service\SearchService@searchStore');
 Route::get('/searchDeal', 'Service\SearchService@searchDeal');
 Route::get('/init', 'Service\ElasticSearchService@init');
 Route::get('frontend/tour','Frontend\TourController@index');
+Route::get('frontend/attraction','Frontend\IndexController@attraction');
 
 Route::middleware(['auth:api'])->group(function () {
     Route::get('/me', function (Request $request) {
@@ -47,10 +48,10 @@ Route::middleware(['auth:api'])->group(function () {
 
     Route::group(['namespace' => 'Service'], function () {
 //deal
-
-        
-
-
+        Route::post('upload/map', [
+            'as' => 'upload.map',
+            'uses' => 'FileService@map',
+        ]);
         Route::post('upload/images', [
             'as' => 'upload.images',
             'uses' => 'FileService@images',
@@ -114,12 +115,25 @@ Route::middleware(['auth:api'])->group(function () {
     Route::post('/tour/update', 'Service\TourService@update');
     Route::post('/tour/delete', 'Service\TourService@delete');
 
+    //attraction
+    Route::get('/attraction/index', 'Service\AttractionService@index');
+    Route::post('/attraction/create', 'Service\AttractionService@create');
+    Route::post('/attraction/update', 'Service\AttractionService@update');
+    Route::post('/attraction/delete', 'Service\AttractionService@delete');
+
     //tour request
     Route::get('/tour-request/index', 'Service\TourRequestService@index');
     Route::get('/tour-request/{id}/detail', 'Service\TourRequestService@detail');
     Route::post('/tour-request/create', 'Service\TourRequestService@create');
     Route::post('/tour-request/update', 'Service\TourRequestService@update');
     Route::post('/tour-request/delete', 'Service\TourRequestService@delete');
+
+    //tour request
+    Route::get('/customer-message/index', 'Service\CustomerMessageService@index');
+    Route::get('/customer-message/{id}/detail', 'Service\CustomerMessageService@detail');
+    Route::post('/customer-message/create', 'Service\CustomerMessageService@create');
+    Route::post('/customer-message/update', 'Service\CustomerMessageService@update');
+    Route::post('/customer-message/delete', 'Service\CustomerMessageService@delete');
 
     // request
     Route::get('/request/index', 'Service\RequestService@index');

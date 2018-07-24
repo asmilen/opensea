@@ -87,8 +87,9 @@
 	}
 	.navigation-bar a.shopping-cart span.amount {
 		position: relative;
-		color: rgb(25,55,97);
-		top: 9px;
+	    color: rgb(25,55,97);
+	    top: 9px;
+	    font-size: 10px;
 	}
 	.navigation-bar a.shopping-cart i {
 		font-size: 30px;
@@ -109,9 +110,15 @@
 	}
 
 	/* Tours */
+	.contents .tours .title {
+		top: 30px;
+	}
 	.contents .tours .title .dash {
-		background-image: linear-gradient(to right, rgba(65, 83, 134, 1) 7px, white 7px);
-    	background-size: 14px 2px;
+	    background-image: linear-gradient(to right, rgba(65, 83, 134, 1) 2vw, white 2vw);
+	    background-position: top;
+	    background-size: 3vw .5vw;
+	    background-repeat: repeat-x;
+	    height: 1vw;
 	}
 	.contents .tours .title .text {
 		font-size: 45px;
@@ -131,6 +138,7 @@
 		height: 94vw;
 		min-height: none;
 		display: none;
+		padding: 1vw;
 	}
 	.contents .tours .list .list-row .list-item.active {
 		display: block;
@@ -152,11 +160,10 @@
 		line-height: 24px;
 	    height: 56%;
 	    overflow-y: hidden;
-	    /* border: 1px solid rgb(25,55,97); */
 	    vertical-align: center;
-	    font-size: 18px;
+	    font-size: 1.2vw;
 	    font-family: "BCCartelDeux";
-	    padding: 8px 8px 6px 8px;
+	    padding: 2vw 2vw 1.6vw 2vw;
 	}
 	.contents .tours .list .tour-info .name {
 	   	line-height: 5vw;
@@ -172,8 +179,8 @@
 
 	}
 	.contents .tours .list .tour-info ul.descriptions li {
-		font-size: 2.8vw;
-    	line-height: 4vw;
+		font-size: 12px;
+		line-height: 16px;
 	}
 	.contents .tours .list .left {
 		left: 20%;
@@ -284,8 +291,11 @@
 		padding-bottom: 50px;
 	}
 	.contents .testinomial .title .dash {
-		background-image: linear-gradient(to right, rgba(65, 83, 134, 1) 7px, white 7px);
-    	background-size: 14px 2px;
+	    background-image: linear-gradient(to right, rgba(65, 83, 134, 1) 2vw, white 2vw);
+	    background-position: top;
+	    background-size: 3vw .5vw;
+	    background-repeat: repeat-x;
+	    height: 1vw;
 	}
 	.contents .testinomial .title .text {
 		font-size: 45px;
@@ -351,6 +361,9 @@
 		padding-top: 20px;
 		padding-bottom: 10px;
 		color: rgb(216,122,37);
+	}
+	.contents .testinomial-info .description {
+		font-size: 12px;
 	}
 	.contents .testinomial .list .prev {
 		display: block;
@@ -526,6 +539,7 @@
 		width: 90%;
 		padding: 5%;
 		left: 5%;
+		margin: 0;
 	}
 	.tour-detail .full-info {
 		width: 100%;
@@ -581,6 +595,6 @@
 	    top: 20%;
 	    padding-top: 40%;
 	    padding-bottom: 40%;
-	    padding-left: 30px;
+	    /*padding-left: 30px;*/
 	}
 }

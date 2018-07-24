@@ -13,17 +13,6 @@
 		padding-left: 0;
 	}
 
-
-	/* Sticky navbar */
-	.sticky {
-		position: fixed;
-		top: 0;
-		width: 100%;
-	}
-	.sticky + .contents {
-		padding-top: 60px;
-	}
-
 	/* Navbar */
 	.navigation-bar {
 		width: 100%;
@@ -87,8 +76,9 @@
 	}
 	.navigation-bar a.shopping-cart span.amount {
 		position: relative;
-		color: rgb(25,55,97);
-		top: 9px;
+	    color: rgb(25,55,97);
+	    top: 9px;
+	    font-size: 10px;
 	}
 	.navigation-bar a.shopping-cart i {
 		font-size: 30px;
@@ -162,11 +152,11 @@
 		margin: .5% auto;
 	}
 	.contents .tickets .list .list-item .info .descriptions .desc {
-		font-size: 2.7vw;
-		line-height: 4vw;
+	    font-size: 2.7vw;
+	    line-height: 5vw;
 	}
 	.contents .tickets .list .list-item .info .prices .price .type {
-		font-size: 2.3vw;
+		font-size: 2vw;
 	}
 	.contents .tickets .list .list-item .info .prices .price .number {
 		top: -.8vw;
@@ -251,8 +241,8 @@
 		padding: 1vw 0;
 	}
 	.contents .highlights .grid .col .panel .right .abstract {
-		font-size: 2.6vw;
-		line-height: 2.8vw;
+		font-size: 2.8vw;
+		line-height: 3.4vw;
 	}
 	.contents .highlights .grid .col .panel .arrow {
 		top: 1vw;
@@ -334,8 +324,9 @@
 		padding-top: 2vw;
 	}
 	.contents .attractions .list .list-item .info .description {
-		font-size: 2.7vw;
-		padding: 1vw;
+		font-size: 11.5px;
+	    line-height: 3.5vw;
+	    padding: 1vw;
 	}
 	.contents .attractions .list .list-item .see-more button {
 		font-size: 2.7vw;
@@ -575,5 +566,67 @@
 	}
 	.footer .address #company {
 		font-size: 11px;
+	}
+
+	/* Attraction popup */
+	.attraction-popup {
+		width: 80%;
+		left: 10%;
+	}
+	.attraction-popup .list {
+		width: 100%;
+		padding: 5% 4%;
+		background-image: url("../../dist/img/bus_attraction_popup_bg.png");
+	}
+	.attraction-popup .list .inner {
+	}
+	.attraction-popup .list .inner .item {
+	}
+	.attraction-popup .list .inner .item .image {
+	}
+	.attraction-popup .list .inner .item .image img {
+		width: 100%;
+	}
+	.attraction-popup .list .inner .item .title {
+		padding: 3% 0;
+	}
+	.attraction-popup .list .inner .item .title .header_1 {
+		font-family: "BCCartelDeux";
+		font-size: 3.5vw;
+		color: rgb(213,122,52);
+		text-align: center;
+		margin: 0 0 2% 0;
+	}
+	.attraction-popup .list .inner .item .title .underline {
+		background-color: rgb(213,122,52);
+		height: 1px;
+		width: 30%;
+		margin: 0 auto;
+	}
+	.attraction-popup .list .inner .item .description {
+		font-family: "SF Text Regular";
+		font-size: 2vw;
+		color: rgb(36,72,153);
+	}
+	.attraction-popup .list .carousel-control {
+		background: none;
+		position: absolute;
+		padding: 45% 0 0 0;
+	}
+	.attraction-popup .list .carousel-control.left {
+		left: -15%;
+		font-size: 6vw;
+	}
+	.attraction-popup .list .carousel-control.right {
+		right: -15%;
+		font-size: 6vw;
+	}
+	.attraction-popup .close {
+		position: absolute;
+		top: 0;
+		right: .5vw;
+		font-size: 4vw;
+		color: rgb(36,72,153);
+		opacity: 1;
 	}
 }
