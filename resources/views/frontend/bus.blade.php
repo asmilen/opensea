@@ -77,7 +77,7 @@
             <div class="icon-line"></div>
             <div class="icon-line"></div>
         </div>
-        <a class="item" href="frontend/index.html">
+        <a class="item" href="/">
             HOME
             <div class="underline"></div>
         </a>
@@ -85,7 +85,7 @@
             HOP ON HOP OFF
             <div class="underline"></div>
         </a>
-        <a class="item" href="tours.html">
+        <a class="item" href="/tour">
             HANOI RETREAT
             <div class="underline"></div>
         </a>
