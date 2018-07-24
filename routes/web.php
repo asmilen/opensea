@@ -14,6 +14,7 @@
 Route::get('/', 'Frontend\IndexController@index')->name('frontend::index');
 Route::get('/bus', 'Frontend\IndexController@bus')->name('frontend::bus');
 Route::get('/tour', 'Frontend\IndexController@tour')->name('frontend::tour');
+Route::get('/faq', 'Frontend\IndexController@faq')->name('frontend::faq');
 
 Route::post('/tour-request', 'Frontend\TourController@sendRequest')->name('send-tour-request');
 Route::post('/customer-message', 'Frontend\IndexController@customerMessage')->name('send-customer-message');

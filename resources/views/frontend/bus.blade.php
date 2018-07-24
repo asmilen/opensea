@@ -18,6 +18,7 @@
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Web Starter Kit">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png"> -->
 
     <!-- Add to homescreen for Safari on iOS -->
@@ -1022,6 +1023,7 @@
 <!-- /.ticket-popup -->
 
 <!-- Content -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="frontend/dist/js/bus_data.js"></script>
 <script src="frontend/dist/js/bus.js"></script>
 <!-- UI -->

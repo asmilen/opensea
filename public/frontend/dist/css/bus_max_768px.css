@@ -446,8 +446,8 @@
 	}
 	.contents .testinomial .list .carousel-indicators li.active {
 		width: 15px;
-	  height: 15px;
-	  background-color: rgb(73,62,34);
+		height: 15px;
+		background-color: rgb(73,62,34);
 	}
 
 	/* Get in touch */

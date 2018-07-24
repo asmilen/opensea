@@ -25,6 +25,11 @@ class IndexController extends Controller
         return view('frontend.tour');
     }
 
+    public function faq()
+    {
+        return view('frontend.faq');
+    }
+
     public function customerMessage(Request $request)
     {
         $retval = [
