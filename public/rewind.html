@@ -13,7 +13,9 @@
 	<link rel="apple-touch-icon" href="./images/apple-touch-icon.png">
 
   <!-- JS-->
+  <script src="./js/lang.js"></script>
   <script src="./js/rewind.js"></script>
+  <script src="./js/rewind_data.js"></script>
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -67,22 +69,22 @@
       <div class="navbar-collapse collapse navbar-dark" id="navBar" style="">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="home.html">HOME</a>
+            <a class="nav-link" id="home" href="home.html">HOME</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">ABOUT US</a>
+            <a class="nav-link" id="aboutUs" href="#">ABOUT US</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="bonbon.html">BONBON CITY TOUR</a>
+            <a class="nav-link" id="bonbon" href="bonbon.html">BONBON CITY TOUR</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#">VIETNAM REWIND</a>
+            <a class="nav-link" id="rewind" href="#">VIETNAM REWIND</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">FAQs</a>
+            <a class="nav-link" id="faq" href="#">FAQs</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">CART <span class="amount">(10)</span></a>
+            <a class="nav-link" id="cart" href="#"><span class="text">CART</span> <span class="amount">(10)</span></a>
           </li>
         </ul>
       </div>
@@ -126,7 +128,7 @@
       <div class="container">
         <div class="header-1">Our journeys</div>
         <div class="list">
-          <div class="journey">
+          <!-- <div class="journey">
             <div class="row">
               <div class="col-md-6">
                 <div class="text">
@@ -319,7 +321,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>  
       </div>
     </section>

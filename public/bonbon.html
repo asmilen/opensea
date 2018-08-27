@@ -13,7 +13,9 @@
 	<link rel="apple-touch-icon" href="./images/apple-touch-icon.png">
 
   <!-- JS-->
+  <script src="./js/lang.js"></script>
   <script src="./js/bonbon.js"></script>
+  <script src="./js/bonbon_data.js"></script>
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -67,22 +69,22 @@
       <div class="navbar-collapse collapse navbar-light" id="navBar" style="">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="home.html">HOME</a>
+            <a class="nav-link" id="home" href="home.html">HOME</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">ABOUT US</a>
+            <a class="nav-link" id="aboutUs" href="#">ABOUT US</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#">BONBON CITY TOUR</a>
+            <a class="nav-link" id="bonbon" href="#">BONBON CITY TOUR</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="rewind.html">VIETNAM REWIND</a>
+            <a class="nav-link" id="rewind" href="rewind.html">VIETNAM REWIND</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">FAQs</a>
+            <a class="nav-link" id="faq" href="#">FAQs</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">CART <span class="amount">(10)</span></a>
+            <a class="nav-link" id="cart" href="#"><span class="text">CART</span> <span class="amount">(10)</span></a>
           </li>
         </ul>
       </div>
@@ -129,320 +131,7 @@
         <div class="header-2">More than a ticket, your entrance to our very own Hanoi</div>
         <div class="header-3">SAVE 10% WHEN PRE-BOOK YOUR TICKET ONLINE</div>
         <div class="list">
-          <div class="carousel slide" id="packages" data-ride="carousel" data-interval="false">
-            <div class="inner carousel-inner">
-              <div class="carousel-item active">
-                <div class="row">
-                  <div class="col-lg-4">
-                    <div class="package">
-                      <div class="name">CLASSIC</div>
-                      <div class="content">
-                        <div class="empty"></div>
-                        <div class="descriptions">
-                          <ul>
-                            <li>24 hours BonBon City Tour Bus</li>
-                            <li>10% off Hanoi Rewind tours</li>
-                            <li>03 exclusive partner's coupons</li>
-                          </ul>
-                        </div>
-                        <div class="prices">
-                          <div class="row">
-                            <div class="col-4">
-                              <div class="price">
-                                <div class="type">CHILD</div>
-                                <div class="row">
-                                  <div class="col-2 offset-1">
-                                    <div class="currency">VND</div>
-                                  </div>
-                                  <div class="col-9">
-                                    <div class="number">250,000</div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-4">
-                              <div class="price" id="adult">
-                                <div class="type">ADULT</div>
-                                <div class="row">
-                                  <div class="col-2 offset-1">
-                                    <div class="currency">VND</div>
-                                  </div>
-                                  <div class="col-9">
-                                    <div class="number">250,000</div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-4">
-                              <div class="price">
-                                <div class="type">FAMILY</div>
-                                <div class="row">
-                                  <div class="col-2 offset-1">
-                                    <div class="currency">VND</div>
-                                  </div>
-                                  <div class="col-9">
-                                    <div class="number">250,000</div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="book-now">BOOK NOW</div>
-                      </div>
-                      <div class="footer"></div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4">
-                    <div class="package">
-                      <div class="name">PREMIUM</div>
-                      <div class="content">
-                        <div class="empty"></div>
-                        <div class="descriptions">
-                          <ul>
-                            <li>24 hours BonBon City Tour Bus</li>
-                            <li>10% off Hanoi Rewind tours</li>
-                            <li>03 exclusive partner's coupons</li>
-                          </ul>
-                        </div>
-                        <div class="prices">
-                          <div class="row">
-                            <div class="col-4">
-                              <div class="price">
-                                <div class="type">CHILD</div>
-                                <div class="row">
-                                  <div class="col-2 offset-1">
-                                    <div class="currency">VND</div>
-                                  </div>
-                                  <div class="col-9">
-                                    <div class="number">250,000</div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-4">
-                              <div class="price" id="adult">
-                                <div class="type">ADULT</div>
-                                <div class="row">
-                                  <div class="col-2 offset-1">
-                                    <div class="currency">VND</div>
-                                  </div>
-                                  <div class="col-9">
-                                    <div class="number">250,000</div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-4">
-                              <div class="price">
-                                <div class="type">FAMILY</div>
-                                <div class="row">
-                                  <div class="col-2 offset-1">
-                                    <div class="currency">VND</div>
-                                  </div>
-                                  <div class="col-9">
-                                    <div class="number">250,000</div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="book-now">BOOK NOW</div>
-                      </div>
-                      <div class="footer"></div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4">
-                    <div class="package">
-                      <div class="name">DELUXE</div>
-                      <div class="content">
-                        <div class="empty"></div>
-                        <div class="descriptions">
-                          <ul>
-                            <li>24 hours BonBon City Tour Bus</li>
-                            <li>10% off Hanoi Rewind tours</li>
-                            <li>03 exclusive partner's coupons</li>
-                          </ul>
-                        </div>
-                        <div class="prices">
-                          <div class="row">
-                            <div class="col-4">
-                              <div class="price">
-                                <div class="type">CHILD</div>
-                                <div class="row">
-                                  <div class="col-2 offset-1">
-                                    <div class="currency">VND</div>
-                                  </div>
-                                  <div class="col-9">
-                                    <div class="number">250,000</div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-4">
-                              <div class="price" id="adult">
-                                <div class="type">ADULT</div>
-                                <div class="row">
-                                  <div class="col-2 offset-1">
-                                    <div class="currency">VND</div>
-                                  </div>
-                                  <div class="col-9">
-                                    <div class="number">250,000</div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-4">
-                              <div class="price">
-                                <div class="type">FAMILY</div>
-                                <div class="row">
-                                  <div class="col-2 offset-1">
-                                    <div class="currency">VND</div>
-                                  </div>
-                                  <div class="col-9">
-                                    <div class="number">250,000</div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="book-now">BOOK NOW</div>
-                      </div>
-                      <div class="footer"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- <div class="carousel-item">
-                <div class="package">
-                  <div class="name">PREMIUM</div>
-                  <div class="content">
-                    <div class="empty"></div>
-                    <div class="descriptions">
-                      <ul>
-                        <li>24 hours BonBon City Tour Bus</li>
-                        <li>10% off Hanoi Rewind tours</li>
-                        <li>03 exclusive partner's coupons</li>
-                      </ul>
-                    </div>
-                    <div class="prices">
-                      <div class="row">
-                        <div class="col-4">
-                          <div class="price">
-                            <div class="type">CHILD</div>
-                            <div class="row">
-                              <div class="col-2 offset-1">
-                                <div class="currency">VND</div>
-                              </div>
-                              <div class="col-9">
-                                <div class="number">250,000</div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-4">
-                          <div class="price" id="adult">
-                            <div class="type">ADULT</div>
-                            <div class="row">
-                              <div class="col-2 offset-1">
-                                <div class="currency">VND</div>
-                              </div>
-                              <div class="col-9">
-                                <div class="number">250,000</div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-4">
-                          <div class="price">
-                            <div class="type">FAMILY</div>
-                            <div class="row">
-                              <div class="col-2 offset-1">
-                                <div class="currency">VND</div>
-                              </div>
-                              <div class="col-9">
-                                <div class="number">250,000</div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="book-now">BOOK NOW</div>
-                  </div>
-                  <div class="footer"></div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="package">
-                  <div class="name">DELUXE</div>
-                  <div class="content">
-                    <div class="empty"></div>
-                    <div class="descriptions">
-                      <ul>
-                        <li>24 hours BonBon City Tour Bus</li>
-                        <li>10% off Hanoi Rewind tours</li>
-                        <li>03 exclusive partner's coupons</li>
-                      </ul>
-                    </div>
-                    <div class="prices">
-                      <div class="row">
-                        <div class="col-4">
-                          <div class="price">
-                            <div class="type">CHILD</div>
-                            <div class="row">
-                              <div class="col-2 offset-1">
-                                <div class="currency">VND</div>
-                              </div>
-                              <div class="col-9">
-                                <div class="number">250,000</div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-4">
-                          <div class="price" id="adult">
-                            <div class="type">ADULT</div>
-                            <div class="row">
-                              <div class="col-2 offset-1">
-                                <div class="currency">VND</div>
-                              </div>
-                              <div class="col-9">
-                                <div class="number">250,000</div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-4">
-                          <div class="price">
-                            <div class="type">FAMILY</div>
-                            <div class="row">
-                              <div class="col-2 offset-1">
-                                <div class="currency">VND</div>
-                              </div>
-                              <div class="col-9">
-                                <div class="number">250,000</div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="book-now">BOOK NOW</div>
-                  </div>
-                  <div class="footer"></div>
-                </div>
-              </div> -->
-            </div>
-
-            <a class="carousel-control-prev" href="#packages" data-slide="prev">
-              <i class="fa fa-chevron-circle-left"></i>
-            </a>
-            <a class="carousel-control-next" href="#packages" data-slide="next">
-              <i class="fa fa-chevron-circle-right"></i>
-            </a>
+          <div class="owl-carousel owl-theme">
           </div>
         </div>
       </div>
@@ -459,7 +148,7 @@
             <div class="col-lg-6 col-md-12 col-xs-12">
               <div class="row">
                 <div class="col-md-12">
-                  <div class="highlight">
+                  <div class="highlight" id="1">
                     <div class="card">
                       <div class="highlight-header card-header">
                         <div class="row">
@@ -495,7 +184,7 @@
                 </div>
                 
                 <div class="col-md-12">
-                  <div class="highlight">
+                  <div class="highlight" id="2">
                     <div class="card">
                       <div class="highlight-header card-header">
                         <div class="row">
@@ -531,7 +220,7 @@
                 </div>
 
                 <div class="col-md-12">
-                  <div class="highlight">
+                  <div class="highlight" id="3">
                     <div class="card">
                       <div class="highlight-header card-header">
                         <div class="row">
@@ -571,7 +260,7 @@
             <div class="col-lg-6 col-md-12 col-xs-12">
               <div class="row">
                 <div class="col-md-12">
-                  <div class="highlight">
+                  <div class="highlight" id="4">
                     <div class="card">
                       <div class="highlight-header card-header">
                         <div class="row">
@@ -607,7 +296,7 @@
                 </div>
 
                 <div class="col-md-12">
-                  <div class="highlight">
+                  <div class="highlight" id="5">
                     <div class="card">
                       <div class="highlight-header card-header">
                         <div class="row">
@@ -643,7 +332,7 @@
                 </div>
 
                 <div class="col-md-12">
-                  <div class="highlight">
+                  <div class="highlight" id="6">
                     <div class="card">
                       <div class="highlight-header card-header">
                         <div class="row">
@@ -769,7 +458,7 @@
         <div class="header-2">The no-so-little gems of our route. Presenting Hanoi's proudest</div>
         <div class="list">
           <div class="owl-carousel owl-theme">
-            <div class="item">
+            <!-- <div class="item">
               <div class="attraction">
                 <div class="name">TRAN QUOC<br>PAGODA</div>
                 <div class="middle">
@@ -813,7 +502,7 @@
                   <button>MORE</button>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
         <div class="bonbon">
@@ -934,23 +623,4 @@
     </div>
   </footer>
   <!-- /footer -->
-  
-<!--   <script type="text/javascript">
-    $owl = $('.owl-carousel');
-    $owl.owlCarousel({
-      loop: true,
-      nav: true,
-      responsiveClass: true,
-      responsive:{
-        0: {
-          items: 1,
-          center: true
-        },
-        992: {
-          items: 3,
-          center: true
-        }
-      }
-    });
-  </script> -->
 </body>
