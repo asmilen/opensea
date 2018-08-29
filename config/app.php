@@ -183,7 +183,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Barryvdh\Cors\ServiceProvider::class,
         // Barryvdh\Debugbar\ServiceProvider::class,
-
+        Dimsav\Translatable\TranslatableServiceProvider::class,
     ],
 
     /*
