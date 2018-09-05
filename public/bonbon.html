@@ -24,6 +24,178 @@
   <![endif]-->
 </head>
 <body>
+  <!-- Ticket popup -->
+  <div class="modal ticket_popup_modal" tabindex="-1" role="dialog" id="ticket-popup-test">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="ticket-popup">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <form>
+            <div class="row">
+              <div class="col-md-3">
+                <div class="banner">
+                  <div class="title">PREMIUM</div>
+                  <img src="./images/ticket_popup_banner.png">
+                  <div class="filter"></div>
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div class="content">
+                  <h1>SELECT YOUR BONBON TICKET</h1>
+                  <div class="prices">
+                    <div class="row">
+                      <div class="col-md-3 offset-md-3">
+                        <div class="price adult">
+                          <div class="title">Adult</div>
+                          <div class="inner-price">
+                            <span class="currency">VND</span>
+                            <span class="number">680,000</span>
+                          </div>
+                          <div class="save">
+                            <span class="text">save up to</span>
+                            <span class="save-price">
+                              <span class="currency">VND</span><span class="number">325,000</span>
+                            </span>
+                          </div>
+                          <div class="choose-amount">
+                            <span class="sub">-</span>
+                            <span class="amount-number">1</span>
+                            <span class="add">+</span>
+                            <input type="number" name="amountAdult" class="amount-adult" hidden>
+                          </div>
+                        </div>               
+                      </div>
+                      <div class="col-md-3">
+                        <div class="price child">
+                          <div class="title">
+                            Child
+                            <div class="sub-title">(3 - 15 years)</div>
+                          </div>
+                          <div class="inner-price">
+                            <span class="currency">VND</span>
+                            <span class="number">540,000</span>
+                          </div>
+                          <div class="save">
+                            <span class="text">save up to</span>
+                            <span class="save-price">
+                              <span class="currency">VND</span><span class="number">265,000</span>
+                            </span>
+                          </div>
+                          <div class="choose-amount">
+                            <span class="sub">-</span>
+                            <span class="amount-number">1</span>
+                            <span class="add">+</span>
+                            <input type="number" name="amountChild" class="amount-child" hidden>
+                          </div>
+                        </div>  
+                      </div>
+                    </div>  
+                  </div>
+
+                  <div class="descriptions">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="description row">
+                          <div class="icon col-3">
+                            <img src="./images/ticket_popup_desc_ticket.png">
+                          </div>
+                          <div class="text col-9">Use your ticket anyday within 6 months</div>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="description row">
+                          <div class="icon col-3">
+                            <img src="./images/ticket_popup_desc_offer.png">
+                          </div>
+                          <div class="text col-9">Exclusive online offers</div>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="description row">
+                          <div class="icon col-3">
+                            <img src="./images/ticket_popup_desc_safe.png">
+                          </div>
+                          <div class="text col-9">Safe and secure checkout</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="offers row">
+                    <div class="col-md-4">
+                      <div class="title cell">EXCLUSIVE OFFER</div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row cell">
+                        <div class="icon col-3">
+                          <img src="./images/ticket_popup_offer_time.png">
+                        </div>
+                        <div class="text col-9">2-day BonBon City Tour</div>  
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row cell">
+                        <div class="icon col-3">
+                          <img src="./images/ticket_popup_offer_coupon.png">
+                        </div>
+                        <div class="text col-9">A set of partner's coupons</div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row cell">
+                        <div class="icon col-3">
+                          <img src="./images/ticket_popup_offer_voucher.png">
+                        </div>
+                        <div class="text col-9">
+                          <span class="price">
+                            <span class="currency">VND</span>
+                            <span class="number">500,000</span>
+                          </span>
+                          voucher for any Vietnam Rewind tour
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row cell">
+                        <div class="icon col-3">
+                          <img src="./images/ticket_popup_offer_puppet.png">
+                        </div>
+                        <div class="text col-9">01 water puppet show ticket</div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row cell">
+                        <div class="icon col-3">
+                          <img src="./images/ticket_popup_offer_attraction.png">
+                        </div>
+                        <div class="text col-9">All exclusive attractions passes</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="sub-total row">
+                    <div class="title col-md-3 offset-md-3">SUB-TOTAL</div>
+                    <div class="price col-md-3">
+                      <span class="currency">VND</span><span class="number">300,000</span>
+                    </div>
+                  </div>
+
+                  <div class="submit-buttons">
+                    <button type="submit" class="add-to-cart">ADD TO CART</button>
+                    <button type="submit" class="book-now">BOOK NOW</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End ticket popup -->
+  
   <!-- Top background -->
   <div class="top-background">
     <img src="./images/bonbon_banner.png">
@@ -103,7 +275,7 @@
   <!-- Main content -->
   <main>
     <!-- Intro video -->
-    <section class="intro-video">
+    <section class="intro-video" id="intro-video">
       <div class="container">
         <div class="header-1">IT'S TIME TO BONBON</div>
         <div class="row">
@@ -125,13 +297,73 @@
     <!-- /.intro-video -->
 
     <!-- Packages -->
-    <section class="packages">
+    <section class="packages" id="tickets">
       <div class="container">
         <div class="header-1">PACKAGES</div>
         <div class="header-2">More than a ticket, your entrance to our very own Hanoi</div>
         <div class="header-3">SAVE 10% WHEN PRE-BOOK YOUR TICKET ONLINE</div>
         <div class="list">
           <div class="owl-carousel owl-theme">
+            <!-- <div class="item">
+              <div class="package">
+                <div class="name">CLASSIC</div>
+                <div class="content">
+                  <div class="empty"></div>
+                  <div class="descriptions">
+                    <ul>
+                      <li>24 hours BonBon City Tour Bus</li>
+                      <li>10% off Hanoi Rewind tours</li>
+                      <li>03 exclusive partner's coupons</li>
+                    </ul>
+                  </div>
+                  <div class="prices">
+                    <div class="row">
+                      <div class="col-4">
+                        <div class="price">
+                          <div class="type">CHILD</div>
+                          <div class="row">
+                            <div class="col-2 offset-1">
+                              <div class="currency">VND</div>
+                            </div>
+                            <div class="col-9">
+                              <div class="number">250,000</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="price" id="adult">
+                          <div class="type">ADULT</div>
+                          <div class="row">
+                            <div class="col-2 offset-1">
+                              <div class="currency">VND</div>
+                            </div>
+                            <div class="col-9">
+                              <div class="number">250,000</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="price">
+                          <div class="type">FAMILY</div>
+                          <div class="row">
+                            <div class="col-2 offset-1">
+                              <div class="currency">VND</div>
+                            </div>
+                            <div class="col-9">
+                              <div class="number">250,000</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="book-now">BOOK NOW</div>
+                </div>
+                <div class="footer"></div>
+              </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -142,7 +374,7 @@
     <section class="highlights">
       <div class="container">
         <div class="header-1">HIGHLIGHTS</div>
-        <div class="header-2">What's on the way? Are you ready for this?</div>
+        <div class="header-2">The best hop on hop off sightseeing bus tour that showcases the city's world renowned landmarks.</div>
         <div class="list">
           <div class="row">
             <div class="col-lg-6 col-md-12 col-xs-12">
@@ -383,7 +615,7 @@
             <div class="col-lg-3 col-md-12">
               <div class="inner">
                 <div class="step" id="step1">
-                  Find the best ticket for your trip
+                  <span>Find the best ticket for your trip</span>
                   <div class="arrow">
                     <img src="./images/bonbon_howitwork_arrow_right.png">
                   </div>
@@ -394,7 +626,7 @@
             <div class="col-lg-3 col-md-12">
               <div class="inner">
                 <div class="step" id="step2">
-                  Purchase online & get your e-ticket
+                  <span>Purchase online & get your e-ticket</span>
                   <div class="arrow">
                     <img src="./images/bonbon_howitwork_arrow_left.png">
                   </div>
@@ -405,7 +637,7 @@
             <div class="col-lg-3 col-md-12">
               <div class="inner">
                 <div class="step" id="step3">
-                  Exchange your e-tickets to paper tickets on the bus at the 1st stop and make sure to validate them
+                  <span>Exchange your e-tickets to paper tickets on the bus at the 1st stop and make sure to validate them</span>
                   <div class="arrow">
                     <img src="./images/bonbon_howitwork_arrow_right.png">
                   </div>
@@ -416,7 +648,7 @@
             <div class="col-lg-3 col-md-12">
               <div class="inner">
                 <div class="step" id="step4">
-                  Enjoy your trip!
+                  <span>Enjoy your trip!</span>
                 </div>
               </div>
             </div>
@@ -427,7 +659,7 @@
         </div>
       </div>
     </section>
-    <!-- /how-it-work -->
+    <!-- /.how-it-work -->
 
     <!-- Route -->
     <section class="route">
@@ -436,14 +668,14 @@
         <div class="header-2">Bon this way</div>
         <div class="row">
           <div class="col-md-9">
-            <div class="image"><img src="./images/bonbon_map.png"></div>
+            <div class="image"><img src="./images/bonbon_map.jpg"></div>
           </div>
           <div class="col-md-3">
             <div class="text">
               Buses arrive at each stop every 30 minutes, so you can quickly rejoin the tour whenever you like. Our bus route has been carefully planned to ensure that you'll capture all the best sights of Hanoi including Hanoi Opera House, Long Bien Bridge, Van Mieu, Imperial Citadel of Thang Long and more
             </div>
             <div class="download">
-              <button>DOWNLOAD MAP</button>
+              <a href="./images/bonbon_map.jpg" download><button>DOWNLOAD MAP</button></a>
             </div>
           </div>
         </div>
@@ -510,8 +742,7 @@
         </div>
       </div>  
     </section>
-    <!-- /.attractions -->
-
+    
     <!-- Happy customers -->
     <section class="customers">
       <div class="container">
@@ -519,7 +750,57 @@
         <div class="header-2">Why only hear from us? Let's check more from our friends</div>
 
         <div class="list">
-          <div class="row">
+          <div class="owl-carousel owl-theme">
+            <div class="item">
+              <div class="customer" id="1">
+                <div class="image" style="background-image: url('./images/bonbon_customers.png');">
+                </div>
+                <div class="text">
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="customer" id="2">
+                <div class="image" style="background-image: url('./images/bonbon_customers.png');">
+                </div>
+                <div class="text">
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="customer" id="3">
+                <div class="image" style="background-image: url('./images/bonbon_customers.png');">
+                </div>
+                <div class="text">
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="customer" id="4">
+                <div class="image" style="background-image: url('./images/bonbon_customers.png');">
+                </div>
+                <div class="text">
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="customer" id="5">
+                <div class="image" style="background-image: url('./images/bonbon_customers.png');">
+                </div>
+                <div class="text">
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="customer" id="6">
+                <div class="image" style="background-image: url('./images/bonbon_customers.png');">
+                </div>
+                <div class="text">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="row">
             <div class="col-md-4">
               <div class="customer">
                 <div class="image">
@@ -547,7 +828,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
@@ -599,6 +880,7 @@
       <div class="row">
         <div class="col-md-3">
           <div class="contact">
+
             <div class="header_1">CONTACT US</div>
             <div class="tel">Tel: <span>(+84) 1234567890</span></div>
             <div class="email">Email: <span>info@opensea.net</span></div>
@@ -618,6 +900,7 @@
             <span>Find us on</span>
             <img src="./images/footer_fb.png" id="fb">
             <img src="./images/footer_instagram.png" id="instagram">
+            <img src="./images/footer_twitter.png" id="twitter">
             <img src="./images/footer_youtube.png" id="youtube">
           </div>
         </div>

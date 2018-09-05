@@ -22,8 +22,7 @@ Route::get('/search', 'Service\SearchService@search');
 Route::get('/searchStore', 'Service\SearchService@searchStore');
 Route::get('/searchDeal', 'Service\SearchService@searchDeal');
 Route::get('/init', 'Service\ElasticSearchService@init');
-Route::get('frontend/tour','Frontend\TourController@index');
-Route::get('frontend/attraction','Frontend\IndexController@attraction');
+
 
 Route::middleware(['auth:api'])->group(function () {
     Route::get('/me', function (Request $request) {

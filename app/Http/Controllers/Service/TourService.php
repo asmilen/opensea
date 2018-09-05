@@ -44,20 +44,20 @@ class TourService extends BaseService
                 'message' => 'Invalid data input!'
             ]);
         }
-        $price = $request->input('price');
-        if ($price) {
-            $price = json_encode($price);
-        }
+
         $dataCreate = [
             'name' => $request->input('name'),
             'description' => $request->input('description'),
+            'description_vi' => $request->input('description_vi'),
             'image' => $request->input('image'),
-            'price' => $price,
+            'price' => $request->input('price'),
             'include' => $request->input('include'),
             'add_on' => $request->input('add_on'),
+            'add_on_vi' => $request->input('add_on_vi'),
             'type' => $request->input('type') ? $request->input('type') : Tour::TYPE_NORMAL,
         ];
         $articleObj = App::make('tourService')->query()->create($dataCreate);
+
         return $this->response([
             'data' => $articleObj
         ]);
@@ -71,22 +71,21 @@ class TourService extends BaseService
             ]);
         }
         $id = $request->input('id');
-        $price = $request->input('price');
-        if ($price) {
-            $price = json_encode($price);
-        }
+
         $dataUpdate = [
             'name' => $request->input('name'),
             'description' => $request->input('description'),
+            'description_vi' => $request->input('description_vi'),
             'image' => $request->input('image'),
-            'price' => $price,
+            'price' => $request->input('price'),
             'include' => $request->input('include'),
-            'add_on' => $request->input('add_on'),
+            'add_on_vi' => $request->input('add_on_vi'),
             'type' => $request->input('type') ? $request->input('type') : Tour::TYPE_NORMAL,
         ];
         $articleObj = App::make('tourService')->baseQuery([
             'id' => $id
         ])->update($dataUpdate);
+
         return $this->response([
             'data' => $articleObj
         ]);

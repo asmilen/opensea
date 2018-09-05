@@ -30,6 +30,13 @@
                     </div>
                 </div>
                 <div class="form-group col-sm-6">
+                    <label for="" class="col-sm-2 control-label">Description (Vietnamese)</label>
+                    <div class="col-sm-10">
+                        <textarea id="newArticleTranslate" rows="4" class="form-control" placeholder="Description"
+                                  ng-model="newArticle.description_vi"></textarea>
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
                     <label for="" class="col-sm-2 control-label">Include</label>
                     <div class="col-sm-10">
                         <textarea type="text" class="form-control" rows="4" placeholder="Include"
@@ -43,6 +50,20 @@
                                   ng-model="newArticle.add_on"></textarea>
                     </div>
                 </div>
+                <div class="form-group col-sm-6">
+                    <label for="" class="col-sm-2 control-label">Add on (Vietnamese)</label>
+                    <div class="col-sm-10">
+                        <textarea type="text" class="form-control" rows="4" placeholder="Add on"
+                                  ng-model="newArticle.add_on_vi"></textarea>
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                        <label for="" class="col-sm-2 control-label">Price</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" ng-model="newArticle.price">
+                        </div>
+                </div>
+                <div class="clearfix"></div>
                 <div class="form-group col-sm-6">
                     <label for="" class="col-sm-2 control-label">Image</label>
                     <div class="col-sm-10">
@@ -59,30 +80,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="clearfix"></div>
-                <div class="form-group col-sm-6">
-                    <label for="" class="col-sm-2 control-label">
-                        Price
-                    </label>
-                    <div class="col-sm-10">
-                        <div ng-repeat="price in newArticle.price">
-                            <div class="col-sm-6">
-                                <label for="" class="col-sm-12 control-label">Title</label>
-                                <div class="col-sm-12">
-                                    <input type="text" class="form-control" placeholder="Title price"
-                                           ng-model="price.title">
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <label for="" class="col-sm-12 control-label">Value</label>
-                                <div class="col-sm-12">
-                                    <input type="number" class="form-control" placeholder="Value price"
-                                           ng-model="price.value">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+
                 <div class="clearfix"></div>
             </div>
             <div class="modal-footer">
@@ -127,6 +126,13 @@
                     </div>
                 </div>
                 <div class="form-group col-sm-6">
+                    <label for="" class="col-sm-2 control-label">Description (Vietnamese)</label>
+                    <div class="col-sm-10">
+                        <textarea id="newArticleTranslate" rows="4" class="form-control" placeholder="Description"
+                                  ng-model="editArticle.description_vi"></textarea>
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
                     <label for="" class="col-sm-2 control-label">Include</label>
                     <div class="col-sm-10">
                         <textarea type="text" class="form-control" rows="4" placeholder="Include"
@@ -138,6 +144,19 @@
                     <div class="col-sm-10">
                         <textarea type="text" class="form-control" rows="4" placeholder="Add on"
                                   ng-model="editArticle.add_on"></textarea>
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="" class="col-sm-2 control-label">Add on (Vietnamese)</label>
+                    <div class="col-sm-10">
+                        <textarea type="text" class="form-control" rows="4" placeholder="Add on"
+                                  ng-model="editArticle.add_on_vi"></textarea>
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="" class="col-sm-2 control-label">Price</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" ng-model="editArticle.price">
                     </div>
                 </div>
                 <div class="form-group col-sm-6">
@@ -156,30 +175,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="clearfix"></div>
-                <div class="form-group col-sm-6">
-                    <label for="" class="col-sm-2 control-label">
-                        Price
-                    </label>
-                    <div class="col-sm-10">
-                        <div ng-repeat="price in editArticle.price">
-                            <div class="col-sm-6">
-                                <label for="" class="col-sm-12 control-label">Title</label>
-                                <div class="col-sm-12">
-                                    <input type="text" class="form-control" placeholder="Title price"
-                                           ng-model="price.title">
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <label for="" class="col-sm-12 control-label">Value</label>
-                                <div class="col-sm-12">
-                                    <input type="number" class="form-control" placeholder="Value price"
-                                           ng-model="price.value">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
                 <div class="clearfix"></div>
             </div>
             <div class="modal-footer">

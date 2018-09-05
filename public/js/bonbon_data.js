@@ -43,21 +43,21 @@ window.tickets = [
       family: '999,000'
     }
   },
-  {
-    name: 'SUPER DELUXE',
-    image: 'images/bonbon_package_deluxe.png',
-    descriptions: [
-      '48 hours BonBon City Tour Bus',
-      '20% off Hanoi Rewind tours',
-      'All-you-can-have attractions pass',
-      `Exclusive partner's coupons`
-    ],
-    prices: {
-      child: '250,000',
-      adult: '350,000',
-      family: '999,000'
-    }
-  }
+  // {
+  //   name: 'SUPER DELUXE',
+  //   image: 'images/bonbon_package_deluxe.png',
+  //   descriptions: [
+  //     '48 hours BonBon City Tour Bus',
+  //     '20% off Hanoi Rewind tours',
+  //     'All-you-can-have attractions pass',
+  //     `Exclusive partner's coupons`
+  //   ],
+  //   prices: {
+  //     child: '250,000',
+  //     adult: '350,000',
+  //     family: '999,000'
+  //   }
+  // }
 ];
 
 // Get tickets
@@ -123,7 +123,7 @@ function renderTickets(tickets) {
                 ${prices}
               </div>
             </div>
-            <div class="book-now">BOOK NOW</div>
+            <div class="book-now" data-toggle="modal" data-target="#ticket-popup-test">BOOK NOW</div>
           </div>
           <div class="footer"></div>
         </div>
@@ -177,4 +177,61 @@ function renderAttractions(attractions) {
 
     $list.append(html);
   }
+}
+
+// Calculate sub-total
+function calculateSubTotal() {
+  let adultAmount = parseInt($('.ticket-popup .adult .choose-amount .amount-number').text());
+  let childAmount = parseInt($('.ticket-popup .child .choose-amount .amount-number').text());
+  let adultPrice = $('.ticket-popup .adult .inner-price .number').text();
+  let childPrice = $('.ticket-popup .child .inner-price .number').text();
+  let subTotal;
+
+  adultPrice = parseInt(adultPrice.split(',').join(''));
+  childPrice = parseInt(childPrice.split(',').join(''));
+  subTotal = adultAmount * adultPrice + childAmount * childPrice;
+  $('.ticket-popup .sub-total .price .number').text(subTotal);
+}
+
+// Ticket popup amount input
+function ticketPopupAmount() {
+  $('.ticket-popup .prices .price.adult .choose-amount .add').click(function(e) {
+    let x = parseInt($('.ticket-popup .adult .choose-amount .amount-number').text());
+
+    $('.ticket-popup input.amount-adult').val(++x);
+    $('.ticket-popup .adult .choose-amount .amount-number').text(x);
+
+    calculateSubTotal();
+  });
+
+  $('.ticket-popup .prices .price.adult .choose-amount .sub').click(function(e) {
+    let x = parseInt($('.ticket-popup .adult .choose-amount .amount-number').text());
+
+    if (x == 0) return;
+
+    $('.ticket-popup input.amount-adult').val(--x);
+    $('.ticket-popup .adult .choose-amount .amount-number').text(x);
+    
+    calculateSubTotal();
+  });
+
+  $('.ticket-popup .prices .price.child .choose-amount .add').click(function(e) {
+    let x = parseInt($('.ticket-popup .child .choose-amount .amount-number').text());
+
+    $('.ticket-popup input.amount-child').val(++x);
+    $('.ticket-popup .child .choose-amount .amount-number').text(x);
+    
+    calculateSubTotal();
+  });
+
+  $('.ticket-popup .prices .price.child .choose-amount .sub').click(function(e) {
+    let x = parseInt($('.ticket-popup .child .choose-amount .amount-number').text());
+
+    if (x == 0) return;
+
+    $('.ticket-popup input.amount-child').val(--x);
+    $('.ticket-popup .child .choose-amount .amount-number').text(x);
+    
+    calculateSubTotal();
+  });
 }

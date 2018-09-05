@@ -2,7 +2,7 @@
 function getTours(cb) {
   $.ajax({
     type: 'GET',
-    url: 'http://opensea.vn/api/frontend/tour',
+    url: '/api/frontend/tour',
     success: resData => cb(resData),
     error: err => console.error(err)
   });
@@ -109,7 +109,7 @@ function renderTours(tours) {
           ${cols}
           <div class="col-md-6">
             <div class="book-now">
-              <button id="${tour.backend_id}">BOOK NOW</button>
+              <button id="${tour.backend_id}" type="button" data-toggle="modal" data-target="#tour-popup-test">BOOK NOW</button>
             </div>
           </div>
         </div>

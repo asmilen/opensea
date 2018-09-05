@@ -5,15 +5,11 @@ namespace App\Models;
 
 class Tour extends BaseModel
 {
-    use \Dimsav\Translatable\Translatable;
-
     const TYPE_NORMAL = 'normal';
-    const TYPE_FUTURE = 'future';
+    const TYPE_FEATURE = 'feature';
     protected $table = 'tour';
     protected $fillable = [
-        'name', 'description', 'image',
-        'price', 'include', 'add_on', 'type'
+        'name', 'description','description_vi', 'image',
+        'price', 'include', 'add_on', 'type' , 'add_on_vi',
     ];
-    public $translatedAttributes = ['description_tl'];
-
 }

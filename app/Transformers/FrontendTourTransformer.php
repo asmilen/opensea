@@ -10,14 +10,14 @@ class FrontendTourTransformer extends TransformerAbstract
     public function transform(Tour $tour)
     {
         return [
-            'backend_id'                    => $tour->id,
+            'backend_id'            => $tour->id,
             'type'                  => $tour->type == 'normal' ? 0 : 1,
             'title'                 => $tour->name,
-            'descriptions'          => explode(PHP_EOL, $tour->description),
+            'descriptions'          => \App::isLocale('vi') ? explode(PHP_EOL, $tour->description_vi) : explode(PHP_EOL, $tour->description),
             'images'                => [$tour->image],
-            'prices'                => json_decode($tour->price),
+            'prices'                => $tour->price,
             'includes'              => explode(PHP_EOL, $tour->include),
-            'addon'                 => explode(PHP_EOL, $tour->add_on),
+            'addon'                 =>  \App::isLocale('vi') ? explode(PHP_EOL, $tour->add_on_vi) : explode(PHP_EOL, $tour->add_on),
         ];
     }
 }

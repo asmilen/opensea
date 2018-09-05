@@ -16,7 +16,7 @@ function TourController($scope, $http, $rootScope, $timeout, Upload) {
     $scope.editArticle = {};
     $scope.listType = [
         {value: 'normal', name: 'Normal'},
-        {value: 'future', name: 'Future'}
+        {value: 'future', name: 'Feature'}
     ];
     $scope.newArticle = {
 
@@ -50,7 +50,6 @@ function TourController($scope, $http, $rootScope, $timeout, Upload) {
             function(response){
                 if (response.data.status == 'successful') {
                     $scope.articles = response.data.data;
-                    $scope.articles = getPrice($scope.articles);
                     $scope.pageId = response.data.paginator.off_set / response.data.paginator.limit;
                     $scope.pagesCount = response.data.paginator.page_count;
                 } else {
@@ -61,22 +60,10 @@ function TourController($scope, $http, $rootScope, $timeout, Upload) {
         );
     };
 
-    function getPrice(articles) {
-        for (var index = 0; index < articles.length; ++index) {
-            articles[index].prices = JSON.parse(articles[index].price);
-        }
-        return articles;
-    }
-
     $scope.showCreateArticleForm = function(){
         tinymce.remove();
         $scope.newArticle = {};
         $scope.newArticle.type = $scope.listType[0].value;
-        $scope.newArticle.price = [
-            {title: '', value: 0},
-            {title: '', value: 0},
-            {title: '', value: 0}
-        ];
         $('#createArticleForm').modal('show');
         $scope.previewImg = "";
     }
@@ -100,9 +87,11 @@ function TourController($scope, $http, $rootScope, $timeout, Upload) {
             name: $scope.newArticle.name,
             type: $scope.newArticle.type,
             description: $scope.newArticle.description,
+            description_vi: $scope.newArticle.description_vi,
             price: $scope.newArticle.price,
             include: $scope.newArticle.include,
             add_on: $scope.newArticle.add_on,
+            add_on_vi: $scope.newArticle.add_on_vi,
             image: $scope.newArticle.image,
         };
         $http.post(api_domain + "/api/tour/create", param).success(function (data) {
@@ -121,7 +110,6 @@ function TourController($scope, $http, $rootScope, $timeout, Upload) {
     $scope.showEditArticle = function(article){
         $scope.editArticle = angular.copy(article);
         $scope.previewImg = $scope.editArticle.image;
-        $scope.editArticle.price = JSON.parse($scope.editArticle.price);
         $('#editArticleForm').modal('show');
     }
 
@@ -139,9 +127,11 @@ function TourController($scope, $http, $rootScope, $timeout, Upload) {
             name: $scope.editArticle.name,
             type: $scope.editArticle.type,
             description: $scope.editArticle.description,
+            description_vi: $scope.editArticle.description_vi,
             price: $scope.editArticle.price,
             include: $scope.editArticle.include,
             add_on: $scope.editArticle.add_on,
+            add_on_vi: $scope.editArticle.add_on_vi,
             image: $scope.editArticle.image,
             id: $scope.editArticle.id
         };
@@ -229,17 +219,4 @@ function TourController($scope, $http, $rootScope, $timeout, Upload) {
         }
         $('#saveButton').button('reset');
     };
-
-    $scope.addPrice = function (objPrice) {
-        objPrice.push({
-            title: '',
-            value: 0
-        });
-    };
-
-    $scope.removePrice = function (objPrice, index) {
-        if (objPrice.length > 1) {
-            objPrice.splice(index, 1);
-        }
-    }
 }

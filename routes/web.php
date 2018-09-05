@@ -15,6 +15,17 @@ Route::get('/', 'Frontend\IndexController@index')->name('frontend::index');
 Route::get('/bus', 'Frontend\IndexController@bus')->name('frontend::bus');
 Route::get('/tour', 'Frontend\IndexController@tour')->name('frontend::tour');
 Route::get('/faq', 'Frontend\IndexController@faq')->name('frontend::faq');
+Route::get('api/frontend/tour','Frontend\TourController@index');
+Route::get('api/frontend/attraction','Frontend\IndexController@attraction');
+
+#lang
+Route::get('/lang', function(){
+    return App::getlocale();
+});
+
+Route::get('/set-lang/{lang}', function($lang){
+    \Session::put('lang',$lang);
+}) ;
 
 Route::post('/tour-request', 'Frontend\TourController@sendRequest')->name('send-tour-request');
 Route::post('/customer-message', 'Frontend\IndexController@customerMessage')->name('send-customer-message');
