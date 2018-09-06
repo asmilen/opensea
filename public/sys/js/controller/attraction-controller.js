@@ -78,6 +78,8 @@ function AttractionController($scope, $http, $rootScope, $timeout, Upload) {
             api_token: api_token,
             name: $scope.newArticle.name,
             description: $scope.newArticle.description,
+            description_vi: $scope.newArticle.description_vi,
+            url: $scope.newArticle.url,
             image: $scope.newArticle.image,
         };
         $http.post(api_domain + "/api/attraction/create", param).success(function (data) {
@@ -112,6 +114,8 @@ function AttractionController($scope, $http, $rootScope, $timeout, Upload) {
             api_token: api_token,
             name: $scope.editArticle.name,
             description: $scope.editArticle.description,
+            description_vi: $scope.editArticle.description_vi,
+            url: $scope.editArticle.url,
             image: $scope.editArticle.image,
             id: $scope.editArticle.id
         };

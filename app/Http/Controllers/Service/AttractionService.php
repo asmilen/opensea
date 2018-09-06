@@ -47,6 +47,8 @@ class AttractionService extends BaseService
         $dataCreate = [
             'name' => $request->input('name'),
             'description' => $request->input('description'),
+            'description_vi' => $request->input('description_vi'),
+            'url' => $request->input('url'),
             'image' => $request->input('image'),
         ];
         $articleObj = App::make('attractionService')->query()->create($dataCreate);
@@ -70,6 +72,8 @@ class AttractionService extends BaseService
         $dataUpdate = [
             'name' => $request->input('name'),
             'description' => $request->input('description'),
+            'description_vi' => $request->input('description_vi'),
+            'url' => $request->input('url'),
             'image' => $request->input('image'),
         ];
         $articleObj = App::make('attractionService')->baseQuery([

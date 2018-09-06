@@ -11,7 +11,7 @@ class FrontendAttractionTransformer extends TransformerAbstract
         return [
             'backend_id'                    => $attraction->id,
             'title'                 => $attraction->name,
-            'content'          => $attraction->description,
+            'content'          => \App::isLocale('vi') ? $attraction->description_vi : $attraction->description,
             'image'                => $attraction->image,
         ];
     }

@@ -9,6 +9,6 @@ class Attraction extends BaseModel
     //
     protected $table = 'attraction';
     protected $fillable = [
-        'name', 'description', 'image',
+        'name', 'description', 'image','description_vi','url',
     ];
 }

@@ -22,6 +22,20 @@
                     </div>
                 </div>
                 <div class="form-group col-sm-6">
+                    <label for="" class="col-sm-2 control-label">Description (Vietnamese)</label>
+                    <div class="col-sm-10">
+                        <textarea id="newArticleSlugVi" rows="4" class="form-control" placeholder="Description (Vietnamese)"
+                                  ng-model="newArticle.description_vi"></textarea>
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="" class="col-sm-2 control-label">Url</label>
+                    <div class="col-sm-10">
+                        <input id="newArticleUrl" type="text" class="form-control" placeholder="Url"
+                               ng-model="newArticle.url">
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
                     <label for="" class="col-sm-2 control-label">Image</label>
                     <div class="col-sm-10">
                         <div class="button"
@@ -71,6 +85,20 @@
                     <div class="col-sm-10">
                         <textarea id="newArticleSlug" rows="4" class="form-control" placeholder="Description"
                                   ng-model="editArticle.description"></textarea>
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="" class="col-sm-2 control-label">Description (Vietnamese)</label>
+                    <div class="col-sm-10">
+                        <textarea id="newArticleSlugVi" rows="4" class="form-control" placeholder="Description (Vietnamese)"
+                                  ng-model="editArticle.description_vi"></textarea>
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="" class="col-sm-2 control-label">Url</label>
+                    <div class="col-sm-10">
+                        <input id="newArticleUrl" type="text" class="form-control" placeholder="Url"
+                               ng-model="editArticle.url">
                     </div>
                 </div>
                 <div class="form-group col-sm-6">

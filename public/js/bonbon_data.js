@@ -138,7 +138,7 @@ function renderTickets(tickets) {
 function getAttractions(cb) {
   $.ajax({
     type: 'GET',
-    url: 'http://opensea.vn/api/frontend/attraction',
+    url: '/api/frontend/attraction',
     success: resData => cb(resData),
     error: err => console.error(err)
   });

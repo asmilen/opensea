@@ -334,14 +334,14 @@ function chooseLanguage(cb) {
   $('.langs .en').click(function(e) {
       $.get('/set-lang/en',function (lang) {
           window.lang = 'en';
-          cb();
+          location.reload(true)
       });
   });
 
   $('.langs .vi').click(function(e) {
       $.get('/set-lang/vi',function (lang) {
           window.lang = 'vi';
-          cb();
+          location.reload(true)
       });
   });
 }
