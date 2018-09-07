@@ -14,6 +14,7 @@ use App\Repositories\PaymentRepository;
 use App\Repositories\RedisRepository;
 use App\Repositories\SettingRepository;
 use App\Repositories\StoreRepository;
+use App\Repositories\TicketComponentRepository;
 use App\Repositories\TicketRepository;
 use App\Repositories\TourRepository;
 use App\Repositories\TourRequestRepository;
@@ -61,6 +62,9 @@ class AppServiceProvider extends ServiceProvider
         });
         $this->app->singleton('ticketService', function () {
             return new TicketRepository();
+        });
+        $this->app->singleton('ticketComponentService', function () {
+            return new TicketComponentRepository();
         });
         $this->app->singleton('categoryService', function () {
             return new CategoryRepository();

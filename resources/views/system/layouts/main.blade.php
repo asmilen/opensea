@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="/sys/components/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="/sys/components/Ionicons/css/ionicons.min.css">
   <link rel="stylesheet" href="/sys/dist/css/AdminLTE.min.css">
-  <link rel="stylesheet" href="/sys/dist/css/skins/skin-green.min.css">
+  <link rel="stylesheet" href="/sys/dist/css/skins/skin-green.css">
   <link rel="stylesheet" href="/sys/css/pnotify.custom.min.css">
   <link rel="stylesheet" href="/sys/dist/css/app.custom.css">
 
@@ -41,7 +41,7 @@
   @yield('script')
 
 </head>
-<body class="hold-transition skin-green sidebar-mini sidebar-collapse" ng-app="system" ng-cloak="">
+<body class="hold-transition skin-green sidebar-mini" ng-app="system" ng-cloak="">
 <div class="wrapper">
 
   @include('system.layouts.inc.header')
@@ -57,8 +57,6 @@
     <div class="pull-right hidden-xs">
      Version:  <b>{{ config('app.version') }} </b>
     </div>
-    <strong>Copyright &copy; 2018 <a href="http://megaads.vn/" target="_blank">MegaAds</a>.</strong> All rights
-    reserved.
   </footer>
 
 

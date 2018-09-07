@@ -108,6 +108,12 @@ Route::middleware(['auth:api'])->group(function () {
     Route::post('/ticket/update-multi-order', 'Service\TicketService@updateMultiOrder');
     Route::post('/ticket/delete', 'Service\TicketService@delete');
 
+    //ticket component
+    Route::get('/ticket-component/index', 'Service\TicketComponentService@index');
+    Route::post('/ticket-component/create', 'Service\TicketComponentService@create');
+    Route::post('/ticket-component/update', 'Service\TicketComponentService@update');
+    Route::post('/ticket-component/delete', 'Service\TicketComponentService@delete');
+
     //tour
     Route::get('/tour/index', 'Service\TourService@index');
     Route::post('/tour/create', 'Service\TourService@create');
