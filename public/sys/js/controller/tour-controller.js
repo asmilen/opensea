@@ -16,7 +16,7 @@ function TourController($scope, $http, $rootScope, $timeout, Upload) {
     $scope.editArticle = {};
     $scope.listType = [
         {value: 'normal', name: 'Normal'},
-        {value: 'future', name: 'Feature'}
+        {value: 'feature', name: 'Feature'}
     ];
     $scope.newArticle = {
 
