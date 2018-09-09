@@ -103,7 +103,8 @@ class TourRequestService extends BaseService
         $dataUpdate = [
             'date' => $request->input('date'),
             'number_people' => $number,
-            'status' => $request->input('status')
+            'status' => $request->input('status'),
+            'time' => $request->input('time')
         ];
 
         $tourRequest = TourRequest::where('id', '=', $id)->first();
@@ -111,7 +112,8 @@ class TourRequestService extends BaseService
         $dataBefore = [
             'date' => $tourRequest->date,
             'number_people' => $tourRequest->number_people,
-            'status' => $tourRequest->status
+            'status' => $tourRequest->status,
+            'time' => $tourRequest->time
         ];
 
         $log = [

@@ -9,6 +9,6 @@ class TourRequest extends BaseModel
     protected $fillable = [
         'name', 'email', 'contact',
         'nation', 'date', 'number_people', 'special_request',
-        'tour_id', 'status', 'note'
+        'tour_id', 'status', 'note', 'time',
     ];
 }
