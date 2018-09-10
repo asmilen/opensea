@@ -52,6 +52,7 @@ class TourService extends BaseService
             'image' => $request->input('image'),
             'price' => $request->input('price'),
             'include' => $request->input('include'),
+            'include_vi' => $request->input('include_vi'),
             'add_on' => $request->input('add_on'),
             'add_on_vi' => $request->input('add_on_vi'),
             'type' => $request->input('type') ? $request->input('type') : Tour::TYPE_NORMAL,
@@ -79,6 +80,7 @@ class TourService extends BaseService
             'image' => $request->input('image'),
             'price' => $request->input('price'),
             'include' => $request->input('include'),
+            'include_vi' => $request->input('include_vi'),
             'add_on_vi' => $request->input('add_on_vi'),
             'type' => $request->input('type') ? $request->input('type') : Tour::TYPE_NORMAL,
         ];

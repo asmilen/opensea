@@ -16,7 +16,7 @@ class FrontendTourTransformer extends TransformerAbstract
             'descriptions'          => \App::isLocale('vi') ? explode(PHP_EOL, $tour->description_vi) : explode(PHP_EOL, $tour->description),
             'images'                => [$tour->image],
             'prices'                => $tour->price,
-            'includes'              => explode(PHP_EOL, $tour->include),
+            'includes'              => \App::isLocale('vi') ? explode(PHP_EOL, $tour->include_vi) : explode(PHP_EOL, $tour->include),
             'addon'                 =>  \App::isLocale('vi') ? explode(PHP_EOL, $tour->add_on_vi) : explode(PHP_EOL, $tour->add_on),
         ];
     }

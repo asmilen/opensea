@@ -139,6 +139,7 @@ function TourRequestController($scope, $http, $rootScope, $timeout, Upload) {
             note_new: $scope.editArticle.note_new,
             number_people: $scope.editArticle.number_people,
             status: $scope.editArticle.status,
+            time: $scope.editArticle.time,
             id: $scope.editArticle.id
         };
         $http.post(api_domain + "/api/tour-request/update", param).success(function (data) {

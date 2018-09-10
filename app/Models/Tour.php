@@ -10,6 +10,6 @@ class Tour extends BaseModel
     protected $table = 'tour';
     protected $fillable = [
         'name', 'description','description_vi', 'image',
-        'price', 'include', 'add_on', 'type' , 'add_on_vi',
+        'price', 'include', 'include_vi', 'add_on', 'type' , 'add_on_vi',
     ];
 }
