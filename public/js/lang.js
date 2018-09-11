@@ -368,6 +368,15 @@ function renderFooterContent(lang) {
   $('footer .find-us span').html(data.findUs);
 }
 
+// Poster font
+function posterFont(lang) {
+  if (lang == 'vi') {
+    $('.poster-font').css('font-family', 'SF Text Regular');
+  } else {
+    $('.poster-font').css('font-family', 'LeJeune Poster Light');
+  }
+}
+
 // Render home content
 function renderHomeContent() {
   let data;
@@ -400,6 +409,10 @@ function renderHomeContent() {
 
       // Footer content
       renderFooterContent(lang);
+    
+      // Font
+      posterFont(lang);
+
   })
 }
 
@@ -459,6 +472,10 @@ function renderBonbonContent() {
 
         // Footer content
         renderFooterContent(lang);
+
+        // Font
+        posterFont(lang);
+
     })
 }
 
@@ -485,5 +502,9 @@ function renderRewindContent() {
 
         // Footer content
         renderFooterContent(lang);
+
+        // Font
+        posterFont(lang);
+
     })
 }
