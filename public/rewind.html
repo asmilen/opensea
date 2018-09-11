@@ -13,6 +13,7 @@
 	<link rel="apple-touch-icon" href="./images/apple-touch-icon.png">
 
   <!-- JS-->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/persist-js@0.3.1/src/persist.min.js"></script>
   <script src="./js/lang.js"></script>
   <script src="./js/rewind.js"></script>
   <script src="./js/rewind_data.js"></script>
@@ -25,367 +26,6 @@
 </head>
 <body>
   <!-- Tour popup -->
-  <div class="modal" tabindex="-1" role="dialog" id="tour-popup-test">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <!-- <div class="modal-body"> -->
-          <div class="tour-popup">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <div class="inner">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="name">
-                    <h1>Hanoi's secretes</h1>
-                    <h2>WITH FILM CAMERAS</h2>
-                  </div>
-                  <div class="images">
-                    <div class="carousel slide" id="imagesCarousel" data-ride="carousel" data-interval="false">
-                      <div class="carousel-inner">
-                        <div class="carousel-item active">
-                          <img src="./images/rewind_popup_image.png" style="width: 100%;">
-                        </div>
-                        <div class="carousel-item">
-                          <img src="./images/rewind_popup_image.png" style="width: 100%;">                  
-                        </div>
-                        <div class="carousel-item">
-                          <img src="./images/rewind_popup_image.png" style="width: 100%;">
-                        </div>
-                      </div>
-                      <a class="carousel-control-prev" href="#imagesCarousel" role="button" data-slide="prev">
-                        <span class="icon">
-                          <i class="fa fa-chevron-left"></i>
-                        </span>
-                        <span class="sr-only">Previous</span>
-                      </a>
-                      <a class="carousel-control-next" href="#imagesCarousel" role="button" data-slide="next">
-                        <span class="icon">
-                          <i class="fa fa-chevron-right"></i>
-                        </span>
-                        <span class="sr-only">Next</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="price">
-                    <div>
-                      <span class="currency">VND</span>
-                      <span class="number">1,400,000</span>  
-                    </div>
-                    <span class="text">per pax - maximum group of 5</span>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6 include included">
-                      <div class="title">Included</div>
-                      <ul>
-                        <li>Professional guide from experienced film photographers and travellers</li>
-                        <li>Film camera renting</li>
-                        <li>01 film roll and film developing package with digital files</li>
-                        <li>01 free coffee and snacks</li>
-                      </ul>
-                    </div>
-                    <div class="col-md-5 offset-md-1 include not-included">
-                      <div class="title">Does not included</div>
-                      <ul>
-                        <li>Extra film roll and film development</li>
-                        <li>Extra drinks and snacks</li>
-                        <li>Transportation if needed</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="book-info">
-                    <div class="title">Booking info</div>
-                    <form>
-                      <div class="row">
-                        <div class="col-md-5">
-                          <div class="form-group">
-                            <input type="text" class="form-control" id="full-name" name="fullName" placeholder="* Full name" required>
-                          </div>
-                        </div>
-                        <div class="col-md-5 offset-md-2">
-                          <div class="form-group">
-                            <input type="email" class="form-control" id="email" name="email" placeholder="* Email address" required>
-                          </div>
-                        </div>
-                        <div class="col-md-5">
-                          <div class="form-group">
-                            <input type="text" class="form-control" id="phone" name="phone" placeholder="* Phone / WhatsApp" required>
-                          </div>
-                        </div>
-                        <div class="col-md-5 offset-md-2">
-                          <div class="form-group">
-                            <select id="nationality" name="nationality" class="form-control" required>
-                              <option>Afghanistan</option>
-                              <option>Albania</option>
-                              <option>Algeria</option>
-                              <option>Andorra</option>
-                              <option>Angola</option>
-                              <option>Antigua and Barbuda</option>
-                              <option>Argentina</option>
-                              <option>Armenia</option>
-                              <option>Aruba</option>
-                              <option>Australia</option>
-                              <option>Austria</option>
-                              <option>Azerbaijan</option>
-                              <option>Bahamas, The</option>
-                              <option>Bahrain</option>
-                              <option>Bangladesh</option>
-                              <option>Barbados</option>
-                              <option>Belarus</option>
-                              <option>Belgium</option>
-                              <option>Belize</option>
-                              <option>Benin</option>
-                              <option>Bhutan</option>
-                              <option>Bolivia</option>
-                              <option>Bosnia and Herzegovina</option>
-                              <option>Botswana</option>
-                              <option>Brazil</option>
-                              <option>Brunei</option>
-                              <option>Bulgaria</option>
-                              <option>Burkina Faso</option>
-                              <option>Burma</option>
-                              <option>Burundi</option>
-                              <option>Cambodia</option>
-                              <option>Cameroon</option>
-                              <option>Canada</option>
-                              <option>Cabo Verde</option>
-                              <option>Central African Republic</option>
-                              <option>Chad</option>
-                              <option>Chile</option>
-                              <option>China</option>
-                              <option>Colombia</option>
-                              <option>Comoros</option>
-                              <option>Congo, Democratic Republic of the</option>
-                              <option>Congo, Republic of the</option>
-                              <option>Costa Rica</option>
-                              <option>Cote d'Ivoire</option>
-                              <option>Croatia</option>
-                              <option>Cuba</option>
-                              <option>Curacao</option>
-                              <option>Cyprus</option>
-                              <option>Czechia</option>
-                              <option>Denmark</option>
-                              <option>Djibouti</option>
-                              <option>Dominica</option>
-                              <option>Dominican Republic</option>
-                              <option>East Timor</option>
-                              <option>Ecuador</option>
-                              <option>Egypt</option>
-                              <option>El Salvador</option>
-                              <option>Equatorial Guinea</option>
-                              <option>Eritrea</option>
-                              <option>Estonia</option>
-                              <option>Eswatini</option>
-                              <option>Ethiopia</option>
-                              <option>Fiji</option>
-                              <option>Finland</option>
-                              <option>France</option>
-                              <option>Gabon</option>
-                              <option>Gambia, The</option>
-                              <option>Georgia</option>
-                              <option>Germany</option>
-                              <option>Ghana</option>
-                              <option>Greece</option>
-                              <option>Grenada</option>
-                              <option>Guatemala</option>
-                              <option>Guinea</option>
-                              <option>Guinea-Bissau</option>
-                              <option>Guyana</option>
-                              <option>Haiti</option>
-                              <option>Holy See</option>
-                              <option>Honduras</option>
-                              <option>Hong Kong</option>
-                              <option>Hungary</option>
-                              <option>Iceland</option>
-                              <option>India</option>
-                              <option>Indonesia</option>
-                              <option>Iran</option>
-                              <option>Iraq</option>
-                              <option>Ireland</option>
-                              <option>Israel</option>
-                              <option>Italy</option>
-                              <option>Jamaica</option>
-                              <option>Japan</option>
-                              <option>Jordan</option>
-                              <option>Kazakhstan</option>
-                              <option>Kenya</option>
-                              <option>Kiribati</option>
-                              <option>Korea, North</option>
-                              <option>Korea, South</option>
-                              <option>Kosovo</option>
-                              <option>Kuwait</option>
-                              <option>Kyrgyzstan</option>
-                              <option>Laos</option>
-                              <option>Latvia</option>
-                              <option>Lebanon</option>
-                              <option>Lesotho</option>
-                              <option>Liberia</option>
-                              <option>Libya</option>
-                              <option>Liechtenstein</option>
-                              <option>Lithuania</option>
-                              <option>Luxembourg</option>
-                              <option>Macau</option>
-                              <option>Macedonia</option>
-                              <option>Madagascar</option>
-                              <option>Malawi</option>
-                              <option>Malaysia</option>
-                              <option>Maldives</option>
-                              <option>Mali</option>
-                              <option>Malta</option>
-                              <option>Marshall Islands</option>
-                              <option>Mauritania</option>
-                              <option>Mauritius</option>
-                              <option>Mexico</option>
-                              <option>Micronesia</option>
-                              <option>Moldova</option>
-                              <option>Monaco</option>
-                              <option>Mongolia</option>
-                              <option>Montenegro</option>
-                              <option>Morocco</option>
-                              <option>Mozambique</option>
-                              <option>Namibia</option>
-                              <option>Nauru</option>
-                              <option>Nepal</option>
-                              <option>Netherlands</option>
-                              <option>New Zealand</option>
-                              <option>Nicaragua</option>
-                              <option>Niger</option>
-                              <option>Nigeria</option>
-                              <option>North Korea</option>
-                              <option>Norway</option>
-                              <option>Oman</option>
-                              <option>Pakistan</option>
-                              <option>Palau</option>
-                              <option>Palestinian Territories</option>
-                              <option>Panama</option>
-                              <option>Papua New Guinea</option>
-                              <option>Paraguay</option>
-                              <option>Peru</option>
-                              <option>Philippines</option>
-                              <option>Poland</option>
-                              <option>Portugal</option>
-                              <option>Qatar</option>
-                              <option>Romania</option>
-                              <option>Russia</option>
-                              <option>Rwanda</option>
-                              <option>Saint Kitts and Nevis</option>
-                              <option>Saint Lucia</option>
-                              <option>Saint Vincent and the Grenadines</option>
-                              <option>Samoa</option>
-                              <option>San Marino</option>
-                              <option>Sao Tome and Principe</option>
-                              <option>Saudi Arabia</option>
-                              <option>Senegal</option>
-                              <option>Serbia</option>
-                              <option>Seychelles</option>
-                              <option>Sierra Leone</option>
-                              <option>Singapore</option>
-                              <option>Sint Maarten</option>
-                              <option>Slovakia</option>
-                              <option>Slovenia</option>
-                              <option>Solomon Islands</option>
-                              <option>Somalia</option>
-                              <option>South Africa</option>
-                              <option>South Korea</option>
-                              <option>South Sudan</option>
-                              <option>Spain</option>
-                              <option>Sri Lanka</option>
-                              <option>Sudan</option>
-                              <option>Suriname</option>
-                              <option>Swaziland (See Eswatini)</option>
-                              <option>Sweden</option>
-                              <option>Switzerland</option>
-                              <option>Syria</option>
-                              <option>Taiwan</option>
-                              <option>Tajikistan</option>
-                              <option>Tanzania</option>
-                              <option>Thailand</option>
-                              <option>Timor-Leste</option>
-                              <option>Togo</option>
-                              <option>Tonga</option>
-                              <option>Trinidad and Tobago</option>
-                              <option>Tunisia</option>
-                              <option>Turkey</option>
-                              <option>Turkmenistan</option>
-                              <option>Tuvalu</option>
-                              <option>Uganda</option>
-                              <option>Ukraine</option>
-                              <option>United Arab Emirates</option>
-                              <option>United Kingdom</option>
-                              <option>Uruguay</option>
-                              <option>Uzbekistan</option>
-                              <option>Vanuatu</option>
-                              <option>Venezuela</option>
-                              <option>Vietnam</option>
-                              <option>Yemen</option>
-                              <option>Zambia</option>
-                              <option>Zimbabwe</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-5">
-                          <div class="form-group">
-                            <label for="date"><span style="color: red;">*</span>Choose your date</label>
-                            <input class="form-control" type="date" name="date" id="date" required>
-                          </div>
-                        </div>
-                        <div class="col-md-3">
-                          <div class="form-group">
-                            <div class="time">
-                              <label><span style="color: red;">*</span>Time</label>
-                              <div class="form-check">
-                                <input class="form-check-input" type="radio" name="time" id="time1" value="1">
-                                <label class="form-check-label" for="time1">9 a.m - 1 p.m</label>
-                              </div>
-                              <div class="form-check">
-                                <input class="form-check-input" type="radio" name="time" id="time2" value="2">
-                                <label class="form-check-label" for="time2">1 p.m - 5 p.m</label>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-md-4">
-                          <div class="form-group">
-                            <label for="amount"><span style="color: red;">*</span>Number of people</label>
-                            <input class="form-control" type="number" min="1" max="5" name="amount" required>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-6">
-                          <div class="form-group">
-                            <textarea class="form-control" id="note" rows="4" placeholder="Special requests"></textarea>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="sub-total">
-                            <div class="line"></div>
-                            <div class="title">Sub-total</div>
-                            <div class="price">
-                              <span class="currency">VND</span>
-                              <span class="number">1,400,000</span>
-                            </div>  
-                          </div>
-                        </div>
-                      </div>
-                      <div class="submit-buttons">
-                        <button type="submit" class="add-to-cart">ADD TO CART</button>
-                        <button type="submit" class="buy-now">BUY NOW</button>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>  
-            </div>
-          </div>
-        <!-- </div> -->
-      </div>
-    </div>
-  </div>
   <!-- /.tour-popup -->
   
   <!-- Top background -->
@@ -469,7 +109,7 @@
     <!-- Intro video -->
     <section class="intro-video" id="intro-video">
       <div class="container">
-        <div class="header-1">An unique way of experiencing Vietnam</div>
+        <div class="header-1 poster-font">An unique way of experiencing Vietnam</div>
         <div class="row">
           
           <div class="col-md-6">
@@ -490,7 +130,7 @@
     <!-- Journeys -->
     <section class="journeys">
       <div class="container">
-        <div class="header-1">Our journeys</div>
+        <div class="header-1 poster-font">Our journeys</div>
         <div class="list">
         </div>  
       </div>
@@ -500,7 +140,7 @@
     <!-- Happy customers -->
     <section class="customers">
       <div class="container">
-        <div class="header-1">Happy customers</div>
+        <div class="header-1 poster-font">Happy customers</div>
 
         <div class="list">
           <div class="owl-carousel owl-theme">
@@ -618,20 +258,20 @@
           <div class="contact">
 
             <div class="header_1">CONTACT US</div>
-            <div class="tel">Tel: <span>(+84) 1234567890</span></div>
+            <div class="tel">Tel: <span>(+84) 12 1536 3297</span></div>
             <div class="email">Email: <span>info@opensea.net</span></div>
           </div>
         </div>
-        <div class="wrap col-md-3">
+        <div class="wrap col-md-2">
           <div style="text-align: left;font-family: 'GothamRoundedBook';font-size: 12px;line-height: 14px;">
             <div style="font-family: 'GothamRoundedBold';    font-size: 16px;line-height: 20px;">CHÍNH SÁCH</div>
-            <div> <a href="/general_policy.html" style="color: white">Quy định chính sách chung</a></div>
-            <div> <a href="/payment_policy.html" style="color: white">Hình thức thanh toán</a></div>
-            <div> <a href="/refund_policy.html" style="color: white">Chính sách đổi trả</a></div>
-            <div> <a href="/personal_policy.html" style="color: white">Bảo mật thông tin cá nhân</a></div>
+            <div> <a href="general_policy.html" style="color: white">Quy định chính sách chung</a></div>
+            <div> <a href="payment_policy.html" style="color: white">Hình thức thanh toán</a></div>
+            <div> <a href="refund_policy.html" style="color: white">Chính sách đổi trả</a></div>
+            <div> <a href="personal_policy.html" style="color: white">Bảo mật thông tin cá nhân</a></div>
           </div>
         </div>
-        <div class="wrap col-md-3">
+        <div class="wrap col-md-4">
           <div class="find-us">
             <span>Find us on</span>
             <img src="./images/footer_fb.png" id="fb">
@@ -645,6 +285,9 @@
             <div class="header_1">OPENSEA TOURISM AND SERVICES COMPANY</div>
             <div class="content">12 Ngo Tram Str, Hoan Kiem Dist., Hanoi, Vietnam</div>
           </div>
+        </div>
+        <div class="col-12 bottom">
+          Mã số doanh nghiệp: 0108160263 do Sở Kế hoạch và Đầu tư TP. Hà Nội cấp lần đầu ngày 05/02/2018
         </div>
       </div>
     </div>
