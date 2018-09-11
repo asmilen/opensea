@@ -9,6 +9,6 @@ class Ticket extends BaseModel
     const STATUS_DISABLE = 'disable';
     protected $table = 'ticket';
     protected $fillable = [
-        'name', 'duration', 'price', 'content', 'type', 'config', 'status', 'slug'
+        'name', 'price', 'type',
     ];
 }
