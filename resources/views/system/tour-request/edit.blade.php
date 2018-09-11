@@ -76,6 +76,14 @@
                 </div>
                 <div class="col-md-4" style="margin-top: 10px">
                     <div class="form-group">
+                        <label for="" class="col-md-3 control-label">Time</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" ng-model="editArticle.time">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" style="margin-top: 10px">
+                    <div class="form-group">
                         <label for="" class="col-md-3 control-label">Special request</label>
                         <div class="col-md-9">
                             <textarea class="form-control" rows="4" disabled> {{ $tourRequest->special_request }}</textarea>
@@ -143,11 +151,13 @@
                             <span>-Date: @{{ note.old_data.date }} <br></span>
                             <span>-Number of People: @{{ note.old_data.number_people }} <br></span>
                             <span>-Status: @{{ note.old_data.status }} <br></span>
+                            <span>-Time: @{{ note.old_data.time }} <br></span>
                         </td>
                         <td>
                             <span>-Date: @{{ note.new_data.date }} <br></span>
                             <span>-Number of People: @{{ note.new_data.number_people }} <br></span>
                             <span>-Status: @{{ note.new_data.status }} <br></span>
+                            <span>-Time: @{{ note.new_data.time }} <br></span>
                         </td>
                     </tr>
                     </tbody>

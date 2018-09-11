@@ -23,7 +23,7 @@
                     </td>
                     <td>
                         <span ng-if="article.type == 'normal'"><label class="label label-info">Normal</label></span>
-                        <span ng-if="article.type == 'future'"><label class="label label-warning">Future</label></span>
+                        <span ng-if="article.type == 'feature'"><label class="label label-warning">Feature</label></span>
                     </td>
                     <td>
                         <a href="javascript:void(0)" class="btn btn-warning btn-sm" title="Edit this tour" ng-click="showEditArticle(article)">

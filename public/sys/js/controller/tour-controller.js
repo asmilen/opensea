@@ -16,7 +16,7 @@ function TourController($scope, $http, $rootScope, $timeout, Upload) {
     $scope.editArticle = {};
     $scope.listType = [
         {value: 'normal', name: 'Normal'},
-        {value: 'future', name: 'Feature'}
+        {value: 'feature', name: 'Feature'}
     ];
     $scope.newArticle = {
 
@@ -90,6 +90,7 @@ function TourController($scope, $http, $rootScope, $timeout, Upload) {
             description_vi: $scope.newArticle.description_vi,
             price: $scope.newArticle.price,
             include: $scope.newArticle.include,
+            include_vi: $scope.newArticle.include_vi,
             add_on: $scope.newArticle.add_on,
             add_on_vi: $scope.newArticle.add_on_vi,
             image: $scope.newArticle.image,
@@ -130,6 +131,7 @@ function TourController($scope, $http, $rootScope, $timeout, Upload) {
             description_vi: $scope.editArticle.description_vi,
             price: $scope.editArticle.price,
             include: $scope.editArticle.include,
+            include_vi: $scope.editArticle.include_vi,
             add_on: $scope.editArticle.add_on,
             add_on_vi: $scope.editArticle.add_on_vi,
             image: $scope.editArticle.image,

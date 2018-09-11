@@ -54,6 +54,7 @@ function TourRequestDetailController($scope, $http, $rootScope, $timeout, Upload
             date: $scope.editArticle.date,
             note_new: $scope.editArticle.note_new,
             number_people: $scope.editArticle.number_people,
+            time : $scope.editArticle.time,
             status: $scope.editArticle.status,
             id: TOUR_REQUEST_ID
         };

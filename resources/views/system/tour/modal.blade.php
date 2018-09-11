@@ -44,6 +44,13 @@
                     </div>
                 </div>
                 <div class="form-group col-sm-6">
+                    <label for="" class="col-sm-2 control-label">Include (Vietnamese)</label>
+                    <div class="col-sm-10">
+                        <textarea type="text" class="form-control" rows="4" placeholder="Include"
+                                  ng-model="newArticle.include_vi"></textarea>
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
                     <label for="" class="col-sm-2 control-label">Add on</label>
                     <div class="col-sm-10">
                         <textarea type="text" class="form-control" rows="4" placeholder="Add on"
@@ -137,6 +144,13 @@
                     <div class="col-sm-10">
                         <textarea type="text" class="form-control" rows="4" placeholder="Include"
                                   ng-model="editArticle.include"></textarea>
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="" class="col-sm-2 control-label">Include (Vietnamese)</label>
+                    <div class="col-sm-10">
+                        <textarea type="text" class="form-control" rows="4" placeholder="Include"
+                                  ng-model="editArticle.include_vi"></textarea>
                     </div>
                 </div>
                 <div class="form-group col-sm-6">
