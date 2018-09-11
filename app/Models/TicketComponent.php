@@ -9,6 +9,6 @@ class TicketComponent extends BaseModel
     //
     protected $table = 'ticket_components';
     protected $fillable = [
-        'description', 'image','description_vi',
+        'description', 'icon','description_vi'
     ];
 }

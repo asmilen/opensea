@@ -8,17 +8,30 @@
 
 namespace App\Repositories;
 
+use App\Models\Ticket;
 use App\Models\TicketComponent;
+use App\Models\TicketFeatures;
 use Illuminate\Support\Facades\DB;
 
-class TicketComponentRepository extends BaseRepository
+class TicketFeatureRepository extends BaseRepository
 {
-    const MODEL = TicketComponent::class;
+    const MODEL = TicketFeatures::class;
+    
+    public function getData($filter = []) {
+        $query = $this->query($filter);
+        
+        return $query->get($filter['columns']);
+    }
 
     public function query($filter = [])
     {
         $columns = ['*'];
         $query = parent::query($filter);
+
+        if (array_key_exists('ticket_id', $filter) && $filter['ticket_id']) {
+            $query->where('ticket_id', '=', $filter['ticket_id']);
+        }
+
         $query->select($columns);
         return $query;
     }
@@ -30,15 +43,6 @@ class TicketComponentRepository extends BaseRepository
         return $query;
     }
 
-    public function getDataById ($filter = []) {
-        $columns = ['description', 'icon', 'description_vi'];
-        if (array_key_exists('id', $filter)) {
-            $query = $this->query($filter);    
-            return $query->get($columns)->first();
-        }
-
-        return null;
-    }
     public function checkSlug($slug, $id = 0) {
         $query= DB::table('blogs')->where('slug', '=', $slug);
         if ($id) {

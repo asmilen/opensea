@@ -20,6 +20,7 @@ use App\Repositories\TourRepository;
 use App\Repositories\TourRequestRepository;
 use App\Repositories\RequestRepository;
 use App\Repositories\TrackingRepository;
+use App\Repositories\TicketFeatureRepository;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -65,6 +66,9 @@ class AppServiceProvider extends ServiceProvider
         });
         $this->app->singleton('ticketComponentService', function () {
             return new TicketComponentRepository();
+        });
+        $this->app->singleton('ticketFeatureService', function () {
+            return new TicketFeatureRepository();
         });
         $this->app->singleton('categoryService', function () {
             return new CategoryRepository();

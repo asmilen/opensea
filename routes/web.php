@@ -16,6 +16,7 @@ Route::get('/bus', 'Frontend\IndexController@bus')->name('frontend::bus');
 Route::get('/tour', 'Frontend\IndexController@tour')->name('frontend::tour');
 Route::get('/faq', 'Frontend\IndexController@faq')->name('frontend::faq');
 Route::get('api/frontend/tour','Frontend\TourController@index');
+Route::get('api/frontend/ticket', 'Frontend\TicketController@index');
 Route::get('api/frontend/attraction','Frontend\IndexController@attraction');
 
 #lang
