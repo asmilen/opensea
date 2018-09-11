@@ -17,17 +17,11 @@ class TicketRepository extends BaseRepository
     const MODEL = Ticket::class;
     public function query($filter = [])
     {
-        $columns = ['ticket.id', 'ticket.slug', 'ticket.name', 'ticket.content', 'ticket.image_url',
-            'ticket.type', 'ticket.duration', 'ticket.price', 'ticket.config', 'ticket.status'];
+        $columns = [*];
         $query = parent::query($filter);
-        if (array_key_exists('status', $filter) && $filter['status']) {
-            $query->where('ticket.status', '=', $filter['status']);
-        }
+
         if (array_key_exists('search', $filter) && $filter['search']) {
             $query->where('ticket.name', 'like', '%' . $filter['search'] . '%');
-        }
-        if (array_key_exists('slug', $filter) && $filter['slug']) {
-            $query->where('blogs.slug', '=', $filter['slug']);
         }
         $query->select($columns);
         return $query;
