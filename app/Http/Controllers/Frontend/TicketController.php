@@ -59,6 +59,15 @@ class TicketController extends Controller
                 }
             }
 
+            #price handle
+            #explode(PHP_EOL, $tour->description_vi)
+            #price: adult:1000:500;child:500:200
+            
+            $prices = explode (";", $ticket->price);
+            foreach ($prices as $price) {
+                $price_component = explode(":", $price);
+                $ticketInfo->prices[]  = array ( $price_component[0] => array ('number' => $price_component[1], 'save' => $price_component[2]) );
+            }
             $ticketInfos[] = $ticketInfo;
         }
 
