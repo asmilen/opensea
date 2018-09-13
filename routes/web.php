@@ -27,6 +27,7 @@ Route::get('api/frontend/attraction','Frontend\IndexController@attraction');
 
 //cart api
 Route::post('api/frontend/cart', 'Frontend\CartController@store');
+Route::get('api/frontend/cart/index', 'Frontend\CartController@index');
 
 #lang
 Route::get('/lang', function(){

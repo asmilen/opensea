@@ -20,8 +20,7 @@ class CartController extends Controller
     public function index()
     {
         //
-
-        return response()->json();
+        return response()->json(Cart::content());
     }
 
     /**
@@ -131,16 +130,12 @@ class CartController extends Controller
 
     private function convertToCartItem ($request) {
         $cartItems = [];
-        Log::error("class type". get_class($request) . " request: ");
-        Log::error($request->all());
 
         $ticketService = App::make('ticketService');
 
         foreach ($request->all() as $item) {
             //query for object prize
 
-
-            Log::info ($item);
             $prizeTypes = $item['quantity'];
 
             foreach ($prizeTypes as $prizeType => $quantity) {
@@ -149,12 +144,13 @@ class CartController extends Controller
                 if ($quantity <= 0) continue;
 
                 $id = $this->codeGen($item);
+
                 $cartItem = array_merge($cartItem, array('id' => $id));
 
                 $cartItem = array_merge ($cartItem, ['name' => $item['name']] );
 
                 Log::info ("prize type: ". $prizeType);
-                
+
                 $cartItem = array_merge ($cartItem ,['options' => ['prize_type' => $prizeType]]);
                 
                 //get ticket prize    
