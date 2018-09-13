@@ -17,7 +17,7 @@ class TicketRepository extends BaseRepository
     const MODEL = Ticket::class;
     public function query($filter = [])
     {
-        $columns = [*];
+        $columns = ['*'];
         $query = parent::query($filter);
 
         if (array_key_exists('search', $filter) && $filter['search']) {

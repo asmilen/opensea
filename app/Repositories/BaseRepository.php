@@ -14,8 +14,12 @@ class BaseRepository {
 
     public function getData($filter = []) {
         $query = $this->query($filter);
-        if ($filter['page_size'] != 0) {
+        if (array_key_exists('page_size', $filter) && $filter['page_size'] != 0) {
             $query->forPage($filter['page_id'], $filter['page_size']);
+        }
+
+        if (!array_key_exists('columns', $filter)) {
+            $filter['columns'] = '*';
         }
         return $query->get($filter['columns']);
     }

@@ -15,9 +15,18 @@ Route::get('/', 'Frontend\IndexController@index')->name('frontend::index');
 Route::get('/bus', 'Frontend\IndexController@bus')->name('frontend::bus');
 Route::get('/tour', 'Frontend\IndexController@tour')->name('frontend::tour');
 Route::get('/faq', 'Frontend\IndexController@faq')->name('frontend::faq');
+
+//tour api
 Route::get('api/frontend/tour','Frontend\TourController@index');
+
+//ticket api
 Route::get('api/frontend/ticket', 'Frontend\TicketController@index');
+
+//attraction api
 Route::get('api/frontend/attraction','Frontend\IndexController@attraction');
+
+//cart api
+Route::post('api/frontend/cart', 'Frontend\CartController@store');
 
 #lang
 Route::get('/lang', function(){
