@@ -90,19 +90,30 @@ class CartController extends Controller
      */
     public function show(Request $request, $rowId)
     {   
-        $retVal = [];
-        
-        if (array_key_exists($rowId, Cart::content())) {
+        $retVal = [
+            'success' => false,
+            'message' => 'unknown error'
+        ];
+        $retCode = 400;
+        $flag = false;
+        if (array_key_exists($rowId, Cart::content()->toArray())) {
             $items = $this->convertCartItemToJson();    
             $cartItem = Cart::content()[$rowId];
 
             foreach ($items as $item) {
                 if ($this->codeGen($item) === $cartItem->id) {
-                    $retVal = $item;
-                    unset($retVal['row_id']);
+                    $retVal['success'] =  true;
+                    $retVal['item'] = $item;
+                    $retVal['message'] = '';
+                    unset($retVal['item']['row_id']);
+                    $retCode = 200;
+                    $flag = true;
                     break;
                 }
             }
+        }
+        if (!$flag) {
+            $retVal ['message'] = 'item with id ' . $rowId . ' not existed';
         }
 
         return response()->json($retVal);
