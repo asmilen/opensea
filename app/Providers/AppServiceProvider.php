@@ -21,6 +21,8 @@ use App\Repositories\TourRequestRepository;
 use App\Repositories\RequestRepository;
 use App\Repositories\TrackingRepository;
 use App\Repositories\TicketFeatureRepository;
+use App\Repositories\OnlineOrderRepository;
+use App\Repositories\TicketInstanceRepository;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -93,6 +95,12 @@ class AppServiceProvider extends ServiceProvider
         });
         $this->app->singleton('requestService', function(){
             return new RequestRepository();
+        });
+        $this->app->singleton('onlineOrderService', function() {
+            return new OnlineOrderRepository();
+        });
+        $this->app->singleton('ticketInstanceService', function() {
+            return new TicketInstanceRepository();
         });
     }
 }

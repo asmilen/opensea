@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Log;
 use \Cart as Cart;
+use App\Http\Controllers\Service\OnlineOrderService;
+use App\Http\Controllers\Service\TicketInstanceService;
 use Validator;
 
 class CartController extends Controller
@@ -232,6 +234,35 @@ class CartController extends Controller
         return response()->json($retVal, $retCode);
     }
 
+    public function checkout(Request $request) {
+        //TODO: add validator here
+        $retVal = [
+            'success' => true,
+            'message' => ''
+        ];
+
+        $orderService = new OnlineOrderService;
+        $article = $orderService->create($request->input('info'));
+
+        $ticketInstanceService = new TicketInstanceService;
+
+        $ordered_items = $request->input('items');
+        
+        foreach ($ordered_items as $ordered_item) {
+            foreach ($ordered_item['quantity'] as $type => $numb) {
+                for ($i = 0; $i < $numb; $i++) {
+                    //create ticket instance
+                    $ticketInstace['order_id'] = $article['id'];
+                    $ticketInstace['ticket_id'] = $ordered_item['id'];
+                    $ticketInstace['type'] = $type;
+                    $ticketInstanceService->create($ticketInstace);
+                }
+            }            
+        }
+
+        return response()->json($retVal);
+    }
+
     private function codeGen($item) {
         $validator = Validator::make($item, [
             'product' => 'required',
@@ -252,7 +283,7 @@ class CartController extends Controller
         $decoded = explode ('|', $item);
         return $decoded;
     }
-
+    
     private function convertToCartItem ($request) {
         $cartItems = [];
 
