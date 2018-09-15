@@ -45,7 +45,7 @@ class CartController extends Controller
     {
         //
         $retval = [
-            'status' => 'failed',
+            'success' => false,
             'message' => 'unknown error'
         ];
         $code = 400;
@@ -65,7 +65,7 @@ class CartController extends Controller
                 $retval['message'] = 'item already on cart';
             }else{
                 Cart::add($item);
-                $retval['status'] = 'success';
+                $retval['success'] = true;
                 $retval['message'] = '';
                 $code = 200;
             }
@@ -106,7 +106,48 @@ class CartController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $retVal = [
+            "success" => false,
+            "message" => ''
+        ];
+        $retCode = 400;
+
+        $cartItem = Cart::content()[$id];
+        $validItem = [];
+        $flag = true;
+        $err = '';
+        if ($cartItem) {
+            $quantities = $request->all();
+
+            foreach ($quantities as $quantity => $value) {
+                $duplicates = Cart::search (function ($item, $rowId) use ($cartItem, $quantity) {
+                    return ($item->id === $cartItem->id) && ($quantity === $item->options['prize_type']);
+                });
+
+                if (count($duplicates) === 1) {
+                    $dup = $duplicates->first();
+                    $validItem[] = array ('item' => $dup, 'newQty' => $value);
+                }else {
+                    $flag = false;
+                    $err = $quantity;
+                    break;
+                }
+            }
+
+            if ($flag) {
+                foreach ($validItem as $item) {
+                    Cart::update($item['item']->rowId, $item['newQty']);
+                }
+                $retVal['success'] = true;
+                $retCode = 200;
+            }else {
+                $retVal['message'] = 'unknow value: ' . $err;
+            }
+        }else {
+            $retVal['message'] = 'blank update field';
+        }   
+
+        return response()->json($retVal, $retCode);
     }
 
     /**
