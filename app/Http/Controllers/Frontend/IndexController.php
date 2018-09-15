@@ -25,6 +25,11 @@ class IndexController extends Controller
         return view('frontend.rewind');
     }
 
+    public function cart()
+    {
+        return view('frontend.cart');
+    }
+
     public function faq()
     {
         return view('frontend.faq');

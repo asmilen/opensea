@@ -1067,4 +1067,5 @@
 <script src="./js/bonbon_data.js"></script>
 <script src="./js/bonbon.js"></script>
 <script src="./js/lang.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
 </body>

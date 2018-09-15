@@ -20,8 +20,8 @@
             <li class="nav-item">
                 <a class="nav-link" id="faq" href="#">FAQs</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" id="cart" href="cart.html"><span class="text">CART</span> <span class="amount">(10)</span></a>
+            <li class="nav-item {{ (Route::currentRouteName()=='frontend::cart')?'active':'' }}">
+                <a class="nav-link" id="cart" href="/cart"><span class="text">CART</span> <span class="amount">(10)</span></a>
             </li>
         </ul>
     </div>

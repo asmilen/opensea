@@ -536,7 +536,7 @@ function addTicketToCart(id, name, type, btn=null) {
   requestAddToCart(submitData, () => {
     closeModal('#ticket-popup-' + id);
     if (btn == 'book') {
-      location.href = 'cart.html';
+      location.href = '/cart';
     } else {
       alert('Success');
     }

@@ -1,46 +1,12 @@
-window.cartData = [
-  {
-    "row_id": "ba65ac6bd7bf7217329729090ffcb1ec",
-    "id": "1",
-    "product": "ticket",
-    "type": "normal",
-    "name": "deluxe",
-    "quantity": {
-      "adult": 1
-    },
-    "price": {
-      "adult": 350000
-    },
-    "sub_total": 350000,
-    "currency": 'VND'
-  },
-  {
-    "row_id": "ba65ac6bd7bf7217329729090fsdsdsd",
-    "id": "2",
-    "product": "tour",
-    "type": "normal",
-    "name": "HANOI'S SECRETS WITH FILM CAMERAS",
-    "quantity": {
-      "adult": 1
-    },
-    "price": {
-      "adult": 250000
-    },
-    "sub_total": 250000,
-    "currency": 'VND'
-  },
-]
-
 // Get cart data
 function getCartData(cb) {
-  // $.ajax({
-  //   type: 'GET',
-  //   url: 'http://opensea.vn/api/frontend/cart/index',
-  //   success: cb,
-  //   error: handleRequestError
-  // });
+  $.ajax({
+    type: 'GET',
+    url: 'api/frontend/cart/index',
+    success: cb,
+    error: handleRequestError
+  });
 
-  cb(window.cartData);
 }
 
 // Request remove item
@@ -160,6 +126,46 @@ function renderCartData(data) {
   $('.order .actual-total .price .number').text(total);
 }
 
+function RequestCheckout(cart_data) {
+    submit_data = {
+        "info" : {
+            "gender" : "male",
+            "first_name" : "thinh",
+            "last_name" : "nguyen",
+            "email" : "thinhnh56@gmail.com",
+            "address_line_1" : "hanoi",
+            "address_line_2" : "hanoi",
+            "city" : "hanoi",
+            "postcode" : "100000",
+            "state" : "LA",
+            "country" : "vietnam"
+        },
+        "items" : cart_data
+    };
+    $.ajax({
+        type: 'POST',
+        url: 'api/frontend/checkout',
+        data: JSON.stringify(submit_data),
+        headers: {
+            'Content-type': 'application/json'
+        },
+        success: function () {
+            swal("Success!", "Successfully Checkout!", "success");
+            getCartData(renderCartData);
+        },
+        error: handleRequestError()
+    });
+}
+
+function processCheckout()
+{
+  $('.checkout button').click(function () {
+    getCartData(RequestCheckout);
+  });
+}
+
 $(document).ready(() => {
+    csrfHeader();
   getCartData(renderCartData);
+  processCheckout(renderCartData);
 });

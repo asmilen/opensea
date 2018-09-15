@@ -14,6 +14,7 @@
 Route::get('/', 'Frontend\IndexController@index')->name('frontend::index');
 Route::get('/bonbon', 'Frontend\IndexController@bonbon')->name('frontend::bonbon');
 Route::get('/rewind', 'Frontend\IndexController@rewind')->name('frontend::rewind');
+Route::get('/cart', 'Frontend\IndexController@cart')->name('frontend::cart');
 Route::get('/faq', 'Frontend\IndexController@faq')->name('frontend::faq');
 
 //tour api

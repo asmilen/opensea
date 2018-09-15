@@ -46,7 +46,7 @@ function getCookie(cname) {
 
 // Handle request error
 function handleRequestError(err) {
-  alert('Error');
+    swal("Error!", "Something went wrong!", "error");
 }
 
 // CSRF header
