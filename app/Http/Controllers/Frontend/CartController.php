@@ -90,22 +90,33 @@ class CartController extends Controller
      */
     public function show(Request $request, $rowId)
     {   
-        $retVal = [];
-        
-        if (array_key_exists($rowId, Cart::content())) {
+        $retVal = [
+            'success' => false,
+            'message' => 'unknown error'
+        ];
+        $retCode = 400;
+        $flag = false;
+        if (array_key_exists($rowId, Cart::content()->toArray())) {
             $items = $this->convertCartItemToJson();    
             $cartItem = Cart::content()[$rowId];
 
             foreach ($items as $item) {
                 if ($this->codeGen($item) === $cartItem->id) {
-                    $retVal = $item;
-                    unset($retVal['row_id']);
+                    $retVal['success'] =  true;
+                    $retVal['item'] = $item;
+                    $retVal['message'] = '';
+                    unset($retVal['item']['row_id']);
+                    $retCode = 200;
+                    $flag = true;
                     break;
                 }
             }
         }
+        if (!$flag) {
+            $retVal ['message'] = 'item with id ' . $rowId . ' not existed';
+        }
 
-        return response()->json($retVal);
+        return response()->json($retVal, $retCode);
     }
 
     /**
@@ -134,7 +145,12 @@ class CartController extends Controller
         ];
         $retCode = 400;
 
-        $cartItem = Cart::content()[$id];
+        $cartItem = null;
+
+        if (array_key_exists($id, Cart::content()->toArray())) {
+            $cartItem = Cart::content()[$id];
+        }
+
         $validItem = [];
         $flag = true;
         $err = '';
@@ -166,7 +182,7 @@ class CartController extends Controller
                 $retVal['message'] = 'unknow value: ' . $err;
             }
         }else {
-            $retVal['message'] = 'blank update field';
+            $retVal['message'] = 'item with id '.$id.' not existed';
         }   
 
         return response()->json($retVal, $retCode);
@@ -178,9 +194,43 @@ class CartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($rowId)
     {
-        //
+        $retVal = [
+            'success' => false,
+            'message' => ''
+        ];
+        $retCode = 400;
+        $flag = false;
+
+        //find item with $rowId
+        $cartArray = Cart::content()->toArray();
+        if (array_key_exists($rowId, $cartArray)) {
+            $targetId = $cartArray[$rowId]['id'];
+
+            $deleteItems = [];
+
+            $sameIdItems = Cart::search (function ($item, $rowId) use ($targetId) {
+                    return ($item->id === $targetId);
+            });
+
+            foreach ($sameIdItems as $item_key => $val) {
+                $deleteItems[] = $item_key;
+            }
+
+            foreach ($deleteItems as $item) {
+                Cart::remove($item);
+            }
+            $flag = true;
+            $retVal['success'] = true;
+            $retCode = 200;
+        }
+
+        if (!$flag) {
+            $retVal ['message'] = 'item with id ' . $rowId . ' not existed';
+        }
+
+        return response()->json($retVal, $retCode);
     }
 
     private function codeGen($item) {
