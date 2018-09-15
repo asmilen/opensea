@@ -1,5 +1,21 @@
-// Language
-window.lang = 'en';
+// Persists
+function persistStorage() {
+  window.storage = new Persist.Store('Opensea');
+}
+
+// Init language
+function initLanguage() {
+  if (!window.storage) {
+    window.lang = 'en';
+  } else {
+    if (!window.storage.get('lang')) {
+      window.lang = 'en';
+      window.storage.set('lang', 'en');
+    } else {
+      window.lang = window.storage.get('lang');
+    }  
+  }
+}
 
 // Navbar content
 window.navContent = {
@@ -259,7 +275,8 @@ window.rewindContent = {
       text: `Our growing collection of exclusive, tailor-made experiences focus on the country heritage with a special feature of craftsmanship ranging from photography, coffee tasting to lacquer and leathery techniques. Starting with Hanoi, schedule your next adventure with ease, and let us take you to its rawest, deepest and also finest secrets, the best way we know how.`
     },
     journeys: {
-      h1: `Our journeys`
+      h1: `Our journeys`,
+      btn: 'BOOK NOW'
     },
     customers: {
       h1: `Happy customers`,
@@ -296,7 +313,8 @@ window.rewindContent = {
       text: `Mỗi ngày chúng tôi đều cố gắng mang đến nhiều hơn những trải nghiệm độc đáo cho chuyến du lịch của bạn, giúp bạn khám phá những nét đẹp của Việt Nam với nhiều hình : từ nhiếp ảnh, cà phê, sơn mài hay làm da. Bắt đầu với Hà Nội, hãy cứ tận hưởng chuyến đi, và để chúng tôi mang đến cho bạn những vẻ đẹp ẩn giấu ít người được biết tới.`
     },
     journeys: {
-      h1: `Các tour`
+      h1: `Các tour`,
+      btn: 'Đặt ngay'
     },
     customers: {
       h1: `Những khách hàng vui vẻ`,
@@ -332,17 +350,29 @@ window.rewindContent = {
 // Choose language
 function chooseLanguage(cb) {
   $('.langs .en').click(function(e) {
-      $.get('/set-lang/en',function (lang) {
-          window.lang = 'en';
-          location.reload(true)
+    if (window.lang != 'en') {
+      window.lang = 'en';
+      
+      if (window.storage)
+        window.storage.set('lang', window.lang);
+
+      $.get('/set-lang/' + window.lang, function () {
+          location.reload();
       });
+    }
   });
 
   $('.langs .vi').click(function(e) {
-      $.get('/set-lang/vi',function (lang) {
-          window.lang = 'vi';
-          location.reload(true)
+    if (window.lang != 'vi') {
+      window.lang = 'vi';
+      
+      if (window.storage)
+        window.storage.set('lang', window.lang);
+
+      $.get('/set-lang/' + window.lang, function () {
+          location.reload();
       });
+    }
   });
 }
 
@@ -380,131 +410,127 @@ function posterFont(lang) {
 // Render home content
 function renderHomeContent() {
   let data;
-  $.get('/lang',function (lang) {
-      // Navbar
-      renderNavbarContent(lang);
+  let lang = window.lang;
 
-      // Home content
-      data = window.homeContent[lang];
+  // Navbar
+  renderNavbarContent(lang);
 
-      $('.banner .header-1').html(data.bannerH1);
-      $('.banner .header-2').html(data.bannerH2);
+  // Home content
+  data = window.homeContent[lang];
 
-      $('.about-us .text .header-1').html(data.aboutUsH1);
-      $('.about-us .text .content').html(data.aboutUsContent);
+  $('.banner .header-1').html(data.bannerH1);
+  $('.banner .header-2').html(data.bannerH2);
+  
+  $('.about-us .text .header-1').html(data.aboutUsH1);
+  $('.about-us .text .content').html(data.aboutUsContent);
 
-      $('.journeys .header').html(data.journeysHeader);
-      $('.journeys #bonbon .header-2').html(data.journeyBonbonH2);
-      $('.journeys #rewind .header-2').html(data.journeyRewindH2);
-      $('.journeys .see-more button').html(data.journeyMore);
+  $('.journeys .header').html(data.journeysHeader);
+  $('.journeys #bonbon .header-2').html(data.journeyBonbonH2);
+  $('.journeys #rewind .header-2').html(data.journeyRewindH2);
+  $('.journeys .see-more button').html(data.journeyMore);
 
-      $('.join-us .header-1').html(data.joinUsH1);
-      $('.join-us .header-2').html(data.joinUsH2);
-      $('.join-us input').attr('placeholder', data.joinUsPlaceholder);
-      $('.join-us .submit').html(data.joinUsSubmit);
+  $('.join-us .header-1').html(data.joinUsH1);
+  $('.join-us .header-2').html(data.joinUsH2);
+  $('.join-us input').attr('placeholder', data.joinUsPlaceholder);
+  $('.join-us .submit').html(data.joinUsSubmit);
 
-      $('#count-bonbon .header-2').html(data.countBonbonH2);
-      $('#count-customers .header-2').html(data.countCustomersH2);
-      $('#count-tours .header-2').html(data.countToursH2);
+  $('#count-bonbon .header-2').html(data.countBonbonH2);
+  $('#count-customers .header-2').html(data.countCustomersH2);
+  $('#count-tours .header-2').html(data.countToursH2);
 
-      // Footer content
-      renderFooterContent(lang);
-    
-      // Font
-      posterFont(lang);
+  // Footer content
+  renderFooterContent(lang);
 
-  })
+  // Font
+  posterFont(lang);
 }
 
 // Render bonbon content
 function renderBonbonContent() {
   let data;
-    $.get('/lang',function (lang) {
+  let lang = window.lang;
 
-        // Navbar
-        renderNavbarContent(lang);
+  // Navbar
+  renderNavbarContent(lang);
 
-        // Bonbon content
-        data = window.bonbonContent[lang];
+  // Bonbon content
+  data = window.bonbonContent[lang];
 
-        $('.intro-video .header-1').html(data.introH1);
-        $('.intro-video .text').html(data.introText);
+  $('.intro-video .header-1').html(data.introH1);
+  $('.intro-video .text').html(data.introText);
 
-        $('.packages .header-1').html(data.packages.h1);
-        $('.packages .header-2').html(data.packages.h2);
-        $('.packages .header-3').html(data.packages.h3);
+  $('.packages .header-1').html(data.packages.h1);
+  $('.packages .header-2').html(data.packages.h2);
+  $('.packages .header-3').html(data.packages.h3);
 
-        $('.highlights .header-1').html(data.highlightH1);
-        $('.highlights .header-2').html(data.highlightH2);
+  $('.highlights .header-1').html(data.highlightH1);
+  $('.highlights .header-2').html(data.highlightH2);
 
-        $('.how-it-work .header-1').html(data.howItwork.h1);
-        for (let i = 1; i < 5; i++) {
-            $(`.how-it-work #step${i} span`).html(data.howItwork['step' + i]);
-        }
-        $('.how-it-work .book-now button').text(data.howItwork.book);
+  $('.how-it-work .header-1').html(data.howItwork.h1);
+  for (let i = 1; i < 5; i++) {
+    $(`.how-it-work #step${i} span`).html(data.howItwork['step' + i]);
+  }
+  $('.how-it-work .book-now button').text(data.howItwork.book);
 
-        for (let i = 1; i < 7; i++) {
-            $(`.highlight#${i} h1`).html(data['highlight' + i].h1);
-            $(`.highlight#${i} h2`).html(data['highlight' + i].h2);
-            $(`.highlight#${i} .content`).html(data['highlight' + i].content);
-        }
+  for (let i = 1; i < 7; i++) { 
+    $(`.highlight#${i} h1`).html(data['highlight' + i].h1);
+    $(`.highlight#${i} h2`).html(data['highlight' + i].h2);
+    $(`.highlight#${i} .content`).html(data['highlight' + i].content);
+  }
 
-        $('.route .header-1').html(data.route.h1);
-        $('.route .header-2').html(data.route.h2);
-        $('.route .text').html(data.route.text);
-        $('.route .download button').html(data.route.download);
+  $('.route .header-1').html(data.route.h1);
+  $('.route .header-2').html(data.route.h2);
+  $('.route .text').html(data.route.text);
+  $('.route .download button').html(data.route.download);
 
-        $('.attractions .header-1').html(data.attractions.h1);
-        $('.attractions .header-2').html(data.attractions.h2);
-        $('.attractions .bonbon button').html(data.attractions.bonbon);
+  $('.attractions .header-1').html(data.attractions.h1);
+  $('.attractions .header-2').html(data.attractions.h2);
+  $('.attractions .bonbon button').html(data.attractions.bonbon);
 
-        $('.customers .header-1').html(data.customers.h1);
-        $('.customers .header-2').html(data.customers.h2);
-        for (let i = 0; i < data.customers.list.length; i++) {
-            $('.customers .list .customer#' + (i + 1) + ' .text').html(data.customers.list[i].review);
-        }
+  $('.customers .header-1').html(data.customers.h1);
+  $('.customers .header-2').html(data.customers.h2);
+  for (let i = 0; i < data.customers.list.length; i++) {
+    $('.customers .list .customer#' + (i + 1) + ' .text').html(data.customers.list[i].review);
+  }
 
-        $('.get-in-touch .header-1').html(data.getInTouch.h1);
-        $('.get-in-touch #name').attr('placeholder', data.getInTouch.namePlaceholder);
-        $('.get-in-touch #email').attr('placeholder', data.getInTouch.emailPlaceholder);
-        $('.get-in-touch textarea').attr('placeholder', data.getInTouch.messagePlaceholder);
-        $('.get-in-touch .submit button').html(data.getInTouch.submit);
+  $('.get-in-touch .header-1').html(data.getInTouch.h1);
+  $('.get-in-touch #name').attr('placeholder', data.getInTouch.namePlaceholder);
+  $('.get-in-touch #email').attr('placeholder', data.getInTouch.emailPlaceholder);
+  $('.get-in-touch textarea').attr('placeholder', data.getInTouch.messagePlaceholder);
+  $('.get-in-touch .submit button').html(data.getInTouch.submit);
 
-        // Footer content
-        renderFooterContent(lang);
+  // Footer content
+  renderFooterContent(lang);
 
-        // Font
-        posterFont(lang);
-
-    })
+  // Font
+  posterFont(lang);
 }
 
 // Render rewind content
 function renderRewindContent() {
-    let data;
-    $.get('/lang',function (lang) {
+  let data;
+  let lang = window.lang;
 
-        // Navbar
-        renderNavbarContent(lang);
+  // Navbar
+  renderNavbarContent(lang);
 
-        // Rewind content
-        data = window.rewindContent[lang];
+  // Rewind content
+  data = window.rewindContent[lang];
 
-        $('.intro-video .header-1').html(data.intro.h1);
-        $('.intro-video .text').html(data.intro.text);
+  $('.intro-video .header-1').html(data.intro.h1);
+  $('.intro-video .text').html(data.intro.text);
 
-        $('.journeys .header-1').html(data.journeys.h1);
+  $('.journeys .header-1').html(data.journeys.h1);
+  $('.journeys button').text(data.journeys.btn)
 
-        $('.customers .header-1').html(data.customers.h1);
-        for (let i = 0; i < data.customers.list.length; i++) {
-            $('.customers .list .customer#' + (i + 1) + ' .text span').html(data.customers.list[i].review);
-        }
+  $('.customers .header-1').html(data.customers.h1);
+  for (let i = 0; i < data.customers.list.length; i++) {
+    $('.customers .list .customer#' + (i + 1) + ' .text span').html(data.customers.list[i].review);
+  }
 
-        // Footer content
-        renderFooterContent(lang);
+  // Footer content
+  renderFooterContent(lang);
 
-        // Font
-        posterFont(lang);
-
-    })
+  // Font
+  posterFont(lang);
 }

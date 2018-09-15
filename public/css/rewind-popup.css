@@ -1,0 +1,164 @@
+.modal-dialog {
+	max-width: 1050px;
+}
+.tour-popup {
+	position: absolute;
+	top: 0;
+	left: auto;
+	background-image: url('../images/tour-popup-bg.png');
+	max-width: 1100px;
+	padding: 30px;
+	margin: 10px auto;
+	z-index: 2000;
+}
+.tour-popup .row {
+	height: unset;
+}
+.tour-popup .inner {
+	background-color: rgb(255,255,255);
+	padding: 30px;
+}
+.tour-popup .inner .name {
+	text-align: center;
+	padding: 20px 0 50px 0;
+}
+.tour-popup .inner .name h1 {
+	font-family: 'MrStalwart';
+    font-size: 40px;
+    color: rgb(183,68,59);
+    text-shadow: 1px 1px rgb(241,180,52), -1px -1px rgb(241,180,52), 3px 3px rgb(54,67,88);
+}
+.tour-popup .inner .name h2 {
+	font-family: 'HolidaySerifRegular';
+    font-size: 28px;
+    color: rgb(51,53,93);
+    text-shadow: 1px 1px rgb(255,248,233), -1px -1px rgb(255,248,233), 3px 3px rgb(193,144,42);
+}
+.tour-popup .inner .images {
+	padding: 0 60px;
+}
+.tour-popup .inner .images a>.icon {
+	color: rgb(125,188,227);
+	border: 2px solid rgb(125,188,227);
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.tour-popup .inner .images a.carousel-control-prev {
+	left: -60px;
+}
+.tour-popup .inner .images a.carousel-control-next {
+	right: -60px;
+}
+.tour-popup .inner .price {
+}
+.tour-popup .inner .price .currency {
+	font-family: 'GothamRoundedBook';
+	font-size: 16px;
+	color: rgb(87,102,113);
+}
+.tour-popup .inner .price .number {
+	font-family: 'GothamRoundedBold';
+	font-size: 34px;
+	color: rgb(0,38,58);
+}
+.tour-popup .inner .price .text {
+	font-family: 'GothamRoundedBook';
+	font-size: 14px;
+	color: rgb(25,54,97);
+}
+.tour-popup .inner .include {
+	padding: 20px 0;
+}
+.tour-popup .inner .include .title {
+	font-family: 'GothamRoundedBold';
+	font-size: 16px;
+	color: rgb(25,54,97);
+}
+.tour-popup .inner .include ul {
+}
+.tour-popup .inner .include ul li {
+	font-family: 'GothamRoundedBook';
+	font-size: 12px;
+	color: rgb(25,54,97);
+	text-align: justify;
+}
+.tour-popup .inner .book-info {
+	padding: 0;
+}
+.tour-popup .inner .book-info .title {
+	text-align: center;
+	font-family: 'GothamRoundedBold';
+	font-size: 16px;
+	color: rgb(25,54,97);
+	padding: 0 0 20px 0;
+}
+.tour-popup .inner .book-info form {
+}
+.tour-popup .inner .book-info form label {
+	font-family: 'GothamRoundedBook';
+	font-size: 13px;
+	color: rgb(25,54,97);
+}
+.tour-popup .inner .book-info form input,
+.tour-popup .inner .book-info form textarea,
+.tour-popup .inner .book-info form select {
+	font-family: 'GothamRoundedBook';
+	font-size: 12px;
+	color: rgb(25,54,97);
+	background-color: rgb(235,235,235);
+}
+.tour-popup .inner .book-info form .form-check label {
+	font-family: 'GothamRoundedBook';
+	font-size: 12px;
+	color: rgb(25,54,97);
+}
+.tour-popup .inner .book-info form .time {
+	padding: 0 0 0 15px;
+}
+.tour-popup .inner .book-info form .sub-total {
+}
+.tour-popup .inner .book-info form .sub-total .title {
+	text-align: right;
+	font-family: 'GothamRoundedBook';
+	font-size: 16px;
+	color: rgb(25,54,97);
+	padding: 0;
+}
+.tour-popup .inner .book-info form .sub-total .price {
+	text-align: right;
+}
+.tour-popup .inner .book-info form .sub-total .price .currency {
+	font-family: 'GothamRoundedBook';
+	font-size: 16px;
+	color: rgb(25,54,97);
+}
+.tour-popup .inner .book-info form .sub-total .price .number {
+	font-family: 'BCCartelDeux';
+	font-size: 34px;
+	color: rgb(25,54,97);
+}
+.tour-popup .submit-buttons {
+	text-align: right;
+	padding: 20px 0 0 0;
+}
+.tour-popup .submit-buttons button {
+	font-family: 'GothamRoundedBold';
+	font-size: 12px;
+	border: none;
+	padding: 8px 28px;
+	cursor: pointer;
+}
+.tour-popup .submit-buttons .add-to-cart {
+	color: rgb(25,54,97);
+	background-color: rgb(255,255,255);
+	border-bottom: 1px solid rgb(25,54,97);
+	margin: 0 10px 0 0;
+}
+.tour-popup .submit-buttons .buy-now {
+	color: rgb(255,255,255);
+	background-color: rgb(25,54,97);
+}

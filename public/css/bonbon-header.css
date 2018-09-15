@@ -1,0 +1,27 @@
+.header {
+    padding: 40px 0 20px 0;
+}
+.header .logo {
+    top: -10px;
+    position: relative;
+}
+.header .logo img {
+	height: 100px;
+	width: unset;
+}
+.header .search input {
+	background: transparent;
+}
+@media (max-width: 768px) {
+	.header {
+	    padding: 10px 0 10px 0;
+	}
+	.header .logo {
+	    top: 0px;
+	    position: relative;
+	}
+	.header .logo img {
+		height: 70px;
+		width: unset;
+	}
+}

@@ -1,0 +1,111 @@
+nav {
+	z-index: 1;
+}
+.navbar {
+    width: 100%;
+    padding: 0;
+    height: 80px;
+}
+.navbar.bg-light, .navbar .bg-light {
+    background-color: rgba(255,255,255,1)!important;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(25,54,97,1);
+}
+.navbar-light .navbar-nav .active>.nav-link,
+	.navbar-light .navbar-nav .nav-link.active,
+	.navbar-light .navbar-nav .nav-link.show,
+	.navbar-light .navbar-nav .show>.nav-link {
+    color: rgba(255,255,255,1);
+}
+.navbar.bg-dark, .navbar .bg-dark {
+    background-color: rgba(100,100,100,.2);
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(240,240,240,1);
+}
+.navbar-dark .navbar-nav .active>.nav-link,
+	.navbar-dark .navbar-nav .nav-link.active,
+	.navbar-dark .navbar-nav .nav-link.show,
+	.navbar-dark .navbar-nav .show>.nav-link {
+    color: rgba(255,255,255,1);
+}
+.nav-item.active {
+	background-color: rgb(60,156,215);
+}
+.navbar-light .nav-item:hover {
+	background-color: rgb(189,222,242);
+}
+.navbar-dark .nav-item:hover {
+	background-color: rgb(150,160,190);
+}
+.navbar>.container {
+	height: 100%;
+	flex-direction: row-reverse;
+	align-items: center;
+}
+.navbar-brand {
+	padding: 0;
+	height: 100%;
+	margin: 0;
+}
+.navbar-brand>img {
+	position: relative;
+    height: 50%;
+    top: 25%;
+}
+.navbar-nav {
+	min-width: 50%;
+}
+.navbar-collapse {
+	justify-content: center;
+}
+.nav-item .nav-link {
+	font-family: 'GothamRoundedBook';
+	font-size: 16px;
+	text-shadow: 0.3px -0.3px #444;
+}
+@media (max-width: 1199.98px) {
+	.navbar-nav {
+		background-color: rgba(0,0,0,.3)!important;
+		min-width: 40%;
+		max-width: 70%;
+	}
+	.nav-item .nav-link {
+		padding: 7px;
+		border-top: 1px solid gray;
+	}
+}
+@media (max-width: 575.98px) {
+	.nav-item .nav-link {
+		padding: 5px;
+	}
+}
+@media (min-width: 992px) {
+	.navbar-expand-lg .navbar-nav .nav-link {
+	    padding-right: 1.4rem;
+	    padding-left: 1.4rem;
+	}
+}
+@media (min-width: 1200px) {
+	.navbar-expand-xl .navbar-nav .nav-link {
+	    padding-right: 2.2rem;
+	    padding-left: 2.2rem;
+	}
+	.navbar>.container {
+		flex-direction: row;
+	}
+	.navbar-nav {
+		position: relative;
+		justify-content: center;
+	}
+}
+@media (max-width: 1200px) {
+	.navbar {
+		height: 40px;
+	}
+}
+.navbar-toggler {
+	margin: auto 0;
+	height: 100%;
+}

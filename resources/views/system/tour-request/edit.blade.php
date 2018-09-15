@@ -76,9 +76,11 @@
                 </div>
                 <div class="col-md-4" style="margin-top: 10px">
                     <div class="form-group">
-                        <label for="" class="col-md-3 control-label">Time</label>
+                        <label for="" class="col-md-3 control-label">Status</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" ng-model="editArticle.time">
+                            <select ng-model="editArticle.time" class="form-control pull-right"
+                                    ng-options="status.value as status.name for status in listTime">
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -151,13 +153,15 @@
                             <span>-Date: @{{ note.old_data.date }} <br></span>
                             <span>-Number of People: @{{ note.old_data.number_people }} <br></span>
                             <span>-Status: @{{ note.old_data.status }} <br></span>
-                            <span>-Time: @{{ note.old_data.time }} <br></span>
+                            <span ng-if="note.old_data.time == '1'">-Time: 9 a.m - 1 p.m</span>
+                            <span ng-if="note.old_data.time == '2'">-Time: 1 p.m - 5 p.m</span>
                         </td>
                         <td>
                             <span>-Date: @{{ note.new_data.date }} <br></span>
                             <span>-Number of People: @{{ note.new_data.number_people }} <br></span>
                             <span>-Status: @{{ note.new_data.status }} <br></span>
-                            <span>-Time: @{{ note.new_data.time }} <br></span>
+                            <span ng-if="note.new_data.time == '1'">-Time: 9 a.m - 1 p.m</span>
+                            <span ng-if="note.new_data.time == '2'">-Time: 1 p.m - 5 p.m</span>
                         </td>
                     </tr>
                     </tbody>

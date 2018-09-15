@@ -13,6 +13,10 @@ function TourRequestController($scope, $http, $rootScope, $timeout, Upload) {
     $scope.filter = {
         key: ""
     };
+    $scope.tourTime = {
+        a: '9 a.m - 1 p.m',
+        b: '1 p.m - 5 p.m'
+    };
     $scope.editArticle = {};
     $scope.listStatus = [
         {value: 'new', name: 'New'},

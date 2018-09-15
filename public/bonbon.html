@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <title>Opensea BonBon</title>
   <meta name="description" content="Opensea" />
@@ -12,11 +13,30 @@
   <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
 	<link rel="apple-touch-icon" href="./images/apple-touch-icon.png">
 
+	<!-- CSS -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <link rel="stylesheet" href="../plugins/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="./css/fonts.css" type='text/css'>
+  <link rel="stylesheet" href="./css/main.css" type='text/css'>
+  <link rel="stylesheet" href="./css/header.css" type='text/css'>
+  <link rel="stylesheet" href="./css/bonbon-header.css" type='text/css'>
+  <link rel="stylesheet" href="./css/nav.css" type='text/css'>
+  <link rel="stylesheet" href="./css/bonbon-nav.css" type='text/css'>
+  <link rel="stylesheet" href="./css/footer.css" type='text/css'>
+  <link rel="stylesheet" href="./css/bonbon.css" type='text/css'>
+  <link rel="stylesheet" href="./css/bonbon.css" type='text/css'>
+  <link rel="stylesheet" href="./css/bonbon-popup.css" type='text/css'>
+  <link rel="stylesheet" href="../plugins/owl_carousel/dist/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="../plugins/owl_carousel/dist/assets/owl.theme.default.min.css">
+
   <!-- JS-->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/persist-js@0.3.1/src/persist.min.js"></script>
-  <script src="./js/lang.js"></script>
-  <script src="./js/bonbon.js"></script>
-  <script src="./js/bonbon_data.js"></script>
+  <script src="../plugins/jquery/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="../plugins/bootstrap/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  <script type="text/javascript" src="../plugins/owl_carousel/dist/owl.carousel.min.js"></script>
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -196,7 +216,158 @@
     </div>
   </div> -->
   <!-- End ticket popup -->
-  
+
+  <!-- Ticket popup family-->
+  <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#ticket-popup-family-test">Show ticket popup family</button>
+  <div class="modal ticket_popup_modal" tabindex="-1" role="dialog" id="ticket-popup-family-test">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="ticket-popup family">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <form>
+            <div class="row">
+              <div class="col-md-3">
+                <div class="banner">
+                  <div class="title">PREMIUM</div>
+                  <img src="./images/ticket_popup_banner.png">
+                  <div class="filter"></div>
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div class="content">
+                  <h1>SELECT YOUR BONBON TICKET</h1>
+                  <div class="prices">
+                    <div class="row">
+                      <div class="col-md-4 offset-md-2">
+                        <div class="price adult">
+                          <div class="title">2 Adults and 2 Children</div>
+                          <div class="inner-price">
+                            <span class="currency">VND</span>
+                            <span class="number">1,020,000</span>
+                          </div>
+                          <div class="save">
+                            <span class="text">save up to</span>
+                            <span class="save-price">
+                              <span class="currency">VND</span><span class="number">180,000</span>
+                            </span>
+                          </div>
+                        </div>               
+                      </div>
+                      <div class="col-md-4 wrap">
+                        <div class="choose-amount">
+                          <span class="sub">-</span>
+                          <span class="amount-number">1</span>
+                          <span class="add">+</span>
+                          <input type="number" name="amountChild" class="amount-child" hidden>
+                        </div>
+                      </div>
+                    </div>  
+                  </div>
+
+                  <div class="descriptions">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="description row">
+                          <div class="icon col-3">
+                            <img src="./images/ticket_popup_desc_ticket.png">
+                          </div>
+                          <div class="text col-9">Use your ticket anyday within 6 months</div>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="description row">
+                          <div class="icon col-3">
+                            <img src="./images/ticket_popup_desc_offer.png">
+                          </div>
+                          <div class="text col-9">Exclusive online offers</div>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="description row">
+                          <div class="icon col-3">
+                            <img src="./images/ticket_popup_desc_safe.png">
+                          </div>
+                          <div class="text col-9">Safe and secure checkout</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="offers row">
+                    <div class="col-md-4">
+                      <div class="title cell">EXCLUSIVE OFFER</div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row cell">
+                        <div class="icon col-3">
+                          <img src="./images/ticket_popup_offer_time.png">
+                        </div>
+                        <div class="text col-9">2-day BonBon City Tour</div>  
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row cell">
+                        <div class="icon col-3">
+                          <img src="./images/ticket_popup_offer_coupon.png">
+                        </div>
+                        <div class="text col-9">A set of partner's coupons</div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row cell">
+                        <div class="icon col-3">
+                          <img src="./images/ticket_popup_offer_voucher.png">
+                        </div>
+                        <div class="text col-9">
+                          <span class="price">
+                            <span class="currency">VND</span>
+                            <span class="number">500,000</span>
+                          </span>
+                          voucher for any Vietnam Rewind tour
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row cell">
+                        <div class="icon col-3">
+                          <img src="./images/ticket_popup_offer_puppet.png">
+                        </div>
+                        <div class="text col-9">01 water puppet show ticket</div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="row cell">
+                        <div class="icon col-3">
+                          <img src="./images/ticket_popup_offer_attraction.png">
+                        </div>
+                        <div class="text col-9">All exclusive attractions passes</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="sub-total row">
+                    <div class="title col-md-3 offset-md-3">SUB-TOTAL</div>
+                    <div class="price col-md-3">
+                      <span class="currency">VND</span><span class="number">300,000</span>
+                    </div>
+                  </div>
+
+                  <div class="submit-buttons">
+                    <button type="submit" class="add-to-cart">ADD TO CART</button>
+                    <button type="submit" class="book-now">BOOK NOW</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <!-- End ticket popup -->
+
   <!-- Top background -->
   <div class="top-background">
     <img src="./images/bonbon_banner.png">
@@ -205,18 +376,18 @@
 
   <!-- Header -->
   <div class="header">
-    <div class="container">
-      <div class="row">
-        <div class="col-4">
-          <div class="search">
-            <!-- <div class="icon"><i class="fa fa-search"></i></div> -->
-            <!-- <div class="icon">
-              <img src="./images/home_search_icon.png">
-            </div>
-            <input type="text"> -->
+  <div class="container">
+    <div class="row">
+      <div class="col-4">
+        <div class="search">
+          <!-- <div class="icon"><i class="fa fa-search"></i></div> -->
+          <!-- <div class="icon">
+            <img src="./images/home_search_icon.png">
           </div>
+          <input type="text"> -->
         </div>
-        <div class="col-4">
+      </div>
+      <div class="col-4">
           <div class="logo">
             <img src="./images/bonbon_logo.png">
           </div>
@@ -257,7 +428,7 @@
             <a class="nav-link" id="faq" href="#">FAQs</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="cart" href="#"><span class="text">CART</span> <span class="amount">(10)</span></a>
+            <a class="nav-link" id="cart" href="cart.html"><span class="text">CART</span> <span class="amount">(10)</span></a>
           </li>
         </ul>
       </div>
@@ -918,4 +1089,9 @@
     </div>
   </footer>
   <!-- /footer -->
+
+  <script src="./js/common.js"></script>
+  <script src="./js/bonbon_data.js"></script>
+  <script src="./js/bonbon.js"></script>
+  <script src="./js/lang.js"></script>
 </body>

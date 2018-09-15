@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Opensea</title>
     <meta name="description" content="Opensea" />
@@ -12,8 +13,22 @@
     <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="./images/apple-touch-icon.png">
 
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="../plugins/bootstrap/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="./css/fonts.css" type='text/css'>
+    <link rel="stylesheet" href="./css/main.css" type='text/css'>
+    <link rel="stylesheet" href="./css/header.css" type='text/css'>
+    <link rel="stylesheet" href="./css/nav.css" type='text/css'>
+    <link rel="stylesheet" href="./css/footer.css" type='text/css'>
+    <link rel="stylesheet" href="./css/home.css" type='text/css'>
+
     <!-- JS-->
-    <script src="./js/home.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/persist-js@0.3.1/src/persist.min.js"></script>
+    <script src="../plugins/jquery/jquery-3.3.1.min.js"></script>
+    <script src="../plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -27,17 +42,16 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <div class="search">
-                    <!-- <div class="icon"><i class="fa fa-search"></i></div> -->
-                    <div class="icon">
-                        <img src="./images/home_search_icon.png">
-                    </div>
-                    <input type="text">
-                </div>
+                <!-- <div class="search">
+                  <div class="icon">
+                    <img src="./images/home_search_icon.png">
+                  </div>
+                  <input type="text">
+                </div> -->
             </div>
             <div class="col-md-4">
                 <div class="logo">
-                    <img src="./images/logo.png">
+                    <img src="./images/opensea_logo.svg">
                 </div>
             </div>
             <div class="col-md-4">
@@ -61,22 +75,22 @@
     <div class="navbar-collapse collapse navbar-light" id="navBar" style="">
         <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="#">HOME</a>
+                <a class="nav-link" id="home" href="#">HOME</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">ABOUT US</a>
+                <a class="nav-link" id="aboutUs" href="#">ABOUT US</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="bonbon.html">BONBON CITY TOUR</a>
+                <a class="nav-link" id="bonbon" href="bonbon.html">BONBON CITY TOUR</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="rewind.html">VIETNAM REWIND</a>
+                <a class="nav-link" id="rewind" href="/rewind">VIETNAM REWIND</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">FAQs</a>
+                <a class="nav-link" id="faq" href="#">FAQs</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">CART <span class="amount">(10)</span></a>
+                <a class="nav-link" id="cart" href="cart.html"><span class="text">CART</span> <span class="amount">(10)</span></a>
             </li>
         </ul>
     </div>
@@ -90,8 +104,9 @@
     <!-- Operator -->
     <div class="container">
         <div class="operator">
+            <div class="filter"></div>
             <!-- <img src="./images/.png"> -->
-            <div class="header-1">Premier Travel Operator</div>
+            <div class="header-1 poster-font">Premier Travel Operator</div>
             <div class="header-2">travel with us for hand-crafted itineraries and<br>unparalled access to Vietnam</div>
             <div class="see-more"><div class="inner"><i class="fa fa-chevron-down"></i></div></div>
         </div>
@@ -108,12 +123,12 @@
             <div class="row">
                 <div class="col-md-6 col-xs-12">
                     <div class="image-1">
-                        <img src="./images/home_aboutus_img1.png">
+                        <img src="./images/Home-02.jpg">
                     </div>
                 </div>
                 <div class="col-md-6 col-xs-12">
                     <div class="text">
-                        <div class="header-1">About us</div>
+                        <div class="header-1 poster-font">About us</div>
                         <div class="content">
                             <span class="opensea">OPENSEA</span> is a young, dynamic travel company<br>that provide services catering to inbound tourist's<br>most popular demands: dining, accommodation,<br>transportation, and entertainment experiences.
                         </div>
@@ -121,7 +136,7 @@
                 </div>
                 <div class="col-md-6 offset-md-6 col-xs-12">
                     <div class="image-2">
-                        <img src="./images/home_aboutus_img2.png">
+                        <img src="./images/Home-03.jpg">
                     </div>
                 </div>
             </div>
@@ -131,7 +146,7 @@
 
     <!-- Journeys -->
     <section class="journeys">
-        <div class="header">Our popular journeys</div>
+        <div class="header poster-font">Our popular journeys</div>
         <div class="journey" id="bonbon">
             <div class="row">
                 <div class="col-md-5 col-lg-5 col-xl-3 offset-xl-2">
@@ -154,7 +169,7 @@
             <div class="row">
                 <div class="col-md-6 col-lg-6 col-xl-6">
                     <div class="image">
-                        <img src="./images/home_journeys_rewind.png">
+                        <img src="./images/Home-04.png">
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-5">
@@ -178,19 +193,19 @@
                 <div class="col-md-4">
                     <div class="item" id="count-bonbon">
                         <div class="header-1">0</div>
-                        <div class="header-2">BonBon<br>kilometers</div>
+                        <div class="header-2 poster-font">Bonbon<br>kilometers</div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="item" id="count-customers">
                         <div class="header-1">0</div>
-                        <div class="header-2">happy<br>customer</div>
+                        <div class="header-2 poster-font">happy<br>customer</div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="item" id="count-tours">
                         <div class="header-1">0</div>
-                        <div class="header-2">joinful<br>tours</div>
+                        <div class="header-2 poster-font">joinful<br>tours</div>
                     </div>
                 </div>
             </div>
@@ -209,13 +224,13 @@
                 </div>
                 <div class="col-md-6">
                     <div class="text">
-                        <div class="header-1">Join us</div>
+                        <div class="header-1 poster-font">Join us</div>
                         <div class="underline"></div>
                         <div class="header-2">Subscribe to our newsletter</div>
                         <form>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <input type="email" name="email">
+                                    <input type="email" name="email" placeholder="Your email">
                                 </div>
                                 <div class="col-md-12">
                                     <button class="submit" type="submit">subscribe</button>
@@ -235,11 +250,21 @@
 <footer>
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="contact">
+
                     <div class="header_1">CONTACT US</div>
-                    <div class="tel">Tel: <span>(+84) 1234567890</span></div>
+                    <div class="tel">Tel: <span>(+84) 12 1536 3297</span></div>
                     <div class="email">Email: <span>info@opensea.net</span></div>
+                </div>
+            </div>
+            <div class="wrap col-md-2">
+                <div style="text-align: left;font-family: 'GothamRoundedBook';font-size: 12px;line-height: 14px;">
+                    <div style="font-family: 'GothamRoundedBold';    font-size: 16px;line-height: 20px;">CHÍNH SÁCH</div>
+                    <div> <a href="general_policy.html" style="color: white">Quy định chính sách chung</a></div>
+                    <div> <a href="payment_policy.html" style="color: white">Hình thức thanh toán</a></div>
+                    <div> <a href="refund_policy.html" style="color: white">Chính sách đổi trả</a></div>
+                    <div> <a href="personal_policy.html" style="color: white">Bảo mật thông tin cá nhân</a></div>
                 </div>
             </div>
             <div class="wrap col-md-4">
@@ -247,17 +272,28 @@
                     <span>Find us on</span>
                     <img src="./images/footer_fb.png" id="fb">
                     <img src="./images/footer_instagram.png" id="instagram">
+                    <img src="./images/footer_twitter.png" id="twitter">
                     <img src="./images/footer_youtube.png" id="youtube">
                 </div>
             </div>
-            <div class="wrap col-md-4">
+            <div class="wrap col-md-3">
                 <div class="address">
                     <div class="header_1">OPENSEA TOURISM AND SERVICES COMPANY</div>
                     <div class="content">12 Ngo Tram Str, Hoan Kiem Dist., Hanoi, Vietnam</div>
                 </div>
             </div>
+            <div class="col-12 bottom">
+                Mã số doanh nghiệp: 0108160263 do Sở Kế hoạch và Đầu tư TP. Hà Nội cấp lần đầu ngày 05/02/2018
+            </div>
         </div>
     </div>
 </footer>
 <!-- /footer -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="./js/common.js"></script>
+<script src="./js/nav.js"></script>
+<script src="./js/banner.js"></script>
+<script src="./js/home.js"></script>
+<script src="./js/lang.js"></script>
 </body>

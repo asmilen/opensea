@@ -1,0 +1,902 @@
+/*Top background*/
+.top-background {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-position-y: 0px;
+    background-repeat-y: no-repeat;
+    z-index: -1;
+}
+.top-background img {
+	width: 100%;
+}
+/*Top see more*/
+.top-see-more {
+	display: flex;
+	justify-content: center;
+	margin: calc(45vw - 200px) 0 calc(10vw + 100px) 0;
+}
+.top-see-more .inner {
+	cursor: pointer;
+	border: 1px solid rgb(255,255,255);
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: rgb(255,255,255);
+}
+@media (max-width: 768px) {
+	.top-see-more {
+		margin: calc(50vw - 170px) 0 20vw 0;
+	}
+}
+/*Video*/
+.intro-video {
+	padding: 0 0 100px 0;
+}
+.intro-video .header-1 {
+	font-family: 'BCCartelDeux';
+	font-size: 40px;
+	color: rgb(171,34,40);
+	text-shadow: 3px 3px rgb(241,195,91);
+	margin: 0 0 60px 0;
+}
+.intro-video .text {
+	font-family: 'GothamRoundedBook';
+	color: rgb(25,54,97);
+	font-size: 16px;
+	padding: 20px;
+	text-align: justify;
+}
+.intro-video .text .quot {
+	color: rgb(237,176,34);
+}
+.intro-video .video {
+	padding: 0 20px 0 0;
+}
+.intro-video .video img {
+	width: 100%;
+}
+@media (max-width: 768px) {
+	.intro-video {
+		padding: 0 0 50px 0;
+	}
+	.intro-video .header-1 {
+		font-size: 20px;
+		margin: 0 0 30px 0;
+		text-align: center;
+	}
+	.intro-video .text {
+		font-size: 14px;
+		padding: 20px;
+	}
+	.intro-video .video {
+		padding: 0 0 0 0;
+	}
+	.intro-video .video img {
+		width: 100%;
+	}
+}
+/*Packages*/
+.packages {
+	background-image: url('../images/bonbon_packages_bg.png');
+	background-attachment: fixed;
+}
+.packages .header-1 {
+	text-align: center;
+	font-family: 'BCCartelDeux';
+	font-size: 40px;
+	color: rgb(171,34,40);
+	text-shadow: 3px 3px rgb(241,195,91);
+	padding: 100px 0 0 0;
+}
+.packages .header-2 {
+	text-align: center;
+	font-family: 'GothamRoundedBook';
+	font-size: 25px;
+	color: rgb(25,54,97);
+	padding: 10px 0 8px 0;
+}
+.packages .header-3 {
+	text-align: center;
+	font-family: 'GothamRoundedBold';
+	font-size: 14px;
+	color: rgb(171,34,40);
+	padding: 0px 0 10px 0;
+}
+@media (max-width: 768px) {
+	.packages .header-1 {
+		font-size: 25px;
+		padding: 50px 0 0 0;
+	}
+	.packages .header-2 {
+		font-size: 16px;
+		padding: 10px 0 8px 0;
+	}
+	.packages .header-3 {
+		font-size: 10px;
+		padding: 0px 0 10px 0;
+	}
+}
+.packages .list {
+	padding: 70px 0 100px 0;
+}
+@media (max-width: 768px) {
+	.packages .list {
+		padding: 40px 0 50px 0;
+	}
+}
+.packages .list .package {
+	width: 290px;
+	background-size: 100%;
+	background-image: url('../images/bonbon_package_bg.png');
+	margin: 0 auto;
+}
+.packages .list .package .name {
+	height: 103px;
+	text-align: center;
+	font-family: 'BCCartelDeux';
+	font-size: 20px;
+	line-height: 20px;
+	color: rgb(171,34,40);
+	padding: 54px 0 0 0;
+}
+.packages .list .package.family .name {
+	color: rgb(237,176,34);
+}
+.packages .list .package .name span {
+	font-size: 14px;
+	font-family: 'GothamRoundedBold';
+}
+.packages .list .package .content {
+	height: 398px;
+	border: 1px solid rgb(237,176,34);
+	margin: 6px 7px 6px 7px;
+}
+.packages .list .package.family .content {
+	height: 388px;
+}
+.packages .list .package.family .content {
+	border: 1px solid rgb(171,34,40);
+}
+.packages .list .package .content .empty {
+	height: 143px;
+	border-bottom: 1px solid rgb(237,176,34);
+}
+.packages .list .package.family .content .empty {
+	border-bottom: 1px solid rgb(171,34,40);
+}
+.packages .list .package .content .descriptions {
+	height: 129px;
+	border-bottom: 1px solid rgb(237,176,34);
+	font-family: 'GothamRoundedBook';
+	color: rgb(25,54,97);
+	font-size: 12px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	line-height: 24px;
+	padding: 15px;
+}
+.packages .list .package.family .content .descriptions {
+	border-bottom: 1px solid rgb(171,34,40);
+}
+.packages .list .package .content .descriptions ul {
+	list-style-type: none;
+	padding: 0 10px 0 20px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.packages .list .package .content .descriptions ul li {
+	padding-left: 0;
+}
+.packages .list .package .content .descriptions ul li:before {
+    margin: 8px 0px -14px -15px;
+    content: '';
+    height: .4em;
+    width: .4em;
+    background: rgb(171,34,40);
+    display: block;
+    transform: rotate(45deg);
+}
+.packages .list .package .content .prices {
+	height: 84px;
+}
+.packages .list .package.family .content .prices {
+	height: 74px;
+}
+.packages .list .package .content .prices .price {
+	height: 100%;
+	text-align: center;
+}
+.packages .list .package.family .content .prices .price {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.packages .list .package .content .prices .price.adult {
+	border-right: 1px dashed rgb(237,176,34);
+}
+.packages .list .package .content .prices .price .row {
+	height: unset;
+}
+.packages .list .package .content .prices .price .type {
+	color: rgb(25,54,97);
+	font-size: 14px;
+	font-family: 'BCCartelDeux';
+	height: 36px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+.packages .list .package .content .prices .price .currency {
+	color: rgb(25,54,97);
+	font-size: 7px;
+	font-family: 'GothamRoundedBook';
+	padding: 4px 0 0 0;
+	text-align: right;
+}
+.packages .list .package.family .content .prices .price .currency {
+	font-size: 14px;
+}
+.packages .list .package .content .prices .price .number {
+	color: rgb(171,34,40);
+	font-size: 16px;
+	font-family: 'GothamRoundedBold';
+	text-align: left;
+}
+.packages .list .package.family .content .prices .price .number {
+	color: rgb(237,176,34);
+	font-size: 22px;
+}
+.packages .list .package .content .prices .price .save .text {
+	font-family: 'GothamRoundedBold';
+	font-size: 10px;
+	color: rgb(25,54,97);
+	vertical-align: top;
+}
+.packages .list .package.family .content .prices .price .save .text {
+	font-family: 'GothamRoundedBook';
+	font-size: 12px;
+}
+.packages .list .package .content .prices .price .save .save-price .currency{
+	font-family: 'GothamRoundedBook';
+	font-size: 8px;
+	color: rgb(171,34,40);
+	vertical-align: top;
+}
+.packages .list .package.family .content .prices .price .save .save-price .currency{
+	font-size: 10px;
+}
+.packages .list .package .content .prices .price .save .save-price .number{
+	font-family: 'GothamRoundedBold';
+	font-size: 11px;
+	color: rgb(171,34,40);
+	vertical-align: top;
+}
+.packages .list .package.family .content .prices .price .save .save-price .number{
+	font-size: 14px;
+}
+.packages .list .package .content .book-now {
+	height: 41px;
+	background-color: rgb(237,176,34);
+	color: rgb(171,34,40);
+	font-family: 'GothamRoundedBold';
+	font-size: 14px;
+	line-height: 41px;
+	vertical-align: middle;
+	text-align: center;
+}
+.packages .list .package.family .content .book-now {
+	background-color: rgb(171,34,40);
+	color: rgb(237,176,34);
+}
+.packages .list .package .footer {
+	height: 35px;
+}
+/*Highlight*/
+.highlights {
+	padding: 0 0 100px 0;
+}
+.highlights .row {
+	height: unset;
+}
+.highlights .header-1 {
+	text-align: center;
+	font-family: 'BCCartelDeux';
+	font-size: 40px;
+	color: rgb(171,34,40);
+	text-shadow: 3px 3px rgb(241,195,91);
+	padding: 100px 0 0 0;
+}
+.highlights .header-2 {
+	text-align: center;
+	font-family: 'GothamRoundedBook';
+	font-size: 25px;
+	color: rgb(25,54,97);
+	padding: 10px 0 8px 0;
+}
+@media (max-width: 768px) {
+	.highlights {
+		padding: 0 0 50px 0;
+	}
+	.highlights .header-1 {
+		font-size: 25px;
+		padding: 50px 0 0 0;
+	}
+	.highlights .header-2 {
+		font-size: 16px;
+		padding: 10px 0 8px 0;
+	}
+}
+.highlights .list {
+	padding: 70px 0 0 0;
+}
+@media (max-width: 768px) {
+	.highlights .list {
+		padding: 40px 0 0 0;
+	}
+}
+.highlights .list .highlight {
+	width: 400px;
+	margin: 0px auto 10px auto;
+	border: 2px solid rgb(237,176,34);
+}
+.highlights .list .highlight .card {
+	border: none;
+	background: none;
+}
+.highlights .list .highlight .card-header {
+	background: none;
+	border: none;
+}
+.highlights .list .highlight .card-body {
+	padding: 0 0.25rem 0.75rem 1.25rem;
+}
+.highlights .list .highlight .highlight-header {
+}
+.highlights .list .highlight .highlight-header .icon {
+}
+.highlights .list .highlight .highlight-header .icon img {
+	position: relative;
+	left: -10px;
+	width: 35px;
+	top: 6px;
+}
+.highlights .list .highlight .highlight-header .text {
+}
+.highlights .list .highlight .highlight-header .text h1 {
+	font-family: 'BCCartelDeux';
+	font-size: 20px;
+	color: rgb(237,176,34);
+}
+.highlights .list .highlight .highlight-header .text h2 {
+	font-family: 'GothamRoundedBook';
+	font-size: 18px;
+	color: rgb(25,54,97);
+}
+.highlights .list .highlight .highlight-header .see-more {
+}
+.highlights .list .highlight .highlight-header .see-more .inner {
+	width: 30px;
+	height: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	border: 2px solid rgb(237,176,34);
+	color: rgb(237,176,34);
+}
+.highlights .list .highlight .content {
+	font-family: 'GothamRoundedBook';
+	font-size: 12px;
+	color: rgb(25,54,97);
+}
+@media (max-width: 576px) {
+	.highlights .list .highlight .highlight-header .icon img {
+		width: 25px;
+	}
+	.highlights .list .highlight {
+		width: 90%;
+		margin: 0px 5% 10px 5%;
+	}
+	.highlights .list .highlight .highlight-header .text h1 {
+		font-size: 16px;
+	}
+	.highlights .list .highlight .highlight-header .text h2 {
+		font-size: 14px;
+	}
+	.highlights .list .highlight .highlight-header .see-more .inner {
+		width: 25px;
+		height: 25px;
+	}
+}
+/*Route*/
+.route {
+	background-image: url('../images/bonbon_route_bg.png');
+	background-attachment: fixed;
+	padding: 0 0 100px 0;
+}
+.route .header-1 {
+	text-align: center;
+	font-family: 'BCCartelDeux';
+	font-size: 40px;
+	color: rgb(171,34,40);
+	text-shadow: 3px 3px rgb(241,195,91);
+	padding: 100px 0 0 0;
+}
+.route .header-2 {
+	text-align: center;
+	font-family: 'GothamRoundedBook';
+	font-size: 25px;
+	color: rgb(25,54,97);
+	padding: 10px 0 40px 0;
+}
+@media (max-width: 768px) {
+	.route {
+		padding: 0 0 50px 0;
+	}
+	.route .header-1 {
+		font-size: 25px;
+		padding: 50px 0 0 0;
+	}
+	.route .header-2 {
+		font-size: 16px;
+		padding: 10px 0 8px 0;
+	}
+}
+.route .text {
+	width: 180px;
+	padding: 20% 0 10px 0;
+	margin: 0 auto;
+	font-family: 'GothamRoundedBook';
+	font-size: 16px;
+	text-align: justify;
+	color: rgb(25,54,97);
+}
+@media (max-width: 768px) {
+	.route .text {
+		width: 100%;
+		padding: 20px 20px;
+	}
+}
+.route .download {
+	width: 180px;
+	margin: 0 auto;
+	padding: 0 0 30px 0;
+}
+.route .download button {
+	width: 100%;
+	border: none;
+	background-color: rgb(237,176,34);
+	color: rgb(171,34,40);
+	font-size: 14px;
+	font-family: 'GothamRoundedBold';
+	padding: 4px 0;
+	cursor: pointer;
+}
+.route .image {
+	padding: 0 10px 0 10px;
+}
+@media (max-width: 768px) {
+	.route .image {
+		padding: 0 20px;
+	}
+}
+.route .image img {
+	width: 100%;
+}
+/*Customers*/
+.customers {
+	background-image: url('../images/bonbon_customers_bg.png');
+	background-attachment: fixed;
+	padding: 0 0 100px 0;
+}
+.customers .header-1 {
+	text-align: center;
+	font-family: 'BCCartelDeux';
+	font-size: 40px;
+	color: rgb(171,34,40);
+	text-shadow: 3px 3px rgb(241,195,91);
+	padding: 100px 0 0 0;
+}
+.customers .header-2 {
+	text-align: center;
+	font-family: 'GothamRoundedBook';
+	font-size: 25px;
+	color: rgb(25,54,97);
+	padding: 10px 0 40px 0;
+}
+@media (max-width: 768px) {
+	.customers {
+		padding: 0 0 50px 0;
+	}
+	.customers .header-1 {
+		font-size: 25px;
+		padding: 50px 0 0 0;
+	}
+	.customers .header-2 {
+		font-size: 16px;
+		padding: 10px 0 8px 0;
+	}
+}
+.customers .list {
+	padding: 80px 0 0 0;
+}
+.customers .list .customer {
+	width: 230px;
+	margin: 0 auto;
+}
+.customers .list .customer .image {
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	margin: 0 auto 50px auto;
+	border: 1px dashed rgb(237,176,34);
+	background-image: url('../images/bonbon_customers.png');
+	background-size: 100%;
+}
+.customers .list .customer .text {
+	text-align: justify;
+}
+@media (max-width: 768px) {
+	.customers .list {
+		padding: 40px 0 0 0;
+	}
+	.customers .list .customer {
+		width: 80%;
+	}
+	.customers .list .customer .image {
+		margin: 0 auto 25px auto;
+	}
+}
+/*Get in touch*/
+.get-in-touch {
+	padding: 100px 0;
+	background-image: url('../images/bonbon_getintouch_bg.png');
+	background-attachment: fixed;
+	background-size: 100%;
+}
+.get-in-touch .slogan {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+}
+@media (max-width: 992px) {
+	.get-in-touch .slogan {
+		display: none;
+	}
+}
+.get-in-touch .slogan img {
+	width: 70%;
+}
+.get-in-touch .form {
+	padding: 10px;
+}
+.get-in-touch .form .header-1 {
+	text-align: center;
+	font-family: 'BCCartelDeux';
+	font-size: 35px;
+	color: rgb(171,34,40);
+	text-shadow: 3px 3px rgb(241,195,91);
+	padding: 0 0 30px 0;
+}
+@media (max-width: 768px) {
+	.get-in-touch {
+		padding: 50px 0;
+	}
+	.get-in-touch .form .header-1 {
+		font-size: 25px;
+		padding: 0 0 30px 0;
+	}
+}
+.get-in-touch .form form {
+}
+.get-in-touch .form form input, .get-in-touch .form form textarea {
+	width: 100%;
+	border: 1px solid rgb(237,176,34);
+	margin: 0 0 20px 0;
+	padding: 3px 8px;
+	font-family: 'GothamRoundedBook';
+	font-size: 14px;
+	color: rgb(25,54,97);
+}
+.get-in-touch .form form textarea {
+	padding: 10px 8px;
+}
+.get-in-touch .form form .submit {
+	text-align: center;
+}
+.get-in-touch .form form .submit button {
+	background-color: rgb(237,176,34);
+	padding: 5px 70px;
+	font-family: 'GothamRoundedBold';
+	color: rgb(171,34,40);
+	font-size: 16px;
+	border: none;
+	outline: none;
+}
+/*How it works*/
+.how-it-work {
+	background-image: url('../images/bonbon_howitwork_bg.png');
+	background-attachment: fixed;
+	background-size: 100%;
+	padding: 0 0 50px 0;
+}
+.how-it-work .header-1 {
+	text-align: center;
+	font-family: 'BCCartelDeux';
+	font-size: 40px;
+	color: rgb(171,34,40);
+	text-shadow: 3px 3px rgb(241,195,91);
+	padding: 50px 0 0 0;
+}
+.how-it-work .flow {
+	/*display: flex;*/
+	/*justify-content: space-between;*/
+	padding: 80px 10px;
+}
+.how-it-work .flow .inner {
+	height: 100%;
+	padding: 20px;
+}
+.how-it-work .flow .step {
+	position: relative;
+	width: 200px;
+	height: 100px;
+	border: 1.5px solid rgb(171,34,40);
+	border-radius: 15px;
+	padding: 15px 10px;
+	font-family: 'GothamRoundedBook';
+	font-size: 12px;
+	color: rgb(25,54,97);
+	text-align: center;
+	background-color: rgb(255,255,255);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
+	/*height: 100%;*/ 
+}
+.how-it-work .flow .step .arrow {
+	position: absolute;
+}
+.how-it-work .flow #step1 .arrow, .how-it-work .flow #step3 .arrow {
+	top: -36px;
+	left: 150px;
+}
+.how-it-work .flow #step2 .arrow {
+	bottom: -37px;
+	left: 150px;
+	/*transform: rotateZ(180deg);*/
+}
+.how-it-work .flow .step .arrow img {
+}
+.how-it-work .book-now {
+	text-align: center;
+}
+.how-it-work .book-now button {
+	background-color: rgb(255,255,255);
+	color: rgb(166,31,28);
+	box-shadow: 7px 7px rgb(166,31,28);
+	font-size: 16px;
+	font-family: 'BCCartelDeux';
+	border: none;
+	padding: 8px 28px;
+	cursor: pointer;
+}
+@media (max-width: 992px) {
+	.how-it-work .flow {
+		align-items: center;
+		flex-direction: column;
+		padding: 40px 10px;
+	}
+	.how-it-work .flow .step {
+		width: 300px;
+	}
+	.how-it-work .flow .step .arrow {
+		width: 150px;
+	}
+	.how-it-work .flow .step .arrow img {
+		width: 100%;
+	}
+	.how-it-work .flow #step1 .arrow {
+		bottom: 20px;
+		top: unset;
+    	left: 325px;
+    	transform-origin: top left;
+		transform: rotate(90deg);
+	}
+	.how-it-work .flow #step2 .arrow {
+	    bottom: 20px;
+	    left: 0;
+	    transform: rotate(90deg);
+	    top: unset;
+	    transform-origin: top left;
+	}
+	.how-it-work .flow #step3 .arrow {
+		bottom: 20px;
+		top: unset;
+    	left: 325px;
+    	transform-origin: top left;
+		transform: rotate(90deg);
+	}
+}
+/*Attractions*/
+.attractions {
+	background-image: url('../images/bonbon_attractions_bg.png');
+	background-attachment: fixed;
+	padding: 0 0 100px 0;
+}
+.attractions .header-1 {
+	text-align: center;
+	font-family: 'BCCartelDeux';
+	font-size: 40px;
+	color: rgb(171,34,40);
+	text-shadow: 3px 3px rgb(241,195,91);
+	padding: 100px 0 0 0;
+}
+.attractions .header-2 {
+	text-align: center;
+	font-family: 'GothamRoundedBook';
+	font-size: 25px;
+	color: rgb(25,54,97);
+	padding: 10px 0 40px 0;
+}
+@media (max-width: 768px) {
+	.attractions {
+		padding: 0 0 50px 0;
+	}
+	.attractions .header-1 {
+		font-size: 25px;
+		padding: 50px 0 0 0;
+	}
+	.attractions .header-2 {
+		font-size: 16px;
+		padding: 10px 0 8px 0;
+	}
+}
+.attractions .list {
+	padding: 50px 0;
+}
+@media (max-width: 768px) {
+	.attractions .list {
+		padding: 25px 0;
+	}
+}
+.attractions .list .attraction {
+	position: relative;
+	margin: 0 auto;
+	width: 290px;
+	text-align: center;
+	padding: 0 0 30px 0;
+	top: 100px;
+	z-index: 100;
+}
+.attractions .list .attraction .name {
+	position: absolute;
+	top: 80px;
+	left: 0;
+	width: 100%;
+	border: none;
+	padding: 12px 0;
+	margin: 0 auto;
+	color: rgb(171,34,40);
+	font-family: 'BCCartelDeux';
+	font-size: 16px;
+}
+.attractions .list .attraction .middle {
+	width: 290px;
+	border: none;
+	padding: 5px;
+	margin: 5px 0;
+}
+.attractions .list .attraction .middle .rectangle {
+	width: 260px;
+	height: 230px;
+	margin: 0 auto;
+	background-image: url('../images/bonbon_attractions_rectangle_bg.png');
+}
+.attractions .list .attraction .description {
+	width: 230px;
+	border: 1px solid rgb(237,176,34);
+	border-top: none;
+	padding: 15px 15px 30px 15px;
+	margin: 5px auto;
+	font-family: 'GothamRoundedBook';
+	font-size: 14px;
+	color: rgb(25,54,97);
+	display: none;
+	height: 217px;
+	/*overflow: hidden;*/
+}
+.attractions .list .attraction>.see-more {
+	position: absolute;
+    bottom: 18px;
+    left: 126px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    border: 1px solid rgb(237,176,34);
+    color: rgb(237,176,34);
+    background: rgb(255,255,255);
+}
+.attractions .list .attraction>.see-more button {
+	background-color: rgb(237,176,34);
+	color: rgb(171,34,40);
+	border: none;
+	padding: 4px 18px;
+	font-family: 'GothamRoundedBold';
+	font-size: 14px;
+	display: none;
+}
+.attractions .list .center .attraction {
+	top: 0;
+}
+.attractions .list .center .attraction .name {
+	position: relative;
+	width: 230px;
+	top: 0;
+	border: 1px solid rgb(237,176,34);
+	border-bottom: none;
+}
+.attractions .list .center .attraction .middle {
+	width: 290px;
+	border-top: 1px solid rgb(237,176,34);
+	border-bottom: 1px solid rgb(237,176,34);
+	padding: 5px;
+	margin: 5px 0;
+}
+.attractions .list .center .attraction .middle .rectangle {
+	width: 260px;
+	height: 230px;
+	margin: 0 auto;
+	background-image: url('../images/bonbon_attractions_rectangle_bg.png');
+}
+.attractions .list .center .attraction .description {
+	display: block;
+}
+.attractions .list .center .attraction>.see-more {
+    position: absolute;
+    bottom: 11px;
+    padding: 10px;
+    left: 95px;
+    z-index: 1;
+    border: none;
+    background: none;
+    width: unset;
+    height: unset;
+}
+.attractions .list .center .attraction>.see-more .icon {
+	display: none;
+}
+.attractions .list .center .attraction>.see-more button {
+	display: inline-block;
+	background-color: rgb(237,176,34);
+	color: rgb(171,34,40);
+	border: none;
+	padding: 4px 18px;
+	font-family: 'GothamRoundedBold';
+	font-size: 14px;
+}
+.attractions .bonbon {
+	text-align: center;
+}
+.attractions .bonbon button {
+	background-color: rgb(255,255,255);
+	color: rgb(166,31,28);
+	box-shadow: 7px 7px rgb(166,31,28);
+	font-size: 16px;
+	font-family: 'BCCartelDeux';
+	border: none;
+	padding: 8px 28px;
+	cursor: pointer;
+}
