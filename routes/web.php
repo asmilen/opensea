@@ -31,6 +31,7 @@ Route::get('api/frontend/cart/index', 'Frontend\CartController@index');
 Route::get ('api/frontend/cart/index/{id}', 'Frontend\CartController@show');
 Route::put('api/frontend/cart/{id}', 'Frontend\CartController@update');
 Route::get ('api/frontend/cart/count', 'Frontend\CartController@count');
+Route::delete ('api/frontend/cart/{id}', 'Frontend\CartController@destroy');
 #lang
 Route::get('/lang', function(){
     return App::getlocale();
