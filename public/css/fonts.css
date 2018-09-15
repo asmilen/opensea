@@ -1,0 +1,87 @@
+/*San Francisco Display Regular*/
+@font-face {
+  font-family: 'SF Display Regular';
+  src: url("../fonts/SF-Pro-Display-Regular.otf");
+}
+/*San Francisco Display Medium*/
+@font-face {
+  font-family: 'SF Display Medium';
+  src: url("../fonts/SFProDisplay-Medium.ttf");
+}
+/*San Francisco Display Bold*/
+@font-face {
+  font-family: 'SF Display Bold';
+  src: url("../fonts/SFProDisplay-Bold.ttf");
+}
+/*San Francisco Display Light*/
+@font-face {
+  font-family: 'SF Display Light';
+  src: url("../fonts/SFProDisplay-Light.ttf");
+}
+/*San Francisco Text Regular*/
+@font-face {
+  font-family: 'SF Text Regular';
+  src: url("../fonts/SFProText-Regular.ttf");
+}
+/*San Francisco Text Bold*/
+@font-face {
+  font-family: 'SF Text Bold';
+  src: url("../fonts/SF-Pro-Text-Bold.ttf");
+}
+/*San Francisco Text LightItalic*/
+@font-face {
+  font-family: 'SF Text LightItalic';
+  src: url("../fonts/SF-Text-LightItalic.otf");
+}
+/*San Francisco Text Heavy*/
+@font-face {
+  font-family: 'SF Text Heavy';
+  src: url("../fonts/SF-Compact-Text-Heavy.otf");
+}
+/*Holmes207*/
+@font-face {
+  font-family: 'Holmes207';
+  src: url('../fonts/Holmes207.ttf');
+}
+
+/*iCielBCBroadsheet-Italic*/
+@font-face {
+  font-family: 'BCBroadsheet Italic';
+  src: url('../fonts/iCielBCBroadsheet-Italic.ttf');
+}
+
+/*iCielBCBroadsheet-Regular*/
+@font-face {
+  font-family: 'BCBroadsheet Regular';
+  src: url('../fonts/iCielBCBroadsheet-Regular.ttf');
+}
+/*Cartel Deux*/
+@font-face {
+  font-family: 'BCCartelDeux';
+  src: url('../fonts/ICIELBCCARTELDEUX-ALT.OTF');
+}
+/*Gotham Round Book*/
+@font-face {
+  font-family: 'GothamRoundedBook';
+  src: url('../fonts/GothamRoundedBook_21018.ttf');
+}
+/*Gotham Round Bold*/
+@font-face {
+  font-family: 'GothamRoundedBold';
+  src: url('../fonts/GothamRoundedBold.otf');
+}
+/*LeJeune Poster Light*/
+@font-face {
+  font-family: 'LeJeune Poster Light';
+  src: url('../fonts/iCielBCLeJeunePoster-Light.otf');
+}
+/*MrStalwart*/
+@font-face {
+  font-family: 'MrStalwart';
+  src: url('../fonts/MrStalwart.ttf');
+}
+/*HolidaySerifRegular*/
+@font-face {
+  font-family: 'HolidaySerifRegular';
+  src: url('../fonts/iCielBCHolidaySerif-Regular.otf');
+}

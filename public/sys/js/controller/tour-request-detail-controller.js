@@ -15,6 +15,10 @@ function TourRequestDetailController($scope, $http, $rootScope, $timeout, Upload
         {value: 'done', name: 'Done'},
         {value: 'cancel', name: 'Cancel'}
     ];
+    $scope.listTime = [
+        {value: '1', name: '9 a.m - 1 p.m'},
+        {value: '2', name: '1 p.m - 5 p.m'},
+    ];
     $scope.baseController = this.__proto__ = new BaseController($scope, $http, $rootScope);
     this.initialize = function(){
         $scope.show();

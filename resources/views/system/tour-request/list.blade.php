@@ -7,6 +7,7 @@
                     <th>Email</th>
                     <th>Tour</th>
                     <th>Date</th>
+                    <th>Time</th>
                     <th>Number people</th>
                     <th>Status</th>
                     <th>Created at</th>
@@ -20,6 +21,10 @@
                     </td>
                     <td>
                         <span>@{{ summarizeDateTime(article.date, true) }}</span>
+                    </td>
+                    <td>
+                        <span ng-if="article.time == '1'">9 a.m - 1 p.m</span>
+                        <span ng-if="article.time == '2'">1 p.m - 5 p.m</span>
                     </td>
                     <td>
                         <span>@{{ article.number_people }}<br></span>

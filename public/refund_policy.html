@@ -10,12 +10,24 @@
   <meta name="author" content="Luu Hoang" />
 
   <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
-	<link rel="apple-touch-icon" href="./images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="./images/apple-touch-icon.png">
+
+    <!-- CSS -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <link rel="stylesheet" href="../plugins/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="./css/fonts.css" type='text/css'>
+  <link rel="stylesheet" href="./css/main.css" type='text/css'>
+  <link rel="stylesheet" href="./css/header.css" type='text/css'>
+  <link rel="stylesheet" href="./css/nav.css" type='text/css'>
+  <link rel="stylesheet" href="./css/footer.css" type='text/css'>
+  <link rel="stylesheet" href="./css/home.css" type='text/css'>
 
   <!-- JS-->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/persist-js@0.3.1/src/persist.min.js"></script>
-  <script src="./js/lang.js"></script>
-  <script src="./js/home.js"></script>
+  <script src="../plugins/jquery/jquery-3.3.1.min.js"></script>
+  <script src="../plugins/bootstrap/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -29,10 +41,16 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4">
+          <!-- <div class="search">
+            <div class="icon">
+              <img src="./images/home_search_icon.png">
+            </div>
+            <input type="text">
+          </div> -->
         </div>
         <div class="col-md-4">
           <div class="logo">
-            <img src="./images/logo.png">
+            <img src="./images/opensea_logo.svg">
           </div>
         </div>
         <div class="col-md-4">
@@ -71,7 +89,7 @@
             <a class="nav-link" id="faq" href="#">FAQs</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="cart" href="#"><span class="text">CART</span> <span class="amount">(10)</span></a>
+            <a class="nav-link" id="cart" href="cart.html"><span class="text">CART</span> <span class="amount">(10)</span></a>
           </li>
         </ul>
       </div>
@@ -81,7 +99,6 @@
 
   <!-- Main content -->
   <main>
-
     <!-- Policy -->
     <section class="journeys">
       <div class="journey" id="rewind">
@@ -120,7 +137,7 @@
               <form>
                 <div class="row">
                   <div class="col-md-12">
-                    <input type="email" name="email">
+                    <input type="email" name="email" placeholder="Your email">
                   </div>
                   <div class="col-md-12">
                     <button class="submit" type="submit">subscribe</button>
@@ -179,4 +196,11 @@
     </div>
   </footer>
   <!-- /footer -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="./js/common.js"></script>
+  <script src="./js/nav.js"></script>
+  <script src="./js/banner.js"></script>
+  <script src="./js/home.js"></script>
+  <script src="./js/lang.js"></script>
 </body>

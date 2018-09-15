@@ -2,7 +2,7 @@
 function getTours(cb) {
   $.ajax({
     type: 'GET',
-    url: 'api/frontend/tour',
+    url: '/api/frontend/tour',
     success: resData => cb(resData),
     error: err => console.error(err)
   });
@@ -209,11 +209,12 @@ function renderTourPopups(tours) {
                       </div>
                       <div class="book-info">
                         <div class="title">Booking info</div>
-                        <form>
+                        <form class="form-tour-request"  method="POST">
+                          <input type="hidden" name="tour_id" value="${tour.backend_id}" />
                           <div class="row">
                             <div class="col-md-5">
                               <div class="form-group">
-                                <input type="text" class="form-control" id="full-name" name="fullName" placeholder="* Full name" required>
+                                <input type="text" class="form-control" id="full-name" name="name" placeholder="* Full name" required>
                               </div>
                             </div>
                             <div class="col-md-5 offset-md-2">
@@ -223,12 +224,12 @@ function renderTourPopups(tours) {
                             </div>
                             <div class="col-md-5">
                               <div class="form-group">
-                                <input type="text" class="form-control" id="phone" name="phone" placeholder="* Phone / WhatsApp" required>
+                                <input type="text" class="form-control" id="phone" name="contact" placeholder="* Phone / WhatsApp" required>
                               </div>
                             </div>
                             <div class="col-md-5 offset-md-2">
                               <div class="form-group">
-                                <select id="nationality" name="nationality" class="form-control" required>
+                                <select id="nationality" name="nation" class="form-control" required>
                                   <option>Afghanistan</option>
                                   <option>Albania</option>
                                   <option>Algeria</option>
@@ -450,7 +451,7 @@ function renderTourPopups(tours) {
                                 <div class="time">
                                   <label><span style="color: red;">*</span>Time</label>
                                   <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="time" id="time1" value="1">
+                                    <input class="form-check-input" type="radio" name="time" id="time1" value="1" required>
                                     <label class="form-check-label" for="time1">9 a.m - 1 p.m</label>
                                   </div>
                                   <div class="form-check">
@@ -463,14 +464,14 @@ function renderTourPopups(tours) {
                             <div class="col-md-4">
                               <div class="form-group">
                                 <label for="amount"><span style="color: red;">*</span>Number of people</label>
-                                <input class="form-control" type="number" min="1" max="5" name="amount" required>
+                                <input class="form-control" type="number" min="1" max="5" name="number_people" required>
                               </div>
                             </div>
                           </div>
                           <div class="row">
                             <div class="col-md-6">
                               <div class="form-group">
-                                <textarea class="form-control" id="note" rows="4" placeholder="Special requests"></textarea>
+                                <textarea class="form-control" id="note" rows="4" placeholder="Special requests" name="special_request"></textarea>
                               </div>
                             </div>
                             <div class="col-md-6">
@@ -485,10 +486,11 @@ function renderTourPopups(tours) {
                             </div>
                           </div>
                           <div class="submit-buttons">
-                            <button type="submit" class="add-to-cart">ADD TO CART</button>
+                            <button  class="add-to-cart">ADD TO CART</button>
                             <button type="submit" class="buy-now">BUY NOW</button>
                           </div>
                         </form>
+                        <div style="color: red; font-size: 12px; padding-top: 10px;" class="error"></div>
                       </div>
                     </div>
                   </div>  
@@ -501,5 +503,34 @@ function renderTourPopups(tours) {
     `;
 
     $body.prepend(html);
+    submitTourRequestForm();
   }
+}
+
+function submitTourRequestForm() {
+    $('.form-tour-request').unbind('submit').bind('submit',function(e) {
+
+            e.preventDefault();
+            $('.error').empty();
+            console.log($(this));
+            $.post('/tour-request', $(this).serialize())
+                .then(function (response) {
+                    if (response.status == 'success') {
+                        $(this).closest('.modal').modal('toggle');
+                        swal(
+                            'Success!',
+                            response.message,
+                            'success'
+                        );
+                    } else {
+                        $.each(response.errors, function (key, value) {
+                            $('.error').append(" <p><span>* " + value + "</span></p>");
+                        });
+                    }
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+
+        });
 }

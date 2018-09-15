@@ -220,7 +220,13 @@ window.tickets = [
 
 // Get tickets
 function getTickets(cb) {
-  cb(window.tickets);
+  $.ajax({
+    type: 'GET',
+    url: 'http://opensea.vn/api/frontend/ticket',
+    success: cb,
+    error: handleRequestError
+  });
+  // cb(window.tickets);
 }
 
 // Render tickets
@@ -251,30 +257,48 @@ function renderTickets(tickets) {
     // n = 12 / Object.keys(ticket.prices).length;
 
     if (ticket.type == 'normal') {
-      for (let k in ticket.prices) {
-        prices += `
-          <div class="col-6">
-            <div class="price ${k}">
-              <div class="type">${k.toUpperCase()}</div>
-              <div class="row">
-                <div class="col-2 offset-1">
-                  <div class="currency">${ticket.currency}</div>
-                </div>
-                <div class="col-9">
-                  <div class="number">${ticket.prices[k].number}</div>
-                </div>
-                <div class="save col-12">
-                  <span class="text">save up to</span>
-                  <span class="save-price">
-                    <span class="currency">${ticket.currency}</span>
-                    <span class="number">${ticket.prices[k].save}</span>
-                  </span>
-                </div>
+      prices = `
+        <div class="col-6">
+          <div class="price adult">
+            <div class="type">ADULT</div>
+            <div class="row">
+              <div class="col-2 offset-1">
+                <div class="currency">${ticket.currency}</div>
+              </div>
+              <div class="col-9">
+                <div class="number">${ticket.prices['adult'].number}</div>
+              </div>
+              <div class="save col-12">
+                <span class="text">save up to</span>
+                <span class="save-price">
+                  <span class="currency">${ticket.currency}</span>
+                  <span class="number">${ticket.prices['adult'].save}</span>
+                </span>
               </div>
             </div>
           </div>
-        `;
-      }
+        </div>
+        <div class="col-6">
+          <div class="price child">
+            <div class="type">CHILD</div>
+            <div class="row">
+              <div class="col-2 offset-1">
+                <div class="currency">${ticket.currency}</div>
+              </div>
+              <div class="col-9">
+                <div class="number">${ticket.prices['child'].number}</div>
+              </div>
+              <div class="save col-12">
+                <span class="text">save up to</span>
+                <span class="save-price">
+                  <span class="currency">${ticket.currency}</span>
+                  <span class="number">${ticket.prices['child'].save}</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
     } else {
       for (let k in ticket.prices) {
         prices += `
@@ -311,7 +335,7 @@ function renderTickets(tickets) {
             <span>${ticket.type == 'family' ? '2 Adult and 2 Children' : ''}</span>
           </div>
           <div class="content">
-            <div class="empty"><img src="${ticket.image}" style="width:100%;height:100%;"></div>
+            <div class="empty"><img src="http://opensea.vn${ticket.image}" style="width:100%;height:100%;"></div>
             <div class="descriptions">
               ${exclusive_offer}
             </div>
@@ -335,7 +359,7 @@ function renderTickets(tickets) {
 function getAttractions(cb) {
   $.ajax({
     type: 'GET',
-    url: 'api/frontend/attraction',
+    url: 'http://opensea.vn/api/frontend/attraction',
     success: resData => cb(resData),
     error: err => console.error(err)
   });
@@ -357,7 +381,7 @@ function renderAttractions(attractions) {
         <div class="attraction" id="${attraction.id}">
           <div class="name">${attraction.title}</div>
           <div class="middle">
-            <div class="rectangle" style="background-image: url('${attraction.image}');"></div>
+            <div class="rectangle" style="background-image: url('http://opensea.vn${attraction.image}');"></div>
           </div>
           <div class="description">
             <div style="width: 100%; height: 100%; overflow: hidden;">
@@ -464,27 +488,64 @@ function ticketPopupAmount(popupId) {
   });
 }
 
-// Price number to int
-function priceNumberToInt(num) {
-  let s = num.split(/\D/gmi).join('');
+// Request add to cart
+function requestAddToCart(data, cb) {
+  console.log(data)
+  // Get headers
+  let xsrfToken = getCookie('XSRF-TOKEN');
 
-  return parseInt(s);
+  // Send request
+  $.ajax({
+    type: 'POST',
+    url: 'http://opensea.vn/api/frontend/cart',
+    data,
+    headers: {
+      'X-XSRF-TOKEN': xsrfToken,
+      'Content-type': 'application/json'
+    },
+    success: cb,
+    error: handleRequestError
+  });
 }
 
-// Int to price number
-function intToPriceNumber(num) {
-  let a = num.toString().split('');
-  let s = '';
+// Click on ticket popup book now button
+function addTicketToCart(id, name, type, btn=null) {
+  let quantity = {};
+  let submitData;
 
-  for (let i = a.length - 1; i >= 0; i--) {
-    if ((a.length - i - 1) % 3 == 0 && i < a.length - 1) {
-      s = a[i] + ',' + s;
-    } else {
-      s = a[i] + s;
-    }
+  // Quantity
+  console.log($(`#ticket-popup-${id} .amount-family`).val())
+  console.log($(`#ticket-popup-${id} .amount-adult`).val())
+  console.log($(`#ticket-popup-${id} .amount-child`).val())
+  if (type == 'family') {
+    quantity = {
+      family: $(`#ticket-popup-${id} .amount-family`).val()
+    };
+  } else {
+    quantity = {
+      child: $(`#ticket-popup-${id} .amount-child`).val(),
+      adult: $(`#ticket-popup-${id} .amount-adult`).val(),
+    };
   }
 
-  return s;
+  // Submit data
+  submitData = [{
+    product: 'ticket',
+    id,
+    name: name.toLowerCase(),
+    type,
+    quantity
+  }];
+
+  // Request add to cart
+  requestAddToCart(submitData, () => {
+    closeModal('#ticket-popup-' + id);
+    if (btn == 'book') {
+      location.href = 'cart.html';
+    } else {
+      alert('Success');
+    }
+  });
 }
 
 // Render ticket popup
@@ -509,7 +570,7 @@ function renderTicketPopups(tickets) {
         <div class="col-md-4">
           <div class="row cell">
             <div class="icon col-3">
-              <img src="${offer.icon}">
+              <img src="http://opensea.vn${offer.icon}">
             </div>
             <div class="text col-9">${offer.text}</div>
           </div>
@@ -549,7 +610,7 @@ function renderTicketPopups(tickets) {
                   <span class="sub">-</span>
                   <span class="amount-number">1</span>
                   <span class="add">+</span>
-                  <input type="number" name="amountAdult" class="amount-adult" min="1" hidden>
+                  <input type="number"  value="1" name="amountAdult" class="amount-adult" min="1" hidden>
                 </div>
               </div>               
             </div>
@@ -574,7 +635,7 @@ function renderTicketPopups(tickets) {
                   <span class="sub">-</span>
                   <span class="amount-number">1</span>
                   <span class="add">+</span>
-                  <input type="number" name="amountChild" class="amount-child" min="1" hidden>
+                  <input type="number" value="1" name="amountChild" class="amount-child" min="1" hidden>
                 </div>
               </div>  
             </div>
@@ -606,7 +667,7 @@ function renderTicketPopups(tickets) {
                 <span class="sub">-</span>
                 <span class="amount-number">1</span>
                 <span class="add">+</span>
-                <input type="number" name="amountFamily" class="amount-family" hidden>
+                <input type="number" value="1" name="amountFamily" class="amount-family" hidden>
               </div>
             </div>
           </div>  
@@ -682,8 +743,8 @@ function renderTicketPopups(tickets) {
                       </div>
 
                       <div class="submit-buttons">
-                        <button type="submit" class="add-to-cart">ADD TO CART</button>
-                        <button type="submit" class="book-now">BOOK NOW</button>
+                        <button type="button" class="add-to-cart" onclick="addTicketToCart(${ticket.id}, '${name.toLowerCase()}', '${ticket.type}')">ADD TO CART</button>
+                        <button type="button" class="book-now" onclick="addTicketToCart(${ticket.id}, '${name.toLowerCase()}', '${ticket.type}', 'book')">BOOK NOW</button>
                       </div>
                     </div>
                   </div>

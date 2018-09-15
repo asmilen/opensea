@@ -1,0 +1,68 @@
+.header {
+	padding: 40px 0;
+	background: transparent;
+}
+.header .search {
+	height: 100%;
+    display: flex;
+    align-items: center;
+}
+.header .search .icon {
+	position: absolute;
+	left: 5px;
+	width: 25px;
+}
+.header .search .icon img {
+	width: 100%;
+}
+.header .search input {
+	padding: 5px 5px 5px 30px;
+	border: 1px solid rgb(38,66,106);
+	border-radius: 5px;
+	font-size: 14px;
+	font-family: 'GothamRoundedBook';
+	color: rgb(25,54,97);
+	width: 200px;
+}
+.header .logo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.header .logo img {
+	width: 230px;
+}
+.header .langs {
+	height: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	font-family: 'GothamRoundedBook';
+	font-size: 16px;
+	color: rgb(25,54,97);
+}
+.header .langs .en {
+	padding: 0 40px;
+	cursor: pointer;
+}
+.header .langs .vertical-line {
+	width: 1px;
+	height: 40%;
+	border: .5px solid rgb(25,54,97);
+}
+.header .langs .vi {
+	padding: 0 0 0 20px;
+	cursor: pointer;
+}
+@media (max-width: 768px) {
+	.header .langs {
+		font-size: 14px;
+		padding: 0 16px 0 0;
+	}
+	.header .langs .en {
+		padding: 0 16px;
+	}
+	.header .langs .vi {
+		padding: 0 0 0 8px;
+	}
+}

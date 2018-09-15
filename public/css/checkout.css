@@ -1,0 +1,85 @@
+/*Main*/
+main {
+	color: rgb(25,54,97);
+	background-color: rgb(255,255,255);
+	background-image: none;
+}
+/*Main header*/
+.main-header {
+	font-family: 'BCCartelDeux';
+	font-size: ;
+}
+.main-header h1 {
+	text-align: center;
+}
+/*Paypal*/
+.paypal {
+}
+.paypal button {
+	color: rgb(25,54,97);
+	border: 1px solid rgb(200,200,200);
+	padding: 12px;
+	font-family: 'GothamRoundedBold';
+	font-size: 14px;
+	background-color: rgb(255,255,255);
+	cursor: pointer;
+}
+.paypal .other {
+	font-size: 14px;
+	font-family: 'GothamRoundedBold';
+}
+/*Checkout form*/
+.checkout-form {
+	font-family: 'GothamRoundedBold';
+}
+.checkout-form h2 {
+	font-size: 18px;
+}
+.checkout-form h3 {
+	font-size: 12px;
+	font-family: 'GothamRoundedBook';
+}
+.checkout-form .form-control {
+	background-color: rgb(235,235,235);
+	font-family: 'GothamRoundedBook';
+	font-size: 14px;
+}
+.checkout-form .info {
+	font-family: 'GothamRoundedBook';
+	font-size: 13px;
+}
+.checkout-form .read-term {
+	text-align: center;
+}
+.checkout-form .buttons .back button {
+	color: rgb(25,54,97);
+	font-size: 16px;
+	padding: 12px 40px;
+	background-color: rgb(255,255,255);
+	border: 0.5px solid rgb(25,54,97);
+}
+.checkout-form .buttons .continue {
+	text-align: right;
+}
+.checkout-form .buttons .continue button {
+	background-color: rgb(25,54,97);
+	color: rgb(255,255,255);
+	font-size: 16px;
+	padding: 12px 40px;
+	border: none;
+}
+/*Main footer*/
+.footer {
+	font-family: 'GothamRoundedBold';
+	font-size: 18px;
+}
+.footer .text {
+	text-align: right;
+}
+.footer .images {
+	text-align: right;
+}
+.footer .images img {
+	width: 120px;
+	margin-left: 20px;
+}

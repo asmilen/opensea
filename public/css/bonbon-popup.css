@@ -1,0 +1,246 @@
+.ticket_popup_modal .modal-dialog {
+	max-width: 900px;
+}
+.ticket-popup {
+}
+.ticket-popup .banner {
+	height: 100%;
+}
+.ticket-popup .banner .title {
+	position: absolute;
+	writing-mode: vertical-rl;
+	text-orientation: upright;
+	z-index: 1052;
+	font-family: 'BCCartelDeux';
+	font-size: 60px;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: rgb(171,34,40);
+}
+.ticket-popup.family .banner .title {
+	color: rgb(241,180,52);
+}
+.ticket-popup .banner .filter {
+	opacity: .5;
+	background-color: rgb(241,180,52);
+	width: 100%;
+	height: 100%;
+	top: 0;
+	z-index: 1051;
+}
+.ticket-popup.family .banner .filter {
+	background-color: rgb(171,34,40);
+}
+.ticket-popup .banner img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.ticket-popup .content {
+}
+.ticket-popup .content h1 {
+	text-align: center;
+    font-family: 'BCCartelDeux';
+    font-size: 22px;
+    color: rgb(171,34,40);
+    text-shadow: 3px 3px rgb(241,195,91);
+    padding: 30px 0 0 0;
+}
+.ticket-popup .content .prices {
+}
+.ticket-popup .content .prices .price {
+	text-align: center;
+	padding: 10px;
+}
+.ticket-popup .content .prices .price .title {
+	font-family: 'GothamRoundedBold';
+	font-size: 16px;
+	color: rgb(25,54,97);
+	height: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.ticket-popup .content .prices .price .sub-title {
+	font-family: 'GothamRoundedBook';
+	font-size: 10px;
+	color: rgb(25,54,97);
+}
+.ticket-popup .content .prices .price .inner-price {
+}
+.ticket-popup .content .prices .price .inner-price .currency {
+	font-family: 'GothamRoundedBook';
+	font-size: 10px;
+	color: rgb(25,54,97);
+	vertical-align: top;
+}
+.ticket-popup .content .prices .price .inner-price .number {
+	font-family: 'GothamRoundedBold';
+	font-size: 18px;
+	color: rgb(171,34,40);
+	vertical-align: top;
+	line-height: 18px;
+}
+.ticket-popup .content .prices .price .save {
+}
+.ticket-popup .content .prices .price .save .text {
+	font-family: 'GothamRoundedBook';
+	font-size: 10px;
+	color: rgb(25,54,97);
+	vertical-align: top;
+}
+.ticket-popup.family .content .prices .price .save .text {
+	font-size: 14px;
+}
+.ticket-popup .content .prices .price .save .save-price {
+}
+.ticket-popup .content .prices .price .save .save-price .currency {
+	font-family: 'GothamRoundedBook';
+	font-size: 8px;
+	color: rgb(171,34,40);
+	vertical-align: top;
+}
+.ticket-popup.family .content .prices .price .save .save-price .currency {
+	font-size: 10px;
+}
+.ticket-popup .content .prices .price .save .save-price .number {
+	font-family: 'GothamRoundedBold';
+	font-size: 12px;
+	color: rgb(171,34,40);
+	vertical-align: top;
+}
+.ticket-popup.family .content .prices .price .save .save-price .number {
+	font-size: 14px;
+}
+.ticket-popup .content .prices .choose-amount {
+	position: relative;
+	border: 2px solid rgb(247,188,40);
+	border-radius: 20px;
+	font-family: 'BCCartelDeux';
+	color: rgb(247,188,40);
+	font-size: 24px;
+	width: 160px;
+	padding: 0;
+	margin: 0 auto;
+	background-color: rgb(235,235,235);
+	text-align: center;
+}
+.ticket-popup .content .prices .choose-amount .sub {
+	position: absolute;
+	left: 10px;
+	cursor: pointer;
+	vertical-align: middle;
+	line-height: 30px;
+}
+.ticket-popup .content .prices .choose-amount .add {
+	position: absolute;
+	right: 10px;
+	vertical-align: middle;
+	line-height: 30px;
+	cursor: pointer;
+}
+.ticket-popup .content .prices .choose-amount .amount-number {
+	font-size: 30px;
+	line-height: 30px;
+}
+
+.ticket-popup .content .descriptions {
+	padding: 20px 0;
+	border-top: 1px dashed rgb(247,188,40);
+	border-bottom: 1px dashed rgb(247,188,40);
+}
+.ticket-popup .content .descriptions .description {
+	font-family: 'GothamRoundedBook';
+	font-size: 12px;
+	color: rgb(25,54,97);
+}
+.ticket-popup .content .descriptions .description .icon {
+	text-align: center;
+}
+.ticket-popup .content .descriptions .description .icon >img {
+	width: 30px;
+}
+.ticket-popup .content .descriptions .description .text{
+}
+
+.ticket-popup .content .offers {
+	padding: 10px 0 20px 0;
+	border-bottom: 1px dashed rgb(247,188,40);
+}
+.ticket-popup .content .offers .cell {
+	padding: 10px 0 0 0;
+}
+.ticket-popup .content .offers .title {
+	position: relative;
+	top: calc(50% - 7px);
+    font-family: 'BCCartelDeux';
+    font-size: 14px;
+    color: rgb(171,34,40);
+    text-shadow: 3px 3px rgb(241,195,91);
+    padding: 0 0 0 12px;
+}
+.ticket-popup .content .offers .icon {
+	text-align: center;
+}
+.ticket-popup .content .offers .icon>img {
+	width: 30px;
+}
+.ticket-popup .content .offers .text {
+	font-family: 'GothamRoundedBook';
+	font-size: 12px;
+	color: rgb(25,54,97);
+}
+
+.ticket-popup .content .sub-total {
+	background-color: rgb(241,180,52);
+	padding: 15px 0;
+	margin: 20px 0;
+	text-align: center;
+}
+.ticket-popup .content .sub-total .title {
+	font-family: 'BCCartelDeux';
+	font-size: 18px;
+	color: rgb(25,54,97);
+}
+.ticket-popup .content .sub-total .price {
+}
+.ticket-popup .content .sub-total .price .currency {
+	font-family: 'GothamRoundedBook';
+	font-size: 10px;
+	color: rgb(25,54,97);
+	vertical-align: top;
+}
+.ticket-popup .content .sub-total .price .number {
+	font-family: 'GothamRoundedBold';
+	font-size: 22px;
+	color: rgb(171,34,40);
+	line-height: 24px;
+}
+
+.ticket-popup .content .submit-buttons {
+	text-align: center;
+}
+.ticket-popup .content .submit-buttons button {
+	margin: 0px 15px 20px 15px;	
+	font-size: 14px;
+	font-family: 'BCCartelDeux';
+	padding: 8px 34px;
+	cursor: pointer;
+}
+.ticket-popup .content .submit-buttons button.add-to-cart {
+	border: 1px solid rgb(171,34,40);
+	background-color: rgb(255,255,255);
+	color: rgb(171,34,40);
+}
+.ticket-popup .content .submit-buttons button.book-now {
+	background-color: rgb(171,34,40);
+	border: none;
+	color: rgb(255,255,255);
+}
+

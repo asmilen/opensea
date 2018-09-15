@@ -22,7 +22,8 @@ class TourController extends Controller
             'name' => 'required',
             'contact' => 'required',
             'date' => 'date|required',
-            'number_people' => 'numeric|required'
+            'number_people' => 'numeric|required',
+            'time' => 'required',
         ]);
 
         if ($validator->fails()) {
