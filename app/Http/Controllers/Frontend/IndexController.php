@@ -12,13 +12,12 @@ use Validator;
 class IndexController extends Controller
 {
     public function index(){
-        //return \File::get(public_path() . '/home.html');
         return view('frontend.home');
     }
 
-    public function bus()
+    public function bonbon()
     {
-        return view('frontend.bus');
+        return view('frontend.bonbon');
     }
 
     public function rewind()

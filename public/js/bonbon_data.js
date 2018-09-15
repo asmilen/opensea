@@ -222,7 +222,7 @@ window.tickets = [
 function getTickets(cb) {
   $.ajax({
     type: 'GET',
-    url: 'http://opensea.vn/api/frontend/ticket',
+    url: '/api/frontend/ticket',
     success: cb,
     error: handleRequestError
   });
@@ -359,7 +359,7 @@ function renderTickets(tickets) {
 function getAttractions(cb) {
   $.ajax({
     type: 'GET',
-    url: 'http://opensea.vn/api/frontend/attraction',
+    url: '/api/frontend/attraction',
     success: resData => cb(resData),
     error: err => console.error(err)
   });
@@ -490,17 +490,12 @@ function ticketPopupAmount(popupId) {
 
 // Request add to cart
 function requestAddToCart(data, cb) {
-  console.log(data)
-  // Get headers
-  let xsrfToken = getCookie('XSRF-TOKEN');
-
   // Send request
   $.ajax({
     type: 'POST',
-    url: 'http://opensea.vn/api/frontend/cart',
-    data,
+    url: '/api/frontend/cart',
+    data: JSON.stringify(data),
     headers: {
-      'X-XSRF-TOKEN': xsrfToken,
       'Content-type': 'application/json'
     },
     success: cb,

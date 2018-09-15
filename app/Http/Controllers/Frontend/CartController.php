@@ -59,7 +59,6 @@ class CartController extends Controller
         //TODO: add validation here
 
         $newItems = $this->convertToCartItem($request);
-
         foreach ($newItems as $item) {
                         
             $duplicates = Cart::search(function ($cartItem, $rowId) use ($item) {
@@ -253,6 +252,7 @@ class CartController extends Controller
         $decoded = explode ('|', $item);
         return $decoded;
     }
+
     private function convertToCartItem ($request) {
         $cartItems = [];
 
