@@ -145,7 +145,12 @@ class CartController extends Controller
         ];
         $retCode = 400;
 
-        $cartItem = Cart::content()[$id];
+        $cartItem = null;
+
+        if (array_key_exists($id, Cart::content()->toArray())) {
+            $cartItem = Cart::content()[$id];
+        }
+
         $validItem = [];
         $flag = true;
         $err = '';
@@ -177,7 +182,7 @@ class CartController extends Controller
                 $retVal['message'] = 'unknow value: ' . $err;
             }
         }else {
-            $retVal['message'] = 'blank update field';
+            $retVal['message'] = 'item with id '.$id.' not existed';
         }   
 
         return response()->json($retVal, $retCode);
