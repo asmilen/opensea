@@ -9,7 +9,7 @@
 namespace App\Models;
 class TicketInstance extends BaseModel
 {
-
+	const STATUS = 'booked';
     protected $table = 'ticket_instance';
     protected $fillable = [
         'id', 'type', 'status', 'order_id', 'ticket_id'

@@ -10,7 +10,8 @@ namespace App\Models;
 class OnlineOrder extends BaseModel
 {
 
-    protected $table = 'online_table';
+	const PAYMENT_STATUS = 'pending';
+    protected $table = 'online_order';
     protected $fillable = [
         'id', 'user_gender', 'user_first_name', 'user_last_name',
         'user_email', 'user_address_line_1',  'user_address_line_2', 'user_city',
