@@ -37,6 +37,8 @@ class TicketController extends Controller
             $ticketInfo->image = $ticket->image_url;
             $ticketInfo->popular = false; //$ticket->popular;
             $ticketInfo->type = $ticket->type;
+            $ticketInfo->feature = [];
+            $ticketInfo->exclusive_offer =[];
 
             #feature filter
             $featureFilter = ['ticket_id' => $ticket->id, 'columns' => '*'];
