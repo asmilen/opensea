@@ -25,6 +25,13 @@ class CartController extends Controller
         return response()->json($items);
     }
 
+    public function count()
+    {
+        $ret = [
+            'count' => Cart::content()->groupBy('id')->count()
+        ];
+        return response()->json($ret);
+    }
     /**
      * Show the form for creating a new resource.
      *

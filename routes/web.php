@@ -29,6 +29,7 @@ Route::get('api/frontend/attraction','Frontend\IndexController@attraction');
 Route::post('api/frontend/cart', 'Frontend\CartController@store');
 Route::get('api/frontend/cart/index', 'Frontend\CartController@index');
 Route::put('api/frontend/cart/{id}', 'Frontend\CartController@update');
+Route::get ('api/frontend/cart/count', 'Frontend\CartController@count');
 
 #lang
 Route::get('/lang', function(){
