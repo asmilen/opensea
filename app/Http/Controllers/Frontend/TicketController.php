@@ -66,8 +66,9 @@ class TicketController extends Controller
             $prices = explode (";", $ticket->price);
             foreach ($prices as $price) {
                 $price_component = explode(":", $price);
-                $ticketInfo->prices[]  = array ( $price_component[0] => array ('number' => $price_component[1], 'save' => $price_component[2]) );
+                $ticketInfo->prices[$price_component[0]] = array ('number' => $price_component[1], 'save' => $price_component[2]);
             }
+            $ticketInfo->currency = 'VND';
             $ticketInfos[] = $ticketInfo;
         }
 
