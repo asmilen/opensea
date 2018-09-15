@@ -94,5 +94,8 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton('requestService', function(){
             return new RequestRepository();
         });
+        $this->app->singleton('onlineOrderService', function() {
+            return new OnlineOrderRepository();
+        });
     }
 }
