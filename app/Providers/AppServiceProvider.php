@@ -21,6 +21,7 @@ use App\Repositories\TourRequestRepository;
 use App\Repositories\RequestRepository;
 use App\Repositories\TrackingRepository;
 use App\Repositories\TicketFeatureRepository;
+use App\Repositories\OnlineOrderRepository;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
