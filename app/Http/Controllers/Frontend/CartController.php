@@ -88,9 +88,24 @@ class CartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
+    public function show(Request $request, $rowId)
+    {   
+        $retVal = [];
+        
+        if (array_key_exists($rowId, Cart::content())) {
+            $items = $this->convertCartItemToJson();    
+            $cartItem = Cart::content()[$rowId];
+
+            foreach ($items as $item) {
+                if ($this->codeGen($item) === $cartItem->id) {
+                    $retVal = $item;
+                    unset($retVal['row_id']);
+                    break;
+                }
+            }
+        }
+
+        return response()->json($retVal);
     }
 
     /**
