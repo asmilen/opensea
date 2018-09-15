@@ -116,7 +116,7 @@ class CartController extends Controller
             $retVal ['message'] = 'item with id ' . $rowId . ' not existed';
         }
 
-        return response()->json($retVal);
+        return response()->json($retVal, $retCode);
     }
 
     /**
