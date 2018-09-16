@@ -7,32 +7,45 @@ use App\Models\CustomerMessage;
 use App\Transformers\FrontendAttractionTransformer;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use \Cart as Cart;
 use Validator;
 
 class IndexController extends Controller
 {
+
     public function index(){
-        return view('frontend.home');
+        $cartCount = Cart::content()->groupBy('id')->count();
+        return view('frontend.home',compact('cartCount'));
     }
 
     public function bonbon()
     {
-        return view('frontend.bonbon');
+        $cartCount = Cart::content()->groupBy('id')->count();
+        return view('frontend.bonbon',compact('cartCount'));
     }
 
     public function rewind()
     {
-        return view('frontend.rewind');
+        $cartCount = Cart::content()->groupBy('id')->count();
+        return view('frontend.rewind',compact('cartCount'));
     }
 
     public function cart()
     {
-        return view('frontend.cart');
+        $cartCount = Cart::content()->groupBy('id')->count();
+        return view('frontend.cart',compact('cartCount'));
+    }
+
+    public function checkout()
+    {
+        $cartCount = Cart::content()->groupBy('id')->count();
+        return view('frontend.checkout',compact('cartCount'));
     }
 
     public function faq()
     {
-        return view('frontend.faq');
+        $cartCount = Cart::content()->groupBy('id')->count();
+        return view('frontend.faq',compact('cartCount'));
     }
 
     public function customerMessage(Request $request)

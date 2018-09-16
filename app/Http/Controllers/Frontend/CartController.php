@@ -21,7 +21,6 @@ class CartController extends Controller
      */
     public function index()
     {
-
         $items = $this->convertCartItemToJson();
         //
         return response()->json($items);

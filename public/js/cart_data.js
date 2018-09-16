@@ -126,43 +126,7 @@ function renderCartData(data) {
   $('.order .actual-total .price .number').text(total);
 }
 
-function RequestCheckout(cart_data) {
-    submit_data = {
-        "info" : {
-            "gender" : "male",
-            "first_name" : "thinh",
-            "last_name" : "nguyen",
-            "email" : "thinhnh56@gmail.com",
-            "address_line_1" : "hanoi",
-            "address_line_2" : "hanoi",
-            "city" : "hanoi",
-            "postcode" : "100000",
-            "state" : "LA",
-            "country" : "vietnam"
-        },
-        "items" : cart_data
-    };
-    $.ajax({
-        type: 'POST',
-        url: 'api/frontend/checkout',
-        data: JSON.stringify(submit_data),
-        headers: {
-            'Content-type': 'application/json'
-        },
-        success: function () {
-            swal("Success!", "Successfully Checkout!", "success");
-            getCartData(renderCartData);
-        },
-        error: handleRequestError()
-    });
-}
 
-function processCheckout()
-{
-  $('.checkout button').click(function () {
-    getCartData(RequestCheckout);
-  });
-}
 
 $(document).ready(() => {
     csrfHeader();
