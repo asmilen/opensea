@@ -45,7 +45,7 @@ function renderTours(tours) {
       if (i == 0) active = 'active';
       console.log(active)
 
-      image = 'http://opensea.vn' + image; // TODO: remove this
+      image = 'https://opensea.vn' + image; // TODO: remove this
       images += `
         <div class="carousel-item ${active}">
           <div class="tour-image">
@@ -133,7 +133,7 @@ function renderTourPopups(tours) {
     let notIncludes = '';
 
     for (let image of tour.images) {
-      image = 'http://opensea.vn' + image; // TODO: remove this
+      image = 'https://opensea.vn' + image; // TODO: remove this
       images += `
         <div class="carousel-item active">
           <img src="${image}" style="width: 100%;">
