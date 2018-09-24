@@ -1,0 +1,108 @@
+/*Main*/
+main {
+	background-image: none;
+}
+/*First banner*/
+.first-banner {
+	background-color: rgb(183,183,183);
+	padding: 70px 0;
+}
+.first-banner h1 {
+	color: rgb(25,54,97);
+	font-family: 'BCCartelDeux';
+	font-size: 24px;
+	text-align: center;
+}
+@media (max-width: 768px) {
+	.first-banner {
+		padding: 55px 0;
+	}
+	.first-banner h1 {
+		font-size: 20px;
+	}	
+}
+/*Navigate*/
+.navigate {
+	background-color: rgb(255,255,255);
+	padding: 120px 0;
+}
+.navigate .navigate-item {
+	cursor: pointer;
+}
+.navigate .navigate-item img {
+	width: 280px!important;
+	margin: 0 auto;
+}
+@media (max-width: 768px) {
+	.navigate {
+		padding: 80px 0 40px 0;
+	}
+	.navigate .navigate-item {
+	}
+	.navigate .navigate-item img {
+	}	
+}
+
+.navigate .navigate-item#nav-bonbon {
+}
+.navigate .navigate-item#nav-rewind {
+}
+.navigate .navigate-item#nav-more {
+}
+
+/*FAQs*/
+.faqs {
+	background-color: rgb(255,255,255);
+	padding: 60px 0 20px 0;
+}
+.faqs h2 {
+	color: rgb(164,28,38);
+	font-family: 'BCCartelDeux';
+	font-size: 22px;
+	text-align: center;
+}
+@media (max-width: 768px) {
+	.faqs {
+		padding: 40px 0 20px 0;
+	}
+	.faqs h2 {
+		font-size: 18px;
+	}	
+}
+
+.faqs .list {
+	color: rgb(25,54,97);
+	max-width: 600px;
+	padding: 40px 0;
+	margin: 0 auto;
+}
+.faqs .list .question {
+	padding: 20px 0;
+}
+.faqs .list .question .question-text {
+	font-family: 'GothamRoundedBold';
+	font-size: 18px;
+}
+.faqs .list .question .icon {
+}
+.faqs .list .question .answer {
+	font-family: 'GothamRoundedBook';
+	font-size: 12px;
+	text-align: justify;
+}
+@media (max-width: 768px) {
+	.faqs .list {
+		padding: 20px 0;
+		width: 80%;
+	}
+	.faqs .list .question {
+		padding: 15px 0;
+	}
+	.faqs .list .question .question-text {
+		font-size: 16px;
+	}
+	.faqs .list .question .icon {
+	}
+	.faqs .list .question .answer {
+	}	
+}

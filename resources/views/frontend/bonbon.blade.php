@@ -394,9 +394,12 @@
             </div>
             <div class="col-4">
                 <div class="langs">
-                    <div class="en">Eng</div>
+                    <!-- <div class="en">Eng</div>
                     <div class="vertical-line"></div>
-                    <div class="vi">Vie</div>
+                    <div class="vi">Vie</div> -->
+                    <div class="en"><img src="./images/header_en.png"></div>
+                    <div class="vertical-line"></div>
+                    <div class="vi"><img src="./images/header_vn.png"></div>
                 </div>
             </div>
         </div>
@@ -409,6 +412,7 @@
     <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navBar" aria-controls="navBar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
+
     @include('frontend.common.navbar')
 </nav>
 <!-- /nav -->
@@ -818,7 +822,7 @@
             <div class="header-2">Bon this way</div>
             <div class="row">
                 <div class="col-md-9">
-                    <div class="image"><img src="./images/bonbon_map.jpg"></div>
+                    <div class="image"><img src="./images/map@2x.png"></div>
                 </div>
                 <div class="col-md-3">
                     <div class="text">
@@ -988,35 +992,36 @@
     <section class="get-in-touch">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
+                <!-- <div class="col-lg-6"> -->
+                <div class="col-12">
                     <div class="slogan">
                         <img src="./images/bonbon_getintouch_slogan.png">
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="form">
-                        <div class="header-1">GET IN TOUCH</div>
-                        <form>
-                            <div class="row">
-                                <div class="col-md-6 col-xs-10 offset-xs-1">
-                                    <input id="name" type="text" name="name" placeholder="type your name here">
-                                </div>
-                                <div class="col-md-1 col-xs-0"></div>
-                                <div class="col-md-5 col-xs-10 offset-xs-1">
-                                    <input id="email" type="email" name="email" placeholder="your e-mail">
-                                </div>
-                                <div class="col-md-12 col-xs-11 offset-xs-1">
-                                    <textarea rows="8" placeholder="message"></textarea>
-                                </div>
-                                <div class="col-12">
-                                    <div class="submit">
-                                        <button type="submit">SEND</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+                <!-- <div class="col-lg-6">
+                  <div class="form">
+                    <div class="header-1">GET IN TOUCH</div>
+                    <form>
+                      <div class="row">
+                        <div class="col-md-6 col-xs-10 offset-xs-1">
+                          <input id="name" type="text" name="name" placeholder="type your name here">
+                        </div>
+                        <div class="col-md-1 col-xs-0"></div>
+                        <div class="col-md-5 col-xs-10 offset-xs-1">
+                          <input id="email" type="email" name="email" placeholder="your e-mail">
+                        </div>
+                        <div class="col-md-12 col-xs-11 offset-xs-1">
+                          <textarea rows="8" placeholder="message"></textarea>
+                        </div>
+                        <div class="col-12">
+                          <div class="submit">
+                            <button type="submit">SEND</button>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div> -->
             </div>
         </div>
     </section>
@@ -1025,7 +1030,6 @@
 <!-- /main -->
 
 <!-- Footer -->
-
 @include('frontend.common.footer')
 <!-- /footer -->
 
@@ -1033,5 +1037,4 @@
 <script src="./js/bonbon_data.js"></script>
 <script src="./js/bonbon.js"></script>
 <script src="./js/lang.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
 </body>
