@@ -56,9 +56,12 @@
             </div>
             <div class="col-md-4">
                 <div class="langs">
-                    <div class="en">Eng</div>
+                    <!-- <div class="en">Eng</div>
                     <div class="vertical-line"></div>
-                    <div class="vi">Vie</div>
+                    <div class="vi">Vie</div> -->
+                    <div class="en"><img src="./images/header_en.png"></div>
+                    <div class="vertical-line"></div>
+                    <div class="vi"><img src="./images/header_vn.png"></div>
                 </div>
             </div>
         </div>
@@ -71,6 +74,7 @@
     <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navBar" aria-controls="navBar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
+
     @include('frontend.common.navbar')
 </nav>
 <!-- /nav -->
@@ -130,7 +134,7 @@
                 <div class="col-md-5 col-lg-5 col-xl-3 offset-xl-2">
                     <div class="text">
                         <div class="header-1">BONBON CITY TOUR</div>
-                        <div class="header-2">travel with us</div>
+                        <div class="header-2 poster-font">travel with us</div>
                         <div class="see-more">
                             <button>MORE</button>
                         </div>
@@ -153,7 +157,7 @@
                 <div class="col-md-6 col-lg-6 col-xl-5">
                     <div class="text">
                         <div class="header-1">VIETNAM REWIND</div>
-                        <div class="header-2">explore with us</div>
+                        <div class="header-2 poster-font">explore with us</div>
                         <div class="see-more">
                             <button>MORE</button>
                         </div>
@@ -234,4 +238,5 @@
 <script src="./js/banner.js"></script>
 <script src="./js/home.js"></script>
 <script src="./js/lang.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
 </body>

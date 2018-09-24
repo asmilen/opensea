@@ -12,8 +12,8 @@
         <li class="nav-item {{ (Route::currentRouteName()=='frontend::rewind')?'active':'' }}">
             <a class="nav-link" id="rewind" href="/rewind">VIETNAM REWIND</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" id="faq" href="#">FAQs</a>
+        <li class="nav-item" {{ (Route::currentRouteName()=='frontend::faq')?'active':'' }}>
+            <a class="nav-link" id="faq" href="/faq">FAQs</a>
         </li>
         <li class="nav-item {{ (Route::currentRouteName()=='frontend::cart')?'active':'' }}">
             <a class="nav-link" id="cart" href="/cart"><span class="text">CART</span> <span class="amount">({{ $cartCount }})</span></a>
