@@ -6,7 +6,7 @@
 
                     <div class="header_1">CONTACT US</div>
                     <div class="tel">Tel: <span>(+84) 12 1536 3297</span></div>
-                    <div class="email">Email: <span>info@opensea.net</span></div>
+                    <div class="email">Email: <span>info@opensea.vn</span></div>
                 </div>
             </div>
             <div class="wrap col-md-2">
