@@ -335,7 +335,7 @@ function renderTickets(tickets) {
             <span>${ticket.type == 'family' ? '2 Adult and 2 Children' : ''}</span>
           </div>
           <div class="content">
-            <div class="empty"><img src="https://opensea.vn${ticket.image}" style="width:100%;height:100%;"></div>
+            <div class="empty"><img src="https://opensea.vn/${ticket.image}" style="width:100%;height:100%;"></div>
             <div class="descriptions">
               ${exclusive_offer}
             </div>
@@ -381,7 +381,7 @@ function renderAttractions(attractions) {
         <div class="attraction" id="${attraction.id}">
           <div class="name">${attraction.title}</div>
           <div class="middle">
-            <div class="rectangle" style="background-image: url('https://opensea.vn${attraction.image}');"></div>
+            <div class="rectangle" style="background-image: url('https://opensea.vn/${attraction.image}');"></div>
           </div>
           <div class="description">
             <div style="width: 100%; height: 100%; overflow: hidden;">
@@ -565,7 +565,7 @@ function renderTicketPopups(tickets) {
         <div class="col-md-4">
           <div class="row cell">
             <div class="icon col-3">
-              <img src="https://opensea.vn${offer.icon}">
+              <img src="https://opensea.vn/${offer.icon}">
             </div>
             <div class="text col-9">${offer.text}</div>
           </div>
