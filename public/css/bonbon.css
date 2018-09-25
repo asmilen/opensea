@@ -1,11 +1,11 @@
 /*Top background*/
 .top-background {
-	position: absolute;
-	top: 0;
-	width: 100%;
-	background-position-y: 0px;
-	background-repeat-y: no-repeat;
-	z-index: -1;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-position-y: 0px;
+    background-repeat-y: no-repeat;
+    z-index: -1;
 }
 .top-background img {
 	width: 100%;
@@ -186,21 +186,21 @@
 .packages .list .package .content .descriptions ul {
 	list-style-type: none;
 	padding: 0 10px 0 20px;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 .packages .list .package .content .descriptions ul li {
 	padding-left: 0;
 }
 .packages .list .package .content .descriptions ul li:before {
-	margin: 8px 0px -14px -15px;
-	content: '';
-	height: .4em;
-	width: .4em;
-	background: rgb(171,34,40);
-	display: block;
-	transform: rotate(45deg);
+    margin: 8px 0px -14px -15px;
+    content: '';
+    height: .4em;
+    width: .4em;
+    background: rgb(171,34,40);
+    display: block;
+    transform: rotate(45deg);
 }
 .packages .list .package .content .prices {
 	height: 84px;
@@ -569,11 +569,12 @@
 }
 @media (max-width: 992px) {
 	.get-in-touch .slogan {
-		display: none;
 	}
 }
 .get-in-touch .slogan img {
+	margin: 0 auto;
 	width: 70%;
+	max-width: 400px;
 }
 .get-in-touch .form {
 	padding: 10px;
@@ -636,9 +637,13 @@
 	text-shadow: 3px 3px rgb(241,195,91);
 	padding: 50px 0 0 0;
 }
+@media (max-width: 768px) {
+	.how-it-work .header-1 {
+		font-size: 25px;
+		padding: 50px 0 0 0;
+	}
+}
 .how-it-work .flow {
-	/*display: flex;*/
-	/*justify-content: space-between;*/
 	padding: 80px 10px;
 }
 .how-it-work .flow .inner {
@@ -661,7 +666,7 @@
 	align-items: center;
 	justify-content: center;
 	margin: 0 auto;
-	/*height: 100%;*/
+	/*height: 100%;*/ 
 }
 .how-it-work .flow .step .arrow {
 	position: absolute;
@@ -708,22 +713,22 @@
 	.how-it-work .flow #step1 .arrow {
 		bottom: 20px;
 		top: unset;
-		left: 325px;
-		transform-origin: top left;
+    	left: 325px;
+    	transform-origin: top left;
 		transform: rotate(90deg);
 	}
 	.how-it-work .flow #step2 .arrow {
-		bottom: 20px;
-		left: 0;
-		transform: rotate(90deg);
-		top: unset;
-		transform-origin: top left;
+	    bottom: 20px;
+	    left: 0;
+	    transform: rotate(90deg);
+	    top: unset;
+	    transform-origin: top left;
 	}
 	.how-it-work .flow #step3 .arrow {
 		bottom: 20px;
 		top: unset;
-		left: 325px;
-		transform-origin: top left;
+    	left: 325px;
+    	transform-origin: top left;
 		transform: rotate(90deg);
 	}
 }
@@ -817,17 +822,17 @@
 }
 .attractions .list .attraction>.see-more {
 	position: absolute;
-	bottom: 18px;
-	left: 126px;
-	width: 40px;
-	height: 40px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 28px;
-	border: 1px solid rgb(237,176,34);
-	color: rgb(237,176,34);
-	background: rgb(255,255,255);
+    bottom: 18px;
+    left: 126px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    border: 1px solid rgb(237,176,34);
+    color: rgb(237,176,34);
+    background: rgb(255,255,255);
 }
 .attractions .list .attraction>.see-more button {
 	background-color: rgb(237,176,34);
@@ -865,15 +870,15 @@
 	display: block;
 }
 .attractions .list .center .attraction>.see-more {
-	position: absolute;
-	bottom: 11px;
-	padding: 10px;
-	left: 95px;
-	z-index: 1;
-	border: none;
-	background: none;
-	width: unset;
-	height: unset;
+    position: absolute;
+    bottom: 11px;
+    padding: 10px;
+    left: 95px;
+    z-index: 1;
+    border: none;
+    background: none;
+    width: unset;
+    height: unset;
 }
 .attractions .list .center .attraction>.see-more .icon {
 	display: none;

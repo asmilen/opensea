@@ -11,6 +11,11 @@
 	margin: 10px auto;
 	z-index: 2000;
 }
+@media (max-width: 768px) {
+	.tour-popup {
+		padding: 18px;
+	}
+}
 .tour-popup .row {
 	height: unset;
 }
@@ -34,6 +39,23 @@
     color: rgb(51,53,93);
     text-shadow: 1px 1px rgb(255,248,233), -1px -1px rgb(255,248,233), 3px 3px rgb(193,144,42);
 }
+@media (max-width: 768px) {
+	.tour-popup .inner {
+		padding: 14px;
+	}
+	.tour-popup .inner .name {
+		text-align: center;
+		padding: 16px 0 30px 0;
+	}
+	.tour-popup .inner .name h1 {
+	    font-size: 35px;
+	    text-shadow: 1px 1px rgb(241,180,52), -1px -1px rgb(241,180,52), 2px 2px rgb(54,67,88);
+	}
+	.tour-popup .inner .name h2 {
+	    font-size: 24px;
+	    text-shadow: 1px 1px rgb(255,248,233), -1px -1px rgb(255,248,233), 2px 2px rgb(193,144,42);
+	}
+}
 .tour-popup .inner .images {
 	padding: 0 60px;
 }
@@ -53,6 +75,21 @@
 .tour-popup .inner .images a.carousel-control-next {
 	right: -60px;
 }
+@media (max-width: 768px) {
+	.tour-popup .inner .images {
+		padding: 0 20px;
+	}
+	.tour-popup .inner .images a>.icon {
+		width: 30px;
+		height: 30px;
+	}
+	.tour-popup .inner .images a.carousel-control-prev {
+		left: -35px;
+	}
+	.tour-popup .inner .images a.carousel-control-next {
+		right: -35px;
+	}
+}
 .tour-popup .inner .price {
 }
 .tour-popup .inner .price .currency {
@@ -69,6 +106,20 @@
 	font-family: 'GothamRoundedBook';
 	font-size: 14px;
 	color: rgb(25,54,97);
+}
+@media (max-width: 768px) {
+	.tour-popup .inner .price {
+		text-align: center;
+	}
+	.tour-popup .inner .price .currency {
+		font-size: 14px;
+	}
+	.tour-popup .inner .price .number {
+		font-size: 30px;
+	}
+	.tour-popup .inner .price .text {
+		font-size: 12px;
+	}
 }
 .tour-popup .inner .include {
 	padding: 20px 0;
@@ -119,14 +170,43 @@
 .tour-popup .inner .book-info form .time {
 	padding: 0 0 0 15px;
 }
+.tour-popup .inner .book-info form .choose-amount {
+}
+.tour-popup .inner .book-info form .choose-amount .sub {
+	line-height: 20px;
+	vertical-align: middle;
+	cursor: pointer;
+	padding: 0 10px;
+}
+.tour-popup .inner .book-info form .choose-amount .add {
+	line-height: 20px;
+	vertical-align: middle;
+	cursor: pointer;
+	padding: 0 10px;
+}
+.tour-popup .inner .book-info form .choose-amount .number {
+	line-height: 20px;
+	vertical-align: middle;
+	background-color: rgb(235,235,235);
+	padding: 5px 20px;
+	border-radius: 5px;
+	font-weight: bold;
+}
 .tour-popup .inner .book-info form .sub-total {
+}
+.tour-popup .inner .book-info form .sub-total .line {
+	width: 50px;
+	height: 1px;
+	border: 1px solid rgb(125,188,227);
+	position: absolute;
+	right: 0;
 }
 .tour-popup .inner .book-info form .sub-total .title {
 	text-align: right;
 	font-family: 'GothamRoundedBook';
 	font-size: 16px;
 	color: rgb(25,54,97);
-	padding: 0;
+	padding: 10px 0 0 0;
 }
 .tour-popup .inner .book-info form .sub-total .price {
 	text-align: right;
@@ -140,6 +220,13 @@
 	font-family: 'BCCartelDeux';
 	font-size: 34px;
 	color: rgb(25,54,97);
+}
+@media (max-width: 768px) {
+	.tour-popup .inner .book-info form .sub-total .line {
+		width: 100%;
+		position: relative;
+		text-align: center;
+	}
 }
 .tour-popup .submit-buttons {
 	text-align: right;
@@ -161,4 +248,18 @@
 .tour-popup .submit-buttons .buy-now {
 	color: rgb(255,255,255);
 	background-color: rgb(25,54,97);
+}
+@media (max-width: 768px) {
+	.tour-popup .submit-buttons {
+		padding: 20px 0 0 0;
+		text-align: center;
+	}
+	.tour-popup .submit-buttons button {
+		padding: 8px 20px;
+	}
+	.tour-popup .submit-buttons .add-to-cart {
+		margin: 0 10px 0 0;
+	}
+	.tour-popup .submit-buttons .buy-now {
+	}
 }
