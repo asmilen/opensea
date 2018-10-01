@@ -30,7 +30,7 @@
                         <span ng-if="ticket.status == 'disable'" class="label label-default">Disable</span>
                     </td>
                     <td>
-                        <a href="javascript:void(0)" class="btn btn-warning btn-sm" title="Edit this article" ng-click="showEditArticle(article)">
+                        <a href="/system/ticket/@{{ ticket.id }}/edit" class="btn btn-warning btn-sm" title="Edit this article" ">
                             <i class="fa fa-pencil"></i>
                         </a>
                         <a href="javascript:void(0)" class="btn btn-danger btn-sm" title="Delete this article" ng-click="deleteArticle(article)">

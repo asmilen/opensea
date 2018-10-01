@@ -11,6 +11,8 @@ namespace App\Http\Controllers\System;
 
 use App\Http\Controllers\Controller;
 use App\Models\Setting;
+use App\Models\Ticket;
+use App\Models\TicketComponent;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
@@ -25,6 +27,16 @@ class TicketController extends Controller
 
     public function index () {
         return view('system.ticket.index');
+    }
+
+    public function edit (Ticket $ticket) {
+        return view('system.ticket.edit',compact('ticket'));
+    }
+
+    public function unassignedComponents(Ticket $ticket) {
+        return TicketComponent::whereNotIn(
+            'id', $ticket->components()->pluck('id')
+        )->get();
     }
 
     public function tinymceImageDialog() {

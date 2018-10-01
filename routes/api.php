@@ -103,6 +103,7 @@ Route::middleware(['auth:api'])->group(function () {
 
 //ticket
     Route::get('/ticket/index', 'Service\TicketService@index');
+    Route::get('/ticket/{id}/edit', 'Service\TicketService@edit');
     Route::post('/ticket/create', 'Service\TicketService@create');
     Route::post('/ticket/update', 'Service\TicketService@update');
     Route::post('/ticket/update-multi-order', 'Service\TicketService@updateMultiOrder');

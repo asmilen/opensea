@@ -58,6 +58,7 @@ Route::any('system/news/dialog', 'System\TicketController@tinymceImageDialog');
 Route::any('system/news/upload', 'System\TicketController@tinymceImageUpload');
 Route::get('system/request', 'System\RequestController@index')->name('system-request');
 Route::get('system/ticket', 'System\TicketController@index')->name('system-ticket');
+Route::get('system/ticket/{ticket}/edit', 'System\TicketController@edit')->name('system-ticket-edit');
 Route::get('system/ticket-component', 'System\TicketComponentController@index')->name('system-ticket-component');
 Route::get('system/tour', 'System\TourController@index')->name('system-tour');
 Route::get('system/attraction', 'System\AttractionController@index')->name('system-attraction');
@@ -67,3 +68,9 @@ Route::get('system/customer-messages', 'System\CustomerMessageController@index')
 Route::get('system/customer-messages/{customerMessage}/edit', 'System\CustomerMessageController@edit');
 Route::get('system/map', 'System\MapController@index')->name('system-map');
 
+
+Route::get('system/ticket/{ticket}/unassigned-components', 'System\TicketController@unassignedComponents')->name('system-ticket.unassigned-components');
+Route::post('system/ticket/{ticket}/features/{feature}', 'System\TicketFeaturesController@store')->name('ticket.features.store');
+Route::delete('system/ticket/{ticket}/features/{feature}', 'System\TicketFeaturesController@destroy')->name('ticket.features.destroy');
+Route::post('system/ticket/{ticket}/offers/{offer}', 'System\TicketOffersController@store')->name('ticket.offers.store');
+Route::delete('system/ticket/{ticket}/offers/{offer}', 'System\TicketOffersController@destroy')->name('ticket.offers.destroy');

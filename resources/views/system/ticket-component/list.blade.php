@@ -12,7 +12,7 @@
                 <tr ng-repeat="article in articles">
                     <td>@{{ $index + 1 }}</td>
                     <td>
-                        <img src="@{{ article.image }}" width="50px">
+                        <img src="@{{ article.icon }}" width="50px">
                     </td>
                     <td>
                         <span>@{{ article.description }}</span>

@@ -9,6 +9,7 @@
 namespace App\Http\Controllers\Service;
 
 
+use App\Models\Ticket;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 
@@ -59,34 +60,25 @@ class TicketService extends BaseService
         ]);
     }
 
+    public function edit($id) {
+        $orderObj = Ticket::with(['features','offers'])->find($id);
+        return $this->response([
+            'data' => $orderObj
+        ]);
+    }
+
     public function update (Request $request) {
-        if (!$request->input('title') || !$request->input('category_id') || !$request->input('id')) {
+        if (!$request->input('name') || !$request->input('type') || !$request->input('id')) {
             return response()->json([
                 'status' => 'fail',
                 'message' => 'Invalid data input!'
             ]);
         }
         $id = $request->input('id');
-        $slug = $request->input('slug') ? $request->input('slug') : $this->getSlug($request->input('title'));
-        $checkSlug = App::make('ticketService')->checkSlug($slug, $id);
-        if (!$checkSlug) {
-            return response()->json([
-                'status' => 'fail',
-                'message' => 'Duplicate slug, try again!!!'
-            ]);
-        }
         $dataUpdate = [
-            'title' => $request->input('title'),
-            'category_id' => $request->input('category_id'),
-            'description' => $request->input('description') ? $request->input('description') : '',
-            'order' => $request->input('order') ? $request->input('order') : null,
-            'meta_description' => $request->input('meta_description') ? $request->input('meta_description') : '',
-            'meta_title' => $request->input('meta_title') ? $request->input('meta_title') : '',
-            'meta_keywords' => $request->input('meta_keywords') ? $request->input('meta_keywords') : '',
-            'status' => $request->input('status') ? $request->input('status') : 'enable',
-            'content' => $request->input('content') ? $request->input('content') : '',
-            'slug' => $slug,
-            'modifier_id' => $request->user()->id
+            'name' => $request->input('name'),
+            'type' => $request->input('type'),
+            'image_url' => $request->input('image_url'),
         ];
         $articleObj = App::make('ticketService')->baseQuery([
             'id' => $id

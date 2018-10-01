@@ -13,4 +13,19 @@ class Ticket extends BaseModel
     protected $fillable = [
         'name', 'price', 'type',
     ];
+
+    public function features()
+    {
+        return $this->belongsToMany('App\Models\TicketComponent','ticket_features')->wherePivot('type', 'feature');
+    }
+
+    public function offers()
+    {
+        return $this->belongsToMany('App\Models\TicketComponent','ticket_features')->wherePivot('type', 'exclusive_offer');
+    }
+
+    public function components()
+    {
+        return $this->belongsToMany('App\Models\TicketComponent','ticket_features');
+    }
 }

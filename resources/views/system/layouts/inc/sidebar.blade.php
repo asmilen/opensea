@@ -27,12 +27,12 @@
                     </li>
                 </ul>
             </li>
-            <li class="treeview {{ (Route::currentRouteName()=='system-ticket') || (Route::currentRouteName()=='system-request') || (Route::currentRouteName()=='system-ticket-component') ?'active':'' }}">
+            <li class="treeview {{ (Route::currentRouteName()=='system-ticket-edit') || (Route::currentRouteName()=='system-ticket') || (Route::currentRouteName()=='system-request') || (Route::currentRouteName()=='system-ticket-component') ?'active':'' }}">
                 <a href="#"><i class="fa fa-link"></i> <span>Ticket Management</span>
                     <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
                 </a>
                 <ul class="treeview-menu ">
-                    <li class="{{ (Route::currentRouteName()=='system-ticket')?'active':'' }}">
+                    <li class="{{ (Route::currentRouteName()=='system-ticket-edit') || (Route::currentRouteName()=='system-ticket') ? 'active' : '' }}">
                         <a href="{{ route('system-ticket' )}}"><i class="fa fa-ticket"></i> <span>Ticket</span></a>
                     </li>
                     <li class="{{ (Route::currentRouteName()=='system-ticket-component')?'active':'' }}">

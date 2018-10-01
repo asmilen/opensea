@@ -19,7 +19,6 @@ class TicketRepository extends BaseRepository
     {
         $columns = ['*'];
         $query = parent::query($filter);
-
         if (array_key_exists('search', $filter) && $filter['search']) {
             $query->where('ticket.name', 'like', '%' . $filter['search'] . '%');
         }
