@@ -20,6 +20,35 @@
     </div>
 </div>
 
+<div class="form-group col-sm-12"  style="margin-top: 10px">
+    <label for="" class="col-sm-3 control-label">
+        Price
+    </label>
+    <div class="col-sm-9">
+        <div ng-repeat="(key, price) in editArticle.price" class="form-group col-sm-12">
+            <div class="col-sm-3">
+                <label for="" class="col-sm-12 control-label">Title</label>
+                <label for="" class="col-md-3 control-label">@{{ key }}</label>
+            </div>
+            <div class="col-sm-3">
+                <label for="" class="col-sm-12 control-label">Value</label>
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" placeholder="Value price"
+                           ng-model="price.number">
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <label for="" class="col-sm-12 control-label">Save</label>
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" placeholder="Value price"
+                           ng-model="price.save">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <div class="col-md-12" style="margin-top: 20px">
     <div class="form-group">
         <label for="" class="col-sm-3 control-label">Image</label>

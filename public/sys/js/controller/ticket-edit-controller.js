@@ -58,6 +58,7 @@ function TicketEditController($scope, $http, $rootScope, $timeout, Upload) {
             function(response){
                 if (response.data.status == 'successful') {
                     $scope.editArticle = response.data.data;
+                    $scope.editArticle.price = JSON.parse($scope.editArticle.price);
                     $scope.previewImg = $scope.editArticle.image_url;
                 } else {
                     showMessage('Error', 'There was an error processing, please try again!', 'error');
@@ -80,6 +81,7 @@ function TicketEditController($scope, $http, $rootScope, $timeout, Upload) {
             name : $scope.editArticle.name,
             type : $scope.editArticle.type,
             image_url : $scope.editArticle.image_url,
+            price : $scope.editArticle.price,
             id: TICKET_ID
         };
         $http.post(api_domain + "/api/ticket/update", param).success(function (data) {

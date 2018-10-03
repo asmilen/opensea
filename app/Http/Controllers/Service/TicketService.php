@@ -79,6 +79,7 @@ class TicketService extends BaseService
             'name' => $request->input('name'),
             'type' => $request->input('type'),
             'image_url' => $request->input('image_url'),
+            'price' => json_encode($request->input('price')),
         ];
         $articleObj = App::make('ticketService')->baseQuery([
             'id' => $id

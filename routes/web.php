@@ -74,3 +74,4 @@ Route::post('system/ticket/{ticket}/features/{feature}', 'System\TicketFeaturesC
 Route::delete('system/ticket/{ticket}/features/{feature}', 'System\TicketFeaturesController@destroy')->name('ticket.features.destroy');
 Route::post('system/ticket/{ticket}/offers/{offer}', 'System\TicketOffersController@store')->name('ticket.offers.store');
 Route::delete('system/ticket/{ticket}/offers/{offer}', 'System\TicketOffersController@destroy')->name('ticket.offers.destroy');
+
